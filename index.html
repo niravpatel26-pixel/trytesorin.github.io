@@ -90,23 +90,26 @@
       gap: 10px;
     }
 
-    /* NEW: logo tile with your black-block mark */
+    /* LOGO TILE + IMAGE */
     .logo-mark {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 12px;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
       border: 1px solid rgba(148, 163, 184, 0.26);
+      overflow: hidden; /* crop any extra whitespace in the PNG */
     }
 
     .logo-mark img {
-      width: 18px;
-      height: auto;
       display: block;
+      width: 140%;     /* make the T nice and bold */
+      height: auto;
+      object-fit: contain;
+      transform: translateY(2px); /* tiny nudge if the T feels a bit high */
     }
 
     .logo-text-main {
@@ -575,7 +578,6 @@
     <header class="nav">
       <div class="nav-left">
         <div class="logo-mark">
-          <!-- Your black-block T logo on white -->
           <img src="tesorin-logo.png" alt="Tesorin logo" />
         </div>
         <div>
