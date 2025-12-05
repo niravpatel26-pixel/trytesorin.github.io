@@ -90,18 +90,23 @@
       gap: 10px;
     }
 
+    /* NEW: logo tile with your black-block mark */
     .logo-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 10% 0, #22c55e, #15803d);
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ecfdf3;
-      font-weight: 700;
-      font-size: 15px;
-      box-shadow: 0 7px 16px rgba(22, 163, 74, 0.45);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+      border: 1px solid rgba(148, 163, 184, 0.26);
+    }
+
+    .logo-mark img {
+      width: 18px;
+      height: auto;
+      display: block;
     }
 
     .logo-text-main {
@@ -569,7 +574,10 @@
     <!-- Top nav -->
     <header class="nav">
       <div class="nav-left">
-        <div class="logo-mark">T</div>
+        <div class="logo-mark">
+          <!-- Your black-block T logo on white -->
+          <img src="tesorin-logo.png" alt="Tesorin logo" />
+        </div>
         <div>
           <div class="logo-text-main">Tesorin</div>
           <div class="logo-tagline">Money planning, made simple</div>
@@ -643,8 +651,8 @@
 
         <p class="hero-footnote">
           <strong>Phase 1:</strong> Tesorin launches as a simple planner app.
-  The first version focuses on guidance that makes sense for India and Canada,
-  then gradually expands to more regions.
+          The first version focuses on guidance that makes sense for India and Canada,
+          then gradually expands to more regions.
           Future product lines — <strong>FinTrek</strong> for deeper planning and
           <strong>SummitVest</strong> for premium high-net-worth strategies — are
           planned as the ecosystem grows.
@@ -713,7 +721,7 @@
         <div class="strip-item-label">Who it’s for</div>
         <div class="strip-item-main">Anyone taking money seriously for the first time</div>
         <div>Students, new grads, early-career professionals and busy adults everywhere —
-    with initial support focused on India and Canada.</div>
+          with initial support focused on India and Canada.</div>
       </div>
       <div>
         <div class="strip-item-label">What it does</div>
