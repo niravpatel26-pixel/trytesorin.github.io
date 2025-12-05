@@ -4,21 +4,36 @@
   <meta charset="UTF-8" />
   <title>Tesorin – Wealth Planning for Beginners</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tesorin helps beginners in India and Canada build their first serious wealth plan – goals, savings, and investing made simple." />
+  <meta
+    name="description"
+    content="Tesorin helps beginners in India and Canada build their first serious wealth plan – goals, savings, and investing made simple."
+  />
+
+  <!-- Optional modern font (Space Grotesk for headings, Inter for body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     :root {
-      --bg: #050816;
-      --bg-card: #0b1020;
-      --accent: #35cfa1;
-      --accent-soft: rgba(53, 207, 161, 0.12);
-      --text: #f8fafc;
+      --bg: #020617;
+      --bg-card: #020617;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.14);
+      --accent-blue: #22d3ee;
+      --text: #e5e7eb;
       --muted: #94a3b8;
-      --border: #1f2937;
-      --radius-lg: 18px;
-      --radius-xl: 26px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.65);
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      --border: rgba(148, 163, 184, 0.25);
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --shadow-soft: 0 30px 80px rgba(15, 23, 42, 0.8);
+      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
+      --font-display: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
     }
 
     * {
@@ -29,60 +44,124 @@
 
     body {
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top, #111827 0, #020617 55%, #020617 100%);
+      background: radial-gradient(circle at top, #020617 0, #020617 45%, #020617 100%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animated aurora background */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(45, 212, 191, 0.14), transparent 55%),
+        radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.16), transparent 60%),
+        radial-gradient(circle at 0% 90%, rgba(16, 185, 129, 0.16), transparent 55%);
+      opacity: 0.85;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      animation: aurora 28s linear infinite alternate;
+      z-index: -2;
+    }
+
+    body::after {
+      animation-duration: 34s;
+      animation-direction: alternate-reverse;
+      filter: blur(4px);
+      opacity: 0.7;
+    }
+
+    @keyframes aurora {
+      0% {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+      50% {
+        transform: translate3d(2%, -1%, 0) scale(1.03);
+      }
+      100% {
+        transform: translate3d(-2%, 1%, 0) scale(1.04);
+      }
     }
 
     .page {
-      max-width: 1100px;
+      max-width: 1120px;
       width: 100%;
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
       gap: 32px;
-      align-items: center;
+      align-items: stretch;
     }
 
     @media (max-width: 900px) {
+      body {
+        padding: 18px 14px 28px;
+      }
       .page {
         grid-template-columns: minmax(0, 1fr);
       }
     }
 
-    .card {
-      border-radius: 30px;
-      background: radial-gradient(circle at top left, #111827, #020617);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      padding: 28px 26px;
+    .card,
+    .side-card {
+      background: radial-gradient(circle at top left, #020617 0, #020617 55%, #020617 100%);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.2);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      isolation: isolate;
+      transition: transform 0.35s ease, box-shadow 0.35s ease,
+        border-color 0.35s ease;
     }
 
-    .card::before {
+    .card::before,
+    .side-card::before {
       content: "";
       position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at top left, rgba(53, 207, 161, 0.08), transparent 55%);
+      inset: -25%;
+      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.09), transparent 55%);
       opacity: 0.9;
       pointer-events: none;
+      z-index: -1;
+    }
+
+    .side-card::before {
+      background: radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.12), transparent 55%);
+    }
+
+    .card:hover,
+    .side-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 70px rgba(15, 23, 42, 0.9);
+      border-color: rgba(94, 234, 212, 0.55);
     }
 
     .card-inner {
-      position: relative;
-      z-index: 1;
+      padding: 30px 28px 26px;
+    }
+
+    @media (max-width: 900px) {
+      .card-inner {
+        padding: 24px 20px 22px;
+      }
     }
 
     .logo-row {
       display: inline-flex;
       align-items: center;
-      padding: 6px 12px;
+      padding: 7px 13px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.9);
       border: 1px solid rgba(148, 163, 184, 0.35);
       margin-bottom: 22px;
       gap: 8px;
@@ -92,11 +171,11 @@
       width: 26px;
       height: 26px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #a5f3fc 0, #22c55e 40%, #0f766e 100%);
+      background: conic-gradient(from 210deg, #22c55e, #22d3ee, #4ade80, #22c55e);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #0b1120;
+      color: #020617;
       font-size: 14px;
       font-weight: 700;
       box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
@@ -104,7 +183,7 @@
 
     .logo-text-main {
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       font-size: 11px;
       color: var(--muted);
@@ -123,21 +202,23 @@
     }
 
     h1 {
-      font-size: clamp(32px, 4vw, 40px);
-      line-height: 1.1;
-      margin-bottom: 12px;
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4.4vw, 44px);
+      line-height: 1.05;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
     }
 
     h1 span.brand {
-      background: linear-gradient(120deg, #4ade80, #22c55e, #2dd4bf);
+      background: linear-gradient(120deg, #4ade80, #22c55e, #22d3ee);
       -webkit-background-clip: text;
       color: transparent;
     }
 
     .subtitle {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--muted);
-      max-width: 480px;
+      max-width: 520px;
       margin-bottom: 22px;
     }
 
@@ -150,14 +231,15 @@
 
     .pill {
       font-size: 12px;
-      padding: 6px 11px;
+      padding: 7px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       background: rgba(15, 23, 42, 0.9);
       color: var(--muted);
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      backdrop-filter: blur(10px);
     }
 
     .pill-dot {
@@ -165,15 +247,17 @@
       height: 6px;
       border-radius: 999px;
       background: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
     }
 
     .waitlist-card {
-      margin-top: 10px;
-      border-radius: var(--radius-xl);
+      margin-top: 12px;
+      border-radius: 30px;
       border: 1px solid rgba(148, 163, 184, 0.45);
-      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.9));
       padding: 18px 18px 16px;
-      max-width: 460px;
+      max-width: 480px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
     }
 
     .waitlist-label {
@@ -186,41 +270,68 @@
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
+      align-items: stretch;
     }
 
     .form-row input[type="email"] {
-      flex: 1 1 180px;
+      flex: 1 1 190px;
       min-width: 0;
-      padding: 10px 12px;
+      padding: 12px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.96);
       color: var(--text);
       font-size: 14px;
       outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
     .form-row input[type="email"]::placeholder {
       color: rgba(148, 163, 184, 0.8);
     }
 
+    .form-row input[type="email"]:focus {
+      border-color: rgba(94, 234, 212, 0.9);
+      box-shadow: 0 0 0 1px rgba(94, 234, 212, 0.85), 0 0 25px rgba(34, 197, 94, 0.35);
+      background: rgba(15, 23, 42, 0.98);
+    }
+
     .form-row button {
       border: none;
       border-radius: 999px;
-      padding: 10px 18px;
+      padding: 11px 20px;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
-      background: linear-gradient(135deg, #22c55e, #14b8a6);
+      background: linear-gradient(135deg, #22c55e, #22d3ee);
       color: #022c22;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       white-space: nowrap;
+      box-shadow: 0 14px 30px rgba(34, 197, 94, 0.55);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
     }
 
     .form-row button span.arrow {
-      font-size: 14px;
+      font-size: 15px;
+      transform: translateX(0);
+      transition: transform 0.18s ease;
+    }
+
+    .form-row button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(34, 197, 94, 0.7);
+      filter: brightness(1.03);
+    }
+
+    .form-row button:hover span.arrow {
+      transform: translateX(3px);
+    }
+
+    .form-row button:active {
+      transform: translateY(0);
+      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.55);
     }
 
     .waitlist-note {
@@ -233,6 +344,7 @@
       margin-top: 26px;
       font-size: 12px;
       color: var(--muted);
+      max-width: 520px;
     }
 
     .footer-text strong {
@@ -240,30 +352,18 @@
       font-weight: 500;
     }
 
-    /* Right side */
+    /* Right / Sidebar mockup */
 
     .side-card {
-      border-radius: 26px;
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.98), #020617);
-      padding: 20px 18px 18px;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.85);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .side-card::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.14), transparent 55%);
-      opacity: 0.9;
-      pointer-events: none;
+      padding: 22px 20px 20px;
     }
 
     .side-inner {
       position: relative;
       z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .side-header {
@@ -271,14 +371,15 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 16px;
+      gap: 10px;
     }
 
     .side-badge {
       font-size: 11px;
       padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
       color: var(--muted);
       display: inline-flex;
       align-items: center;
@@ -289,22 +390,24 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #22c55e, #06b6d4);
+      background: linear-gradient(135deg, #22c55e, #22d3ee);
+      box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.4);
     }
 
     .side-chip {
       font-size: 11px;
       padding: 5px 10px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.5);
       color: var(--muted);
+      white-space: nowrap;
     }
 
     .metric-card {
       border-radius: 18px;
       border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(15, 23, 42, 0.98);
       padding: 12px 12px 10px;
       margin-bottom: 10px;
     }
@@ -365,12 +468,23 @@
       width: 62%;
       height: 100%;
       background: linear-gradient(90deg, #22c55e, #22d3ee);
+      transform-origin: left;
+      animation: fill 1.2s ease-out forwards;
+    }
+
+    @keyframes fill {
+      from {
+        transform: scaleX(0.6);
+      }
+      to {
+        transform: scaleX(1);
+      }
     }
 
     .side-list {
       margin-top: 14px;
       padding-top: 10px;
-      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      border-top: 1px dashed rgba(148, 163, 184, 0.45);
     }
 
     .side-item {
@@ -386,26 +500,13 @@
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.8);
+      background: rgba(148, 163, 184, 0.9);
       margin-top: 5px;
-    }
-
-    @media (max-width: 900px) {
-      body {
-        padding: 18px 16px;
-      }
-      .card {
-        padding: 22px 18px;
-      }
-      .side-card {
-        order: -1;
-      }
     }
   </style>
 </head>
 <body>
   <main class="page">
-
     <!-- LEFT / MAIN CONTENT -->
     <section class="card">
       <div class="card-inner">
@@ -430,11 +531,11 @@
         <div class="pill-row">
           <div class="pill">
             <span class="pill-dot"></span>
-            For students & young professionals
+            For students &amp; young professionals
           </div>
           <div class="pill">
             <span class="pill-dot"></span>
-            India & Canada friendly
+            India &amp; Canada friendly
           </div>
           <div class="pill">
             <span class="pill-dot"></span>
@@ -444,31 +545,28 @@
 
         <div class="waitlist-card">
           <div class="waitlist-label">Join the early access list</div>
-         <form id="waitlist-form" class="form-row">
-  <input
-    type="email"
-    name="email"
-    placeholder="Enter your email"
-    required
-  />
-  <button type="submit">
-    Get early access
-    <span class="arrow">→</span>
-  </button>
-</form>
-
-
+          <form id="waitlist-form" class="form-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">
+              Get early access
+              <span class="arrow">→</span>
+            </button>
+          </form>
           <div class="waitlist-note">
             No spam. We’ll only email you when the beta is ready.
           </div>
         </div>
 
         <p class="footer-text">
-         <strong>Phase 1:</strong> Tesorin is the foundation of our long-term vision. 
-Future product lines — including <strong>Fintrek</strong> for advanced planning and 
-<strong>SummitVest</strong> for premium high-net-worth wealth management — are planned as 
-the ecosystem evolves.
-
+          <strong>Phase 1:</strong> Tesorin is the foundation of our long-term vision.
+          Future product lines — including <strong>Fintrek</strong> for advanced planning and
+          <strong>SummitVest</strong> for premium high-net-worth wealth management —
+          are planned as the ecosystem evolves.
         </p>
       </div>
     </section>
@@ -527,37 +625,36 @@ the ecosystem evolves.
         </div>
       </div>
     </aside>
-
   </main>
+
+  <!-- Formspree submit + redirect to success page -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("waitlist-form");
-    if (!form) return;
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("waitlist-form");
+      if (!form) return;
 
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-      const formData = new FormData(form);
+        const formData = new FormData(form);
 
-      try {
-        await fetch("https://formspree.io/f/xzznvgkp", {
-          method: "POST",
-          headers: {
-            "Accept": "application/json"
-          },
-          body: formData
-        });
-      } catch (err) {
-        console.error("Form submission error:", err);
-        // Even if there's an error, still show thank-you page for now
-      }
+        try {
+          await fetch("https://formspree.io/f/xzznvgkp", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+            },
+            body: formData,
+          });
+        } catch (err) {
+          console.error("Form submission error:", err);
+          // Even if there's an error, still show thank-you page for now
+        }
 
-      // Redirect to your custom thank-you page
-      window.location.href = "https://trytesorin.com/success.html";
+        // Redirect to your custom thank-you page
+        window.location.href = "https://trytesorin.com/success.html";
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
-
-
