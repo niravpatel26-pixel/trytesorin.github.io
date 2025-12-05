@@ -529,5 +529,36 @@ the ecosystem evolves.
     </aside>
 
   </main>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("waitlist-form");
+    if (!form) return;
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        await fetch("https://formspree.io/f/mpwvlryp", {
+          method: "POST",
+          headers: {
+            "Accept": "application/json"
+          },
+          body: formData
+        });
+      } catch (err) {
+        console.error("Form submission error:", err);
+        // Even if there's an error, still show thank-you page for now
+      }
+
+      // Redirect to your custom thank-you page
+      window.location.href = "https://trytesorin.com/success.html";
+    });
+  });
+</script>
+</body>
+</html>
+
 </body>
 </html>
