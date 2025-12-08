@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tesorin – Official Brand Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Official brand page for Tesorin – a premium fintech app focused on calm, beginner-friendly personal wealth planning."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --bg-soft: #ffffff;
+      --text-main: #0f172a;
+      --text-soft: #6b7280;
+      --accent: #22c55e;
+      --border-subtle: #e5e7eb;
+      --max-width: 800px;
+      --radius-lg: 18px;
+      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top, #eef7ff 0, #f7f8fa 50%, #f7f8fa 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 16px 40px;
+    }
+
+    .shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: #f9fafb;
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      padding: 22px 22px 26px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 10% 0, #22c55e, #15803d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ecfdf3;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 7px 16px rgba(22, 163, 74, 0.45);
+    }
+
+    .brand-text-main {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .brand-tagline {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .back-link {
+      font-size: 12px;
+      color: var(--text-soft);
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 6px 10px;
+      background: #ffffff;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-soft);
+    }
+
+    h2 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      margin-top: 10px;
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+    }
+
+    .card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 14px 16px;
+      margin-top: 4px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #ffffff;
+      color: var(--text-soft);
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-top: 6px;
+    }
+
+    li {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 10px;
+    }
+
+    .highlight {
+      color: #111827;
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        border-radius: 18px;
+        padding: 18px 14px 22px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="brand">
+        <div class="brand-mark">T</div>
+        <div>
+          <div class="brand-text-main">Tesorin</div>
+          <div class="brand-tagline">Official brand page</div>
+        </div>
+      </div>
+      <a href="/" class="back-link">← Back to main site</a>
+    </header>
+
+    <main>
+      <section>
+        <div class="kicker">Overview</div>
+        <h1>Tesorin — personal wealth planning made calm.</h1>
+        <p>
+          Tesorin is a premium fintech app focused on helping beginners build <span class="highlight">serious wealth
+          from small, realistic starts</span>. Instead of trading screens, hot stock ideas, or complicated products,
+          Tesorin gives you a clear view of your money, your goals, and the next few moves that actually matter.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Beginner-friendly planning</span>
+          <span class="pill">Serious about long-term wealth</span>
+          <span class="pill">Calm, minimal design</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Why the name “Tesorin”?</h2>
+        <div class="card">
+          <p>
+            The name “Tesorin” is inspired by the idea of a <span class="highlight">treasure you build over time</span> —
+            not a lottery ticket or a lucky guess. It reflects our core belief: wealth should feel like something you
+            carefully shape, not something you gamble on.
+          </p>
+          <p style="margin-top:8px;">
+            Tesorin is for people who are ready to take money seriously for the first time, but want a tool that feels
+            calm, modern, and respectful of their attention.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>What Tesorin stands for</h2>
+        <ul>
+          <li><span class="highlight">Simplicity first</span> – A clear, gentle interface instead of noisy dashboards.</li>
+          <li><span class="highlight">No pressure, no products</span> – The app is built as a planning surface, not as a sales funnel.</li>
+          <li><span class="highlight">Beginner-friendly, not beginner-ish</span> – Plain language without dumbing things down.</li>
+          <li><span class="highlight">Serious long-term thinking</span> – Safety, buffers, debt, and true wealth, not just chasing returns.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Where Tesorin fits in your financial life</h2>
+        <p>
+          Tesorin is designed to sit where a thoughtful financial planner might sit: between your day-to-day cash flow
+          and your long-term “I want to be okay” goals.
+        </p>
+        <div class="card">
+          <ul>
+            <li>Helps you understand your monthly cash flow and what’s realistically left over.</li>
+            <li>Gives you a calm, visual sense of emergency funds, debt payoff, and long-term targets.</li>
+            <li>Shows how small monthly decisions add up over years and decades.</li>
+            <li>Starts with everyday scenarios in India and Canada, then expands to more regions over time.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>The broader ecosystem: FinTrek &amp; SummitVest</h2>
+        <p>
+          Tesorin is the first product in a planned ecosystem:
+        </p>
+        <ul>
+          <li><span class="highlight">Tesorin</span> – a calm, beginner-focused wealth planning app.</li>
+          <li><span class="highlight">FinTrek</span> – deeper, more detailed planning for people who want to go further.</li>
+          <li><span class="highlight">SummitVest</span> – premium, high-context strategies and tools for more complex situations.</li>
+        </ul>
+        <p style="margin-top:8px;">
+          Together, they are meant to grow with you as your money life becomes more complex, without losing the simple,
+          respectful tone that Tesorin starts with.
+        </p>
+      </section>
+
+      <section>
+        <h2>Brand tone and visual identity</h2>
+        <div class="card">
+          <p>
+            Tesorin’s visual identity is intentionally minimal and calm: soft neutrals, gentle gradients, and a single
+            green accent that signals progress without shouting. Typography leans on clean, modern sans-serif fonts to
+            keep the focus on your numbers and decisions, not on decoration.
+          </p>
+          <p style="margin-top:8px;">
+            In words, Tesorin speaks like a thoughtful friend: direct, clear, and kind — never condescending, never
+            hype-driven.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Official links</h2>
+        <ul>
+          <li><span class="highlight">Website:</span> https://www.trytesorin.com</li>
+          <li><span class="highlight">Early access waitlist:</span> available on the homepage.</li>
+          <!-- Later you can add LinkedIn, X, etc. -->
+        </ul>
+      </section>
+
+      <p class="meta">
+        This is the official brand page for Tesorin. If you see other uses of the name “Tesorin” for finance tools,
+        they are not associated with this project unless explicitly stated.
+      </p>
+    </main>
+  </div>
+</body>
+</html>
