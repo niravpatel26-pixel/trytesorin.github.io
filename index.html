@@ -21,14 +21,15 @@
     "category": "Free",
     "url": "https://www.trytesorin.com/"
   }
-    }
-</script>
-<link rel="canonical" href="https://www.trytesorin.com/" />
+}
+  </script>
+
+  <link rel="canonical" href="https://www.trytesorin.com/" />
 
   <meta charset="UTF-8" />
   <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -53,7 +54,6 @@
   <meta property="og:url" content="https://www.trytesorin.com" />
   <meta property="og:site_name" content="Tesorin" />
   <meta property="og:type" content="website" />
-  <!-- Update this when you have a real image -->
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
   <!-- Twitter Card -->
@@ -98,7 +98,7 @@
 
     body {
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top, #eef7ff 0, #f7f8fa 50%, #f7f8fa 100%);
+      background: #ffffff;
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -113,7 +113,7 @@
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 20px 16px 64px;
+      padding: 32px 16px 80px;
     }
 
     /* HEADER */
@@ -121,7 +121,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 6px 0 18px;
+      padding: 8px 0 28px;
     }
 
     .brand {
@@ -130,27 +130,25 @@
       gap: 10px;
     }
 
-   .brand-mark {
-  width: 32px;           /* slightly larger, like an app icon */
-  height: 32px;
-  border-radius: 10px;   /* soft square, Wealthsimple-ish */
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
-  border: 1px solid rgba(148, 163, 184, 0.20);
-  overflow: hidden;
-}
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+      border: 1px solid rgba(148, 163, 184, 0.20);
+      overflow: hidden;
+    }
 
-.brand-mark img {
-  width: 100%;           /* fill the tile */
-  height: 100%;
-  object-fit: contain;   /* keep proportions */
-  display: block;
-}
-
-
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
     .brand-name {
       font-family: var(--font-display);
@@ -225,10 +223,10 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 40px);
-      line-height: 1.06;
+      font-size: clamp(34px, 4.4vw, 44px);
+      line-height: 1.04;
       letter-spacing: -0.035em;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .hero-title span.highlight {
@@ -237,7 +235,7 @@
 
     .hero-subtitle {
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.7;
       color: var(--text-soft);
       max-width: 480px;
       margin-bottom: 18px;
@@ -313,12 +311,12 @@
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
-      background: linear-gradient(135deg, #16a34a, #22c55e);
-      color: #ecfdf5;
+      background: #111827;
+      color: #f9fafb;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 14px 32px rgba(22, 163, 74, 0.55);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
       white-space: nowrap;
       transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
     }
@@ -331,7 +329,7 @@
 
     .cta-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(22, 163, 74, 0.65);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
       filter: brightness(1.03);
     }
 
@@ -532,7 +530,7 @@
 
     /* SECTIONS */
     .section {
-      margin-top: 60px;
+      margin-top: 72px;
     }
 
     .section-header {
@@ -740,14 +738,14 @@
       <!-- HEADER -->
       <header>
         <div class="brand">
-  <div class="brand-mark">
-    <img src="tesorin-logo.png" alt="Tesorin logo" />
-  </div>
-  <div class="brand-text-wrap">
-    <div class="brand-name">Tesorin</div>
-    <div class="brand-tagline">Start small. Plan big.</div>
-  </div>
-</div>
+          <div class="brand-mark">
+            <img src="tesorin-logo.png" alt="Tesorin logo" />
+          </div>
+          <div class="brand-text-wrap">
+            <div class="brand-name">Tesorin</div>
+            <div class="brand-tagline">Start small. Plan big.</div>
+          </div>
+        </div>
         <nav>
           <a href="#how">How it works</a>
           <a href="#features">Features</a>
