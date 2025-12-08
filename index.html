@@ -2,36 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tesorin – Start small. Plan big.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Tesorin helps you turn small starts into a serious wealth plan – one place for your goals, cash flow, and next money moves."
-  />
 
-  <!-- Modern fonts -->
+  <title>Tesorin – Personal Wealth Planning Made Simple</title>
+
+  <meta name="description" content="Tesorin is a premium fintech app that helps you build your long-term wealth plan with clarity and confidence. A clean, simple way to understand your money, set goals, and grow your financial future." />
+  <meta name="keywords" content="Tesorin, wealth planning app, personal finance, fintech, money management, goal planning, financial clarity" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Tesorin – Personal Wealth Planning Made Simple" />
+  <meta property="og:description" content="A premium fintech app for building long-term wealth with clarity, simplicity, and confidence." />
+  <meta property="og:url" content="https://www.trytesorin.com" />
+  <meta property="og:site_name" content="Tesorin" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tesorin – Personal Wealth Planning Made Simple" />
+  <meta name="twitter:description" content="A premium fintech app for building long-term wealth simply and confidently." />
+  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
   <style>
     :root {
-      --bg: #f4f5fb;
-      --bg-card: #ffffff;
-      --text-main: #020617;
-      --text-muted: #6b7280;
-      --accent: #16a34a;
-      --accent-soft: rgba(22, 163, 74, 0.08);
-      --accent-pill: #e5f7eb;
-      --border-subtle: rgba(15, 23, 42, 0.06);
-      --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.06);
-      --radius-lg: 24px;
-      --radius-xl: 32px;
-      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-display: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --bg: #f7f8fa;
+      --bg-soft: #ffffff;
+      --text-main: #0f172a;
+      --text-soft: #6b7280;
+      --accent: #22c55e;
+      --border-subtle: #e5e7eb;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --radius-xl: 22px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
     }
 
     * {
@@ -41,720 +56,747 @@
     }
 
     body {
-      font-family: var(--font-sans);
-      background:
-        radial-gradient(circle at top left, #e0f2fe 0, transparent 55%),
-        radial-gradient(circle at bottom right, #dcfce7 0, transparent 55%),
-        var(--bg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #eef7ff 0, #f7f8fa 50%, #f7f8fa 100%);
       color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
       min-height: 100vh;
       display: flex;
-      justify-content: center;
-      padding: 24px;
+      flex-direction: column;
     }
 
     .shell {
-      max-width: 1120px;
       width: 100%;
-      background: linear-gradient(to bottom right, #f9fafb, #f3f4f6);
-      border-radius: 36px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      padding: 22px 26px 26px;
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 16px 64px;
     }
 
-    @media (max-width: 900px) {
-      body {
-        padding: 16px;
-      }
-      .shell {
-        padding: 18px 16px 20px;
-        border-radius: 26px;
-      }
-    }
-
-    /* Top nav */
-    .nav {
+    /* HEADER */
+    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      padding: 6px 0 18px;
     }
 
-    .nav-left {
+    .brand {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .logo-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 10% 0, #22c55e, #15803d);
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 11px;
+      background: radial-gradient(circle at 0 0, #bbf7d0, #22c55e);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ecfdf3;
       font-weight: 700;
-      font-size: 15px;
-      box-shadow: 0 7px 16px rgba(22, 163, 74, 0.45);
+      font-size: 17px;
+      color: #022c22;
+      box-shadow: 0 8px 26px rgba(22, 163, 74, 0.35);
     }
 
-    .logo-text-main {
-      font-family: var(--font-display);
+    .brand-name {
       font-weight: 600;
       letter-spacing: 0.02em;
-      font-size: 17px;
+      font-size: 18px;
     }
 
-    .logo-tagline {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .nav-right {
+    nav {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 22px;
       font-size: 13px;
+      color: var(--text-soft);
     }
 
-    .nav-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.03);
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      padding: 4px 0;
+    }
+
+    nav a.highlight {
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
       border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      font-size: 12px;
     }
 
-    .nav-dot {
+    .nav-cta {
+      display: none;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      padding-top: 24px;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .hero-label span.dot {
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: var(--accent);
-    }
-
-    .nav-btn {
-      padding: 7px 14px;
-      border-radius: 999px;
-      border: none;
-      background: #0f172a;
-      color: #f9fafb;
-      font-size: 13px;
-      font-weight: 500;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.35);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-    }
-
-    .nav-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 26px rgba(15, 23, 42, 0.45);
-      filter: brightness(1.03);
-    }
-
-    .nav-btn span.arrow {
-      font-size: 14px;
-      transform: translateX(0);
-      transition: transform 0.16s ease;
-    }
-
-    .nav-btn:hover span.arrow {
-      transform: translateX(3px);
-    }
-
-    /* Hero layout */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: stretch;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-left {
-      padding: 14px 4px 6px;
-    }
-
-    .eyebrow {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .eyebrow-pill {
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: var(--accent-pill);
-      color: #166534;
-      font-size: 11px;
-      font-weight: 500;
+      background: #22c55e;
     }
 
     .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 40px);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      margin-bottom: 14px;
-    }
-
-    .hero-title span.highlight {
-      color: var(--accent);
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
     }
 
     .hero-subtitle {
       font-size: 15px;
-      color: var(--text-muted);
-      max-width: 480px;
-      margin-bottom: 20px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      max-width: 420px;
       margin-bottom: 22px;
     }
 
-    .chip {
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(255, 255, 255, 0.8);
-      color: var(--text-muted);
-      font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .chip-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
-
-    /* Waitlist card */
-    .waitlist-card {
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
-      padding: 10px 10px 10px 16px;
+    .hero-cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
       align-items: center;
-      max-width: 520px;
-      margin-bottom: 8px;
+      gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .waitlist-label {
+    .btn-primary {
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #ecfdf5;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(22, 163, 74, 0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary span.chevron {
+      font-size: 15px;
+      translate: 0 0;
+      transition: translate 0.16s ease-out;
+    }
+
+    .btn-primary:hover span.chevron {
+      translate: 1px -1px;
+    }
+
+    .btn-ghost {
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: transparent;
+      color: var(--text-main);
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-note strong {
+      color: #111827;
+      font-weight: 500;
+    }
+
+    /* HERO VISUAL (FAKE DASHBOARD) */
+    .hero-visual-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      position: relative;
       width: 100%;
-      font-size: 12px;
-      color: var(--text-muted);
+      max-width: 360px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #020617, #020617, #0b1120);
+      padding: 16px 16px 18px;
+      box-shadow: var(--shadow-soft);
+      color: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .hero-chip {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 11px;
+      color: #cbd5f5;
+    }
+
+    .hero-balance {
+      margin: 6px 0 18px;
+    }
+
+    .hero-balance-label {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-bottom: 4px;
+    }
+
+    .hero-balance-value {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 3px;
+    }
+
+    .hero-balance-change {
+      font-size: 11px;
+      color: #4ade80;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .hero-pill {
+      flex: 1;
+      min-width: 120px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, rgba(52, 211, 153, 0.18), rgba(15, 23, 42, 0.9));
+      padding: 9px 11px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .hero-pill span.label {
+      display: block;
+      font-size: 11px;
+      color: #9ca3af;
       margin-bottom: 2px;
     }
 
-    .form-row {
-      display: flex;
-      flex: 1;
-      gap: 10px;
-    }
-
-    .form-row input[type="email"] {
-      flex: 1;
-      min-width: 0;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: #f9fafb;
-      font-size: 13px;
-      color: var(--text-main);
-      outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-
-    .form-row input::placeholder {
-      color: rgba(148, 163, 184, 0.9);
-    }
-
-    .form-row input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(22, 163, 74, 0.25);
-      background: #ffffff;
-    }
-
-    .cta-btn {
-      border: none;
-      border-radius: 999px;
-      padding: 10px 18px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      background: linear-gradient(135deg, #16a34a, #22c55e);
-      color: #ecfdf5;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 14px 32px rgba(22, 163, 74, 0.55);
-      white-space: nowrap;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-    }
-
-    .cta-btn span.arrow {
+    .hero-pill span.value {
       font-size: 14px;
-      transform: translateX(0);
-      transition: transform 0.2s ease;
+      font-weight: 500;
     }
 
-    .cta-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(22, 163, 74, 0.65);
-      filter: brightness(1.03);
+    .hero-bars {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+      align-items: flex-end;
+      height: 64px;
     }
 
-    .cta-btn:hover span.arrow {
-      transform: translateX(3px);
+    .bar {
+      border-radius: 999px;
+      background: linear-gradient(to top, #1d2839, #4ade80);
+      opacity: 0.65;
     }
 
-    .cta-note {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-      max-width: 360px;
+    .bar:nth-child(2),
+    .bar:nth-child(5) {
+      height: 40%;
     }
 
-    .hero-footnote {
-      margin-top: 18px;
-      font-size: 12px;
-      color: var(--text-muted);
+    .bar:nth-child(3),
+    .bar:nth-child(4) {
+      height: 70%;
+    }
+
+    .bar:nth-child(1),
+    .bar:nth-child(6) {
+      height: 25%;
+    }
+
+    .hero-card-footer {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #9ca3af;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 60px;
+    }
+
+    .section-header {
+      text-align: left;
       max-width: 520px;
+      margin-bottom: 26px;
     }
 
-    .hero-footnote strong {
-      font-weight: 600;
-      color: #111827;
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
     }
 
-    /* Hero right: device card */
-    .hero-right {
+    .section-title {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 18px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .feature-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: #ecfdf5;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
 
-    .device-shell {
-      background: radial-gradient(circle at top left, #0f172a, #020617);
-      border-radius: 32px;
-      border: 1px solid rgba(15, 23, 42, 0.4);
-      box-shadow: 0 26px 70px rgba(15, 23, 42, 0.5);
-      padding: 18px 18px 20px;
-      color: #f9fafb;
-      width: 100%;
-      max-width: 360px;
-      position: relative;
-      overflow: hidden;
+    .feature-title {
+      font-size: 14px;
+      margin-bottom: 5px;
+      font-weight: 500;
     }
 
-    .device-shell::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background: radial-gradient(circle at 0% 0%, rgba(52, 211, 153, 0.25), transparent 50%),
-                  radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.26), transparent 55%);
-      opacity: 0.9;
-      pointer-events: none;
+    .feature-body {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.5;
     }
 
-    .device-inner {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .device-top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: rgba(226, 232, 240, 0.9);
-      align-items: center;
-    }
-
-    .device-tag {
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.85);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .device-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #22c55e, #22d3ee);
-    }
-
-    .device-chip {
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.85);
-      font-size: 11px;
-    }
-
-    .device-card {
-      margin-top: 4px;
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.9);
-      padding: 12px 12px 10px;
-    }
-
-    .card-label {
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.9);
-      margin-bottom: 4px;
-    }
-
-    .card-main {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .card-value {
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    .card-tag {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.15);
-      color: #bbf7d0;
-    }
-
-    .card-sub {
-      margin-top: 4px;
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.95);
-    }
-
-    .progress-card {
-      margin-top: 8px;
-      border-radius: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.92);
-      padding: 10px 11px;
-    }
-
-    .progress-top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.95);
-      margin-bottom: 4px;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 7px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      overflow: hidden;
-      border: 1px solid rgba(59, 130, 246, 0.7);
-    }
-
-    .progress-fill {
-      width: 62%;
-      height: 100%;
-      background: linear-gradient(90deg, #22c55e, #22d3ee);
-      transform-origin: left;
-    }
-
-    .progress-sub {
-      margin-top: 4px;
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.9);
-    }
-
-    .device-list {
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px dashed rgba(148, 163, 184, 0.5);
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.9);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .device-item {
-      display: flex;
-      gap: 6px;
-    }
-
-    .device-bullet {
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.9);
-      margin-top: 4px;
-    }
-
-    /* Credibility strip */
-    .strip {
-      margin-top: 4px;
-      padding: 14px 18px 10px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.25);
+    .how-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 18px;
+    }
+
+    .step {
       font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 700px) {
-      .strip {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .strip-item-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(75, 85, 99, 0.9);
+      color: var(--text-soft);
       margin-bottom: 4px;
     }
 
-    .strip-item-main {
-      font-weight: 600;
-      color: #111827;
+    .badge-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 10px;
+      margin-right: 6px;
+    }
+
+    /* TRUST + CTA */
+    .trust-strip {
+      margin-top: 40px;
+      padding: 12px 14px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .trust-strip span.label {
+      color: var(--text-soft);
+    }
+
+    .trust-strip span.highlight {
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 40px;
+      padding-top: 18px;
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer a {
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 880px) {
+      nav {
+        display: none;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        padding: 7px 14px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(255, 255, 255, 0.9);
+        font-size: 12px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 22px;
+      }
+
+      .hero-visual-wrap {
+        order: -1;
+      }
+
+      .hero-title {
+        font-size: 30px;
+      }
+
+      .features-grid,
+      .how-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section {
+        margin-top: 44px;
+      }
+
+      .trust-strip {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <!-- Top nav -->
-    <header class="nav">
-      <div class="nav-left">
-        <div class="logo-mark">T</div>
-        <div>
-          <div class="logo-text-main">Tesorin</div>
-          <div class="logo-tagline">Start small. Plan big.</div>
+  <div class="page">
+    <div class="shell">
+      <!-- HEADER -->
+      <header>
+        <div class="brand">
+          <div class="brand-mark">T</div>
+          <div class="brand-name">Tesorin</div>
         </div>
-      </div>
-      <div class="nav-right">
-        <div class="nav-pill">
-          <span class="nav-dot"></span>
-          Early access · In progress
-        </div>
-        <button class="nav-btn" type="button" onclick="document.getElementById('waitlist-form-email').focus();">
-          Join waitlist
-          <span class="arrow">→</span>
-        </button>
-      </div>
-    </header>
+        <nav>
+          <a href="#how">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#trust">Safety</a>
+          <a href="#faq" class="highlight">FAQs</a>
+        </nav>
+        <button class="nav-cta">Get early access</button>
+      </header>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-left">
-        <div class="eyebrow">
-          Smarter first steps with money
-          <span class="eyebrow-pill">Calm, beginner-friendly planning</span>
-        </div>
+      <!-- HERO -->
+      <main>
+        <section class="hero">
+          <div>
+            <div class="hero-label">
+              <span class="dot"></span>
+              Early access · Personal wealth planning
+            </div>
 
-        <h1 class="hero-title">
-          Build your first <span class="highlight">serious money plan.</span>
-        </h1>
+            <h1 class="hero-title">
+              Serious wealth,<br />
+              small, calm starts.
+            </h1>
 
-        <p class="hero-subtitle">
-          Tesorin helps beginners understand their cash flow, set clear goals, and
-          design a simple, realistic wealth plan — without jargon, overwhelm, or
-          endless spreadsheets.
-        </p>
+            <p class="hero-subtitle">
+              Tesorin gives you a clean, single view of your money and goals — so you can build long-term wealth without stress, noise, or complicated products.
+            </p>
 
-        <div class="chips">
-          <div class="chip">
-            <span class="chip-dot"></span>
-            For students &amp; young professionals
+            <div class="hero-cta-row">
+              <button class="btn-primary">
+                Get early access
+                <span class="chevron">↗</span>
+              </button>
+              <button class="btn-ghost">
+                Watch a 1-minute overview
+              </button>
+            </div>
+
+            <p class="hero-note">
+              <strong>No jargon.</strong> No stock tips. Just a calm plan for your future wealth.
+            </p>
           </div>
-          <div class="chip">
-            <span class="chip-dot"></span>
-            Smart, tax-aware planning (India &amp; Canada first)
-          </div>
-          <div class="chip">
-            <span class="chip-dot"></span>
-            Free to join the beta waitlist
-          </div>
-        </div>
 
-        <div class="waitlist-card">
-          <div class="waitlist-label">Join the early access list</div>
-          <form id="waitlist-form" class="form-row">
-            <input
-              id="waitlist-form-email"
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              required
-            />
-            <button type="submit" class="cta-btn">
-              Get early access
-              <span class="arrow">→</span>
+          <div class="hero-visual-wrap">
+            <!-- Fake "Wealth Overview" card -->
+            <div class="hero-card" aria-hidden="true">
+              <div class="hero-card-header">
+                <div class="hero-chip">Wealth overview</div>
+                <div style="display:flex; gap:4px; opacity:0.6; font-size:9px;">
+                  <span>●</span><span>●</span><span>●</span>
+                </div>
+              </div>
+
+              <div class="hero-balance">
+                <div class="hero-balance-label">Projected net worth at 60</div>
+                <div class="hero-balance-value">$1.24M</div>
+                <div class="hero-balance-change">+ $420,000 vs. doing nothing</div>
+              </div>
+
+              <div class="hero-pill-row">
+                <div class="hero-pill">
+                  <span class="label">Today</span>
+                  <span class="value">$18,450</span>
+                </div>
+                <div class="hero-pill">
+                  <span class="label">Monthly to stay on track</span>
+                  <span class="value">$310 / month</span>
+                </div>
+              </div>
+
+              <div class="hero-bars">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+
+              <div class="hero-card-footer">
+                <span>Plan status: Calm & on track</span>
+                <span>Updated just now</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="section" id="features">
+          <div class="section-header">
+            <div class="section-kicker">Why Tesorin</div>
+            <h2 class="section-title">Everything you need to see your money clearly.</h2>
+            <p class="section-subtitle">
+              Not an investing course, not a trading app. Just a simple, premium space that shows your cash, goals, and future in one calm dashboard.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon">◎</div>
+              <h3 class="feature-title">One clean wealth snapshot</h3>
+              <p class="feature-body">
+                See income, spending, savings, and future goals in one place. No spreadsheets, no ten different apps to keep track of.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">↗</div>
+              <h3 class="feature-title">Small steps, serious future</h3>
+              <p class="feature-body">
+                Start with what you have today. Tesorin shows how small, consistent moves compound into real future wealth.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">☰</div>
+              <h3 class="feature-title">Calm, guided decisions</h3>
+              <p class="feature-body">
+                No hype, no product pushing. Just clear prompts, ranges, and “what if” views to help you decide comfortably.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="section" id="how">
+          <div class="section-header">
+            <div class="section-kicker">How it works</div>
+            <h2 class="section-title">From “I should plan” to “I have a plan”.</h2>
+            <p class="section-subtitle">
+              Tesorin sits where a good financial planner would — but on your phone, without the pressure, and built for beginners who want to get serious.
+            </p>
+          </div>
+
+          <div class="how-grid">
+            <article class="feature-card">
+              <div class="step">
+                <span class="badge-number">1</span>
+                Tell us where you are today
+              </div>
+              <h3 class="feature-title">A quick, honest picture</h3>
+              <p class="feature-body">
+                Add your income, rough spending, and what you’ve already saved. We keep it light, so you don’t get stuck in forms.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="step">
+                <span class="badge-number">2</span>
+                Choose what “wealth” means to you
+              </div>
+              <h3 class="feature-title">Define your version of “ahead”</h3>
+              <p class="feature-body">
+                Pick milestones like a buffer fund, a freedom number, or a long-term net worth target. Tesorin doesn’t assume one life path.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="step">
+                <span class="badge-number">3</span>
+                Get a calm, step-by-step path
+              </div>
+              <h3 class="feature-title">Monthly moves, not market noise</h3>
+              <p class="feature-body">
+                We translate the plan into simple monthly amounts and check-ins you can actually stick to — even with small starts.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- TRUST / SAFETY -->
+        <section class="section" id="trust">
+          <div class="section-header">
+            <div class="section-kicker">Designed for trust</div>
+            <h2 class="section-title">Built like a tool, not a sales pitch.</h2>
+            <p class="section-subtitle">
+              Tesorin is designed to feel like a calm planning surface, not a high-pressure sales call. No hidden agendas, no commissions for pushing products.
+            </p>
+          </div>
+
+          <div class="trust-strip">
+            <span class="label">
+              <span class="highlight">No investment products inside Tesorin yet.</span> Start by getting the plan right — where you are, where you’re heading, and what “enough” looks like.
+            </span>
+            <span class="label">
+              Product roadmap includes smart integrations and guidance, always with your interests first.
+            </span>
+          </div>
+        </section>
+
+        <!-- FAQ PREVIEW (LIGHT) -->
+        <section class="section" id="faq">
+          <div class="section-header">
+            <div class="section-kicker">Questions</div>
+            <h2 class="section-title">Is Tesorin right for me?</h2>
+            <p class="section-subtitle">
+              Tesorin is for people who are done “winging it” with money, but don’t want to become full-time finance nerds. If you want a simple, serious starting point, you’re in the right place.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <article class="feature-card">
+              <h3 class="feature-title">Do I need a lot of money to start?</h3>
+              <p class="feature-body">
+                No. Tesorin is deliberately built for small, realistic starting points. The question is not “how much do you have?” — it’s “what can we build from here?”.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Is this an investing or trading app?</h3>
+              <p class="feature-body">
+                No. Tesorin focuses on planning: your cash flow, buffers, and long-term wealth path. Any investing comes later, as an extension of a solid plan.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">When can I try it?</h3>
+              <p class="feature-body">
+                We’re inviting a first wave of early users soon. Join the early access list and help us shape a calmer way to plan money.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section">
+          <div class="trust-strip">
+            <div>
+              <span class="highlight">Start your first serious wealth plan with Tesorin.</span><br />
+              Join the early access list and help shape a calmer way to do money.
+            </div>
+            <button class="btn-primary">
+              Join early access
+              <span class="chevron">↗</span>
             </button>
-          </form>
-        </div>
-        <p class="cta-note">
-          No spam. We’ll only email you when the beta is ready and share a few key
-          updates on Tesorin, FinTrek, and SummitVest as they evolve.
-        </p>
-
-        <p class="hero-footnote">
-          <strong>Phase 1:</strong> Tesorin launches as a simple planner app.   
-          The first version focuses on guidance that makes sense for India and Canada,   
-          then gradually expands to more regions.
-          Future product lines — <strong>FinTrek</strong> for deeper planning and
-          <strong>SummitVest</strong> for premium high-net-worth strategies — are
-          planned as the ecosystem grows.
-        </p>
-      </div>
-
-      <div class="hero-right">
-        <div class="device-shell">
-          <div class="device-inner">
-            <div class="device-top">
-              <div class="device-tag">
-                <span class="device-dot"></span>
-                Preview · Tesorin plan
-              </div>
-              <div class="device-chip">Beginner mode · On</div>
-            </div>
-
-            <div class="device-card">
-              <div class="card-label">Monthly cash flow</div>
-              <div class="card-main">
-                <div class="card-value">₹ 18,500</div>
-                <div class="card-tag">after expenses</div>
-              </div>
-              <div class="card-sub">
-                Tesorin suggests how much to save, invest, and keep aside so you’re
-                not guessing every month.
-              </div>
-            </div>
-
-            <div class="progress-card">
-              <div class="progress-top">
-                <span>Emergency fund</span>
-                <span>62% funded</span>
-              </div>
-              <div class="progress-bar">
-                <div class="progress-fill"></div>
-              </div>
-              <div class="progress-sub">
-                Track key goals — emergency cash, debt payoff, and long-term
-                investing — in one calm view.
-              </div>
-            </div>
-
-            <div class="device-list">
-              <div class="device-item">
-                <span class="device-bullet"></span>
-                <span>Built for India and Canada scenarios, including currency and basic tax context.</span>
-              </div>
-              <div class="device-item">
-                <span class="device-bullet"></span>
-                <span>Clear priorities: safety first, then debt, then long-term wealth.</span>
-              </div>
-              <div class="device-item">
-                <span class="device-bullet"></span>
-                <span>Designed for beginners — no trading screen, no product push, just planning.</span>
-              </div>
-            </div>
           </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <span>© 2025 Tesorin – Official website of the Tesorin wealth planning app.</span>
+        <div class="footer-links">
+          <a href="#how">How it works</a>
+          <a href="#features">Features</a>
+          <a href="#trust">Safety</a>
+          <a href="#faq">FAQs</a>
         </div>
-      </div>
-    </section>
-
-    <!-- Credibility / positioning strip -->
-    <section class="strip">
-      <div>
-        <div class="strip-item-label">Who it’s for</div>
-        <div class="strip-item-main">Anyone taking money seriously for the first time</div>
-        <div>Students, new grads, early-career professionals and busy adults everywhere —
-    with initial support focused on India and Canada.</div>
-      </div>
-      <div>
-        <div class="strip-item-label">What it does</div>
-        <div class="strip-item-main">One simple money plan</div>
-        <div>See income, expenses, and goals in one place — then let Tesorin suggest a clear next step.</div>
-      </div>
-      <div>
-        <div class="strip-item-label">Where it’s going</div>
-        <div class="strip-item-main">From plan to action</div>
-        <div>Future phases will connect to investing and premium planning through FinTrek and SummitVest.</div>
-      </div>
-    </section>
+      </footer>
+    </div>
   </div>
-
-  <!-- Formspree submit + redirect to success page -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("waitlist-form");
-      if (!form) return;
-
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-          await fetch("https://formspree.io/f/xzznvgkp", {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-            },
-            body: formData,
-          });
-        } catch (err) {
-          console.error("Form submission error:", err);
-        }
-
-        // Redirect to your thank-you page
-        window.location.href = "https://trytesorin.com/success.html";
-      });
-    });
-  </script>
 </body>
 </html>
