@@ -2,17 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About Tesorin – Calm, Serious Wealth Planning</title>
+
+  <title>About Tesorin – Calm Wealth Planning from Small Starts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Learn what Tesorin stands for, why it exists, and how it fits into your financial life. A calm, beginner-friendly way to build serious wealth from small starts."
+    content="Learn what Tesorin stands for, why it exists, and how it helps beginners build serious wealth from small, realistic starts."
   />
 
-  <!-- Icons (reuse from main site) -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Icons (same as index) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,7 +35,7 @@
       --radius-xl: 22px;
       --radius-lg: 18px;
       --radius-pill: 999px;
-      --max-width: 880px;
+      --max-width: 1120px;
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-display: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
@@ -47,7 +48,7 @@
 
     body {
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top, #eef7ff 0, #f7f8fa 50%, #f7f8fa 100%);
+      background: #ffffff;
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
     }
@@ -62,15 +63,15 @@
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 32px 16px 64px;
+      padding: 32px 16px 80px;
     }
 
-    /* HEADER (same family as main site) */
+    /* HEADER */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 0 24px;
+      padding: 8px 0 28px;
     }
 
     .brand-link {
@@ -126,7 +127,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 24px;
       font-size: 14px;
       color: var(--text-soft);
     }
@@ -135,6 +136,12 @@
       text-decoration: none;
       color: inherit;
       padding: 4px 0;
+    }
+
+    nav a.active {
+      font-weight: 500;
+      color: #111827;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.6);
     }
 
     nav a.highlight {
@@ -148,48 +155,60 @@
       display: none;
     }
 
-    /* PAGE LAYOUT */
-    main {
-      background: #f9fafb;
-      border-radius: 26px;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
-      padding: 24px 22px 28px;
+    /* HERO / INTRO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.9fr);
+      gap: 32px;
+      align-items: center;
+      padding-top: 24px;
     }
 
-    .about-hero {
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
-      padding-bottom: 18px;
-      margin-bottom: 18px;
-    }
-
-    .kicker {
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(255, 255, 255, 0.9);
       font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
       color: var(--text-soft);
-      margin-bottom: 6px;
+      margin-bottom: 12px;
     }
 
-    h1 {
+    .hero-label span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-title {
       font-family: var(--font-display);
-      font-size: 26px;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
+      font-size: clamp(30px, 4vw, 38px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 12px;
     }
 
-    .hero-sub {
-      font-size: 14px;
+    .hero-title span.highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
       line-height: 1.7;
       color: var(--text-soft);
-      max-width: 620px;
+      max-width: 520px;
+      margin-bottom: 16px;
     }
 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 12px;
+      margin-top: 6px;
     }
 
     .pill {
@@ -201,39 +220,223 @@
       color: var(--text-soft);
     }
 
-    section {
-      margin-top: 18px;
-    }
-
-    h2 {
-      font-size: 17px;
-      margin-bottom: 6px;
-      font-family: var(--font-display);
-      letter-spacing: -0.02em;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 1.7;
+    .hero-note {
+      font-size: 11px;
       color: var(--text-soft);
+      margin-top: 10px;
+      max-width: 420px;
     }
 
-    .card {
+    .hero-note strong {
+      color: #111827;
+      font-weight: 500;
+    }
+
+    /* HERO VISUAL */
+    .hero-visual-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      border-radius: 32px;
+      background: radial-gradient(circle at top left, #0f172a, #020617);
+      padding: 18px 18px 20px;
+      box-shadow: 0 26px 70px rgba(15, 23, 42, 0.5);
+      color: #e5e7eb;
+      border: 1px solid rgba(15, 23, 42, 0.4);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0% 0%, rgba(52, 211, 153, 0.25), transparent 50%),
+                  radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.26), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: rgba(226, 232, 240, 0.9);
+      margin-bottom: 2px;
+    }
+
+    .hero-chip {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #22d3ee);
+    }
+
+    .hero-chip-tag {
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.85);
+      font-size: 11px;
+    }
+
+    .hero-balance-block {
+      margin-top: 4px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 12px 12px 10px;
+    }
+
+    .hero-balance-label {
+      font-size: 11px;
+      color: rgba(203, 213, 225, 0.9);
+      margin-bottom: 4px;
+    }
+
+    .hero-balance-main {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .hero-balance-value {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .hero-balance-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.15);
+      color: #bbf7d0;
+    }
+
+    .hero-balance-sub {
+      margin-top: 4px;
+      font-size: 11px;
+      color: rgba(203, 213, 225, 0.95);
+    }
+
+    .hero-card-list {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.5);
+      font-size: 11px;
+      color: rgba(203, 213, 225, 0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-card-item {
+      display: flex;
+      gap: 6px;
+    }
+
+    .hero-card-bullet {
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.9);
+      margin-top: 4px;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 72px;
+    }
+
+    .section-header {
+      text-align: left;
+      max-width: 580px;
+      margin-bottom: 22px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+      font-family: var(--font-display);
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .feature-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
       background: var(--bg-soft);
       border-radius: var(--radius-lg);
+      padding: 14px 16px 16px;
       border: 1px solid var(--border-subtle);
-      padding: 14px 14px 16px;
-      margin-top: 4px;
+    }
+
+    .feature-title {
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .feature-body {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
     }
 
     ul {
       padding-left: 18px;
-      margin-top: 6px;
     }
 
     li {
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 13px;
+      line-height: 1.7;
       color: var(--text-soft);
       margin-bottom: 4px;
     }
@@ -243,20 +446,34 @@
       font-weight: 500;
     }
 
+    .card {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 16px 16px 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
     .meta {
       font-size: 11px;
       color: var(--text-soft);
-      margin-top: 14px;
+      margin-top: 18px;
     }
 
+    /* FOOTER */
     footer {
-      margin-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 40px;
+      padding-top: 18px;
       font-size: 11px;
       color: var(--text-soft);
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       gap: 10px;
+      justify-content: space-between;
+      align-items: center;
     }
 
     footer a {
@@ -268,22 +485,50 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 720px) {
-      main {
-        border-radius: 20px;
-        padding: 20px 16px 24px;
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 880px) {
+      nav {
+        display: none;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        padding: 7px 14px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(255, 255, 255, 0.9);
+        font-size: 12px;
       }
 
       header {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
       }
 
-      nav {
-        gap: 16px;
-        font-size: 13px;
-        flex-wrap: wrap;
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 22px;
+      }
+
+      .hero-visual-wrap {
+        order: -1;
+      }
+
+      .two-column {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .feature-grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section {
+        margin-top: 48px;
       }
     }
   </style>
@@ -306,133 +551,287 @@
         </a>
         <nav>
           <a href="/">Home</a>
-          <a href="#story">About</a>
+          <a href="/about.html" class="active">About</a>
           <a href="/#features">Features</a>
-          <a href="/#faq" class="highlight">FAQs</a>
+          <a href="/#faq">FAQs</a>
         </nav>
+        <button class="nav-cta" type="button" onclick="window.location.href='/'">
+          Back to homepage
+        </button>
       </header>
 
-      <!-- ABOUT CONTENT -->
+      <!-- HERO / INTRO -->
       <main>
-        <!-- Hero / Intro -->
-        <section class="about-hero" id="story">
-          <div class="kicker">About Tesorin</div>
-          <h1>Tesorin — personal wealth planning made calm.</h1>
-          <p class="hero-sub">
-            Tesorin is a premium fintech app focused on helping beginners build
-            <span class="highlight">serious wealth from small, realistic starts</span>. Instead of trading screens,
-            hot stock ideas, or complicated products, Tesorin gives you a clear view of your money, your goals,
-            and the next few moves that actually matter.
-          </p>
-          <div class="pill-row">
-            <span class="pill">Beginner-friendly planning</span>
-            <span class="pill">Serious about long-term wealth</span>
-            <span class="pill">Calm, minimal design</span>
-          </div>
-        </section>
+        <section class="hero">
+          <div>
+            <div class="hero-label">
+              <span class="dot"></span>
+              About Tesorin · Calm wealth planning
+            </div>
 
-        <!-- Name -->
-        <section>
-          <h2>Why the name “Tesorin”?</h2>
-          <div class="card">
-            <p>
-              The name “Tesorin” is inspired by the idea of a
-              <span class="highlight">treasure you build over time</span> — not a lottery ticket or a lucky guess.
-              It reflects our core belief: wealth should feel like something you carefully shape, not something you gamble on.
+            <h1 class="hero-title">
+              Tesorin — <span class="highlight">personal wealth planning made calm.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Tesorin is a premium fintech app focused on helping beginners build
+              serious wealth from small, realistic starts. Instead of trading screens,
+              hot stock ideas, or complicated products, Tesorin gives you a clear view
+              of your money, your goals, and the next few moves that actually matter.
             </p>
-            <p style="margin-top:8px;">
-              Tesorin is for people who are ready to take money seriously for the first time, but want a tool that feels
-              calm, modern, and respectful of their attention.
+
+            <div class="pill-row">
+              <span class="pill">Beginner-friendly planning</span>
+              <span class="pill">Serious about long-term wealth</span>
+              <span class="pill">Calm, minimal design</span>
+            </div>
+
+            <p class="hero-note">
+              <strong>Tesorin exists for people taking money seriously for the first time</strong> —
+              without wanting the pressure, noise, or confusion that usually comes with “finance.”
             </p>
           </div>
-        </section>
 
-        <!-- Values -->
-        <section>
-          <h2>What Tesorin stands for</h2>
-          <ul>
-            <li><span class="highlight">Simplicity first</span> – A clear, gentle interface instead of noisy dashboards.</li>
-            <li><span class="highlight">No pressure, no products</span> – Built as a planning surface, not as a sales funnel.</li>
-            <li><span class="highlight">Beginner-friendly, not beginner-ish</span> – Plain language without dumbing things down.</li>
-            <li><span class="highlight">Serious long-term thinking</span> – Safety, buffers, debt, and true wealth, not just chasing returns.</li>
-          </ul>
-        </section>
+          <div class="hero-visual-wrap">
+            <div class="hero-card" aria-hidden="true">
+              <div class="hero-card-inner">
+                <div class="hero-card-header">
+                  <div class="hero-chip">
+                    <span class="hero-dot"></span>
+                    Snapshot · Tesorin plan
+                  </div>
+                  <div class="hero-chip-tag">Beginner mode · On</div>
+                </div>
 
-        <!-- Role in user's life -->
-        <section>
-          <h2>Where Tesorin fits in your financial life</h2>
-          <p>
-            Tesorin is designed to sit where a thoughtful financial planner might sit: between your day-to-day cash flow
-            and your long-term “I want to be okay” goals.
-          </p>
-          <div class="card">
-            <ul>
-              <li>Helps you understand your monthly cash flow and what’s realistically left over.</li>
-              <li>Gives you a calm, visual sense of emergency funds, debt payoff, and long-term targets.</li>
-              <li>Shows how small monthly decisions add up over years and decades.</li>
-              <li>Starts with everyday scenarios in India and Canada, then expands to more regions over time.</li>
-            </ul>
+                <div class="hero-balance-block">
+                  <div class="hero-balance-label">Monthly cash flow after expenses</div>
+                  <div class="hero-balance-main">
+                    <div class="hero-balance-value">$420</div>
+                    <div class="hero-balance-tag">to work with</div>
+                  </div>
+                  <div class="hero-balance-sub">
+                    One clean view of what’s left after bills — and how to split it
+                    between safety, debt, and long-term wealth.
+                  </div>
+                </div>
+
+                <div class="hero-card-list">
+                  <div class="hero-card-item">
+                    <span class="hero-card-bullet"></span>
+                    <span>Helps you see where you stand today, without guilt or overwhelm.</span>
+                  </div>
+                  <div class="hero-card-item">
+                    <span class="hero-card-bullet"></span>
+                    <span>Shows how small monthly decisions add up over years and decades.</span>
+                  </div>
+                  <div class="hero-card-item">
+                    <span class="hero-card-bullet"></span>
+                    <span>Built as a planning surface, not a product sales screen.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
-        <!-- Ecosystem -->
-        <section>
-          <h2>The broader ecosystem: FinTrek &amp; SummitVest</h2>
-          <p>
-            Tesorin is the first product in a planned ecosystem:
-          </p>
-          <ul>
-            <li><span class="highlight">Tesorin</span> – a calm, beginner-focused wealth planning app.</li>
-            <li><span class="highlight">FinTrek</span> – deeper, more detailed planning for people who want to go further.</li>
-            <li><span class="highlight">SummitVest</span> – premium, high-context strategies and tools for more complex situations.</li>
-          </ul>
-          <p style="margin-top:8px;">
-            Together, they are meant to grow with you as your money life becomes more complex, without losing the simple,
-            respectful tone that Tesorin starts with.
-          </p>
+        <!-- WHY THE NAME -->
+        <section class="section" id="name">
+          <div class="section-header">
+            <div class="section-kicker">Name & story</div>
+            <h2 class="section-title">Why the name “Tesorin”?</h2>
+            <p class="section-subtitle">
+              The name “Tesorin” is inspired by the idea of a <span class="highlight">treasure you build over time</span> —
+              not a lottery ticket or a lucky guess. It reflects a core belief: wealth should feel like something
+              you carefully shape, not something you gamble on.
+            </p>
+          </div>
+
+          <div class="card">
+            Tesorin is for people who are ready to take money seriously for the first time, but want a tool that feels
+            calm, modern, and respectful of their attention. It gives you a place to understand where you are, define
+            what “ahead” looks like, and decide on small, realistic steps you can actually stick with.
+          </div>
         </section>
 
-        <!-- Tone & visual identity -->
-        <section>
-          <h2>What you can expect from us</h2>
+        <!-- WHAT TESORIN STANDS FOR -->
+        <section class="section" id="principles">
+          <div class="section-header">
+            <div class="section-kicker">Principles</div>
+            <h2 class="section-title">What Tesorin stands for.</h2>
+            <p class="section-subtitle">
+              Under the hood, Tesorin is just software. But it’s built around a few simple promises about how money
+              should feel when you’re using it.
+            </p>
+          </div>
+
+          <div class="feature-grid-2">
+            <article class="feature-card">
+              <h3 class="feature-title">Simplicity first</h3>
+              <p class="feature-body">
+                A clear, gentle interface instead of noisy dashboards. One calm view of your cash flow, buffer,
+                and goals — so you’re not jumping between ten apps and five spreadsheets.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">No pressure, no products</h3>
+              <p class="feature-body">
+                Tesorin is built as a planning surface, not a sales funnel. No commissions, no “recommended” investments,
+                no hidden product agenda — just guidance that stays on your side.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Beginner-friendly, not beginners-ish</h3>
+              <p class="feature-body">
+                Plain language without dumbing things down. Smart defaults, gentle prompts, and a design that respects
+                your attention and your time.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">Serious long-term thinking</h3>
+              <p class="feature-body">
+                Safety first, then buffers and debt, then true wealth. Not just chasing returns, but making sure your
+                future feels stable, not fragile.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- WHERE IT FITS -->
+        <section class="section" id="fit">
+          <div class="section-header">
+            <div class="section-kicker">Your money life</div>
+            <h2 class="section-title">Where Tesorin fits in.</h2>
+            <p class="section-subtitle">
+              Tesorin is designed to sit where a thoughtful financial planner might sit: between your
+              day-to-day cash flow and your long-term “I want to be okay” goals.
+            </p>
+          </div>
+
+          <div class="two-column">
+            <div>
+              <ul>
+                <li>Helps you understand your monthly cash flow and what’s realistically left over.</li>
+                <li>Gives you a calm, visual sense of emergency funds, debt payoff, and long-term targets.</li>
+                <li>Shows how small monthly decisions add up over years and decades.</li>
+                <li>Starts with everyday scenarios in India and Canada, then expands to more regions over time.</li>
+              </ul>
+            </div>
+            <div class="card">
+              Tesorin isn’t an investing course or a trading app.  
+              It’s the quiet layer underneath all of that — the plan that makes those other decisions feel less random,
+              and more like part of a bigger story you’re writing on purpose.
+            </div>
+          </div>
+        </section>
+
+        <!-- ECOSYSTEM -->
+        <section class="section" id="ecosystem">
+          <div class="section-header">
+            <div class="section-kicker">Roadmap</div>
+            <h2 class="section-title">The broader ecosystem: FinTrek &amp; SummitVest.</h2>
+            <p class="section-subtitle">
+              Tesorin is the first product in a planned ecosystem that grows with you as your money life becomes
+              more complex.
+            </p>
+          </div>
+
+          <div class="feature-grid-2">
+            <article class="feature-card">
+              <h3 class="feature-title">Tesorin</h3>
+              <p class="feature-body">
+                A calm, beginner-focused wealth planning app. One place to see your money, your buffers,
+                and your version of “ahead”.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">FinTrek</h3>
+              <p class="feature-body">
+                Planned as deeper, more detailed planning for people who want to go further — more scenarios,
+                more knobs, more “what if”.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">SummitVest</h3>
+              <p class="feature-body">
+                Future premium, high-context strategies and tools for more complex situations, when your money
+                life has more moving parts.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <h3 class="feature-title">One philosophy across all</h3>
+              <p class="feature-body">
+                Together, these tools are meant to grow with you without losing the simple, respectful tone that
+                Tesorin starts with.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- WHAT YOU CAN EXPECT -->
+        <section class="section" id="promise">
+          <div class="section-header">
+            <div class="section-kicker">Tone & promise</div>
+            <h2 class="section-title">What you can expect from us.</h2>
+            <p class="section-subtitle">
+              Tesorin treats your attention and your money with respect. No shouting, no guilt-tripping,
+              no “act now or you’ll be left behind.”
+            </p>
+          </div>
+
           <div class="card">
             <p>
-              Tesorin treats your attention and your money with respect. We don’t shout, scare, or guilt you into acting.
               We give you a clear picture of where you are, what’s possible, and the next small step that actually helps.
-            </p>
-            <p style="margin-top:8px;">
               We speak plainly, even about serious topics like debt, risk, and long-term wealth. No jargon if we can avoid it,
-              no drama when markets move, and no promises we can’t keep. Above all, we stay on your side. Tesorin is built
-              to plan with you, not to sell to you: no commissions, no product agenda, just honest guidance that starts from
-              your reality and grows with you over time.
+              no drama when markets move, and no promises we can’t keep.
             </p>
-            <p style="margin-top:8px;">
-              In words, Tesorin speaks like a thoughtful friend: direct, clear, and kind — never condescending, never
-              hype-driven.
+            <p style="margin-top:10px;">
+              Above all, we stay on your side. Tesorin is built to plan with you, not to sell to you:
+              no commissions, no product agenda — just honest guidance that starts from your reality and grows with you over time.
+            </p>
+            <p style="margin-top:10px;">
+              In words, Tesorin speaks like a thoughtful friend: direct, clear, and kind — never condescending, never hype-driven.
             </p>
           </div>
         </section>
 
-        <!-- Links -->
-        <section>
-          <h2>Official links</h2>
+        <!-- OFFICIAL LINKS -->
+        <section class="section" id="links">
+          <div class="section-header">
+            <div class="section-kicker">Official</div>
+            <h2 class="section-title">Official links & info.</h2>
+            <p class="section-subtitle">
+              If you’re not sure whether something is really from Tesorin, you can start here.
+            </p>
+          </div>
+
           <ul>
             <li><span class="highlight">Website:</span> https://www.trytesorin.com</li>
             <li><span class="highlight">Early access waitlist:</span> available on the homepage.</li>
-            <!-- Later you can add LinkedIn, X, etc. -->
           </ul>
+
+          <p class="meta">
+            This is the official about page for Tesorin. If you see other uses of the name “Tesorin” for finance tools,
+            they are not associated with this project unless explicitly stated.
+          </p>
         </section>
-
-        <p class="meta">
-          This is the official about page for Tesorin. If you see other uses of the name “Tesorin” for finance tools,
-          they are not associated with this project unless explicitly stated.
-        </p>
-
-        <footer>
-          <span>© 2025 Tesorin – Calm wealth planning from small starts.</span>
-          <a href="/">← Back to homepage</a>
-        </footer>
       </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <span>© 2025 Tesorin – Calm wealth planning from small starts.</span>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/#how">How it works</a>
+          <a href="/#features">Features</a>
+          <a href="/#faq">FAQs</a>
+        </div>
+      </footer>
     </div>
   </div>
 </body>
