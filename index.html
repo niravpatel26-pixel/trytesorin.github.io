@@ -131,18 +131,25 @@
     }
 
     .brand-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      background: radial-gradient(circle at 10% 0, #22c55e, #15803d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ecfdf3;
-      font-weight: 700;
-      font-size: 15px;
-      box-shadow: 0 7px 16px rgba(22, 163, 74, 0.45);
-    }
+  width: 28px;
+  height: 28px;
+  border-radius: 999px; /* more circular, like an app icon */
+  background: #ffffff;  /* white tile behind your black logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 7px 16px rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  overflow: hidden;     /* crops the logo nicely inside the circle */
+}
+
+/* make the logo scale nicely inside the badge */
+.brand-mark img {
+  width: 70%;           /* tweak 60–80% if you want smaller/bigger */
+  height: auto;
+  display: block;
+}
+
 
     .brand-name {
       font-family: var(--font-display);
