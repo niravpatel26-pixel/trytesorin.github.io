@@ -130,25 +130,26 @@
       gap: 10px;
     }
 
-    .brand-mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 999px; /* more circular, like an app icon */
-  background: #ffffff;  /* white tile behind your black logo */
+   .brand-mark {
+  width: 32px;           /* slightly larger, like an app icon */
+  height: 32px;
+  border-radius: 10px;   /* soft square, Wealthsimple-ish */
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 7px 16px rgba(15, 23, 42, 0.18);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  overflow: hidden;     /* crops the logo nicely inside the circle */
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  overflow: hidden;
 }
 
-/* make the logo scale nicely inside the badge */
 .brand-mark img {
-  width: 70%;           /* tweak 60–80% if you want smaller/bigger */
-  height: auto;
+  width: 100%;           /* fill the tile */
+  height: 100%;
+  object-fit: contain;   /* keep proportions */
   display: block;
 }
+
 
 
     .brand-name {
