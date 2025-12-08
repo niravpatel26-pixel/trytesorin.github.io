@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Tesorin",
-  "url": "https://www.trytesorin.com/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Web",
-  "description": "Tesorin helps beginners build their first serious money plan with simple cash-flow insights, clear goals, and calm step-by-step guidance.",
-  "creator": {
-    "@type": "Organization",
-    "name": "Tesorin"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "category": "Free",
-    "url": "https://www.trytesorin.com/"
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tesorin",
+    "url": "https://www.trytesorin.com/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Tesorin helps beginners build their first serious money plan with simple cash-flow insights, clear goals, and calm step-by-step guidance.",
+    "creator": {
+      "@type": "Organization",
+      "name": "Tesorin"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "category": "Free",
+      "url": "https://www.trytesorin.com/"
+    }
   }
-}
   </script>
 
   <link rel="canonical" href="https://www.trytesorin.com/" />
 
   <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/favicon.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Tesorin – Start Small, Build Serious Wealth | Simple Money Planning App</title>
@@ -127,42 +125,49 @@
       padding: 8px 0 28px;
     }
 
+    .brand-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+    }
+
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
-      border: 1px solid rgba(148, 163, 184, 0.20);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12);
+      border: 1px solid rgba(148, 163, 184, 0.28);
       overflow: hidden;
     }
 
     .brand-mark img {
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      height: 80%;
       object-fit: contain;
       display: block;
     }
 
     .brand-name {
       font-family: var(--font-display);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      font-size: 20px;
     }
 
     .brand-tagline {
-      font-size: 11px;
-      color: var(--text-soft);
+      font-size: 12px;
+      color: #4b5563;
     }
 
     .brand-text-wrap {
@@ -173,8 +178,8 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 22px;
-      font-size: 13px;
+      gap: 24px;
+      font-size: 14px;
       color: var(--text-soft);
     }
 
@@ -740,15 +745,17 @@
     <div class="shell">
       <!-- HEADER -->
       <header>
-        <div class="brand">
-          <div class="brand-mark">
-            <img src="tesorin-logo.png" alt="Tesorin logo" />
+        <a href="/" class="brand-link">
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="tesorin-logo.png" alt="Tesorin logo" />
+            </div>
+            <div class="brand-text-wrap">
+              <div class="brand-name">Tesorin</div>
+              <div class="brand-tagline">Start small. Plan big.</div>
+            </div>
           </div>
-          <div class="brand-text-wrap">
-            <div class="brand-name">Tesorin</div>
-            <div class="brand-tagline">Start small. Plan big.</div>
-          </div>
-        </div>
+        </a>
         <nav>
           <a href="#how">How it works</a>
           <a href="#features">Features</a>
