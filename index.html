@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <!-- Icons -->
@@ -352,6 +352,30 @@
       color: var(--text-soft);
       margin-top: 4px;
       max-width: 360px;
+    }
+
+    /* NEW: live app launch button */
+    .app-launch {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #ffffff;
+      color: #111827;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.09);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .app-launch:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.16);
+      background: #f9fafb;
     }
 
     .hero-footnote {
@@ -805,6 +829,17 @@
                 </button>
               </form>
             </div>
+
+            <!-- Live app launch button -->
+            <a
+              href="https://tesorin-app-pcc6cn6dymIh55c9qfyha3.streamlit.app"
+              target="_blank"
+              rel="noopener"
+              class="app-launch"
+            >
+              Open live planner demo ↗
+            </a>
+
             <p class="cta-note">
               No spam. We’ll only email you when the beta is ready and share a few key updates as Tesorin evolves.
             </p>
