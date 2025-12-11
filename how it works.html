@@ -1,1 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <title>How TESORIN Works – A Calm Way To Plan Money</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="See how TESORIN turns your income, spending, and goals into a calm, step-by-step money plan you can actually follow."
+  />
+
+  <link rel="canonical" href="https://www.trytesorin.com/how-it-works.html" />
+
+  <!-- Basic OG (optional but nice) -->
+  <meta property="og:title" content="How TESORIN Works – A Calm Way To Plan Money" />
+  <meta
+    property="og:description"
+    content="From “I should plan” to “I have a plan” — here’s how TESORIN builds a simple, serious money plan with you."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trytesorin.com/how-it-works.html" />
+
+  <!-- Fonts (same as home) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #ffffff;
+      --text-main: #0f172a;
+      --text-soft: #6b7280;
+      --accent: #22c55e;
+      --border-subtle: #e5e7eb;
+      --radius-xl: 22px;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 900px; /* a bit narrower for reading */
+      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Playfair Display", "Times New Roman", serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 16px 72px;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+      border: 1px solid rgba(148, 163, 184, 0.20);
+      overflow: hidden;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 16px;
+    }
+
+    .brand-tagline {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: inherit;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      color: #111827;
+    }
+
+    nav a.active {
+      border-bottom: 1px solid #111827;
+      color: #111827;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    /* HERO AREA */
+    .hero-header {
+      margin-bottom: 40px;
+    }
+
+    .hero-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 40px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    /* STEP LIST */
+    .steps-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 780px) {
+      .steps-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .step-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 16px;
+      background: #ffffff;
+    }
+
+    .step-label {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-number {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .step-body {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .step-body ul {
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+
+    .step-body li {
+      margin-bottom: 4px;
+    }
+
+    /* RIGHT COLUMN SUMMARY */
+    .summary-card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 20px;
+      background: #f9fafb;
+      font-size: 13px;
+    }
+
+    .summary-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .summary-block {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(229, 231, 235, 0.9);
+    }
+
+    .summary-block-title {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .summary-block p {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    /* BACKGROUND SECTION – “what TESORIN does” */
+    .background-section {
+      margin-bottom: 56px;
+    }
+
+    .background-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .background-sub {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+      max-width: 580px;
+      line-height: 1.6;
+    }
+
+    .background-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .background-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 14px 14px 16px;
+      background: #ffffff;
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .background-card h3 {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    @media (max-width: 780px) {
+      .background-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      margin-top: 8px;
+      padding: 14px 16px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .cta-strip .highlight {
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .cta-btn {
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #111827;
+      color: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+
+    .cta-btn span.arrow {
+      font-size: 14px;
+      transform: translateX(0);
+      transition: transform 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.45);
+      filter: brightness(1.03);
+    }
+
+    .cta-btn:hover span.arrow {
+      transform: translateX(3px);
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    footer a {
+      color: var(--text-soft);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        flex-direction: row;
+        gap: 10px;
+      }
+      nav {
+        display: none; /* keep this page super clean on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="shell">
+      <!-- HEADER -->
+      <header>
+        <div class="brand">
+          <div class="brand-mark">
+            <img src="tesorin-logo.png" alt="TESORIN logo" />
+          </div>
+          <div class="brand-text-wrap">
+            <div class="brand-name">TESORIN</div>
+            <div class="brand-tagline">Start small. Plan big.</div>
+          </div>
+        </div>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/how-it-works.html" class="active">How it works</a>
+        </nav>
+      </header>
+
+      <!-- HERO INTRO -->
+      <section class="hero-header">
+        <div class="hero-kicker">HOW TESORIN WORKS</div>
+        <h1 class="hero-title">From “I should plan” to “I have a plan”.</h1>
+        <p class="hero-subtitle">
+          TESORIN stays very simple on the surface: a calm view of your money and a handful of clear next steps.
+          Underneath, it uses rules that a good planner would — prioritising safety, debt, and long-term wealth
+          in a way that fits your life.
+        </p>
+      </section>
+
+      <!-- THREE STEPS -->
+      <section class="steps-layout">
+        <div class="steps-list">
+          <article class="step-card">
+            <div class="step-label">
+              <span class="step-number">1</span>
+              Step one
+            </div>
+            <h2 class="step-title">Map where you stand today.</h2>
+            <div class="step-body">
+              You give TESORIN a lightweight picture of your current money:
+              <ul>
+                <li>Monthly income (after tax, roughly is fine).</li>
+                <li>Core spending and fixed obligations.</li>
+                <li>Any savings, debt, or investments you already have.</li>
+              </ul>
+              No spreadsheets, no bank-connection required at the start. Just enough detail to be honest with yourself.
+            </div>
+          </article>
+
+          <article class="step-card">
+            <div class="step-label">
+              <span class="step-number">2</span>
+              Step two
+            </div>
+            <h2 class="step-title">Define what “ahead” looks like for you.</h2>
+            <div class="step-body">
+              Instead of asking “how much money do you want?”, TESORIN helps you set a few grounded milestones:
+              <ul>
+                <li>A safety buffer or emergency fund that lets you breathe.</li>
+                <li>Debt comfort targets (what you want to pay off, and by when).</li>
+                <li>Long-term “freedom” numbers — for future choices, not just retirement.</li>
+              </ul>
+              You choose what matters; TESORIN organises it into a simple priority stack.
+            </div>
+          </article>
+
+          <article class="step-card">
+            <div class="step-label">
+              <span class="step-number">3</span>
+              Step three
+            </div>
+            <h2 class="step-title">Turn it into a calm monthly path.</h2>
+            <div class="step-body">
+              TESORIN translates everything into amounts you can act on:
+              <ul>
+                <li>How much to keep as “breathing room” each month.</li>
+                <li>How much to direct to safety, debt, and longer-term investing.</li>
+                <li>How your numbers might evolve over the next few years.</li>
+              </ul>
+              The output is not a trading screen — it’s a plan you can actually stick to, even with small starts.
+            </div>
+          </article>
+        </div>
+
+        <aside class="summary-card">
+          <div class="summary-title">In plain language:</div>
+          <p>
+            TESORIN behaves like a friendly planner who isn’t trying to sell you anything.
+            It asks a few careful questions, shows you one clear picture, and then keeps nudging
+            you towards better decisions — at your pace.
+          </p>
+
+          <div class="summary-block">
+            <div class="summary-block-title">What you bring</div>
+            <p>
+              A rough but honest snapshot of your money, a sense of what “secure” would feel like,
+              and willingness to start small.
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <div class="summary-block-title">What TESORIN brings</div>
+            <p>
+              A simple rules-based engine that prioritises safety, clarifies trade-offs,
+              and keeps your attention on the next two or three moves — not market noise.
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <div class="summary-block-title">What you leave with</div>
+            <p>
+              A serious, calm money plan you understand: how today’s choices support the life
+              you’re trying to build over the next 5–10 years.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <!-- WHAT TESORIN DOES IN THE BACKGROUND -->
+      <section class="background-section">
+        <h2 class="background-title">What TESORIN quietly does in the background.</h2>
+        <p class="background-sub">
+          On screen, you see simple numbers and ranges. Behind the scenes, TESORIN uses a few core principles
+          to keep your plan sane and realistic — starting with India and Canada, and expanding from there.
+        </p>
+
+        <div class="background-grid">
+          <article class="background-card">
+            <h3>Cash-flow &amp; buffers.</h3>
+            <p>
+              TESORIN looks at how much actually stays in your hands each month,
+              then suggests a buffer so surprise expenses don’t blow up your plan.
+              No “optimize every rupee/dollar” pressure — just enough structure.
+            </p>
+          </article>
+
+          <article class="background-card">
+            <h3>Safety before optimization.</h3>
+            <p>
+              Before chasing returns, TESORIN nudges you to cover basics: emergency cash,
+              high-interest debt, and near-term commitments. Only then does it point you toward
+              longer-term investing conversations.
+            </p>
+          </article>
+
+          <article class="background-card">
+            <h3>Built to extend, not trap.</h3>
+            <p>
+              Future phases will connect your plan to products through FINTREK and SUMMITVEST.
+              The design principle stays the same: your interests first, no hidden commissions,
+              no “product hunt” inside the app.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CTA STRIP -->
+      <section class="cta-strip">
+        <div>
+          <span class="highlight">Ready for your own TESORIN plan?</span><br />
+          Start on the main page, add your details in a few minutes, and see what a calm money plan looks like.
+        </div>
+        <a href="/" class="cta-btn">
+          Go to main page
+          <span class="arrow">→</span>
+        </a>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <span>© 2025 TESORIN – How TESORIN works.</span>
+        <div class="footer-links">
+          <a href="/">Home</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
 
