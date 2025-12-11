@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <script type="application/ld+json">
@@ -537,23 +537,31 @@
       margin-top: 4px;
     }
 
-            <!-- FINAL CTA / TRUST STRIP -->
-        <section class="section">
-          <div class="trust-strip">
-            <div>
-              <span class="highlight">Try the TESORIN demo.</span><br />
-              Open the early preview in your browser and see how the planner feels with sample numbers.
-            </div>
-            <button
-              class="cta-btn"
-              type="button"
-              onclick="window.location.href='https://app.trytesorin.com';"
-            >
-              Open demo
-              <span class="arrow">→</span>
-            </button>
-          </div>
-        </section>
+    /* FINAL CTA / TRUST STRIP */
+    .section {
+      margin-top: 48px;
+    }
+
+    .trust-strip {
+      padding: 12px 14px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    .trust-strip span.label {
+      color: var(--text-soft);
+    }
+
+    .trust-strip span.highlight {
+      font-weight: 500;
+    }
 
     /* FOOTER */
     footer {
@@ -776,11 +784,15 @@
         <section class="section">
           <div class="trust-strip">
             <div>
-              <span class="highlight">Start your first serious wealth plan with TESORIN.</span><br />
-              Join the early access list and help shape a calmer way to do money.
+              <span class="highlight">Try the TESORIN demo app.</span><br />
+              Open the early preview in your browser and explore how the planner feels with sample numbers.
             </div>
-            <button class="cta-btn" type="button" onclick="document.getElementById('waitlist-form-email').focus();">
-              Join early access
+            <button
+              class="cta-btn"
+              type="button"
+              onclick="window.location.href='https://app.trytesorin.com';"
+            >
+              Open demo
               <span class="arrow">→</span>
             </button>
           </div>
