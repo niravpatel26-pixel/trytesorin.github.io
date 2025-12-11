@@ -13,7 +13,7 @@
 
   <link rel="canonical" href="https://www.trytesorin.com/how-it-works.html" />
 
-  <!-- Basic OG (optional but nice) -->
+  <!-- Basic OG -->
   <meta property="og:title" content="How TESORIN Works – A Calm Way To Plan Money" />
   <meta
     property="og:description"
@@ -21,6 +21,11 @@
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trytesorin.com/how-it-works.html" />
+
+  <!-- Icons (align with main site) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
 
   <!-- Fonts (same as home) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,6 +85,13 @@
       padding-bottom: 32px;
     }
 
+    .brand-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+    }
+
     .brand {
       display: flex;
       align-items: center;
@@ -135,7 +147,7 @@
     nav a {
       text-decoration: none;
       color: inherit;
-      padding-bottom: 2px;
+      padding: 4px 0;
     }
 
     nav a:hover {
@@ -143,8 +155,9 @@
     }
 
     nav a.active {
-      border-bottom: 1px solid #111827;
+      font-weight: 500;
       color: #111827;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.6);
     }
 
     .nav-cta {
@@ -411,13 +424,23 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 640px) {
-      header {
-        flex-direction: row;
-        gap: 10px;
-      }
+    /* RESPONSIVE NAV */
+    @media (max-width: 880px) {
       nav {
-        display: none; /* keep this page super clean on mobile */
+        display: none;
+      }
+
+      .nav-cta {
+        display: inline-flex;
+        padding: 7px 14px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        background: rgba(255, 255, 255, 0.9);
+        font-size: 12px;
+      }
+
+      header {
+        gap: 10px;
       }
     }
   </style>
@@ -427,19 +450,27 @@
     <div class="shell">
       <!-- HEADER -->
       <header>
-        <div class="brand">
-          <div class="brand-mark">
-            <img src="tesorin-logo.png" alt="TESORIN logo" />
+        <a href="/" class="brand-link">
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="tesorin-logo.png" alt="TESORIN logo" />
+            </div>
+            <div class="brand-text-wrap">
+              <div class="brand-name">TESORIN</div>
+              <div class="brand-tagline">Start small. Plan big.</div>
+            </div>
           </div>
-          <div class="brand-text-wrap">
-            <div class="brand-name">TESORIN</div>
-            <div class="brand-tagline">Start small. Plan big.</div>
-          </div>
-        </div>
+        </a>
         <nav>
-          <a href="/">Home</a>
           <a href="/how-it-works.html" class="active">How it works</a>
+          <a href="/features.html">Features</a>
+          <a href="/about.html">About</a>
+          <a href="/safety.html">Safety</a>
+          <a href="/faq.html">FAQs</a>
         </nav>
+        <button class="nav-cta" type="button" onclick="window.location.href='/'">
+          Back to homepage
+        </button>
       </header>
 
       <!-- HERO INTRO -->
@@ -596,11 +627,14 @@
       <footer>
         <span>© 2025 TESORIN – How TESORIN works.</span>
         <div class="footer-links">
-          <a href="/">Home</a>
+          <a href="/how-it-works.html">How it works</a>
+          <a href="/features.html">Features</a>
+          <a href="/about.html">About</a>
+          <a href="/safety.html">Safety</a>
+          <a href="/faq.html">FAQs</a>
         </div>
       </footer>
     </div>
   </div>
 </body>
 </html>
-
