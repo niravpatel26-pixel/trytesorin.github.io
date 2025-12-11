@@ -5,14 +5,14 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Tesorin",
+  "name": "TESORIN",
   "url": "https://www.trytesorin.com/",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
-  "description": "Tesorin helps beginners build their first serious money plan with simple cash-flow insights, clear goals, and calm step-by-step guidance.",
+  "description": "TESORIN helps beginners build their first serious money plan with simple cash-flow insights, clear goals, and calm step-by-step guidance.",
   "creator": {
     "@type": "Organization",
-    "name": "Tesorin"
+    "name": "TESORIN"
   },
   "offers": {
     "@type": "Offer",
@@ -122,6 +122,13 @@
       align-items: center;
       justify-content: space-between;
       padding: 8px 0 28px;
+    }
+
+    .brand-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
     }
 
     .brand {
@@ -530,102 +537,12 @@
       margin-top: 4px;
     }
 
-    /* SECTIONS */
+    /* FINAL CTA / TRUST STRIP */
     .section {
-      margin-top: 72px;
+      margin-top: 48px;
     }
 
-    .section-header {
-      text-align: left;
-      max-width: 520px;
-      margin-bottom: 26px;
-    }
-
-    .section-kicker {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 20px;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-      font-family: var(--font-display);
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      line-height: 1.6;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .feature-card {
-      background: var(--bg-soft);
-      border-radius: var(--radius-lg);
-      padding: 16px 16px 18px;
-      border: 1px solid var(--border-subtle);
-    }
-
-    .feature-icon {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: #ecfdf5;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-
-    .feature-title {
-      font-size: 14px;
-      margin-bottom: 5px;
-      font-weight: 500;
-    }
-
-    .feature-body {
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.5;
-    }
-
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .step {
-      font-size: 12px;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
-    .badge-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 10px;
-      margin-right: 6px;
-    }
-
-    /* TRUST + CTA */
     .trust-strip {
-      margin-top: 40px;
       padding: 12px 14px;
       border-radius: var(--radius-xl);
       border: 1px solid rgba(148, 163, 184, 0.45);
@@ -707,13 +624,8 @@
         font-size: 30px;
       }
 
-      .features-grid,
-      .how-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
       .section {
-        margin-top: 44px;
+        margin-top: 40px;
       }
 
       .trust-strip {
@@ -739,20 +651,23 @@
     <div class="shell">
       <!-- HEADER -->
       <header>
-        <div class="brand">
-          <div class="brand-mark">
-            <img src="tesorin-logo.png" alt="TESORIN logo" />
+        <a href="/" class="brand-link">
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="tesorin-logo.png" alt="TESORIN logo" />
+            </div>
+            <div class="brand-text-wrap">
+              <div class="brand-name">TESORIN</div>
+              <div class="brand-tagline">Start small. Plan big.</div>
+            </div>
           </div>
-          <div class="brand-text-wrap">
-            <div class="brand-name">TESORIN</div>
-            <div class="brand-tagline">Start small. Plan big.</div>
-          </div>
-        </div>
+        </a>
         <nav>
-          <a href="#how">How it works</a>
-          <a href="#features">Features</a>
-          <a href="#trust">Safety</a>
-          <a href="#faq" class="highlight">FAQs</a>
+          <a href="/how-it-works.html">How it works</a>
+          <a href="/features.html">Features</a>
+          <a href="/about.html">About</a>
+          <a href="/safety.html">Safety</a>
+          <a href="/faq.html" class="highlight">FAQs</a>
         </nav>
         <button class="nav-cta" type="button" onclick="document.getElementById('waitlist-form-email').focus();">
           Join waitlist
@@ -865,151 +780,7 @@
           </div>
         </section>
 
-        <!-- FEATURES -->
-        <section class="section" id="features">
-          <div class="section-header">
-            <div class="section-kicker">Why TESORIN</div>
-            <h2 class="section-title">Everything you need to see your money clearly.</h2>
-            <p class="section-subtitle">
-              Not an investing course, not a trading app. Just a simple, premium space that shows your cash, goals,
-              and future in one calm dashboard.
-            </p>
-          </div>
-
-          <div class="features-grid">
-            <article class="feature-card">
-              <div class="feature-icon">◎</div>
-              <h3 class="feature-title">One clean wealth snapshot</h3>
-              <p class="feature-body">
-                See income, spending, savings, and goals in one place. No spreadsheets and no juggling ten different apps.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-icon">↗</div>
-              <h3 class="feature-title">Small steps, serious future</h3>
-              <p class="feature-body">
-                Start with what you have today. TESORIN shows how small, consistent moves compound into real future wealth.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-icon">☰</div>
-              <h3 class="feature-title">Calm, guided decisions</h3>
-              <p class="feature-body">
-                No hype, no product pushing. Just clear prompts, ranges, and “what if” views to help you decide comfortably.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <!-- HOW IT WORKS -->
-        <section class="section" id="how">
-          <div class="section-header">
-            <div class="section-kicker">How it works</div>
-            <h2 class="section-title">From “I should plan” to “I have a plan”.</h2>
-            <p class="section-subtitle">
-              TESORIN sits where a good financial planner would — but on your phone, without the pressure, and built
-              for beginners who want to get serious.
-            </p>
-          </div>
-
-          <div class="how-grid">
-            <article class="feature-card">
-              <div class="step">
-                <span class="badge-number">1</span>
-                Tell us where you are today
-              </div>
-              <h3 class="feature-title">A quick, honest picture</h3>
-              <p class="feature-body">
-                Add your income, rough spending, and what you’ve already saved. We keep it light, so you don’t get stuck in forms.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="step">
-                <span class="badge-number">2</span>
-                Choose what “wealth” means to you
-              </div>
-              <h3 class="feature-title">Define your version of “ahead”</h3>
-              <p class="feature-body">
-                Pick milestones like a buffer fund, a freedom number, or a long-term net worth target. TESORIN doesn’t assume one life path.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <div class="step">
-                <span class="badge-number">3</span>
-                Get a calm, step-by-step path
-              </div>
-              <h3 class="feature-title">Monthly moves, not market noise</h3>
-              <p class="feature-body">
-                We translate the plan into simple monthly amounts and check-ins you can actually stick to — even with small starts.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <!-- TRUST / SAFETY -->
-        <section class="section" id="trust">
-          <div class="section-header">
-            <div class="section-kicker">Designed for trust</div>
-            <h2 class="section-title">Built like a tool, not a sales pitch.</h2>
-            <p class="section-subtitle">
-              TESORIN is designed to feel like a calm planning surface, not a high-pressure sales call. No hidden
-              agendas, no commissions for pushing products.
-            </p>
-          </div>
-
-          <div class="trust-strip">
-            <span class="label">
-              <span class="highlight">No investment products inside TESORIN yet.</span> Start by getting the plan right —
-              where you are, where you’re heading, and what “enough” looks like.
-            </span>
-            <span class="label">
-              Product roadmap includes smart integrations and guidance, always with your interests first.
-            </span>
-          </div>
-        </section>
-
-        <!-- FAQ PREVIEW -->
-        <section class="section" id="faq">
-          <div class="section-header">
-            <div class="section-kicker">Questions</div>
-            <h2 class="section-title">Is TESORIN right for me?</h2>
-            <p class="section-subtitle">
-              TESORIN is for people who are done “winging it” with money, but don’t want to become full-time finance
-              nerds. If you want a simple, serious starting point, you’re in the right place.
-            </p>
-          </div>
-
-          <div class="features-grid">
-            <article class="feature-card">
-              <h3 class="feature-title">Do I need a lot of money to start?</h3>
-              <p class="feature-body">
-                No. TESORIN is deliberately built for small, realistic starting points. The question is not “how much do you have?” —
-                it’s “what can we build from here?”.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3 class="feature-title">Is this an investing or trading app?</h3>
-              <p class="feature-body">
-                No. TESORIN focuses on planning: your cash flow, buffers, and long-term wealth path. Any investing
-                comes later, as an extension of a solid plan.
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3 class="feature-title">When can I try it?</h3>
-              <p class="feature-body">
-                We’re inviting a first wave of early users soon. Join the early access list and help us shape a calmer way to plan money.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <!-- FINAL CTA -->
+        <!-- FINAL CTA / TRUST STRIP -->
         <section class="section">
           <div class="trust-strip">
             <div>
@@ -1028,10 +799,11 @@
       <footer>
         <span>© 2025 TESORIN – Official website of the TESORIN wealth planning app.</span>
         <div class="footer-links">
-          <a href="#how">How it works</a>
-          <a href="#features">Features</a>
-          <a href="#trust">Safety</a>
-          <a href="#faq">FAQs</a>
+          <a href="/how-it-works.html">How it works</a>
+          <a href="/features.html">Features</a>
+          <a href="/about.html">About</a>
+          <a href="/safety.html">Safety</a>
+          <a href="/faq.html">FAQs</a>
         </div>
       </footer>
     </div>
