@@ -656,21 +656,72 @@
         </section>
 
         <!-- FINAL CTA -->
-        <section class="section">
-          <div class="cta-card">
-            <div>
-              <strong>TESORIN is built to be calm, not risky.</strong><br />
-              If this approach to safety and planning matches how you want to handle money,
+       <section class="cta-strip">
+        <div>
+          <span class="highlight">TESORIN is built to be calm, not risky.</span><br />
+           If this approach to safety and planning matches how you want to handle money,
               you can learn more on the homepage or join the early access list.
-            </div>
-            <button class="cta-btn" type="button" onclick="window.location.href='/'">
-              Go to homepage
-              <span class="arrow">→</span>
-            </button>
-          </div>
-        </section>
-      </main>
+        </div>
+        <a href="/" class="cta-btn">
+          Go to main page
+          <span class="arrow">→</span>
+        </a>
+      </section>
+         /* CTA STRIP */
+    .cta-strip {
+      margin-top: 48px;
+      padding: 14px 16px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
 
+    .cta-strip .highlight {
+      font-weight: 500;
+      color: #111827;
+    }
+
+    .cta-btn {
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #111827;
+      color: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+
+    .cta-btn span.arrow {
+      font-size: 14px;
+      transform: translateX(0);
+      transition: transform 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.45);
+      filter: brightness(1.03);
+    }
+
+    .cta-btn:hover span.arrow {
+      transform: translateX(3px);
+    }
+        
       <!-- FOOTER -->
       <footer>
         <span>© 2025 TESORIN – Calm wealth planning from small starts.</span>
