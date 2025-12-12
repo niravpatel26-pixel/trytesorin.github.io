@@ -192,87 +192,134 @@
       max-width: 620px;
     }
 
-    /* STEP LIST */
-    .steps-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 40px;
-      margin-bottom: 56px;
+    /* SECTION LAYOUT */
+    .section {
+      margin-top: 40px;
     }
 
-    @media (max-width: 780px) {
-      .steps-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .section-header {
+      text-align: left;
+      max-width: 580px;
+      margin-bottom: 18px;
     }
 
-    .steps-list {
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+      font-family: var(--font-display);
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* ACCORDION */
+    .accordion {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 10px;
     }
 
-    .step-card {
+    .accordion-item {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
-      padding: 18px 18px 16px;
       background: #ffffff;
+      overflow: hidden;
     }
 
-    .step-label {
+    .accordion-header {
+      margin: 0;
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      padding: 12px 14px;
+      border: none;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .accordion-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .accordion-eyebrow {
       font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
       color: var(--text-soft);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
-    .step-number {
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-    }
-
-    .step-title {
-      font-size: 15px;
+    .accordion-title {
+      font-size: 14px;
       font-weight: 500;
-      margin-bottom: 6px;
+      color: #111827;
     }
 
-    .step-body {
+    .accordion-icon {
+      font-size: 14px;
+      color: var(--text-soft);
+      transform: rotate(0deg);
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-trigger[aria-expanded="true"] .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-panel {
+      padding: 0 14px 12px 14px;
+      border-top: 1px solid rgba(229, 231, 235, 0.9);
       font-size: 13px;
       color: var(--text-soft);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    .step-body ul {
+    .accordion-body ul {
       margin-top: 8px;
       padding-left: 18px;
     }
 
-    .step-body li {
+    .accordion-body li {
       margin-bottom: 4px;
     }
 
-    /* RIGHT COLUMN SUMMARY */
+    /* SUMMARY CARD */
     .summary-card {
       border-radius: var(--radius-xl);
       border: 1px solid var(--border-subtle);
       padding: 18px 18px 20px;
       background: #f9fafb;
       font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-top: 18px;
     }
 
     .summary-title {
       font-size: 13px;
       font-weight: 500;
       margin-bottom: 8px;
+      color: #111827;
     }
 
     .summary-block {
@@ -285,6 +332,7 @@
       font-size: 12px;
       font-weight: 500;
       margin-bottom: 4px;
+      color: #111827;
     }
 
     .summary-block p {
@@ -293,57 +341,9 @@
       line-height: 1.6;
     }
 
-    /* BACKGROUND SECTION – “what TESORIN does” */
-    .background-section {
-      margin-bottom: 56px;
-    }
-
-    .background-title {
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-
-    .background-sub {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-bottom: 16px;
-      max-width: 580px;
-      line-height: 1.6;
-    }
-
-    .background-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .background-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: 14px 14px 16px;
-      background: #ffffff;
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.6;
-    }
-
-    .background-card h3 {
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 6px;
-      color: #111827;
-    }
-
-    @media (max-width: 780px) {
-      .background-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
     /* CTA STRIP */
     .cta-strip {
-      margin-top: 8px;
+      margin-top: 48px;
       padding: 14px 16px;
       border-radius: var(--radius-xl);
       border: 1px solid rgba(148, 163, 184, 0.45);
@@ -442,6 +442,10 @@
       header {
         gap: 10px;
       }
+
+      .cta-strip {
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -484,61 +488,104 @@
         </p>
       </section>
 
-      <!-- THREE STEPS -->
-      <section class="steps-layout">
-        <div class="steps-list">
-          <article class="step-card">
-            <div class="step-label">
-              <span class="step-number">1</span>
-              Step one
-            </div>
-            <h2 class="step-title">Map where you stand today.</h2>
-            <div class="step-body">
-              You give TESORIN a lightweight picture of your current money:
-              <ul>
-                <li>Monthly income (after tax, roughly is fine).</li>
-                <li>Core spending and fixed obligations.</li>
-                <li>Any savings, debt, or investments you already have.</li>
-              </ul>
-              No spreadsheets, no bank-connection required at the start. Just enough detail to be honest with yourself.
+      <!-- THREE STEPS – ACCORDION -->
+      <section class="section" id="steps">
+        <div class="section-header">
+          <div class="section-kicker">Three calm steps</div>
+          <h2 class="section-title">How TESORIN builds your plan with you.</h2>
+          <p class="section-subtitle">
+            In practice, using TESORIN feels like answering a few careful questions and getting back a path you can
+            actually follow month by month.
+          </p>
+        </div>
+
+        <div class="accordion" role="list">
+          <!-- Step 1 -->
+          <article class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <span class="accordion-title-wrap">
+                  <span class="accordion-eyebrow">Step one</span>
+                  <span class="accordion-title">Map where you stand today.</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true">▾</span>
+              </button>
+            </h2>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                You give TESORIN a lightweight picture of your current money:
+                <ul>
+                  <li>Monthly income (after tax, roughly is fine).</li>
+                  <li>Core spending and fixed obligations.</li>
+                  <li>Any savings, debt, or investments you already have.</li>
+                </ul>
+                No spreadsheets, no bank-connection required at the start. Just enough detail to be honest with yourself.
+              </div>
             </div>
           </article>
 
-          <article class="step-card">
-            <div class="step-label">
-              <span class="step-number">2</span>
-              Step two
-            </div>
-            <h2 class="step-title">Define what “ahead” looks like for you.</h2>
-            <div class="step-body">
-              Instead of asking “how much money do you want?”, TESORIN helps you set a few grounded milestones:
-              <ul>
-                <li>A safety buffer or emergency fund that lets you breathe.</li>
-                <li>Debt comfort targets (what you want to pay off, and by when).</li>
-                <li>Long-term “freedom” numbers — for future choices, not just retirement.</li>
-              </ul>
-              You choose what matters; TESORIN organises it into a simple priority stack.
+          <!-- Step 2 -->
+          <article class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <span class="accordion-title-wrap">
+                  <span class="accordion-eyebrow">Step two</span>
+                  <span class="accordion-title">Define what “ahead” looks like for you.</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true">▾</span>
+              </button>
+            </h2>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                Instead of asking “how much money do you want?”, TESORIN helps you set a few grounded milestones:
+                <ul>
+                  <li>A safety buffer or emergency fund that lets you breathe.</li>
+                  <li>Debt comfort targets (what you want to pay off, and by when).</li>
+                  <li>Long-term “freedom” numbers — for future choices, not just retirement.</li>
+                </ul>
+                You choose what matters; TESORIN organises it into a simple priority stack.
+              </div>
             </div>
           </article>
 
-          <article class="step-card">
-            <div class="step-label">
-              <span class="step-number">3</span>
-              Step three
-            </div>
-            <h2 class="step-title">Turn it into a calm monthly path.</h2>
-            <div class="step-body">
-              TESORIN translates everything into amounts you can act on:
-              <ul>
-                <li>How much to keep as “breathing room” each month.</li>
-                <li>How much to direct to safety, debt, and longer-term investing.</li>
-                <li>How your numbers might evolve over the next few years.</li>
-              </ul>
-              The output is not a trading screen — it’s a plan you can actually stick to, even with small starts.
+          <!-- Step 3 -->
+          <article class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <span class="accordion-title-wrap">
+                  <span class="accordion-eyebrow">Step three</span>
+                  <span class="accordion-title">Turn it into a calm monthly path.</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true">▾</span>
+              </button>
+            </h2>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                TESORIN translates everything into amounts you can act on:
+                <ul>
+                  <li>How much to keep as “breathing room” each month.</li>
+                  <li>How much to direct to safety, debt, and longer-term investing.</li>
+                  <li>How your numbers might evolve over the next few years.</li>
+                </ul>
+                The output is not a trading screen — it’s a plan you can actually stick to, even with small starts.
+              </div>
             </div>
           </article>
         </div>
 
+        <!-- Summary card -->
         <aside class="summary-card">
           <div class="summary-title">In plain language:</div>
           <p>
@@ -573,40 +620,85 @@
         </aside>
       </section>
 
-      <!-- WHAT TESORIN DOES IN THE BACKGROUND -->
-      <section class="background-section">
-        <h2 class="background-title">What TESORIN quietly does in the background.</h2>
-        <p class="background-sub">
-          On screen, you see simple numbers and ranges. Behind the scenes, TESORIN uses a few core principles
-          to keep your plan sane and realistic — starting with India and Canada, and expanding from there.
-        </p>
+      <!-- BACKGROUND – ACCORDION -->
+      <section class="section" id="background">
+        <div class="section-header">
+          <div class="section-kicker">Under the hood</div>
+          <h2 class="section-title">What TESORIN quietly does in the background.</h2>
+          <p class="section-subtitle">
+            On screen, you see simple numbers and ranges. Behind the scenes, TESORIN uses a few core principles
+            to keep your plan sane and realistic — starting with India and Canada, and expanding from there.
+          </p>
+        </div>
 
-        <div class="background-grid">
-          <article class="background-card">
-            <h3>Cash-flow &amp; buffers.</h3>
-            <p>
-              TESORIN looks at how much actually stays in your hands each month,
-              then suggests a buffer so surprise expenses don’t blow up your plan.
-              No “optimize every rupee/dollar” pressure — just enough structure.
-            </p>
+        <div class="accordion" role="list">
+          <!-- Cash-flow & buffers -->
+          <article class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <span class="accordion-title-wrap">
+                  <span class="accordion-title">Cash-flow &amp; buffers.</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true">▾</span>
+              </button>
+            </h2>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                TESORIN looks at how much actually stays in your hands each month,
+                then suggests a buffer so surprise expenses don’t blow up your plan.
+                No “optimize every rupee/dollar” pressure — just enough structure.
+              </div>
+            </div>
           </article>
 
-          <article class="background-card">
-            <h3>Safety before optimization.</h3>
-            <p>
-              Before chasing returns, TESORIN nudges you to cover basics: emergency cash,
-              high-interest debt, and near-term commitments. Only then does it point you toward
-              longer-term investing conversations.
-            </p>
+          <!-- Safety before optimisation -->
+          <article class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <span class="accordion-title-wrap">
+                  <span class="accordion-title">Safety before optimization.</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true">▾</span>
+              </button>
+            </h2>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                Before chasing returns, TESORIN nudges you to cover basics: emergency cash,
+                high-interest debt, and near-term commitments. Only then does it point you toward
+                longer-term investing conversations.
+              </div>
+            </div>
           </article>
 
-          <article class="background-card">
-            <h3>Built to extend, not trap.</h3>
-            <p>
-              Future phases will connect your plan to products through FINTREK and SUMMITVEST.
-              The design principle stays the same: your interests first, no hidden commissions,
-              no “product hunt” inside the app.
-            </p>
+          <!-- Built to extend, not trap -->
+          <article class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-trigger"
+                type="button"
+                aria-expanded="false"
+              >
+                <span class="accordion-title-wrap">
+                  <span class="accordion-title">Built to extend, not trap.</span>
+                </span>
+                <span class="accordion-icon" aria-hidden="true">▾</span>
+              </button>
+            </h2>
+            <div class="accordion-panel" hidden>
+              <div class="accordion-body">
+                Future phases will connect your plan to products through FINTREK and SUMMITVEST.
+                The design principle stays the same: your interests first, no hidden commissions,
+                no “product hunt” inside the app.
+              </div>
+            </div>
           </article>
         </div>
       </section>
@@ -636,5 +728,37 @@
       </footer>
     </div>
   </div>
+
+  <!-- Simple accordion behaviour -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const triggers = document.querySelectorAll(".accordion-trigger");
+
+      function closeAll() {
+        triggers.forEach((btn) => {
+          const panel = btn.parentElement.nextElementSibling;
+          btn.setAttribute("aria-expanded", "false");
+          if (panel) panel.hidden = true;
+        });
+      }
+
+      triggers.forEach((btn) => {
+        const panel = btn.parentElement.nextElementSibling;
+        if (!panel) return;
+
+        btn.addEventListener("click", () => {
+          const isOpen = btn.getAttribute("aria-expanded") === "true";
+          if (isOpen) {
+            btn.setAttribute("aria-expanded", "false");
+            panel.hidden = true;
+          } else {
+            closeAll();
+            btn.setAttribute("aria-expanded", "true");
+            panel.hidden = false;
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
