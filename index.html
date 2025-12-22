@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <script type="application/ld+json">
@@ -247,7 +247,35 @@
       line-height: 1.7;
       color: var(--text-soft);
       max-width: 480px;
+      margin-bottom: 14px;
+    }
+
+    /* NEW: quick bullets under subtitle (copy clarity, minimal visual change) */
+    .hero-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
       margin-bottom: 18px;
+      max-width: 520px;
+    }
+
+    .hero-bullets li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-soft);
+    }
+
+    .hero-bullets .bullet-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.9);
+      margin-top: 8px;
+      flex: 0 0 7px;
     }
 
     .hero-note {
@@ -369,6 +397,9 @@
     .hero-visual-wrap {
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
 
     .hero-card {
@@ -436,105 +467,32 @@
       font-size: 11px;
     }
 
-    .hero-balance-block {
-      margin-top: 4px;
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.9);
-      padding: 12px 12px 10px;
-    }
-
-    .hero-balance-label {
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.9);
-      margin-bottom: 4px;
-    }
-
-    .hero-balance-main {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
-
-    .hero-balance-value {
-      font-size: 22px;
-      font-weight: 600;
-    }
-
-    .hero-balance-tag {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.15);
-      color: #bbf7d0;
-    }
-
-    .hero-balance-sub {
-      margin-top: 4px;
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.95);
-    }
-
-    .progress-card {
-      margin-top: 8px;
-      border-radius: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.92);
-      padding: 10px 11px;
-    }
-
-    .progress-top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.95);
-      margin-bottom: 4px;
-    }
-
-    .progress-bar {
+    /* NEW: beta screenshot inside hero card (keeps your existing card style) */
+    .hero-app-shot {
       width: 100%;
-      height: 7px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
       overflow: hidden;
-      border: 1px solid rgba(59, 130, 246, 0.7);
+      background: rgba(15, 23, 42, 0.65);
+      box-shadow: 0 14px 40px rgba(2, 6, 23, 0.45);
     }
 
-    .progress-fill {
-      width: 62%;
-      height: 100%;
-      background: linear-gradient(90deg, #22c55e, #22d3ee);
-      transform-origin: left;
+    .hero-app-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .progress-sub {
-      margin-top: 4px;
+    .hero-visual-caption {
       font-size: 11px;
-      color: rgba(203, 213, 225, 0.9);
+      color: var(--text-soft);
+      text-align: center;
+      max-width: 360px;
     }
 
-    .hero-card-list {
-      margin-top: 8px;
-      padding-top: 8px;
-      border-top: 1px dashed rgba(148, 163, 184, 0.5);
-      font-size: 11px;
-      color: rgba(203, 213, 225, 0.9);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .hero-card-item {
-      display: flex;
-      gap: 6px;
-    }
-
-    .hero-card-bullet {
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: rgba(148, 163, 184, 0.9);
-      margin-top: 4px;
+    .hero-visual-caption strong {
+      color: #111827;
+      font-weight: 600;
     }
 
     /* FINAL CTA / TRUST STRIP */
@@ -687,10 +645,27 @@
               Built to stay with you <span class="highlight">from first plan to real wealth.</span>
             </h1>
 
+            <!-- UPDATED: clearer "who it's for" without changing the visual style -->
             <p class="hero-subtitle">
-              TESORIN gives you a clean, single view of your money and goals — so you can build long-term wealth without stress,
-              noise, or complicated products.
+              TESORIN is for people who want a simple plan — build an emergency fund, pay down debt, then start investing —
+              without spreadsheets, stress, or product noise.
             </p>
+
+            <!-- NEW: 3 concrete bullets (highest leverage clarity) -->
+            <ul class="hero-bullets" aria-label="What TESORIN does">
+              <li>
+                <span class="bullet-dot" aria-hidden="true"></span>
+                <span><strong style="color:#111827;font-weight:600;">One number:</strong> your monthly flexibility (what you can safely route to goals).</span>
+              </li>
+              <li>
+                <span class="bullet-dot" aria-hidden="true"></span>
+                <span><strong style="color:#111827;font-weight:600;">Next best move:</strong> safety → debt → long-term wealth, in a calm order.</span>
+              </li>
+              <li>
+                <span class="bullet-dot" aria-hidden="true"></span>
+                <span><strong style="color:#111827;font-weight:600;">Simple progress:</strong> track goals and see momentum without overthinking.</span>
+              </li>
+            </ul>
 
             <!-- Waitlist -->
             <div class="waitlist-card">
@@ -726,61 +701,32 @@
           </div>
 
           <div class="hero-visual-wrap">
-            <!-- Device-style preview -->
+            <!-- Device-style preview (kept) -->
             <div class="hero-card" aria-hidden="true">
               <div class="hero-card-inner">
                 <div class="hero-card-header">
                   <div class="hero-chip">
                     <span class="hero-dot"></span>
-                    Preview · TESORIN plan
+                    Live beta · Home screen
                   </div>
-                  <div class="hero-chip-tag">Beginner mode · On</div>
+                  <div class="hero-chip-tag">Calm view · On</div>
                 </div>
 
-                <div class="hero-balance-block">
-                  <div class="hero-balance-label">Monthly cash flow after expenses</div>
-                  <div class="hero-balance-main">
-                    <div class="hero-balance-value">$420</div>
-                    <div class="hero-balance-tag">to work with</div>
-                  </div>
-                  <div class="hero-balance-sub">
-                    TESORIN suggests how much to save, invest, and keep aside so you’re not guessing every month.
-                  </div>
-                </div>
-
-                <div class="progress-card">
-                  <div class="progress-top">
-                    <span>Emergency fund</span>
-                    <span>62% funded</span>
-                  </div>
-                  <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                  </div>
-                  <div class="progress-sub">
-                    Track key goals — safety buffer, debt payoff, and long-term investing — in one calm view.
-                  </div>
-                </div>
-
-                <div class="hero-card-list">
-                  <div class="hero-card-item">
-                    <span class="hero-card-bullet"></span>
-                    <span>Clear priorities: safety first, then debt, then long-term wealth.</span>
-                  </div>
-                  <div class="hero-card-item">
-                    <span class="hero-card-bullet"></span>
-                    <span>Built for people taking money seriously for the first time — with scenarios that make sense in India and Canada.</span>
-                  </div>
-                  <div class="hero-card-item">
-                    <span class="hero-card-bullet"></span>
-                    <span>Designed for beginners — no trading screen, no product push, just planning.</span>
-                  </div>
+                <!-- UPDATED: real beta screenshot (replace with your file name) -->
+                <div class="hero-app-shot">
+                  <!-- Put your screenshot file in the same folder and name it like below -->
+                  <img src="tesorin-beta-home.png" alt="TESORIN beta app home screen preview" />
                 </div>
               </div>
+            </div>
+
+            <div class="hero-visual-caption">
+              <strong>Your money</strong> in one calm screen — flexibility, cashflow, goals, and next steps.
             </div>
           </div>
         </section>
 
-        <!-- FINAL CTA / TRUST STRIP -->
+        <!-- FINAL CTA / TRUST STRIP (unchanged for now) -->
         <section class="section">
           <div class="trust-strip">
             <div>
