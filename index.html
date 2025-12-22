@@ -250,7 +250,7 @@
       margin-bottom: 14px;
     }
 
-    /* NEW: quick bullets under subtitle (copy clarity, minimal visual change) */
+    /* Quick bullets under subtitle */
     .hero-bullets {
       list-style: none;
       display: flex;
@@ -467,7 +467,7 @@
       font-size: 11px;
     }
 
-    /* NEW: beta screenshot inside hero card (keeps your existing card style) */
+    /* Beta screenshot inside hero card */
     .hero-app-shot {
       width: 100%;
       border-radius: 18px;
@@ -493,32 +493,6 @@
     .hero-visual-caption strong {
       color: #111827;
       font-weight: 600;
-    }
-
-    /* FINAL CTA / TRUST STRIP */
-    .section {
-      margin-top: 48px;
-    }
-
-    .trust-strip {
-      padding: 12px 14px;
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .trust-strip span.label {
-      color: var(--text-soft);
-    }
-
-    .trust-strip span.highlight {
-      font-weight: 500;
     }
 
     /* FOOTER */
@@ -582,14 +556,6 @@
         font-size: 30px;
       }
 
-      .section {
-        margin-top: 40px;
-      }
-
-      .trust-strip {
-        align-items: flex-start;
-      }
-
       .waitlist-card {
         border-radius: 22px;
       }
@@ -645,13 +611,11 @@
               Built to stay with you <span class="highlight">from first plan to real wealth.</span>
             </h1>
 
-            <!-- UPDATED: clearer "who it's for" without changing the visual style -->
             <p class="hero-subtitle">
               TESORIN is for people who want a simple plan — build an emergency fund, pay down debt, then start investing —
               without spreadsheets, stress, or product noise.
             </p>
 
-            <!-- NEW: 3 concrete bullets (highest leverage clarity) -->
             <ul class="hero-bullets" aria-label="What TESORIN does">
               <li>
                 <span class="bullet-dot" aria-hidden="true"></span>
@@ -701,7 +665,6 @@
           </div>
 
           <div class="hero-visual-wrap">
-            <!-- Device-style preview (kept) -->
             <div class="hero-card" aria-hidden="true">
               <div class="hero-card-inner">
                 <div class="hero-card-header">
@@ -712,9 +675,7 @@
                   <div class="hero-chip-tag">Calm view · On</div>
                 </div>
 
-                <!-- UPDATED: real beta screenshot (replace with your file name) -->
                 <div class="hero-app-shot">
-                  <!-- Put your screenshot file in the same folder and name it like below -->
                   <img src="tesorin-beta-home.png" alt="TESORIN beta app home screen preview" />
                 </div>
               </div>
@@ -723,24 +684,6 @@
             <div class="hero-visual-caption">
               <strong>Your money</strong> in one calm screen — flexibility, cashflow, goals, and next steps.
             </div>
-          </div>
-        </section>
-
-        <!-- FINAL CTA / TRUST STRIP (unchanged for now) -->
-        <section class="section">
-          <div class="trust-strip">
-            <div>
-              <span class="highlight">Try the TESORIN demo app.</span><br />
-              Open the early preview in your browser and explore how the planner feels with sample numbers.
-            </div>
-            <button
-              class="cta-btn"
-              type="button"
-              onclick="window.location.href='https://app.trytesorin.com';"
-            >
-              Open demo
-              <span class="arrow">→</span>
-            </button>
           </div>
         </section>
       </main>
