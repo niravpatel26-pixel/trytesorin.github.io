@@ -10,17 +10,8 @@
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
   "description": "TESORIN helps beginners build their first serious money plan with simple cash-flow insights, clear goals, and calm step-by-step guidance.",
-  "creator": {
-    "@type": "Organization",
-    "name": "TESORIN"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "category": "Free",
-    "url": "https://www.trytesorin.com/"
-  }
+  "creator": { "@type": "Organization", "name": "TESORIN" },
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "category": "Free", "url": "https://www.trytesorin.com/" }
 }
   </script>
 
@@ -30,7 +21,6 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>TESORIN – Start Small, Build Serious Wealth | Simple Money Planning App</title>
@@ -65,7 +55,7 @@
   />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Fonts: serif display + clean sans -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -76,7 +66,6 @@
   <style>
     :root {
       --bg: #ffffff;
-      --bg-soft: #ffffff;
       --text-main: #0f172a;
       --text-soft: #6b7280;
       --accent: #22c55e;
@@ -392,7 +381,7 @@
     .hero-card {
       position: relative;
       width: 100%;
-      max-width: 360px;
+      max-width: 380px;
       border-radius: 32px;
       background: radial-gradient(circle at top left, #0f172a, #020617);
       padding: 18px 18px 20px;
@@ -406,8 +395,9 @@
       content: "";
       position: absolute;
       inset: -40%;
-      background: radial-gradient(circle at 0% 0%, rgba(52, 211, 153, 0.25), transparent 50%),
-                  radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.26), transparent 55%);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(52, 211, 153, 0.25), transparent 50%),
+        radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.26), transparent 55%);
       opacity: 0.9;
       pointer-events: none;
     }
@@ -455,49 +445,59 @@
     }
 
     /*
-      UPDATED:
-      This makes the screenshot feel "native" inside the dark hero card:
-      - a subtle light surface (like your website)
-      - a clean inner mat
-      - then the phone image
-      This matches the look you shared, without needing a special composite image.
+      BEST BLEND FOR YOUR IMAGE (tesorin-home-shot.png):
+      Your PNG already includes the phone + soft background shading.
+      So we avoid extra "mat frames" and instead give it:
+      - a gentle glass surface,
+      - subtle border,
+      - and a very soft, premium shadow.
+      This makes it feel like it belongs to the site AND the dark card.
     */
-    .hero-app-frame {
-      border-radius: 22px;
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
-      padding: 14px;
+    .hero-app-wrap {
+      position: relative;
+      border-radius: 24px;
+      padding: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.20);
+      background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.10), rgba(255,255,255,0.03) 60%);
       box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.10),
-        0 18px 45px rgba(0, 0, 0, 0.32);
+        inset 0 1px 0 rgba(255,255,255,0.10),
+        0 18px 50px rgba(0,0,0,0.40);
+      overflow: hidden;
     }
 
-    .hero-app-mat {
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.20);
-      background: linear-gradient(180deg, #ffffff, #f9fafb);
-      padding: 12px;
-      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.25);
+    .hero-app-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background:
+        radial-gradient(circle at 35% 15%, rgba(34,197,94,0.14), transparent 55%),
+        radial-gradient(circle at 75% 18%, rgba(34,211,238,0.12), transparent 58%);
+      opacity: 0.9;
+      pointer-events: none;
     }
 
     .hero-app-shot {
-      border-radius: 16px;
+      position: relative;
+      z-index: 1;
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.28);
-      background: #ffffff;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(255,255,255,0.04);
     }
 
     .hero-app-shot img {
       width: 100%;
       height: auto;
       display: block;
+      transform: translateY(0);
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,0.28));
     }
 
     .hero-visual-caption {
       font-size: 11px;
       color: var(--text-soft);
       text-align: center;
-      max-width: 360px;
+      max-width: 380px;
     }
 
     .hero-visual-caption strong {
@@ -561,6 +561,8 @@
       .form-row { flex-direction: column; }
 
       .cta-btn { justify-content: center; }
+
+      .hero-card { max-width: 420px; }
     }
   </style>
 </head>
@@ -670,13 +672,10 @@
                   <div class="hero-chip-tag">Calm view · On</div>
                 </div>
 
-                <!-- UPDATED: "website-native" light surface + mat INSIDE the dark card -->
-                <div class="hero-app-frame">
-                  <div class="hero-app-mat">
-                    <div class="hero-app-shot">
-                      <!-- Use your clean phone-only image -->
-                      <img src="tesorin-home-shot.png" alt="TESORIN beta app home screen preview" />
-                    </div>
+                <!-- UPDATED: uses tesorin-home-shot.png -->
+                <div class="hero-app-wrap">
+                  <div class="hero-app-shot">
+                    <img src="tesorin-home-shot.png" alt="TESORIN beta app home screen preview" />
                   </div>
                 </div>
               </div>
