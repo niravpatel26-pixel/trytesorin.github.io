@@ -9,7 +9,7 @@
   "url": "https://www.trytesorin.com/",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
-  "description": "TESORIN helps beginners build their first serious money plan with simple cash-flow insights, clear goals, and calm step-by-step guidance.",
+  "description": "TESORIN helps you build your first serious money plan — start simple, see priorities clearly, and take the next right action each month.",
   "creator": { "@type": "Organization", "name": "TESORIN" },
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "category": "Free", "url": "https://www.trytesorin.com/" }
 }
@@ -27,7 +27,7 @@
 
   <meta
     name="description"
-    content="TESORIN helps you build your first serious money plan — clear goals, simple cash-flow insights, and calm step-by-step guidance. Start small, plan big, and grow your wealth confidently."
+    content="TESORIN helps you build your first serious money plan — start simple, see priorities clearly, and take the next right action each month. Start small, plan big, and grow your wealth confidently."
   />
 
   <meta
@@ -39,7 +39,7 @@
   <meta property="og:title" content="TESORIN – Personal Wealth Planning Made Simple" />
   <meta
     property="og:description"
-    content="TESORIN gives beginners a calm, simple way to understand their money, set clear goals, and design a serious wealth plan without jargon or overwhelm."
+    content="TESORIN gives you a calm, simple way to understand your money, set clear goals, and build a plan that grows with you — without jargon or overwhelm."
   />
   <meta property="og:url" content="https://www.trytesorin.com" />
   <meta property="og:site_name" content="TESORIN" />
@@ -357,6 +357,15 @@
       max-width: 360px;
     }
 
+    /* NEW: trust lines under the form, same visual language */
+    .trust-lines {
+      font-size: 11px;
+      color: var(--text-soft);
+      margin-top: 8px;
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
     .hero-footnote {
       margin-top: 18px;
       font-size: 12px;
@@ -379,29 +388,19 @@
       width: 100%;
     }
 
-    /*
-      REMOVE the dark "demo card" look by turning the right side into a light,
-      single-surface presentation (one gradient, no extra glow layers).
-    */
     .hero-card {
       position: relative;
       width: 100%;
       max-width: 380px;
       border-radius: 34px;
-
-      /* ONE gradient only */
       background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f6f7f9 70%, #f3f4f6 100%);
-
-      /* very subtle border + shadow to feel native to the page */
       border: 1px solid rgba(148, 163, 184, 0.22);
-      box-shadow:
-        0 28px 70px rgba(15, 23, 42, 0.16);
+      box-shadow: 0 28px 70px rgba(15, 23, 42, 0.16);
       padding: 18px;
       overflow: hidden;
       color: var(--text-main);
     }
 
-    /* kill the dark overlay glow layer */
     .hero-card::before { content: none; }
 
     .hero-card-inner {
@@ -413,13 +412,11 @@
       width: 100%;
     }
 
-    /* remove the header chips completely (no "Live beta" etc.) */
     .hero-card-header { display: none; }
     .hero-chip { display: none; }
     .hero-chip-tag { display: none; }
     .hero-dot { display: none; }
 
-    /* the image should feel like it sits on the same surface as the site */
     .hero-app-wrap {
       position: relative;
       border-radius: 26px;
@@ -433,20 +430,33 @@
 
     .hero-app-wrap::before { content: none; }
 
+    /*
+      UPDATED: make tesorin-home-shot.png feel like it belongs
+      by giving it a "native surface" frame + subtle inset boundary.
+      (No image edits needed; pure CSS.)
+    */
     .hero-app-shot {
       border-radius: 24px;
       overflow: hidden;
       border: 1px solid rgba(148, 163, 184, 0.18);
-      background: #ffffff;
-      box-shadow:
-        0 20px 45px rgba(15, 23, 42, 0.14);
+
+      /* frame surface to blend with page */
+      background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f8fa 65%, #f3f4f6 100%);
+      padding: 10px;
+
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
     }
 
     .hero-app-shot img {
       width: 100%;
       height: auto;
       display: block;
-      filter: none; /* no extra drop-shadow/filters */
+
+      /* slight inner rounding so the frame shows */
+      border-radius: 18px;
+
+      /* soft "print" look to reduce any tacky background contrast */
+      filter: saturate(0.98) contrast(0.98) brightness(1.01);
     }
 
     .hero-visual-caption {
@@ -561,12 +571,11 @@
             </div>
 
             <h1 class="hero-title">
-              Built to stay with you <span class="highlight">from first plan to real wealth.</span>
+              Your first step into wealth — <span class="highlight">with a plan that grows with you.</span>
             </h1>
 
             <p class="hero-subtitle">
-              TESORIN is for people who want a simple plan — build an emergency fund, pay down debt, then start investing —
-              without spreadsheets, stress, or product noise.
+              Start simple. See your priorities clearly. Take the next right action each month.
             </p>
 
             <ul class="hero-bullets" aria-label="What TESORIN does">
@@ -601,15 +610,25 @@
                 </button>
               </form>
             </div>
+
+            <!-- NEW: trust bullets under the form -->
+            <div class="trust-lines">
+              Private by default. Start without connecting a bank.<br>
+              No stock tips. No product pushing. Planning comes first.<br>
+              Built for real life. Designed for early-stage planners in India &amp; Canada.
+            </div>
+
             <p class="cta-note">
               No spam. We’ll only email you when the beta is ready and share a few key updates as TESORIN evolves.
             </p>
 
             <p class="hero-footnote">
-              <strong>Phase 1:</strong> TESORIN launches as a simple planner app. Early guidance is tuned for common
-              day-to-day decisions in India and Canada, then gradually expands to more regions. Future product lines —
-              <strong>FinTrek</strong> for deeper planning and <strong>SummitVest</strong> for premium strategies —
-              are planned as the ecosystem grows.
+              <strong>Phase 1 — Foundation:</strong> Get clarity and build financial stability. Understand your cashflow,
+              set priorities, and create a plan you can actually follow.<br><br>
+              <strong>Phase 2 — Growth:</strong> Turn consistency into momentum. As your income and assets grow, TESORIN
+              helps you optimize decisions and plan further ahead.<br><br>
+              <strong>Phase 3 — Stewardship:</strong> Structure wealth for the long term. Planning expands into strategy,
+              protection, and legacy thinking.
             </p>
 
             <p class="hero-note">
@@ -620,8 +639,6 @@
           <div class="hero-visual-wrap">
             <div class="hero-card" aria-hidden="true">
               <div class="hero-card-inner">
-                <!-- Header removed (no labels) -->
-
                 <div class="hero-app-wrap">
                   <div class="hero-app-shot">
                     <img src="tesorin-home-shot.png" alt="TESORIN beta app home screen preview" />
