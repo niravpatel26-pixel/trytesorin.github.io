@@ -422,26 +422,22 @@
       box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
     }
 
-    /* Cropping window so the baked-in poster headline doesn't fight your hero headline */
-    .hero-app-shot {
-      width: 100%;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: #ffffff;
-    }
+ .hero-app-shot {
+  width: 100%;
+  height: 520px;              /* fixed viewport */
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #ffffff;
+}
 
-    /*
-      We intentionally crop the top area of the image (where "Manage your finances easily" sits)
-      so the preview feels like an embedded product UI, not a standalone poster.
-    */
-    .hero-app-shot img {
-      width: 100%;
-      height: 520px;              /* controls how much is visible */
-      object-fit: cover;          /* enables cropping */
-      object-position: center 68%;/* pushes crop upward (hides top poster text) */
-      display: block;
-    }
+.hero-app-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(-120px); 
+}
+
 
     .hero-visual-caption {
       font-size: 11px;
