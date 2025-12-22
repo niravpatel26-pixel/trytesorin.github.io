@@ -1,71 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "TESORIN",
-  "url": "https://www.trytesorin.com/",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Web",
-  "description": "TESORIN helps beginners build their first serious money plan with simple cash-flow insights, clear goals, and calm step-by-step guidance.",
-  "creator": {
-    "@type": "Organization",
-    "name": "TESORIN"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "category": "Free",
-    "url": "https://www.trytesorin.com/"
-  }
-}
-  </script>
-
-  <link rel="canonical" href="https://www.trytesorin.com/" />
-
   <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/favicon.png">
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>TESORIN – Start Small, Build Serious Wealth | Simple Money Planning App</title>
+  <title>TESORIN – Start Small, Build Serious Wealth</title>
 
   <meta
     name="description"
-    content="TESORIN helps you build your first serious money plan — clear goals, simple cash-flow insights, and calm step-by-step guidance. Start small, plan big, and grow your wealth confidently."
+    content="TESORIN helps you build your first serious money plan — clear goals, simple cash-flow insights, and calm step-by-step guidance."
   />
 
-  <meta
-    name="keywords"
-    content="TESORIN, wealth planning app, personal finance, fintech, money management, beginner investing, money planning, cash flow"
-  />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
 
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="TESORIN – Personal Wealth Planning Made Simple" />
-  <meta
-    property="og:description"
-    content="TESORIN gives beginners a calm, simple way to understand their money, set clear goals, and design a serious wealth plan without jargon or overwhelm."
-  />
-  <meta property="og:url" content="https://www.trytesorin.com" />
-  <meta property="og:site_name" content="TESORIN" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TESORIN – Personal Wealth Planning Made Simple" />
-  <meta
-    name="twitter:description"
-    content="A premium fintech app for small, calm starts that grow into serious future wealth."
-  />
-  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
-
-  <!-- Fonts: serif display + clean sans -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -75,19 +24,16 @@
 
   <style>
     :root {
-      --bg: #ffffff;
-      --bg-soft: #ffffff;
       --text-main: #0f172a;
       --text-soft: #6b7280;
       --accent: #22c55e;
-      --border-subtle: #e5e7eb;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
-      --radius-xl: 22px;
+      --border: rgba(148, 163, 184, 0.35);
+      --radius-xl: 24px;
       --radius-lg: 18px;
       --radius-pill: 999px;
       --max-width: 1120px;
-      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-display: "Playfair Display", "Times New Roman", serif;
+      --font-sans: "Inter", system-ui, sans-serif;
+      --font-display: "Playfair Display", serif;
     }
 
     * {
@@ -98,19 +44,12 @@
 
     body {
       font-family: var(--font-sans);
-      background: var(--bg);
       color: var(--text-main);
+      background: #ffffff;
       -webkit-font-smoothing: antialiased;
     }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
     .shell {
-      width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 32px 16px 80px;
@@ -119,50 +58,41 @@
     /* HEADER */
     header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 8px 0 28px;
-    }
-
-    .brand-link {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
       align-items: center;
+      padding-bottom: 28px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .brand-mark {
       width: 32px;
       height: 32px;
       border-radius: 10px;
-      background: #ffffff;
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
-      border: 1px solid rgba(148, 163, 184, 0.20);
-      overflow: hidden;
+      background: #fff;
     }
 
     .brand-mark img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      display: block;
     }
 
     .brand-name {
       font-family: var(--font-display);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
       font-size: 16px;
+      letter-spacing: 0.14em;
+      font-weight: 600;
     }
 
     .brand-tagline {
@@ -170,43 +100,21 @@
       color: var(--text-soft);
     }
 
-    .brand-text-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: inherit;
-      padding: 4px 0;
-    }
-
-    nav a.highlight {
-      padding: 7px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 12px;
-    }
-
     .nav-cta {
-      display: none;
+      border-radius: var(--radius-pill);
+      padding: 8px 16px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
     }
 
     /* HERO */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 32px;
+      gap: 40px;
       align-items: center;
-      padding-top: 24px;
     }
 
     .hero-label {
@@ -215,30 +123,27 @@
       gap: 8px;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--border);
       font-size: 11px;
       color: var(--text-soft);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
-    .hero-label span.dot {
+    .hero-label .dot {
       width: 6px;
       height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
     .hero-title {
       font-family: var(--font-display);
       font-size: clamp(34px, 4.4vw, 44px);
-      line-height: 1.04;
-      letter-spacing: -0.03em;
-      font-weight: 600;
+      line-height: 1.05;
       margin-bottom: 16px;
     }
 
-    .hero-title span.highlight {
+    .hero-title .highlight {
       color: var(--accent);
     }
 
@@ -247,264 +152,148 @@
       line-height: 1.7;
       color: var(--text-soft);
       max-width: 480px;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
-    /* Quick bullets under subtitle */
     .hero-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 8px;
-      margin-bottom: 18px;
-      max-width: 520px;
+      margin-bottom: 22px;
     }
 
     .hero-bullets li {
       display: flex;
       gap: 10px;
-      align-items: flex-start;
       font-size: 13px;
-      line-height: 1.6;
       color: var(--text-soft);
     }
 
-    .hero-bullets .bullet-dot {
+    .hero-bullets .bullet {
       width: 7px;
       height: 7px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.9);
-      margin-top: 8px;
-      flex: 0 0 7px;
-    }
-
-    .hero-note {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-top: 10px;
-      max-width: 420px;
-    }
-
-    .hero-note strong {
-      color: #111827;
-      font-weight: 500;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
     }
 
     /* WAITLIST */
     .waitlist-card {
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.05);
+      max-width: 520px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
       padding: 10px 10px 10px 16px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      align-items: center;
-      max-width: 520px;
-      margin-bottom: 6px;
     }
 
     .waitlist-label {
       width: 100%;
       font-size: 12px;
       color: var(--text-soft);
-      margin-bottom: 2px;
     }
 
     .form-row {
       display: flex;
-      flex: 1;
       gap: 10px;
+      width: 100%;
     }
 
-    .form-row input[type="email"] {
+    .form-row input {
       flex: 1;
-      min-width: 0;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: #f9fafb;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
       font-size: 13px;
-      color: var(--text-main);
-      outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-
-    .form-row input::placeholder {
-      color: rgba(148, 163, 184, 0.9);
-    }
-
-    .form-row input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(22, 163, 74, 0.25);
-      background: #ffffff;
     }
 
     .cta-btn {
+      border-radius: var(--radius-pill);
+      background: #111827;
+      color: #fff;
       border: none;
-      border-radius: 999px;
       padding: 10px 18px;
       font-size: 13px;
       font-weight: 600;
       cursor: pointer;
-      background: #111827;
-      color: #f9fafb;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.35);
-      white-space: nowrap;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-    }
-
-    .cta-btn span.arrow {
-      font-size: 14px;
-      transform: translateX(0);
-      transition: transform 0.2s ease;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
-      filter: brightness(1.03);
-    }
-
-    .cta-btn:hover span.arrow {
-      transform: translateX(3px);
     }
 
     .cta-note {
       font-size: 11px;
       color: var(--text-soft);
-      margin-top: 4px;
+      margin-top: 6px;
       max-width: 360px;
     }
 
-    .hero-footnote {
-      margin-top: 18px;
-      font-size: 12px;
-      color: var(--text-soft);
-      max-width: 520px;
-    }
-
-    .hero-footnote strong {
-      font-weight: 600;
-      color: #111827;
-    }
-
-    /* HERO VISUAL — ultra-fine "light mat" wrapper */
-    .hero-visual-wrap {
+    /* HERO VISUAL */
+    .hero-visual {
       display: flex;
-      justify-content: center;
       flex-direction: column;
       align-items: center;
       gap: 12px;
     }
 
-    /* Light surface that matches your website cards */
-    .hero-preview-surface {
+    .preview-surface {
       width: 100%;
       max-width: 420px;
       border-radius: 28px;
-      border: 1px solid rgba(148, 163, 184, 0.38);
+      border: 1px solid var(--border);
       background: linear-gradient(180deg, #ffffff, #f9fafb);
-      box-shadow: 0 18px 55px rgba(15, 23, 42, 0.10);
       padding: 14px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.10);
     }
 
-    /* Inner mat gives the screenshot breathing room (native-to-page feel) */
-    .hero-preview-mat {
-      border-radius: 22px;
-      border: 1px solid rgba(148, 163, 184, 0.30);
+    .preview-mat {
       background: #ffffff;
+      border-radius: 22px;
       padding: 12px;
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
     }
 
- .hero-app-shot {
-  width: 100%;
-  height: 520px;              /* fixed viewport */
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  background: #ffffff;
-}
+    .hero-app-shot {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
 
-.hero-app-shot img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transform: translateY(-120px); 
-}
+    .hero-app-shot img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+    }
 
-
-    .hero-visual-caption {
+    .hero-caption {
       font-size: 11px;
       color: var(--text-soft);
       text-align: center;
-      max-width: 420px;
     }
 
-    .hero-visual-caption strong {
-      color: #111827;
-      font-weight: 600;
+    .hero-caption strong {
+      color: var(--text-main);
     }
 
     /* FOOTER */
     footer {
-      border-top: 1px solid var(--border-subtle);
-      margin-top: 40px;
+      margin-top: 48px;
       padding-top: 18px;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
       font-size: 11px;
       color: var(--text-soft);
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: 10px;
-      justify-content: space-between;
-      align-items: center;
     }
 
-    footer a {
-      color: var(--text-soft);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    /* RESPONSIVE */
     @media (max-width: 880px) {
-      nav {
-        display: none;
-      }
-
-      .nav-cta {
-        display: inline-flex;
-        padding: 7px 14px;
-        border-radius: var(--radius-pill);
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        background: rgba(255, 255, 255, 0.9);
-        font-size: 12px;
-      }
-
-      header {
-        gap: 10px;
-      }
-
       .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: 22px;
+        grid-template-columns: 1fr;
       }
 
-      .hero-visual-wrap {
+      .hero-visual {
         order: -1;
       }
 
@@ -512,178 +301,82 @@
         font-size: 30px;
       }
 
-      .waitlist-card {
-        border-radius: 22px;
-      }
-
       .form-row {
         flex-direction: column;
-      }
-
-      .cta-btn {
-        justify-content: center;
-      }
-
-      /* Slightly different crop on smaller screens */
-      .hero-app-shot img {
-        height: 500px;
-        object-position: center 70%;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="page">
-    <div class="shell">
-      <!-- HEADER -->
-      <header>
-        <a href="/" class="brand-link">
-          <div class="brand">
-            <div class="brand-mark">
-              <img src="tesorin-logo.png" alt="TESORIN logo" />
-            </div>
-            <div class="brand-text-wrap">
-              <div class="brand-name">TESORIN</div>
-              <div class="brand-tagline">Start small. Plan big.</div>
-            </div>
-          </div>
-        </a>
-        <nav>
-          <a href="/how-it-works.html">How it works</a>
-          <a href="/features.html">Features</a>
-          <a href="/about.html">About</a>
-          <a href="/safety.html">Safety</a>
-          <a href="/faq.html" class="highlight">FAQs</a>
-        </nav>
-        <button class="nav-cta" type="button" onclick="document.getElementById('waitlist-form-email').focus();">
-          Join waitlist
-        </button>
-      </header>
-
-      <!-- HERO -->
-      <main>
-        <section class="hero">
-          <div>
-            <div class="hero-label">
-              <span class="dot"></span>
-              Early access · Personal wealth planning
-            </div>
-
-            <h1 class="hero-title">
-              Built to stay with you <span class="highlight">from first plan to real wealth.</span>
-            </h1>
-
-            <p class="hero-subtitle">
-              TESORIN is for people who want a simple plan — build an emergency fund, pay down debt, then start investing —
-              without spreadsheets, stress, or product noise.
-            </p>
-
-            <ul class="hero-bullets" aria-label="What TESORIN does">
-              <li>
-                <span class="bullet-dot" aria-hidden="true"></span>
-                <span><strong style="color:#111827;font-weight:600;">One number:</strong> your monthly flexibility (what you can safely route to goals).</span>
-              </li>
-              <li>
-                <span class="bullet-dot" aria-hidden="true"></span>
-                <span><strong style="color:#111827;font-weight:600;">Next best move:</strong> safety → debt → long-term wealth, in a calm order.</span>
-              </li>
-              <li>
-                <span class="bullet-dot" aria-hidden="true"></span>
-                <span><strong style="color:#111827;font-weight:600;">Simple progress:</strong> track goals and see momentum without overthinking.</span>
-              </li>
-            </ul>
-
-            <!-- Waitlist -->
-            <div class="waitlist-card">
-              <div class="waitlist-label">Join the early access list</div>
-              <form id="waitlist-form" class="form-row">
-                <input
-                  id="waitlist-form-email"
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  required
-                />
-                <button type="submit" class="cta-btn">
-                  Get early access
-                  <span class="arrow">→</span>
-                </button>
-              </form>
-            </div>
-            <p class="cta-note">
-              No spam. We’ll only email you when the beta is ready and share a few key updates as TESORIN evolves.
-            </p>
-
-            <p class="hero-footnote">
-              <strong>Phase 1:</strong> TESORIN launches as a simple planner app. Early guidance is tuned for common
-              day-to-day decisions in India and Canada, then gradually expands to more regions. Future product lines —
-              <strong>FinTrek</strong> for deeper planning and <strong>SummitVest</strong> for premium strategies —
-              are planned as the ecosystem grows.
-            </p>
-
-            <p class="hero-note">
-              <strong>No jargon.</strong> No stock tips. Just a calm plan for your future wealth.
-            </p>
-          </div>
-
-          <div class="hero-visual-wrap">
-            <!-- Ultra-fine "light mat" preview (no 'Live beta' / 'Calm view' chips) -->
-            <div class="hero-preview-surface" aria-label="TESORIN app preview">
-              <div class="hero-preview-mat">
-                <div class="hero-app-shot">
-                  <img src="tesorin-beta-home.png" alt="TESORIN app home screen preview" />
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-visual-caption">
-              <strong>Know what you can safely do this month.</strong>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <!-- FOOTER -->
-      <footer>
-        <span>© 2025 TESORIN – Official website of the TESORIN wealth planning app.</span>
-        <div class="footer-links">
-          <a href="/how-it-works.html">How it works</a>
-          <a href="/features.html">Features</a>
-          <a href="/about.html">About</a>
-          <a href="/safety.html">Safety</a>
-          <a href="/faq.html">FAQs</a>
+  <div class="shell">
+    <header>
+      <a href="/" class="brand">
+        <div class="brand-mark">
+          <img src="tesorin-logo.png" alt="TESORIN logo" />
         </div>
-      </footer>
-    </div>
+        <div>
+          <div class="brand-name">TESORIN</div>
+          <div class="brand-tagline">Start small. Plan big.</div>
+        </div>
+      </a>
+      <button class="nav-cta">Join waitlist</button>
+    </header>
+
+    <main class="hero">
+      <div>
+        <div class="hero-label">
+          <span class="dot"></span>
+          Early access · Personal wealth planning
+        </div>
+
+        <h1 class="hero-title">
+          Built to stay with you <span class="highlight">from first plan to real wealth.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          TESORIN is for people who want a simple plan — build an emergency fund,
+          pay down debt, then start investing — without spreadsheets, stress, or product noise.
+        </p>
+
+        <ul class="hero-bullets">
+          <li><span class="bullet"></span>One number: your monthly flexibility.</li>
+          <li><span class="bullet"></span>Next best move: safety → debt → long-term wealth.</li>
+          <li><span class="bullet"></span>Simple progress without overthinking.</li>
+        </ul>
+
+        <div class="waitlist-card">
+          <div class="waitlist-label">Join the early access list</div>
+          <form class="form-row">
+            <input type="email" placeholder="Enter your email" required />
+            <button class="cta-btn">Get early access →</button>
+          </form>
+        </div>
+
+        <p class="cta-note">
+          No spam. We’ll only email you when the beta is ready.
+        </p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="preview-surface">
+          <div class="preview-mat">
+            <div class="hero-app-shot">
+              <img src="tesorin-home-shot.png" alt="TESORIN app home screen" />
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-caption">
+          <strong>Know what you can safely do this month.</strong>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2025 TESORIN</span>
+      <span>How it works · Features · Safety · FAQs</span>
+    </footer>
   </div>
-
-  <!-- Formspree submit + redirect to success page -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const form = document.getElementById("waitlist-form");
-      if (!form) return;
-
-      form.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        try {
-          await fetch("https://formspree.io/f/xzznvgkp", {
-            method: "POST",
-            headers: {
-              Accept: "application/json",
-            },
-            body: formData,
-          });
-        } catch (err) {
-          console.error("Form submission error:", err);
-        }
-
-        // Redirect to your thank-you page
-        window.location.href = "https://www.trytesorin.com/success.html";
-      });
-    });
-  </script>
 </body>
 </html>
