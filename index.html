@@ -357,7 +357,7 @@
       max-width: 360px;
     }
 
-    /* NEW: trust lines under the form, same visual language */
+    /* UPDATED: short, calm, single-line reassurance under the form */
     .trust-lines {
       font-size: 11px;
       color: var(--text-soft);
@@ -430,20 +430,13 @@
 
     .hero-app-wrap::before { content: none; }
 
-    /*
-      UPDATED: make tesorin-home-shot.png feel like it belongs
-      by giving it a "native surface" frame + subtle inset boundary.
-      (No image edits needed; pure CSS.)
-    */
+    /* Make tesorin-home-shot.png feel like it belongs (CSS-only) */
     .hero-app-shot {
       border-radius: 24px;
       overflow: hidden;
       border: 1px solid rgba(148, 163, 184, 0.18);
-
-      /* frame surface to blend with page */
       background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f8fa 65%, #f3f4f6 100%);
       padding: 10px;
-
       box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
     }
 
@@ -451,11 +444,7 @@
       width: 100%;
       height: auto;
       display: block;
-
-      /* slight inner rounding so the frame shows */
       border-radius: 18px;
-
-      /* soft "print" look to reduce any tacky background contrast */
       filter: saturate(0.98) contrast(0.98) brightness(1.01);
     }
 
@@ -611,11 +600,9 @@
               </form>
             </div>
 
-            <!-- NEW: trust bullets under the form -->
+            <!-- UPDATED: short reassurance (keeps section calm, reduces chaos) -->
             <div class="trust-lines">
-              Private by default. Start without connecting a bank.<br>
-              No stock tips. No product pushing. Planning comes first.<br>
-              Built for real life. Designed for early-stage planners in India &amp; Canada.
+              Private by default. No stock tips. No spam.
             </div>
 
             <p class="cta-note">
