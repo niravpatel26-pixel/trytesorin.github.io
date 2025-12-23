@@ -155,6 +155,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 8px 0 28px;
+      position: relative; /* menu anchor */
     }
 
     .brand-link {
@@ -231,7 +232,84 @@
       border-bottom: 1px solid rgba(148, 163, 184, 0.6);
     }
 
-    .nav-cta { display: none; }
+    /* Burger */
+    .menu-btn {
+      display: none;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(255, 255, 255, 0.92);
+      padding: 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      line-height: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18);
+    }
+
+    .menu-bars {
+      width: 18px;
+      height: 2px;
+      background: #111827;
+      display: block;
+      position: relative;
+      border-radius: 2px;
+    }
+
+    .menu-bars::before,
+    .menu-bars::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: #111827;
+      border-radius: 2px;
+    }
+    .menu-bars::before { top: -6px; }
+    .menu-bars::after { top: 6px; }
+
+    .mobile-menu {
+      position: absolute;
+      right: 0;
+      top: 58px;
+      width: min(360px, calc(100vw - 32px));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+      overflow: hidden;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .mobile-menu-inner {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 4px;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: #111827;
+      font-size: 13px;
+      padding: 10px 10px;
+      border-radius: 12px;
+    }
+
+    .mobile-menu a:hover { background: #f3f4f6; }
+    .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
+
+    .mobile-menu .mobile-cta {
+      margin-top: 6px;
+      background: #111827;
+      color: #ffffff;
+      text-align: center;
+    }
+    .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
     /* HERO */
     .hero {
@@ -325,7 +403,7 @@
     /* FAQ LIST */
     .faq-list { max-width: 820px; }
 
-    /* Replace native <details> animation with a premium accordion (JS-driven) */
+    /* Premium accordion */
     .faq-item {
       background: var(--bg-soft);
       border-radius: var(--radius-lg);
@@ -406,10 +484,12 @@
       transform: translate3d(0, 0, 0);
     }
 
-    /* Focus ring (premium + accessible) */
+    /* Focus ring */
     .faq-trigger:focus-visible,
     .cta-btn:focus-visible,
-    nav a:focus-visible {
+    nav a:focus-visible,
+    .menu-btn:focus-visible,
+    .mobile-menu a:focus-visible {
       outline: none;
       box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
       border-radius: 12px;
@@ -495,28 +575,13 @@
     /* RESPONSIVE */
     @media (max-width: 880px) {
       nav { display: none; }
-
-      .nav-cta {
-        display: inline-flex;
-        padding: 7px 14px;
-        border-radius: var(--radius-pill);
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        background: rgba(255, 255, 255, 0.9);
-        font-size: 12px;
-      }
-
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
       header { gap: 10px; }
-
       .section { margin-top: 32px; }
-
       .cta-strip { align-items: flex-start; }
     }
 
-    /* ------------------------------
-       TESORIN Motion System (v1)
-       Scroll reveal + stagger + reduced motion
-    -------------------------------- */
-
+    /* Reduced motion + scroll reveal */
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; }
       .reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right {
@@ -530,6 +595,8 @@
         opacity: 1 !important;
         max-height: none !important;
       }
+      .faq-item:hover { transform: none !important; box-shadow: none !important; }
+      .cta-strip:hover { transform: none !important; box-shadow: none !important; }
     }
 
     .reveal{
@@ -570,6 +637,7 @@
             </div>
           </div>
         </a>
+
         <nav>
           <a href="/how-it-works.html">How it works</a>
           <a href="/features.html">Features</a>
@@ -577,9 +645,24 @@
           <a href="/safety.html">Safety</a>
           <a href="/faq.html" class="active">FAQs</a>
         </nav>
-        <button class="nav-cta" type="button" onclick="window.location.href='/'">
-          Back to homepage
+
+        <!-- Mobile burger -->
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="menu-bars" aria-hidden="true"></span>
         </button>
+
+        <!-- Mobile dropdown -->
+        <div id="mobile-menu" class="mobile-menu" hidden>
+          <div class="mobile-menu-inner">
+            <a href="/how-it-works.html">How it works</a>
+            <a href="/features.html">Features</a>
+            <a href="/about.html">About</a>
+            <a href="/safety.html">Safety</a>
+            <a class="active" href="/faq.html">FAQs</a>
+            <a href="/personal-finance-planning-app.html">Planning app</a>
+            <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+          </div>
+        </div>
       </header>
 
       <!-- HERO -->
@@ -809,7 +892,6 @@
           <a href="/about.html">About</a>
           <a href="/safety.html">Safety</a>
           <a href="/faq.html">FAQs</a>
-          <!-- ✅ new intent/SEO page link -->
           <a href="/personal-finance-planning-app.html">Planning app</a>
         </div>
       </footer>
@@ -817,6 +899,36 @@
   </div>
 
   <script>
+    // ------------------------------
+    // Mobile burger menu (sitewide pattern)
+    // ------------------------------
+    (function () {
+      const btn = document.querySelector(".menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      if (!btn || !menu) return;
+
+      function closeMenu() {
+        btn.setAttribute("aria-expanded", "false");
+        menu.hidden = true;
+      }
+
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
+        menu.hidden = open;
+      });
+
+      document.addEventListener("click", (e) => {
+        if (menu.hidden) return;
+        const within = menu.contains(e.target) || btn.contains(e.target);
+        if (!within) closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    })();
+
     // ------------------------------
     // Premium FAQ accordion
     // - smooth height + fade
@@ -826,7 +938,6 @@
     (function () {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-      const items = Array.from(document.querySelectorAll(".faq-item"));
       const triggers = Array.from(document.querySelectorAll(".faq-trigger"));
 
       function setPanelState(btn, panel, open) {
@@ -852,20 +963,16 @@
       function closeAll(exceptIndex = -1) {
         triggers.forEach((btn, i) => {
           if (i === exceptIndex) return;
-          const panelId = btn.getAttribute("aria-controls");
-          const panel = document.getElementById(panelId);
+          const panel = document.getElementById(btn.getAttribute("aria-controls"));
           if (!panel) return;
           setPanelState(btn, panel, false);
         });
       }
 
-      // init: open first item (your previous default behavior)
       triggers.forEach((btn, i) => {
-        const panelId = btn.getAttribute("aria-controls");
-        const panel = document.getElementById(panelId);
+        const panel = document.getElementById(btn.getAttribute("aria-controls"));
         if (!panel) return;
 
-        // Start open if aria-expanded=true
         const startOpen = btn.getAttribute("aria-expanded") === "true";
         panel.style.maxHeight = "0px";
         panel.style.opacity = "0";
@@ -879,14 +986,12 @@
           } else {
             closeAll(i);
             setPanelState(btn, panel, true);
-            // keep URL hash stable if item has an id
             const parent = btn.closest(".faq-item");
             if (parent && parent.id) history.replaceState(null, "", "#" + parent.id);
           }
         });
       });
 
-      // deep link: if URL has a hash matching a faq id, open it
       function openFromHash() {
         const id = (location.hash || "").replace("#", "");
         if (!id) return;
@@ -895,7 +1000,6 @@
         const btn = target.querySelector(".faq-trigger");
         if (!btn) return;
         btn.click();
-        // bring into view smoothly
         if (!reduceMotion.matches) {
           setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
         } else {
@@ -905,7 +1009,6 @@
       window.addEventListener("hashchange", openFromHash);
       setTimeout(openFromHash, 0);
 
-      // keep open panels sized correctly on resize
       window.addEventListener("resize", () => {
         triggers.forEach((btn) => {
           if (btn.getAttribute("aria-expanded") !== "true") return;
