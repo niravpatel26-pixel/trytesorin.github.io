@@ -442,6 +442,7 @@
       width: 100%;
     }
 
+    /* --- NEW: subtle scroll micro-motion hooks --- */
     .hero-card {
       position: relative;
       width: 100%;
@@ -453,6 +454,18 @@
       padding: 18px;
       overflow: hidden;
       color: var(--text-main);
+
+      will-change: transform;
+      transform: translate3d(0,0,0);
+      transition: transform 120ms ease-out;
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-card {
+        transition: none !important;
+        transform: none !important;
+      }
     }
 
     .hero-card::before { content: none; }
@@ -480,20 +493,20 @@
     /* ✅ FIX: remove the CSS seam line */
     .hero-app-shot {
       border-radius: 24px;
-      overflow: hidden;                 /* clips any subpixel edge */
-      border: none;                      /* removes 1px border that can look like a white line */
-      background: transparent;           /* avoid background seam */
-      padding: 0;                        /* removes inner gap that can reveal edges */
+      overflow: hidden;
+      border: none;
+      background: transparent;
+      padding: 0;
       box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
     }
 
     .hero-app-shot img {
       width: 100%;
       height: auto;
-      display: block;                    /* removes inline-image baseline gap */
-      border-radius: 24px;               /* match container so no corner halo */
+      display: block;
+      border-radius: 24px;
       filter: saturate(0.98) contrast(0.98) brightness(1.01);
-      transform: translateZ(0);          /* helps some browsers avoid seams */
+      transform: translateZ(0);
     }
 
     .hero-visual-caption {
@@ -716,7 +729,7 @@
     </div>
   </div>
 
-  <!-- Formspree submit + redirect to success page -->
+  <!-- Formspree submit + redirect to success page + subtle scroll animation -->
   <script>
     // allow /?focus=waitlist to focus email field
     (function () {
@@ -751,6 +764,54 @@
         window.location.href = "https://www.trytesorin.com/success.html";
       });
     });
+
+    // --- Subtle scroll-based micro motion for the hero phone card ---
+    (function () {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (reduceMotion.matches) return;
+
+      const card = document.querySelector(".hero-card");
+      if (!card) return;
+
+      let rafId = null;
+
+      function clamp(n, min, max) {
+        return Math.max(min, Math.min(max, n));
+      }
+
+      function animate() {
+        rafId = null;
+
+        const rect = card.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+
+        const center = rect.top + rect.height * 0.5;
+        const t = 1 - (center / vh);
+        const p = clamp((t + 0.15) / 0.9, 0, 1);
+
+        // very subtle ranges
+        const translateY = (p - 0.5) * -10; // +/- 5px
+        const rotateX = (p - 0.5) * 1.8;    // +/- 0.9deg
+        const rotateY = (p - 0.5) * -1.8;   // +/- 0.9deg
+
+        card.style.transform =
+          `perspective(1100px) translate3d(0, ${translateY.toFixed(2)}px, 0) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+
+        // tiny shadow breathing
+        const shadowA = 0.14 + p * 0.045; // 0.14..0.185
+        card.style.boxShadow = `0 28px 70px rgba(15, 23, 42, ${shadowA.toFixed(3)})`;
+      }
+
+      function onScrollOrResize() {
+        if (rafId) return;
+        rafId = requestAnimationFrame(animate);
+      }
+
+      window.addEventListener("scroll", onScrollOrResize, { passive: true });
+      window.addEventListener("resize", onScrollOrResize);
+
+      onScrollOrResize();
+    })();
   </script>
 </body>
 </html>
