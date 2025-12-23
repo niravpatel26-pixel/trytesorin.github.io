@@ -46,16 +46,12 @@
       --radius-xl: 22px;
       --radius-lg: 18px;
       --radius-pill: 999px;
-      --max-width: 900px; /* a bit narrower for reading */
+      --max-width: 1120px; /* ✅ match home/about container width */
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-display: "Playfair Display", "Times New Roman", serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: var(--font-sans);
@@ -70,19 +66,20 @@
       flex-direction: column;
     }
 
+    /* ✅ match home/about */
     .shell {
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 32px 16px 72px;
+      padding: 32px 16px 80px;
     }
 
-    /* HEADER */
+    /* HEADER (✅ match home/about) */
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: 32px;
+      padding: 8px 0 28px;
     }
 
     .brand-link {
@@ -136,10 +133,11 @@
       color: var(--text-soft);
     }
 
+    /* ✅ match home/about nav spacing */
     nav {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 22px;
       font-size: 13px;
       color: var(--text-soft);
     }
@@ -150,51 +148,81 @@
       padding: 4px 0;
     }
 
-    nav a:hover {
-      color: #111827;
-    }
-
     nav a.active {
       font-weight: 500;
       color: #111827;
       border-bottom: 1px solid rgba(148, 163, 184, 0.6);
     }
 
-    .nav-cta {
-      display: none;
+    nav a.highlight {
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 12px;
     }
 
-    /* HERO AREA */
-    .hero-header {
-      margin-bottom: 40px;
+    .nav-cta { display: none; }
+
+    /* HERO (✅ align with about's single-column max widths) */
+    .hero {
+      padding-top: 24px;
+      padding-bottom: 8px;
+      max-width: 720px;
     }
 
-    .hero-kicker {
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(255, 255, 255, 0.9);
       font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
       color: var(--text-soft);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .hero-label span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(30px, 4vw, 40px);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      margin-bottom: 14px;
+      font-size: clamp(30px, 4vw, 36px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 10px;
     }
 
     .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
+      font-size: 15px;
       line-height: 1.7;
-      max-width: 620px;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+      max-width: 640px;
     }
 
-    /* SECTION LAYOUT */
+    .hero-note {
+      font-size: 11px;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .hero-note strong {
+      color: #111827;
+      font-weight: 500;
+    }
+
+    /* SECTIONS (✅ match about) */
     .section {
       margin-top: 40px;
+      max-width: 820px;
     }
 
     .section-header {
@@ -238,9 +266,7 @@
       overflow: hidden;
     }
 
-    .accordion-header {
-      margin: 0;
-    }
+    .accordion-header { margin: 0; }
 
     .accordion-trigger {
       width: 100%;
@@ -299,9 +325,7 @@
       padding-left: 18px;
     }
 
-    .accordion-body li {
-      margin-bottom: 4px;
-    }
+    .accordion-body li { margin-bottom: 4px; }
 
     /* SUMMARY CARD */
     .summary-card {
@@ -320,6 +344,8 @@
       font-weight: 500;
       margin-bottom: 8px;
       color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
     .summary-block {
@@ -355,6 +381,7 @@
       gap: 10px;
       font-size: 13px;
       color: var(--text-soft);
+      max-width: 820px;
     }
 
     .cta-strip .highlight {
@@ -392,31 +419,24 @@
       filter: brightness(1.03);
     }
 
-    .cta-btn:hover span.arrow {
-      transform: translateX(3px);
-    }
+    .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FOOTER */
+    /* FOOTER (✅ match home/about) */
     footer {
+      border-top: 1px solid var(--border-subtle);
       margin-top: 40px;
       padding-top: 18px;
-      border-top: 1px solid var(--border-subtle);
       font-size: 11px;
       color: var(--text-soft);
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       gap: 10px;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    footer a {
-      color: var(--text-soft);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a { color: var(--text-soft); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
     .footer-links {
       display: flex;
@@ -424,11 +444,9 @@
       flex-wrap: wrap;
     }
 
-    /* RESPONSIVE NAV */
+    /* RESPONSIVE NAV (✅ match home/about) */
     @media (max-width: 880px) {
-      nav {
-        display: none;
-      }
+      nav { display: none; }
 
       .nav-cta {
         display: inline-flex;
@@ -439,16 +457,13 @@
         font-size: 12px;
       }
 
-      header {
-        gap: 10px;
-      }
+      header { gap: 10px; }
 
-      .cta-strip {
-        align-items: flex-start;
-      }
+      .cta-strip { align-items: flex-start; }
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <div class="shell">
@@ -477,243 +492,262 @@
         </button>
       </header>
 
-      <!-- HERO INTRO -->
-      <section class="hero-header">
-        <div class="hero-kicker">HOW TESORIN WORKS</div>
-        <h1 class="hero-title">From “I should plan” to “I have a plan”.</h1>
-        <p class="hero-subtitle">
-          TESORIN stays very simple on the surface: a calm view of your money and a handful of clear next steps.
-          Underneath, it uses rules that a good planner would — prioritising safety, debt, and long-term wealth
-          in a way that fits your life.
-        </p>
-      </section>
+      <!-- HERO -->
+      <main>
+        <section class="hero">
+          <div class="hero-label">
+            <span class="dot"></span>
+            How it works · Calm planning flow
+          </div>
 
-      <!-- THREE STEPS – ACCORDION -->
-      <section class="section" id="steps">
-        <div class="section-header">
-          <div class="section-kicker">Three calm steps</div>
-          <h2 class="section-title">How TESORIN builds your plan with you.</h2>
-          <p class="section-subtitle">
-            In practice, using TESORIN feels like answering a few careful questions and getting back a path you can
-            actually follow month by month.
-          </p>
-        </div>
+          <h1 class="hero-title">
+            How TESORIN helps you take the next right step with money.
+          </h1>
 
-        <div class="accordion" role="list">
-          <!-- Step 1 -->
-          <article class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-trigger"
-                type="button"
-                aria-expanded="false"
-              >
-                <span class="accordion-title-wrap">
-                  <span class="accordion-eyebrow">Step one</span>
-                  <span class="accordion-title">Map where you stand today.</span>
-                </span>
-                <span class="accordion-icon" aria-hidden="true">▾</span>
-              </button>
-            </h2>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                You give TESORIN a lightweight picture of your current money:
-                <ul>
-                  <li>Monthly income (after tax, roughly is fine).</li>
-                  <li>Core spending and fixed obligations.</li>
-                  <li>Any savings, debt, or investments you already have.</li>
-                </ul>
-                No spreadsheets, no bank-connection required at the start. Just enough detail to be honest with yourself.
-              </div>
-            </div>
-          </article>
-
-          <!-- Step 2 -->
-          <article class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-trigger"
-                type="button"
-                aria-expanded="false"
-              >
-                <span class="accordion-title-wrap">
-                  <span class="accordion-eyebrow">Step two</span>
-                  <span class="accordion-title">Define what “ahead” looks like for you.</span>
-                </span>
-                <span class="accordion-icon" aria-hidden="true">▾</span>
-              </button>
-            </h2>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                Instead of asking “how much money do you want?”, TESORIN helps you set a few grounded milestones:
-                <ul>
-                  <li>A safety buffer or emergency fund that lets you breathe.</li>
-                  <li>Debt comfort targets (what you want to pay off, and by when).</li>
-                  <li>Long-term “freedom” numbers — for future choices, not just retirement.</li>
-                </ul>
-                You choose what matters; TESORIN organises it into a simple priority stack.
-              </div>
-            </div>
-          </article>
-
-          <!-- Step 3 -->
-          <article class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-trigger"
-                type="button"
-                aria-expanded="false"
-              >
-                <span class="accordion-title-wrap">
-                  <span class="accordion-eyebrow">Step three</span>
-                  <span class="accordion-title">Turn it into a calm monthly path.</span>
-                </span>
-                <span class="accordion-icon" aria-hidden="true">▾</span>
-              </button>
-            </h2>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                TESORIN translates everything into amounts you can act on:
-                <ul>
-                  <li>How much to keep as “breathing room” each month.</li>
-                  <li>How much to direct to safety, debt, and longer-term investing.</li>
-                  <li>How your numbers might evolve over the next few years.</li>
-                </ul>
-                The output is not a trading screen — it’s a plan you can actually stick to, even with small starts.
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Summary card -->
-        <aside class="summary-card">
-          <div class="summary-title">In plain language:</div>
-          <p>
-            TESORIN behaves like a friendly planner who isn’t trying to sell you anything.
-            It asks a few careful questions, shows you one clear picture, and then keeps nudging
-            you towards better decisions — at your pace.
+          <p class="hero-subtitle">
+            A simple planning flow that turns your income and goals into clear monthly actions —
+            without spreadsheets, pressure, or market noise.
           </p>
 
-          <div class="summary-block">
-            <div class="summary-block-title">What you bring</div>
-            <p>
-              A rough but honest snapshot of your money, a sense of what “secure” would feel like,
-              and willingness to start small.
+          <p class="hero-note">
+            <strong>Private by default.</strong> Start without connecting a bank. No stock tips. No product pushing.
+          </p>
+        </section>
+
+        <!-- STEPS -->
+        <section class="section" id="steps">
+          <div class="section-header">
+            <div class="section-kicker">The flow</div>
+            <h2 class="section-title">A calm system, repeated month by month.</h2>
+            <p class="section-subtitle">
+              You don’t “optimize everything.” You do the next right thing, consistently — and the plan updates as your life changes.
             </p>
           </div>
 
-          <div class="summary-block">
-            <div class="summary-block-title">What TESORIN brings</div>
-            <p>
-              A simple rules-based engine that prioritises safety, clarifies trade-offs,
-              and keeps your attention on the next two or three moves — not market noise.
+          <div class="accordion" role="list">
+            <!-- Step 1 -->
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Step 1</span>
+                    <span class="accordion-title">Input a simple snapshot.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  Add just enough to be honest:
+                  <ul>
+                    <li>Monthly income (rough is fine).</li>
+                    <li>Core spending and fixed commitments.</li>
+                    <li>Savings, debt, and any investments you already have.</li>
+                  </ul>
+                  You can start manually. Bank linking is not required to begin.
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 2 -->
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Step 2</span>
+                    <span class="accordion-title">Get clarity on what’s safe.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  TESORIN gives you one anchor number:
+                  <ul>
+                    <li><strong style="color:#111827;font-weight:500;">Monthly flexibility</strong> — what you can safely route to goals after essentials.</li>
+                  </ul>
+                  No guilt. No “track every coffee.” Just a clear, usable view.
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 3 -->
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Step 3</span>
+                    <span class="accordion-title">Build a plan in a calm order.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  Your money gets organized into a sensible sequence:
+                  <ul>
+                    <li>Safety first (buffers and breathing room).</li>
+                    <li>High-interest debt next.</li>
+                    <li>Long-term wealth after that.</li>
+                  </ul>
+                  This keeps the plan realistic — especially at the beginning.
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 4 -->
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Step 4</span>
+                    <span class="accordion-title">Take one or two actions this month.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  TESORIN keeps it simple:
+                  <ul>
+                    <li>One or two clear moves (not a long checklist).</li>
+                    <li>Amounts you can actually follow.</li>
+                    <li>Progress that feels steady, not dramatic.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <!-- Step 5 -->
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Step 5</span>
+                    <span class="accordion-title">Update as life changes.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  Raise, rent change, travel, family support — the plan isn’t brittle.
+                  Adjust your inputs, and TESORIN recalculates what’s safe and what’s next.
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Summary card -->
+          <aside class="summary-card">
+            <div class="summary-title">What you’ll actually see</div>
+
+            <div class="summary-block" style="margin-top:0;padding-top:0;border-top:none;">
+              <div class="summary-block-title">1) Your monthly flexibility</div>
+              <p>
+                One number that tells you what’s safe to allocate toward goals this month.
+              </p>
+            </div>
+
+            <div class="summary-block">
+              <div class="summary-block-title">2) A clear priority stack</div>
+              <p>
+                Safety → debt → long-term wealth, in a calm order that reduces regret.
+              </p>
+            </div>
+
+            <div class="summary-block">
+              <div class="summary-block-title">3) Simple progress</div>
+              <p>
+                Momentum you can feel — without turning your life into a tracking project.
+              </p>
+            </div>
+
+            <div class="summary-block">
+              <div class="summary-block-title">What TESORIN is not</div>
+              <p>
+                Not a trading screen. Not stock tips. Not product pushing. Planning comes first.
+              </p>
+            </div>
+          </aside>
+        </section>
+
+        <!-- UNDER THE HOOD -->
+        <section class="section" id="background">
+          <div class="section-header">
+            <div class="section-kicker">Under the hood</div>
+            <h2 class="section-title">Simple rules, chosen to keep you safe.</h2>
+            <p class="section-subtitle">
+              You see a calm interface. Behind it is a rules-based approach that prioritizes stability first — tuned for early-stage planners.
             </p>
           </div>
 
-          <div class="summary-block">
-            <div class="summary-block-title">What you leave with</div>
-            <p>
-              A serious, calm money plan you understand: how today’s choices support the life
-              you’re trying to build over the next 5–10 years.
-            </p>
+          <div class="accordion" role="list">
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-title">Cash-flow &amp; buffers.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  TESORIN estimates what reliably stays in your hands each month and suggests a buffer
+                  so surprise expenses don’t break the plan.
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-title">Safety before optimization.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  Before chasing returns, TESORIN nudges you to cover basics:
+                  emergency cash, high-interest debt, and near-term commitments — then long-term wealth.
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-title">Built to grow with you.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  TESORIN starts simple. As your situation grows, the ecosystem can expand into deeper planning —
+                  while keeping the same principle: user-first, calm, transparent.
+                </div>
+              </div>
+            </article>
           </div>
-        </aside>
-      </section>
+        </section>
 
-      <!-- BACKGROUND – ACCORDION -->
-      <section class="section" id="background">
-        <div class="section-header">
-          <div class="section-kicker">Under the hood</div>
-          <h2 class="section-title">What TESORIN quietly does in the background.</h2>
-          <p class="section-subtitle">
-            On screen, you see simple numbers and ranges. Behind the scenes, TESORIN uses a few core principles
-            to keep your plan sane and realistic — starting with India and Canada, and expanding from there.
-          </p>
-        </div>
-
-        <div class="accordion" role="list">
-          <!-- Cash-flow & buffers -->
-          <article class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-trigger"
-                type="button"
-                aria-expanded="false"
-              >
-                <span class="accordion-title-wrap">
-                  <span class="accordion-title">Cash-flow &amp; buffers.</span>
-                </span>
-                <span class="accordion-icon" aria-hidden="true">▾</span>
-              </button>
-            </h2>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                TESORIN looks at how much actually stays in your hands each month,
-                then suggests a buffer so surprise expenses don’t blow up your plan.
-                No “optimize every rupee/dollar” pressure — just enough structure.
-              </div>
-            </div>
-          </article>
-
-          <!-- Safety before optimisation -->
-          <article class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-trigger"
-                type="button"
-                aria-expanded="false"
-              >
-                <span class="accordion-title-wrap">
-                  <span class="accordion-title">Safety before optimization.</span>
-                </span>
-                <span class="accordion-icon" aria-hidden="true">▾</span>
-              </button>
-            </h2>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                Before chasing returns, TESORIN nudges you to cover basics: emergency cash,
-                high-interest debt, and near-term commitments. Only then does it point you toward
-                longer-term investing conversations.
-              </div>
-            </div>
-          </article>
-
-          <!-- Built to extend, not trap -->
-          <article class="accordion-item">
-            <h2 class="accordion-header">
-              <button
-                class="accordion-trigger"
-                type="button"
-                aria-expanded="false"
-              >
-                <span class="accordion-title-wrap">
-                  <span class="accordion-title">Built to extend, not trap.</span>
-                </span>
-                <span class="accordion-icon" aria-hidden="true">▾</span>
-              </button>
-            </h2>
-            <div class="accordion-panel" hidden>
-              <div class="accordion-body">
-                Future phases will connect your plan to products through FINTREK and SUMMITVEST.
-                The design principle stays the same: your interests first, no hidden commissions,
-                no “product hunt” inside the app.
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CTA STRIP -->
-      <section class="cta-strip">
-        <div>
-          <span class="highlight">Ready for your own TESORIN plan?</span><br />
-          Start on the main page, add your details in a few minutes, and see what a calm money plan looks like.
-        </div>
-        <a href="/" class="cta-btn">
-          Go to main page
-          <span class="arrow">→</span>
-        </a>
-      </section>
+        <!-- CTA STRIP -->
+        <section class="cta-strip">
+          <div>
+            <span class="highlight">Want to see your monthly flexibility?</span><br />
+            Join early access on the main page and get notified when beta access opens.
+          </div>
+          <a href="/" class="cta-btn">
+            Go to main page
+            <span class="arrow">→</span>
+          </a>
+        </section>
+      </main>
 
       <!-- FOOTER -->
       <footer>
