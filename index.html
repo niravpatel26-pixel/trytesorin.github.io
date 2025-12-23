@@ -174,6 +174,13 @@
       padding: 4px 0;
     }
 
+    /* ✅ ADDED: active state (alignment parity with About/Safety/FAQ) */
+    nav a.active {
+      font-weight: 500;
+      color: #111827;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
     nav a.highlight {
       padding: 7px 14px;
       border-radius: var(--radius-pill);
@@ -357,7 +364,6 @@
       max-width: 360px;
     }
 
-    /* UPDATED: short, calm, single-line reassurance under the form */
     .trust-lines {
       font-size: 11px;
       color: var(--text-soft);
@@ -430,7 +436,6 @@
 
     .hero-app-wrap::before { content: none; }
 
-    /* Make tesorin-home-shot.png feel like it belongs (CSS-only) */
     .hero-app-shot {
       border-radius: 24px;
       overflow: hidden;
@@ -600,24 +605,20 @@
               </form>
             </div>
 
-            <!-- UPDATED: calm, non-repetitive reassurance -->
             <div class="trust-lines">
               Private by default. No stock tips. No spam.
             </div>
 
-            <!-- UPDATED: removes duplication, keeps meaning -->
             <p class="cta-note">
               We’ll email you when beta access opens, plus a few important updates.
             </p>
 
-            <!-- UPDATED: tighter phase copy (same structure, less chaos) -->
             <p class="hero-footnote">
               <strong>Phase 1 — Foundation:</strong> Build stability with clear cashflow and simple priorities.<br><br>
               <strong>Phase 2 — Growth:</strong> Turn consistency into momentum as income and assets rise.<br><br>
               <strong>Phase 3 — Stewardship:</strong> Structure wealth for the long term — strategy, protection, legacy.
             </p>
 
-            <!-- UPDATED: less repetitive, more premium -->
             <p class="hero-note">
               <strong>No jargon.</strong> No noise. Just a calm plan for your future wealth.
             </p>
