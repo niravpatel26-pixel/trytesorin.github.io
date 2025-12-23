@@ -2,11 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Safety & Trust – TESORIN | How we think about your money & data</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Learn how TESORIN is being designed with safety, calm planning, and clear boundaries in mind — including what it does, what it doesn’t do, and how we think about your data." />
 
-  <!-- Icons -->
+  <title>Safety & Trust – TESORIN | How we think about your money & data</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Learn how TESORIN is being designed with safety, calm planning, and clear boundaries in mind — including what it does, what it doesn’t do, and how we think about your data."
+  />
+
+  <link rel="canonical" href="https://www.trytesorin.com/safety.html" />
+
+  <!-- Basic OG -->
+  <meta property="og:title" content="Safety & Trust – TESORIN | How we think about your money & data" />
+  <meta
+    property="og:description"
+    content="Learn how TESORIN is being designed with safety, calm planning, and clear boundaries in mind — including what it does, what it doesn’t do, and how we think about your data."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trytesorin.com/safety.html" />
+
+  <!-- Icons (align with main site) -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
@@ -14,7 +30,10 @@
   <!-- Fonts (same as other pages) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     :root {
@@ -24,7 +43,6 @@
       --text-soft: #6b7280;
       --accent: #22c55e;
       --border-subtle: #e5e7eb;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
       --radius-xl: 22px;
       --radius-lg: 18px;
       --radius-pill: 999px;
@@ -68,7 +86,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 8px 0 28px;
-      position: relative;
+      position: relative; /* mobile menu anchor */
+      gap: 12px;
     }
 
     .brand-link {
@@ -104,6 +123,11 @@
       display: block;
     }
 
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
     .brand-name {
       font-family: var(--font-display);
       font-weight: 600;
@@ -115,11 +139,6 @@
     .brand-tagline {
       font-size: 11px;
       color: var(--text-soft);
-    }
-
-    .brand-text-wrap {
-      display: flex;
-      flex-direction: column;
     }
 
     nav {
@@ -142,7 +161,7 @@
       border-bottom: 1px solid rgba(148, 163, 184, 0.6);
     }
 
-    /* Mobile burger */
+    /* Mobile burger (match how-it-works) */
     .menu-btn {
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.6);
@@ -152,6 +171,11 @@
       cursor: pointer;
       line-height: 0;
       -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18);
     }
 
     .menu-bars {
@@ -321,85 +345,81 @@
       color: var(--text-soft);
     }
 
-    ul { padding-left: 18px; }
-    li {
-      font-size: 13px;
-      line-height: 1.7;
-      color: var(--text-soft);
-      margin-bottom: 4px;
-    }
-
     .highlight {
       color: #111827;
       font-weight: 500;
     }
 
-    /* Premium accordion (JS-driven) */
-    .acc-list { max-width: 820px; }
+    /* ACCORDION (match how-it-works) */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 820px;
+    }
 
-    .acc-item {
-      background: var(--bg-soft);
+    .accordion-item {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
+      background: #ffffff;
       overflow: hidden;
-      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out), border-color var(--d-1) var(--ease-out);
-      will-change: transform;
+      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out);
     }
 
-    .acc-item:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
-      border-color: rgba(148, 163, 184, 0.7);
-    }
+    .accordion-item:hover { box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08); }
 
-    .acc-item + .acc-item { margin-top: 10px; }
+    .accordion-header { margin: 0; }
 
-    .acc-trigger {
+    .accordion-trigger {
       width: 100%;
       padding: 12px 14px;
       border: none;
       background: transparent;
-      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      text-align: left;
+      gap: 10px;
       font: inherit;
-      color: inherit;
+      text-align: left;
+      cursor: pointer;
     }
 
-    .acc-q {
+    .accordion-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .accordion-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+    }
+
+    .accordion-title {
       font-size: 14px;
       font-weight: 500;
       color: #111827;
       line-height: 1.35;
     }
 
-    .acc-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: #9ca3af;
-      flex: 0 0 28px;
-      transition: transform var(--d-2) var(--ease-out), color var(--d-1) var(--ease-out), border-color var(--d-1) var(--ease-out);
+    .accordion-icon {
+      font-size: 14px;
+      color: var(--text-soft);
+      transform: rotate(0deg);
+      transition: transform 0.2s var(--ease-out);
     }
 
-    .acc-trigger[aria-expanded="true"] .acc-icon {
+    .accordion-trigger[aria-expanded="true"] .accordion-icon {
       transform: rotate(180deg);
-      color: #111827;
-      border-color: rgba(148, 163, 184, 0.65);
     }
 
-    .acc-panel {
+    .accordion-panel {
       padding: 0 14px 12px 14px;
       border-top: 1px solid rgba(229, 231, 235, 0.9);
-      color: var(--text-soft);
       font-size: 13px;
+      color: var(--text-soft);
       line-height: 1.7;
 
       max-height: 0;
@@ -412,9 +432,21 @@
         transform var(--d-2) var(--ease-soft);
     }
 
-    .acc-panel.is-open {
+    .accordion-panel.is-open {
       opacity: 1;
       transform: translate3d(0, 0, 0);
+    }
+
+    .accordion-body ul {
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+
+    .accordion-body li {
+      margin-bottom: 4px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-soft);
     }
 
     /* FOOTER */
@@ -440,43 +472,26 @@
       flex-wrap: wrap;
     }
 
-    /* RESPONSIVE */
-    @media (max-width: 880px) {
-      nav { display: none; }
-      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
-      header { gap: 10px; }
-      .section { margin-top: 32px; }
-    }
-
-    /* Focus ring */
-    .menu-btn:focus-visible,
-    .mobile-menu a:focus-visible,
-    nav a:focus-visible,
-    .acc-trigger:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
-      border-radius: 12px;
-    }
-
     /* ------------------------------
        TESORIN Motion System (v1)
-       Scroll reveal + stagger + reduced motion
+       Scroll reveal + hover micro-lift
     -------------------------------- */
 
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; }
-      .reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right {
+      .reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right,
+      .hover-lift, .hover-glow {
         transition: none !important;
+        animation: none !important;
         transform: none !important;
         opacity: 1 !important;
       }
-      .acc-panel {
+      .accordion-panel {
         transition: none !important;
         transform: none !important;
         opacity: 1 !important;
         max-height: none !important;
       }
-      .acc-item:hover { transform: none !important; box-shadow: none !important; }
     }
 
     .reveal{
@@ -498,6 +513,22 @@
 
     [data-stagger] .reveal{
       transition-delay: calc(var(--stagger, 0) * 1ms);
+    }
+
+    .hover-lift{
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out), filter var(--d-1) var(--ease-out);
+      will-change: transform;
+    }
+    .hover-lift:hover{ transform: translateY(-2px); filter: brightness(1.02); }
+
+    .hover-glow:hover{ box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12); }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 880px) {
+      nav { display: none; }
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
+      header { gap: 10px; }
+      .section { margin-top: 32px; }
     }
   </style>
 </head>
@@ -547,8 +578,8 @@
         </div>
       </header>
 
-      <!-- HERO -->
       <main>
+        <!-- HERO -->
         <section class="hero" data-stagger>
           <div class="hero-label reveal reveal-up">
             <span class="dot"></span>
@@ -568,7 +599,7 @@
           </p>
         </section>
 
-        <!-- ACCORDION SECTIONS -->
+        <!-- SAFETY PILLARS -->
         <section class="section">
           <div class="section-header" data-stagger>
             <div class="section-kicker reveal reveal-up">Safety pillars</div>
@@ -579,174 +610,209 @@
             </p>
           </div>
 
-          <div class="acc-list" data-stagger>
-            <!-- What TESORIN is / isn't -->
-            <article class="acc-item reveal reveal-up" id="safety-boundaries">
-              <button class="acc-trigger" type="button" aria-expanded="true" aria-controls="panel-1">
-                <span class="acc-q">What TESORIN is — and what it is not</span>
-                <span class="acc-icon" aria-hidden="true">⌄</span>
-              </button>
-              <div class="acc-panel is-open" id="panel-1" role="region">
-                <div class="acc-body">
-                  Clear boundaries are part of safety. TESORIN stays in the lane of planning and clarity,
-                  not product pushing or high-pressure sales.
-                  <br /><br />
-                  <strong>TESORIN is:</strong>
-                  <ul>
-                    <li>A planning app that helps you see income, spending, buffers, and goals in one calm view.</li>
-                    <li>A way to think through “what should I do next?” with your money, month by month.</li>
-                    <li>Beginner-friendly: built for people taking money seriously for the first time.</li>
-                  </ul>
-                  <strong>TESORIN is <span class="highlight">not</span>:</strong>
-                  <ul>
-                    <li>Not a bank or brokerage account.</li>
-                    <li>Not a place that holds your money or executes trades on your behalf.</li>
-                    <li>Not personal financial, legal, tax, or investment advice tailored to your full situation.</li>
-                    <li>Not built around commissions for selling you specific products.</li>
-                  </ul>
-                  <div class="pill-row">
-                    <span class="pill">Planning, not trading</span>
-                    <span class="pill">Clarity first, products later</span>
-                    <span class="pill">Beginner-safe defaults</span>
+          <div class="accordion" role="list" data-stagger>
+            <!-- 1 -->
+            <article class="accordion-item reveal reveal-up hover-lift" id="safety-boundaries">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="true">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Pillar</span>
+                    <span class="accordion-title">What TESORIN is — and what it is not</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel is-open">
+                <div class="accordion-body">
+                  <div class="acc-body">
+                    Clear boundaries are part of safety. TESORIN stays in the lane of planning and clarity,
+                    not product pushing or high-pressure sales.
+                    <br /><br />
+                    <strong>TESORIN is:</strong>
+                    <ul>
+                      <li>A planning app that helps you see income, spending, buffers, and goals in one calm view.</li>
+                      <li>A way to think through “what should I do next?” with your money, month by month.</li>
+                      <li>Beginner-friendly: built for people taking money seriously for the first time.</li>
+                    </ul>
+                    <strong>TESORIN is <span class="highlight">not</span>:</strong>
+                    <ul>
+                      <li>Not a bank or brokerage account.</li>
+                      <li>Not a place that holds your money or executes trades on your behalf.</li>
+                      <li>Not personal financial, legal, tax, or investment advice tailored to your full situation.</li>
+                      <li>Not built around commissions for selling you specific products.</li>
+                    </ul>
+                    <div class="pill-row">
+                      <span class="pill">Planning, not trading</span>
+                      <span class="pill">Clarity first, products later</span>
+                      <span class="pill">Beginner-safe defaults</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </article>
 
-            <!-- Money handling -->
-            <article class="acc-item reveal reveal-up" id="safety-money">
-              <button class="acc-trigger" type="button" aria-expanded="false" aria-controls="panel-2">
-                <span class="acc-q">How your money is handled</span>
-                <span class="acc-icon" aria-hidden="true">⌄</span>
-              </button>
-              <div class="acc-panel" id="panel-2" role="region">
-                <div class="acc-body">
-                  TESORIN starts from a conservative place: your actual money stays with your existing banks
-                  and investment platforms. TESORIN helps you plan around those accounts, not replace them.
-                  <ul>
-                    <li>
-                      <span class="highlight">No custody of your funds.</span><br />
-                      TESORIN does not hold your money. Your cash and investments remain with your bank,
-                      broker, or other providers you already use.
-                    </li>
-                    <li>
-                      <span class="highlight">No “hidden” transactions.</span><br />
-                      TESORIN does not move money for you in the background. Any transfers or investments
-                      you make are done through your own bank or broker.
-                    </li>
-                    <li>
-                      <span class="highlight">Future integrations will be cautious.</span><br />
-                      When TESORIN eventually connects with third-party financial services, the goal is to
-                      work only with regulated providers and to explain clearly what each integration does.
-                    </li>
-                    <li>
-                      <span class="highlight">You stay in control.</span><br />
-                      You choose which accounts to connect (if any), what to act on, and when. TESORIN’s role
-                      is to make the choices clearer, not to decide for you.
-                    </li>
-                  </ul>
+            <!-- 2 -->
+            <article class="accordion-item reveal reveal-up hover-lift" id="safety-money">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Pillar</span>
+                    <span class="accordion-title">How your money is handled</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  <div class="acc-body">
+                    TESORIN starts from a conservative place: your actual money stays with your existing banks
+                    and investment platforms. TESORIN helps you plan around those accounts, not replace them.
+                    <ul>
+                      <li>
+                        <span class="highlight">No custody of your funds.</span><br />
+                        TESORIN does not hold your money. Your cash and investments remain with your bank,
+                        broker, or other providers you already use.
+                      </li>
+                      <li>
+                        <span class="highlight">No “hidden” transactions.</span><br />
+                        TESORIN does not move money for you in the background. Any transfers or investments
+                        you make are done through your own bank or broker.
+                      </li>
+                      <li>
+                        <span class="highlight">Future integrations will be cautious.</span><br />
+                        When TESORIN eventually connects with third-party financial services, the goal is to
+                        work only with regulated providers and to explain clearly what each integration does.
+                      </li>
+                      <li>
+                        <span class="highlight">You stay in control.</span><br />
+                        You choose which accounts to connect (if any), what to act on, and when. TESORIN’s role
+                        is to make the choices clearer, not to decide for you.
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <!-- Data & privacy -->
-            <article class="acc-item reveal reveal-up" id="safety-data">
-              <button class="acc-trigger" type="button" aria-expanded="false" aria-controls="panel-3">
-                <span class="acc-q">How we think about your data</span>
-                <span class="acc-icon" aria-hidden="true">⌄</span>
-              </button>
-              <div class="acc-panel" id="panel-3" role="region">
-                <div class="acc-body">
-                  Good planning requires honest numbers. That only works if you can trust how your information is handled.
-                  <ul>
-                    <li>
-                      <span class="highlight">Collect only what’s needed.</span><br />
-                      TESORIN is being designed to work with simple, high-level inputs: income ranges, rough spending,
-                      debts, and goals — not endless forms or unnecessary personal details.
-                    </li>
-                    <li>
-                      <span class="highlight">Respect by default.</span><br />
-                      The intention is to use secure channels (like HTTPS) and reputable infrastructure to store data,
-                      with access limited to what’s required to run the product.
-                    </li>
-                    <li>
-                      <span class="highlight">No silent selling of identifiable data.</span><br />
-                      TESORIN is not being built around selling personally identifiable financial data to third parties.
-                    </li>
-                    <li>
-                      <span class="highlight">Clear policies as the product matures.</span><br />
-                      As TESORIN gets closer to launch, you’ll see a plain-language privacy policy and terms of use that
-                      explain what happens with your data in detail — no dark patterns, no buried surprises.
-                    </li>
-                  </ul>
+            <!-- 3 -->
+            <article class="accordion-item reveal reveal-up hover-lift" id="safety-data">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Pillar</span>
+                    <span class="accordion-title">How we think about your data</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  <div class="acc-body">
+                    Good planning requires honest numbers. That only works if you can trust how your information is handled.
+                    <ul>
+                      <li>
+                        <span class="highlight">Collect only what’s needed.</span><br />
+                        TESORIN is being designed to work with simple, high-level inputs: income ranges, rough spending,
+                        debts, and goals — not endless forms or unnecessary personal details.
+                      </li>
+                      <li>
+                        <span class="highlight">Respect by default.</span><br />
+                        The intention is to use secure channels (like HTTPS) and reputable infrastructure to store data,
+                        with access limited to what’s required to run the product.
+                      </li>
+                      <li>
+                        <span class="highlight">No silent selling of identifiable data.</span><br />
+                        TESORIN is not being built around selling personally identifiable financial data to third parties.
+                      </li>
+                      <li>
+                        <span class="highlight">Clear policies as the product matures.</span><br />
+                        As TESORIN gets closer to launch, you’ll see a plain-language privacy policy and terms of use that
+                        explain what happens with your data in detail — no dark patterns, no buried surprises.
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <!-- Disclaimers -->
-            <article class="acc-item reveal reveal-up" id="safety-limits">
-              <button class="acc-trigger" type="button" aria-expanded="false" aria-controls="panel-4">
-                <span class="acc-q">What TESORIN cannot promise</span>
-                <span class="acc-icon" aria-hidden="true">⌄</span>
-              </button>
-              <div class="acc-panel" id="panel-4" role="region">
-                <div class="acc-body">
-                  Honest tools need honest disclaimers. These are limits you should keep in mind while using TESORIN.
-                  <ul>
-                    <li>
-                      <span class="highlight">Not financial advice.</span><br />
-                      TESORIN gives general planning frameworks and educational guidance. It does not know your entire
-                      situation, your risk tolerance, or your legal/tax constraints.
-                    </li>
-                    <li>
-                      <span class="highlight">No guarantees.</span><br />
-                      All projections, charts, and scenarios are estimates, not promises. Markets, laws, and your own life
-                      can change in ways nobody can fully predict.
-                    </li>
-                    <li>
-                      <span class="highlight">You remain responsible for decisions.</span><br />
-                      TESORIN can help you think more clearly, but decisions are always yours. When in doubt, speaking with
-                      a qualified human professional in your region is important.
-                    </li>
-                    <li>
-                      <span class="highlight">Not a substitute for regulation.</span><br />
-                      TESORIN is a planning layer on top of existing regulated financial systems. It is not itself a bank,
-                      broker, or regulated investment firm.
-                    </li>
-                  </ul>
+            <!-- 4 -->
+            <article class="accordion-item reveal reveal-up hover-lift" id="safety-limits">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Pillar</span>
+                    <span class="accordion-title">What TESORIN cannot promise</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  <div class="acc-body">
+                    Honest tools need honest disclaimers. These are limits you should keep in mind while using TESORIN.
+                    <ul>
+                      <li>
+                        <span class="highlight">Not financial advice.</span><br />
+                        TESORIN gives general planning frameworks and educational guidance. It does not know your entire
+                        situation, your risk tolerance, or your legal/tax constraints.
+                      </li>
+                      <li>
+                        <span class="highlight">No guarantees.</span><br />
+                        All projections, charts, and scenarios are estimates, not promises. Markets, laws, and your own life
+                        can change in ways nobody can fully predict.
+                      </li>
+                      <li>
+                        <span class="highlight">You remain responsible for decisions.</span><br />
+                        TESORIN can help you think more clearly, but decisions are always yours. When in doubt, speaking with
+                        a qualified human professional in your region is important.
+                      </li>
+                      <li>
+                        <span class="highlight">Not a substitute for regulation.</span><br />
+                        TESORIN is a planning layer on top of existing regulated financial systems. It is not itself a bank,
+                        broker, or regulated investment firm.
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <!-- Staying safe online -->
-            <article class="acc-item reveal reveal-up" id="safety-online">
-              <button class="acc-trigger" type="button" aria-expanded="false" aria-controls="panel-5">
-                <span class="acc-q">If something doesn’t feel right</span>
-                <span class="acc-icon" aria-hidden="true">⌄</span>
-              </button>
-              <div class="acc-panel" id="panel-5" role="region">
-                <div class="acc-body">
-                  A big part of safety is knowing what <em>not</em> to trust. A few quick rules:
-                  <ul>
-                    <li>
-                      <span class="highlight">Check the URL.</span><br />
-                      Official TESORIN pages will use the <code>trytesorin.com</code> domain (or clearly announced domains).
-                    </li>
-                    <li>
-                      <span class="highlight">Be careful with links.</span><br />
-                      Don’t log in or share sensitive information from links that look suspicious or come from people
-                      you don’t know.
-                    </li>
-                    <li>
-                      <span class="highlight">Never share one-time codes.</span><br />
-                      No one legitimate needs your bank OTP or full card details to “help” you use a planning app.
-                    </li>
-                    <li>
-                      <span class="highlight">Ask questions.</span><br />
-                      If any message or feature that claims to be from TESORIN doesn’t match what you see on the official
-                      site, treat it with caution and verify first.
-                    </li>
-                  </ul>
+            <!-- 5 -->
+            <article class="accordion-item reveal reveal-up hover-lift" id="safety-online">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">Pillar</span>
+                    <span class="accordion-title">If something doesn’t feel right</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  <div class="acc-body">
+                    A big part of safety is knowing what <em>not</em> to trust. A few quick rules:
+                    <ul>
+                      <li>
+                        <span class="highlight">Check the URL.</span><br />
+                        Official TESORIN pages will use the <code>trytesorin.com</code> domain (or clearly announced domains).
+                      </li>
+                      <li>
+                        <span class="highlight">Be careful with links.</span><br />
+                        Don’t log in or share sensitive information from links that look suspicious or come from people
+                        you don’t know.
+                      </li>
+                      <li>
+                        <span class="highlight">Never share one-time codes.</span><br />
+                        No one legitimate needs your bank OTP or full card details to “help” you use a planning app.
+                      </li>
+                      <li>
+                        <span class="highlight">Ask questions.</span><br />
+                        If any message or feature that claims to be from TESORIN doesn’t match what you see on the official
+                        site, treat it with caution and verify first.
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </article>
@@ -771,134 +837,122 @@
   </div>
 
   <script>
-    // ------------------------------
-    // Mobile burger menu (sitewide pattern)
-    // ------------------------------
-    (function () {
-      const btn = document.querySelector(".menu-btn");
-      const menu = document.getElementById("mobile-menu");
-      if (!btn || !menu) return;
+    document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu behavior (match how-it-works)
+      (function () {
+        const btn = document.querySelector(".menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        if (!btn || !menu) return;
 
-      function closeMenu() {
-        btn.setAttribute("aria-expanded", "false");
-        menu.hidden = true;
-      }
-
-      btn.addEventListener("click", () => {
-        const open = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", open ? "false" : "true");
-        menu.hidden = open;
-      });
-
-      document.addEventListener("click", (e) => {
-        if (menu.hidden) return;
-        const within = menu.contains(e.target) || btn.contains(e.target);
-        if (!within) closeMenu();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-      });
-    })();
-
-    // ------------------------------
-    // Premium accordion (Safety)
-    // - smooth height + fade
-    // - deep link support via #safety-...
-    // - closes others when opening one
-    // ------------------------------
-    (function () {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const triggers = Array.from(document.querySelectorAll(".acc-trigger"));
-
-      function setPanelState(btn, panel, open) {
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-
-        if (reduceMotion.matches) {
-          panel.style.maxHeight = open ? "none" : "0px";
-          panel.style.opacity = open ? "1" : "0";
-          panel.style.transform = open ? "none" : "translate3d(0,-4px,0)";
-          panel.classList.toggle("is-open", open);
-          return;
+        function closeMenu() {
+          btn.setAttribute("aria-expanded", "false");
+          menu.hidden = true;
         }
 
-        if (open) {
-          panel.classList.add("is-open");
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } else {
-          panel.classList.remove("is-open");
-          panel.style.maxHeight = "0px";
-        }
-      }
+        btn.addEventListener("click", () => {
+          const open = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", open ? "false" : "true");
+          menu.hidden = open;
+        });
 
-      function closeAll(exceptIndex = -1) {
-        triggers.forEach((btn, i) => {
-          if (i === exceptIndex) return;
-          const panel = document.getElementById(btn.getAttribute("aria-controls"));
-          if (!panel) return;
-          setPanelState(btn, panel, false);
+        document.addEventListener("click", (e) => {
+          if (menu.hidden) return;
+          const within = menu.contains(e.target) || btn.contains(e.target);
+          if (!within) closeMenu();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMenu();
+        });
+      })();
+
+      // Accordion behavior (bulletproof selection)
+      const triggers = document.querySelectorAll(".accordion-trigger");
+
+      function closeAll() {
+        triggers.forEach((btn) => {
+          const item = btn.closest(".accordion-item");
+          const panel = item ? item.querySelector(".accordion-panel") : null;
+          btn.setAttribute("aria-expanded", "false");
+          if (panel) {
+            panel.hidden = true;
+            panel.classList.remove("is-open");
+            panel.style.maxHeight = "0px";
+          }
         });
       }
 
-      // init
-      triggers.forEach((btn, i) => {
-        const panel = document.getElementById(btn.getAttribute("aria-controls"));
+      function openPanel(btn, panel) {
+        btn.setAttribute("aria-expanded", "true");
+        panel.hidden = false;
+        requestAnimationFrame(() => {
+          panel.classList.add("is-open");
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        });
+      }
+
+      function closePanel(btn, panel) {
+        btn.setAttribute("aria-expanded", "false");
+        panel.classList.remove("is-open");
+        panel.style.maxHeight = "0px";
+        const onEnd = (e) => {
+          if (e.propertyName !== "max-height") return;
+          panel.hidden = true;
+          panel.removeEventListener("transitionend", onEnd);
+        };
+        panel.addEventListener("transitionend", onEnd);
+      }
+
+      // Init + click handlers
+      triggers.forEach((btn) => {
+        const item = btn.closest(".accordion-item");
+        const panel = item ? item.querySelector(".accordion-panel") : null;
         if (!panel) return;
 
         const startOpen = btn.getAttribute("aria-expanded") === "true";
-        panel.style.maxHeight = "0px";
-        panel.style.opacity = "0";
-        panel.style.transform = "translate3d(0,-4px,0)";
-        setPanelState(btn, panel, startOpen);
+        if (!startOpen) {
+          panel.hidden = true;
+          panel.classList.remove("is-open");
+          panel.style.maxHeight = "0px";
+        } else {
+          panel.hidden = false;
+          panel.classList.add("is-open");
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
 
         btn.addEventListener("click", () => {
           const isOpen = btn.getAttribute("aria-expanded") === "true";
           if (isOpen) {
-            setPanelState(btn, panel, false);
+            closePanel(btn, panel);
           } else {
-            closeAll(i);
-            setPanelState(btn, panel, true);
-            const parent = btn.closest(".acc-item");
+            closeAll();
+            openPanel(btn, panel);
+            const parent = btn.closest(".accordion-item");
             if (parent && parent.id) history.replaceState(null, "", "#" + parent.id);
           }
         });
       });
 
-      // deep link
+      // Deep link support via #safety-...
       function openFromHash() {
         const id = (location.hash || "").replace("#", "");
         if (!id) return;
         const target = document.getElementById(id);
         if (!target) return;
-        const btn = target.querySelector(".acc-trigger");
+        const btn = target.querySelector(".accordion-trigger");
         if (!btn) return;
-        btn.click();
-        if (!reduceMotion.matches) {
-          setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
-        } else {
-          target.scrollIntoView();
-        }
+
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        if (!isOpen) btn.click();
+
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+        }, 60);
       }
       window.addEventListener("hashchange", openFromHash);
       setTimeout(openFromHash, 0);
 
-      // resize: keep open panels correct
-      window.addEventListener("resize", () => {
-        triggers.forEach((btn) => {
-          if (btn.getAttribute("aria-expanded") !== "true") return;
-          const panel = document.getElementById(btn.getAttribute("aria-controls"));
-          if (!panel) return;
-          if (reduceMotion.matches) return;
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        });
-      });
-    })();
-
-    // ------------------------------
-    // TESORIN Motion System (v1)
-    // Scroll reveal + optional staggering
-    // ------------------------------
-    (function () {
+      // Scroll reveal + optional staggering (match how-it-works)
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       if (reduceMotion.matches) {
         document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
@@ -907,12 +961,12 @@
 
       document.querySelectorAll("[data-stagger]").forEach((wrap) => {
         const children = wrap.querySelectorAll(".reveal");
-        children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
+        children.forEach((el, i) => {
+          el.style.setProperty("--stagger", String(i * 70));
+        });
       });
 
       const els = document.querySelectorAll(".reveal");
-      if (!els.length) return;
-
       const io = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
@@ -922,7 +976,18 @@
       }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
 
       els.forEach(el => io.observe(el));
-    })();
+
+      // Resize fix for open panels (keeps height correct)
+      window.addEventListener("resize", () => {
+        triggers.forEach((btn) => {
+          if (btn.getAttribute("aria-expanded") !== "true") return;
+          const item = btn.closest(".accordion-item");
+          const panel = item ? item.querySelector(".accordion-panel") : null;
+          if (!panel) return;
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        });
+      });
+    });
   </script>
 </body>
 </html>
