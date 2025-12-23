@@ -174,7 +174,6 @@
       padding: 4px 0;
     }
 
-    /* ✅ ADDED: active state (alignment parity with About/Safety/FAQ) */
     nav a.active {
       font-weight: 500;
       color: #111827;
@@ -235,7 +234,43 @@
       line-height: 1.7;
       color: var(--text-soft);
       max-width: 480px;
+      margin-bottom: 10px; /* updated to make room for link row */
+    }
+
+    /* ✅ NEW: subtle clarity link row under subtitle */
+    .hero-clarity-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
       margin-bottom: 14px;
+      max-width: 520px;
+    }
+
+    .clarity-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(249, 250, 251, 0.9);
+      font-size: 11px;
+      color: var(--text-soft);
+      text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+
+    .clarity-link:hover{
+      transform: translateY(-1px);
+      border-color: rgba(34, 197, 94, 0.45);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+      text-decoration:none;
+    }
+
+    .clarity-link .dot{
+      width: 6px; height: 6px; border-radius: 999px;
+      background: rgba(34, 197, 94, 0.9);
     }
 
     .hero-bullets {
@@ -382,6 +417,20 @@
     .hero-footnote strong {
       font-weight: 600;
       color: #111827;
+    }
+
+    /* ✅ NEW: "Not a budgeting app" line with link */
+    .category-line{
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--text-soft);
+      max-width: 520px;
+      line-height: 1.6;
+    }
+    .category-line a{
+      color: #111827;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     /* HERO VISUAL */
@@ -572,6 +621,18 @@
               Start simple. See your priorities clearly. Take the next right action each month.
             </p>
 
+            <!-- ✅ NEW: subtle “category clarity” links -->
+            <div class="hero-clarity-row" aria-label="Category clarity links">
+              <a class="clarity-link" href="/personal-finance-planning-app.html">
+                <span class="dot" aria-hidden="true"></span>
+                What is a planning app?
+              </a>
+              <a class="clarity-link" href="/personal-finance-planning-app.html#ladder">
+                <span class="dot" aria-hidden="true"></span>
+                TESORIN → Fintrek → SummitVest
+              </a>
+            </div>
+
             <ul class="hero-bullets" aria-label="What TESORIN does">
               <li>
                 <span class="bullet-dot" aria-hidden="true"></span>
@@ -613,6 +674,12 @@
               We’ll email you when beta access opens, plus a few important updates.
             </p>
 
+            <!-- ✅ NEW: category line to funnel curious visitors -->
+            <p class="category-line">
+              Not a budgeting tracker. Not a trading app.
+              <a href="/personal-finance-planning-app.html">See how planning-first works →</a>
+            </p>
+
             <p class="hero-footnote">
               <strong>Phase 1 — Foundation:</strong> Build stability with clear cashflow and simple priorities.<br><br>
               <strong>Phase 2 — Growth:</strong> Turn consistency into momentum as income and assets rise.<br><br>
@@ -651,6 +718,8 @@
           <a href="/about.html">About</a>
           <a href="/safety.html">Safety</a>
           <a href="/faq.html">FAQs</a>
+          <!-- ✅ NEW: soft link (SEO + user clarity) -->
+          <a href="/personal-finance-planning-app.html">Planning app</a>
         </div>
       </footer>
     </div>
@@ -658,6 +727,17 @@
 
   <!-- Formspree submit + redirect to success page -->
   <script>
+    // ✅ NEW: allow /?focus=waitlist to focus email field (used by other page mobile CTA)
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("focus") === "waitlist") {
+        setTimeout(() => {
+          const el = document.getElementById("waitlist-form-email");
+          if (el) el.focus();
+        }, 50);
+      }
+    })();
+
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("waitlist-form");
       if (!form) return;
