@@ -86,6 +86,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 8px 0 28px;
+      position: relative; /* mobile menu anchor */
     }
 
     .brand-link {
@@ -166,7 +167,85 @@
       font-size: 12px;
     }
 
-    .nav-cta { display: none; }
+    /* Mobile burger */
+    .menu-btn {
+      display: none;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(255, 255, 255, 0.92);
+      padding: 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      line-height: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18);
+    }
+
+    .menu-bars {
+      width: 18px;
+      height: 2px;
+      background: #111827;
+      display: block;
+      position: relative;
+      border-radius: 2px;
+    }
+
+    .menu-bars::before,
+    .menu-bars::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 18px;
+      height: 2px;
+      background: #111827;
+      border-radius: 2px;
+    }
+    .menu-bars::before { top: -6px; }
+    .menu-bars::after { top: 6px; }
+
+    .mobile-menu {
+      position: absolute;
+      right: 0;
+      top: 58px;
+      width: min(360px, calc(100vw - 32px));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+      overflow: hidden;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .mobile-menu-inner {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 4px;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: #111827;
+      font-size: 13px;
+      padding: 10px 10px;
+      border-radius: 12px;
+    }
+
+    .mobile-menu a:hover { background: #f3f4f6; }
+
+    .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
+
+    .mobile-menu .mobile-cta {
+      margin-top: 6px;
+      background: #111827;
+      color: #ffffff;
+      text-align: center;
+    }
+    .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
     /* HERO */
     .hero {
@@ -269,7 +348,10 @@
       border: 1px solid var(--border-subtle);
       background: #ffffff;
       overflow: hidden;
+      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out);
     }
+
+    .accordion-item:hover { box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08); }
 
     .accordion-header { margin: 0; }
 
@@ -464,24 +546,6 @@
       flex-wrap: wrap;
     }
 
-    /* RESPONSIVE NAV */
-    @media (max-width: 880px) {
-      nav { display: none; }
-
-      .nav-cta {
-        display: inline-flex;
-        padding: 7px 14px;
-        border-radius: var(--radius-pill);
-        border: 1px solid rgba(148, 163, 184, 0.6);
-        background: rgba(255, 255, 255, 0.9);
-        font-size: 12px;
-      }
-
-      header { gap: 10px; }
-
-      .cta-strip { align-items: flex-start; }
-    }
-
     /* ------------------------------
        TESORIN Motion System (v1)
        Scroll reveal + hover micro-lift
@@ -533,9 +597,13 @@
 
     .hover-glow:hover{ box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12); }
 
-    /* Apply hover polish */
-    .accordion-item { transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out); }
-    .accordion-item:hover { box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08); }
+    /* RESPONSIVE NAV */
+    @media (max-width: 880px) {
+      nav { display: none; }
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
+      header { gap: 10px; }
+      .cta-strip { align-items: flex-start; }
+    }
   </style>
 </head>
 
@@ -555,6 +623,7 @@
             </div>
           </div>
         </a>
+
         <nav>
           <a href="/how-it-works.html" class="active">How it works</a>
           <a href="/features.html">Features</a>
@@ -562,9 +631,24 @@
           <a href="/safety.html">Safety</a>
           <a href="/faq.html">FAQs</a>
         </nav>
-        <button class="nav-cta" type="button" onclick="window.location.href='/'">
-          Back to homepage
+
+        <!-- Mobile burger -->
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="menu-bars" aria-hidden="true"></span>
         </button>
+
+        <!-- Mobile dropdown -->
+        <div id="mobile-menu" class="mobile-menu" hidden>
+          <div class="mobile-menu-inner">
+            <a class="active" href="/how-it-works.html">How it works</a>
+            <a href="/features.html">Features</a>
+            <a href="/about.html">About</a>
+            <a href="/safety.html">Safety</a>
+            <a href="/faq.html">FAQs</a>
+            <a href="/personal-finance-planning-app.html">Planning app</a>
+            <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+          </div>
+        </div>
       </header>
 
       <!-- HERO -->
@@ -833,7 +917,6 @@
           <a href="/about.html">About</a>
           <a href="/safety.html">Safety</a>
           <a href="/faq.html">FAQs</a>
-          <!-- ✅ include the SEO/intent page sitewide -->
           <a href="/personal-finance-planning-app.html">Planning app</a>
         </div>
       </footer>
@@ -842,6 +925,34 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu behavior
+      (function () {
+        const btn = document.querySelector(".menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        if (!btn || !menu) return;
+
+        function closeMenu() {
+          btn.setAttribute("aria-expanded", "false");
+          menu.hidden = true;
+        }
+
+        btn.addEventListener("click", () => {
+          const open = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", open ? "false" : "true");
+          menu.hidden = open;
+        });
+
+        document.addEventListener("click", (e) => {
+          if (menu.hidden) return;
+          const within = menu.contains(e.target) || btn.contains(e.target);
+          if (!within) closeMenu();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMenu();
+        });
+      })();
+
       const triggers = document.querySelectorAll(".accordion-trigger");
 
       function closeAll() {
@@ -859,7 +970,6 @@
       function openPanel(btn, panel) {
         btn.setAttribute("aria-expanded", "true");
         panel.hidden = false;
-        // wait a frame so maxHeight animates
         requestAnimationFrame(() => {
           panel.classList.add("is-open");
           panel.style.maxHeight = panel.scrollHeight + "px";
@@ -870,7 +980,6 @@
         btn.setAttribute("aria-expanded", "false");
         panel.classList.remove("is-open");
         panel.style.maxHeight = "0px";
-        // after transition, hide
         const onEnd = (e) => {
           if (e.propertyName !== "max-height") return;
           panel.hidden = true;
@@ -883,7 +992,6 @@
         const panel = btn.parentElement.nextElementSibling;
         if (!panel) return;
 
-        // init state
         panel.hidden = true;
         panel.style.maxHeight = "0px";
 
@@ -898,22 +1006,13 @@
         });
       });
 
-      // ------------------------------
-      // TESORIN Motion System (v1)
       // Scroll reveal + optional staggering
-      // ------------------------------
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       if (reduceMotion.matches) {
         document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
-        document.querySelectorAll(".accordion-panel").forEach(p => {
-          p.style.maxHeight = "none";
-          p.style.opacity = "1";
-          p.style.transform = "none";
-        });
         return;
       }
 
-      // Auto-stagger children inside containers with [data-stagger]
       document.querySelectorAll("[data-stagger]").forEach((wrap) => {
         const children = wrap.querySelectorAll(".reveal");
         children.forEach((el, i) => {
@@ -922,8 +1021,6 @@
       });
 
       const els = document.querySelectorAll(".reveal");
-      if (!els.length) return;
-
       const io = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
