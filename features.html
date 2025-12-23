@@ -13,7 +13,7 @@
 
   <link rel="canonical" href="https://www.trytesorin.com/features.html" />
 
-  <!-- OG basics (optional but good) -->
+  <!-- OG basics -->
   <meta property="og:title" content="TESORIN Features – A Calm, Serious Money Planning Surface" />
   <meta
     property="og:description"
@@ -46,12 +46,17 @@
       --radius-xl: 22px;
       --radius-lg: 18px;
       --radius-pill: 999px;
-
-      /* ✅ Match Home/About container for consistent alignment */
       --max-width: 1120px;
 
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-display: "Playfair Display", "Times New Roman", serif;
+
+      /* Motion system tokens */
+      --ease-out: cubic-bezier(.2,.8,.2,1);
+      --ease-soft: cubic-bezier(.2,.6,.2,1);
+      --d-1: 140ms;
+      --d-2: 220ms;
+      --d-3: 320ms;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,7 +74,6 @@
       flex-direction: column;
     }
 
-    /* ✅ Match Home/About shell padding */
     .shell {
       width: 100%;
       max-width: var(--max-width);
@@ -77,7 +81,7 @@
       padding: 32px 16px 80px;
     }
 
-    /* HEADER (✅ match Home/About nav spacing + rhythm) */
+    /* HEADER */
     header {
       display: flex;
       align-items: center;
@@ -139,7 +143,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 22px; /* ✅ match */
+      gap: 22px;
       font-size: 13px;
       color: var(--text-soft);
     }
@@ -148,6 +152,7 @@
       text-decoration: none;
       color: inherit;
       padding: 4px 0;
+      transition: color var(--d-1) var(--ease-out);
     }
 
     nav a:hover { color: #111827; }
@@ -160,7 +165,7 @@
 
     .nav-cta { display: none; }
 
-    /* HERO (✅ match About/How it works single-column rhythm) */
+    /* HERO */
     .hero {
       padding-top: 24px;
       padding-bottom: 8px;
@@ -215,11 +220,11 @@
       font-weight: 500;
     }
 
-    /* SECTION TITLES (keep existing sizes; just standardize spacing) */
+    /* SECTIONS */
     .feature-section {
       margin-top: 40px;
       margin-bottom: 52px;
-      max-width: 820px; /* ✅ match About/How it works content width */
+      max-width: 820px;
     }
 
     .section-title {
@@ -250,6 +255,14 @@
       font-size: 13px;
       color: var(--text-soft);
       line-height: 1.6;
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out), border-color var(--d-1) var(--ease-out);
+      will-change: transform;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(148, 163, 184, 0.7);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
 
     .feature-label {
@@ -270,7 +283,7 @@
     /* EXPERIENCE SECTION */
     .experience-section {
       margin-bottom: 52px;
-      max-width: 820px; /* ✅ align */
+      max-width: 820px;
     }
 
     .experience-layout {
@@ -301,6 +314,13 @@
       font-size: 13px;
       color: var(--text-soft);
       line-height: 1.7;
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out);
+      will-change: transform;
+    }
+
+    .coming-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
     }
 
     .coming-title {
@@ -342,7 +362,7 @@
       gap: 10px;
       font-size: 13px;
       color: var(--text-soft);
-      max-width: 820px; /* ✅ align */
+      max-width: 820px;
     }
 
     .cta-strip .highlight {
@@ -365,13 +385,13 @@
       box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35);
       text-decoration: none;
       white-space: nowrap;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), filter 0.15s var(--ease-out);
     }
 
     .cta-btn span.arrow {
       font-size: 14px;
       transform: translateX(0);
-      transition: transform 0.2s ease;
+      transition: transform 0.2s var(--ease-out);
     }
 
     .cta-btn:hover {
@@ -382,7 +402,7 @@
 
     .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FOOTER (✅ match Home/About) */
+    /* FOOTER */
     footer {
       border-top: 1px solid var(--border-subtle);
       margin-top: 40px;
@@ -424,6 +444,41 @@
 
       .experience-layout { grid-template-columns: minmax(0, 1fr); }
     }
+
+    /* ------------------------------
+       TESORIN Motion System (v1)
+       Scroll reveal + stagger + reduced motion
+    -------------------------------- */
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+      .reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .reveal{
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+      transition: opacity var(--d-2) var(--ease-soft), transform var(--d-2) var(--ease-soft);
+      will-change: transform, opacity;
+    }
+
+    .reveal.is-in{
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .reveal-up{ transform: translate3d(0, 14px, 0); }
+    .reveal-fade{ transform: none; }
+    .reveal-left{ transform: translate3d(-14px, 0, 0); }
+    .reveal-right{ transform: translate3d(14px, 0, 0); }
+
+    [data-stagger] .reveal{
+      transition-delay: calc(var(--stagger, 0) * 1ms);
+    }
   </style>
 </head>
 
@@ -457,32 +512,34 @@
 
       <main>
         <!-- HERO -->
-        <section class="hero">
-          <div class="hero-label">
+        <section class="hero" data-stagger>
+          <div class="hero-label reveal reveal-up">
             <span class="dot"></span>
             Features · Planning-first
           </div>
 
-          <h1 class="hero-title">A calm planning surface that tells you what to do next.</h1>
+          <h1 class="hero-title reveal reveal-up">A calm planning surface that tells you what to do next.</h1>
 
-          <p class="hero-subtitle">
+          <p class="hero-subtitle reveal reveal-up">
             See your money clearly, understand what’s safe, and take one or two useful actions each month.
           </p>
 
-          <p class="hero-note">
+          <p class="hero-note reveal reveal-up">
             <strong>Your anchor number:</strong> monthly flexibility — what you can safely route to goals after essentials.
           </p>
         </section>
 
         <!-- PRIMARY FEATURE GRID -->
         <section class="feature-section">
-          <h2 class="section-title">The core of the product.</h2>
-          <p class="section-subtitle">
-            Three pillars: clarity, priorities, and guidance — designed for small starts and steady progress.
-          </p>
+          <div data-stagger>
+            <h2 class="section-title reveal reveal-up">The core of the product.</h2>
+            <p class="section-subtitle reveal reveal-up">
+              Three pillars: clarity, priorities, and guidance — designed for small starts and steady progress.
+            </p>
+          </div>
 
-          <div class="features-grid">
-            <article class="feature-card">
+          <div class="features-grid" data-stagger>
+            <article class="feature-card reveal reveal-up">
               <div class="feature-label">CLARITY</div>
               <h3 class="feature-heading">One clean snapshot.</h3>
               <p>
@@ -490,7 +547,7 @@
               </p>
             </article>
 
-            <article class="feature-card">
+            <article class="feature-card reveal reveal-up">
               <div class="feature-label">PRIORITIES</div>
               <h3 class="feature-heading">A plan in the right order.</h3>
               <p>
@@ -498,7 +555,7 @@
               </p>
             </article>
 
-            <article class="feature-card">
+            <article class="feature-card reveal reveal-up">
               <div class="feature-label">GUIDANCE</div>
               <h3 class="feature-heading">Simple monthly actions.</h3>
               <p>
@@ -510,19 +567,21 @@
 
         <!-- EXPERIENCE + ROADMAP -->
         <section class="experience-section">
-          <h2 class="section-title">What it feels like to use.</h2>
-          <p class="section-subtitle">
-            Quiet by design — so the plan is easier to follow, not harder to maintain.
-          </p>
+          <div data-stagger>
+            <h2 class="section-title reveal reveal-up">What it feels like to use.</h2>
+            <p class="section-subtitle reveal reveal-up">
+              Quiet by design — so the plan is easier to follow, not harder to maintain.
+            </p>
+          </div>
 
-          <div class="experience-layout">
-            <div class="experience-list">
+          <div class="experience-layout" data-stagger>
+            <div class="experience-list reveal reveal-up">
               <p><strong>Quiet interface.</strong> Built to reduce anxiety and help you think clearly.</p>
               <p><strong>Plain language.</strong> Beginner-friendly without sounding childish.</p>
               <p><strong>Clear trade-offs.</strong> Adjust goals and see what changes — without “one perfect answer.”</p>
             </div>
 
-            <aside class="coming-card">
+            <aside class="coming-card reveal reveal-up">
               <div class="coming-pill">
                 <span class="coming-dot"></span>
                 On the roadmap
@@ -537,7 +596,7 @@
         </section>
 
         <!-- CTA -->
-        <section class="cta-strip">
+        <section class="cta-strip reveal reveal-up">
           <div>
             <span class="highlight">Want to see your monthly flexibility?</span><br />
             Join early access on the main page and get notified when beta access opens.
@@ -559,9 +618,46 @@
           <a href="/about.html">About</a>
           <a href="/safety.html">Safety</a>
           <a href="/faq.html">FAQs</a>
+          <!-- ✅ new intent/SEO page link -->
+          <a href="/personal-finance-planning-app.html">Planning app</a>
         </div>
       </footer>
     </div>
   </div>
+
+  <script>
+    // ------------------------------
+    // TESORIN Motion System (v1)
+    // Scroll reveal + optional staggering
+    // ------------------------------
+    (function () {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (reduceMotion.matches) {
+        document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
+        return;
+      }
+
+      // Auto-stagger children inside containers with [data-stagger]
+      document.querySelectorAll("[data-stagger]").forEach((wrap) => {
+        const children = wrap.querySelectorAll(".reveal");
+        children.forEach((el, i) => {
+          el.style.setProperty("--stagger", String(i * 70)); // 70ms step
+        });
+      });
+
+      const els = document.querySelectorAll(".reveal");
+      if (!els.length) return;
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
