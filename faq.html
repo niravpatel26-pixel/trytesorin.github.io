@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <title>FAQs – TESORIN | Questions about the planning-first money app</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>FAQs — TESORIN | Questions about the planning-first money app</title>
   <meta
     name="description"
     content="Answers to common questions about TESORIN — what it is, who it’s for, pricing, launch access, and what it does (and doesn’t) do."
@@ -12,20 +13,20 @@
 
   <link rel="canonical" href="https://www.trytesorin.com/faq.html" />
 
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="FAQs – TESORIN | Questions about the planning-first money app" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="FAQs — TESORIN" />
   <meta
     property="og:description"
     content="Answers to common questions about TESORIN — what it is, who it’s for, pricing, launch access, and what it does (and doesn’t) do."
   />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trytesorin.com/faq.html" />
   <meta property="og:site_name" content="TESORIN" />
-  <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="FAQs – TESORIN | Questions about the planning-first money app" />
+  <meta name="twitter:title" content="FAQs — TESORIN" />
   <meta
     name="twitter:description"
     content="Answers to common questions about TESORIN — what it is, who it’s for, pricing, launch access, and what it does (and doesn’t) do."
@@ -131,21 +132,21 @@
         "name": "How do you handle my data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "TESORIN is designed to be conservative with data. You’ll be able to see what’s collected, why it’s needed, and what controls you have. More detail is on the Safety page."
+          "text": "TESORIN is designed to be conservative with data. You’ll be able to see what’s collected, why it’s needed, and what controls you have. For deeper detail, read the Safety page."
         }
       }
     ]
   }
   </script>
 
-  <!-- Icons (align with main site) -->
+  <!-- Icons (match index) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Fonts (same as homepage) -->
+  <!-- Fonts (match index) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -155,6 +156,7 @@
 
   <style>
     :root {
+      /* Match index tokens */
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
@@ -167,9 +169,9 @@
       --border-subtle: rgba(148, 163, 184, 0.30);
       --border-strong: rgba(148, 163, 184, 0.44);
 
-      --radius-xl: 22px;
-      --radius-lg: 18px;
       --radius-pill: 999px;
+      --radius-lg: 18px;
+      --radius-xl: 22px;
 
       --max-width: 1120px;
 
@@ -179,7 +181,7 @@
       --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
 
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-      --shadow-card: 0 16px 36px rgba(15, 23, 42, 0.08);
+      --shadow-device: 0 24px 60px rgba(15, 23, 42, 0.12);
 
       --ease-out: cubic-bezier(.2,.8,.2,1);
       --ease-soft: cubic-bezier(.2,.6,.2,1);
@@ -233,7 +235,7 @@
       padding: 22px 16px 76px;
     }
 
-    /* HEADER (match homepage) */
+    /* HEADER (match index) */
     header {
       display: flex;
       align-items: center;
@@ -298,7 +300,23 @@
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
-    /* MOBILE MENU (match homepage) */
+    /* Active underline (match features/safety) */
+    nav a.active {
+      color: var(--text-main);
+      position: relative;
+    }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.70);
+    }
+
+    /* MOBILE MENU (match index) */
     .menu-btn {
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.55);
@@ -343,57 +361,42 @@
     .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
-    /* HERO */
-    .hero { padding-top: 10px; max-width: 760px; }
+    /* CONTENT (match features widths) */
+    main { max-width: 92ch; }
 
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.40);
-      background: rgba(255, 255, 255, 0.90);
-      font-size: 11px;
-      color: var(--text-mute);
-      margin-bottom: 12px;
-    }
-    .hero-label span.dot {
-      width: 6px; height: 6px; border-radius: 999px;
-      background: rgba(34, 197, 94, 0.90);
+    .hero {
+      padding-top: 10px;
+      max-width: 72ch;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4.2vw, 44px);
+      font-size: clamp(34px, 4.2vw, 46px);
       line-height: 1.06;
       letter-spacing: -0.035em;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       text-wrap: balance;
-      max-width: 28ch;
     }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.7;
       color: var(--text-soft);
-      max-width: 66ch;
       margin-bottom: 10px;
+      max-width: 70ch;
     }
 
     .hero-note {
       font-size: 12px;
       color: var(--text-mute);
       line-height: 1.6;
-      max-width: 72ch;
+      max-width: 78ch;
     }
     .hero-note strong { color: var(--text-main); font-weight: 600; }
+    .hero-note a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
 
-    /* SECTION */
-    .section { margin-top: 34px; max-width: 860px; }
-
-    .section-header { max-width: 620px; margin-bottom: 16px; }
+    .section { margin-top: 28px; max-width: 92ch; }
 
     .section-kicker {
       font-size: 11px;
@@ -414,21 +417,22 @@
       font-size: 14px;
       color: var(--text-soft);
       line-height: 1.7;
+      max-width: 76ch;
     }
 
-    /* ACCORDION */
-    .accordion { display: flex; flex-direction: column; gap: 10px; max-width: 860px; }
+    /* ACCORDION (aligned to features/safety feel) */
+    .accordion { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; max-width: 92ch; }
 
     .accordion-item {
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.28);
+      border: 1px solid var(--border-subtle);
       background: var(--card);
       overflow: hidden;
-      box-shadow: none;
-      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out), filter var(--d-1) var(--ease-out);
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out);
       will-change: transform;
     }
-    .accordion-item:hover { box-shadow: var(--shadow-card); transform: translateY(-1px); filter: brightness(1.01); }
+    .accordion-item:hover { transform: translateY(-1px); box-shadow: 0 22px 52px rgba(15, 23, 42, 0.08); }
 
     .accordion-header { margin: 0; }
 
@@ -444,15 +448,6 @@
       font: inherit;
       text-align: left;
       cursor: pointer;
-    }
-
-    .accordion-title-wrap { display: flex; flex-direction: column; gap: 2px; }
-
-    .accordion-eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-mute);
     }
 
     .accordion-title {
@@ -473,9 +468,9 @@
     .accordion-panel {
       padding: 0 14px 12px 14px;
       border-top: 1px solid rgba(148, 163, 184, 0.18);
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-soft);
-      line-height: 1.7;
+      line-height: 1.75;
 
       max-height: 0;
       overflow: hidden;
@@ -486,10 +481,16 @@
         opacity var(--d-2) var(--ease-soft),
         transform var(--d-2) var(--ease-soft);
     }
-
     .accordion-panel.is-open { opacity: 1; transform: translate3d(0, 0, 0); }
 
-    /* CTA STRIP */
+    .muted-line {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-mute);
+      line-height: 1.6;
+    }
+
+    /* CTA STRIP (match features) */
     .cta-strip {
       margin-top: 22px;
       padding: 14px 16px;
@@ -503,7 +504,7 @@
       gap: 10px;
       font-size: 13px;
       color: var(--text-mute);
-      max-width: 860px;
+      max-width: 92ch;
     }
     .cta-strip .highlight { font-weight: 600; color: var(--text-main); }
 
@@ -523,13 +524,13 @@
       box-shadow: 0 14px 30px rgba(15, 23, 42, 0.30);
       text-decoration: none;
       white-space: nowrap;
-      transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), filter 0.15s var(--ease-out), opacity .15s ease;
+      transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), filter 0.15s var(--ease-out);
     }
     .cta-btn span.arrow { font-size: 14px; transform: translateX(0); transition: transform 0.2s var(--ease-out); }
     .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
     .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FOOTER (match homepage) */
+    /* FOOTER (match index) */
     footer {
       border-top: 1px solid rgba(229, 231, 235, 1);
       margin-top: 44px;
@@ -546,13 +547,7 @@
     footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* Motion */
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .accordion-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
-      .accordion-item { transition: none !important; transform: none !important; }
-    }
-
+    /* Reveal */
     .reveal{
       opacity: 0;
       transform: translate3d(0, 10px, 0);
@@ -561,16 +556,20 @@
     }
     .reveal.is-in{ opacity: 1; transform: translate3d(0, 0, 0); }
     .reveal-up{ transform: translate3d(0, 14px, 0); }
-
     [data-stagger] .reveal{ transition-delay: calc(var(--stagger, 0) * 1ms); }
 
-    /* Responsive */
     @media (max-width: 880px) {
       nav { display: none; }
-      .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
-      .hero { padding-top: 10px; }
-      .section { margin-top: 28px; }
-      .cta-strip { align-items: flex-start; }
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
+      header { padding-bottom: 14px; }
+      .hero-title { font-size: clamp(30px, 7vw, 40px); }
+      .hero-subtitle { font-size: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .accordion-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
+      .accordion-item { transition: none !important; transform: none !important; }
     }
   </style>
 </head>
@@ -599,15 +598,13 @@
           <a href="/features.html">Features</a>
           <a href="/about.html">About</a>
           <a href="/safety.html">Safety</a>
-          <a href="/faq.html" class="highlight">FAQs</a>
+          <a href="/faq.html" class="active" aria-current="page">FAQs</a>
         </nav>
 
-        <!-- Mobile burger -->
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
 
-        <!-- Mobile dropdown -->
         <div id="mobile-menu" class="mobile-menu" hidden>
           <div class="mobile-menu-inner">
             <a href="/how-it-works.html">How it works</a>
@@ -622,31 +619,24 @@
       </header>
 
       <main id="main">
-        <!-- HERO -->
-        <section class="hero" data-stagger aria-label="FAQs overview">
-          <div class="hero-label reveal reveal-up">
-            <span class="dot" aria-hidden="true"></span>
-            FAQs · TESORIN
-          </div>
-
+        <!-- HERO (no top pill) -->
+        <section class="hero" aria-label="FAQs overview" data-stagger>
           <h1 class="hero-title reveal reveal-up">Clear answers, without the noise.</h1>
-
           <p class="hero-subtitle reveal reveal-up">
-            A quick reference for what TESORIN is, what it’s not, and how early access works.
+            A quick reference for how TESORIN works, what it’s designed to do, and how early access is rolling out.
           </p>
-
           <p class="hero-note reveal reveal-up">
-            <strong>Note:</strong> TESORIN is a planning layer. It helps you decide what to do next — not what to buy.
+            If you want the product boundaries in one place, see <a href="/safety.html">Safety →</a>
           </p>
         </section>
 
         <!-- FAQ LIST -->
         <section class="section" aria-label="FAQ list">
-          <div class="section-header" data-stagger>
-            <div class="section-kicker reveal reveal-up">Getting started</div>
+          <div data-stagger>
+            <div class="section-kicker reveal reveal-up">FAQs</div>
             <h2 class="section-title reveal reveal-up">The essentials.</h2>
             <p class="section-subtitle reveal reveal-up">
-              Start here if you’re deciding whether the product matches how you want to manage money.
+              Short answers, plain language — with enough context to make a decision.
             </p>
           </div>
 
@@ -654,10 +644,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-start">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="true">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Do I need a lot of money to start using TESORIN?</span>
-                  </span>
+                  <span class="accordion-title">Do I need a lot of money to start using TESORIN?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -671,10 +658,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-linking">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Do I have to link a bank account?</span>
-                  </span>
+                  <span class="accordion-title">Do I have to link a bank account?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -688,10 +672,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-flexibility">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">What does “monthly flexibility” mean?</span>
-                  </span>
+                  <span class="accordion-title">What does “monthly flexibility” mean?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -705,16 +686,13 @@
             <article class="accordion-item reveal reveal-up" id="faq-budgeting">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Is TESORIN a budgeting tracker?</span>
-                  </span>
+                  <span class="accordion-title">Is TESORIN a budgeting tracker?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
-                  Not in the usual sense. TESORIN isn’t built around categorizing every transaction. It’s built around a monthly plan you can follow without constant tracking.
+                  Not in the usual sense. It’s not built around categorizing every transaction — it’s built around a monthly plan you can follow without constant tracking.
                 </div>
               </div>
             </article>
@@ -722,10 +700,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-trading">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Is TESORIN an investing or trading app?</span>
-                  </span>
+                  <span class="accordion-title">Is TESORIN an investing or trading app?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -739,16 +714,13 @@
             <article class="accordion-item reveal reveal-up" id="faq-invest">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Will TESORIN tell me exactly what to invest in?</span>
-                  </span>
+                  <span class="accordion-title">Will TESORIN tell me exactly what to invest in?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
-                  No. TESORIN helps you decide how much you can safely invest and what it’s for. Specific investments are your choice.
+                  No. It helps you decide how much you can safely invest and what it’s for. Specific investments are your choice.
                 </div>
               </div>
             </article>
@@ -756,10 +728,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-countries">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Which countries does TESORIN support first?</span>
-                  </span>
+                  <span class="accordion-title">Which countries does TESORIN support first?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -773,10 +742,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-multiple">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Can I use TESORIN with multiple accounts (and a partner)?</span>
-                  </span>
+                  <span class="accordion-title">Can I use TESORIN with multiple accounts (and a partner)?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -790,10 +756,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-launch">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">When will TESORIN launch?</span>
-                  </span>
+                  <span class="accordion-title">When will TESORIN launch?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -807,10 +770,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-waves">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">How do early access waves work?</span>
-                  </span>
+                  <span class="accordion-title">How do early access waves work?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -824,10 +784,7 @@
             <article class="accordion-item reveal reveal-up" id="faq-cost">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">How much will TESORIN cost?</span>
-                  </span>
+                  <span class="accordion-title">How much will TESORIN cost?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -841,39 +798,34 @@
             <article class="accordion-item reveal reveal-up" id="faq-data">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">How do you handle my data?</span>
-                  </span>
+                  <span class="accordion-title">How do you handle my data?</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
                   TESORIN is designed to be conservative with data. You’ll be able to see what’s collected, why it’s needed, and what controls you have.
-                  For deeper detail, read the
-                  <a href="/safety.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Safety</a>
-                  page.
+                  <div class="muted-line">
+                    For deeper detail, read <a href="/safety.html">Safety</a>.
+                  </div>
                 </div>
               </div>
             </article>
           </div>
 
-          <!-- CTA STRIP -->
           <section class="cta-strip reveal reveal-up" aria-label="Next step">
             <div>
-              <span class="highlight">Join early access.</span><br />
-              Add your email on the homepage. We’ll invite people in small waves.
+              <span class="highlight">Want early access?</span><br />
+              Join the waitlist and we’ll invite beta users in small waves.
             </div>
             <a href="/?focus=waitlist" class="cta-btn">
-              Go to waitlist
+              Join waitlist
               <span class="arrow" aria-hidden="true">→</span>
             </a>
           </section>
         </section>
       </main>
 
-      <!-- FOOTER -->
       <footer>
         <span>© 2026 TESORIN. All rights reserved.</span>
         <div class="footer-links">
@@ -891,7 +843,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Mobile menu behavior (match homepage)
+      // Mobile menu (match index)
       (function () {
         const btn = document.querySelector(".menu-btn");
         const menu = document.getElementById("mobile-menu");
@@ -956,7 +908,7 @@
         panel.addEventListener("transitionend", onEnd);
       }
 
-      // Init + click
+      // Init + click handlers
       triggers.forEach((btn) => {
         const item = btn.closest(".accordion-item");
         const panel = item ? item.querySelector(".accordion-panel") : null;
@@ -1008,30 +960,32 @@
       window.addEventListener("hashchange", openFromHash);
       setTimeout(openFromHash, 0);
 
-      // Scroll reveal + staggering
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (reduceMotion.matches) {
-        document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
-        return;
-      }
+      // Scroll reveal + optional staggering (match features)
+      (function () {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        if (reduceMotion.matches) {
+          document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
+          return;
+        }
 
-      document.querySelectorAll("[data-stagger]").forEach((wrap) => {
-        const children = wrap.querySelectorAll(".reveal");
-        children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
-      });
-
-      const els = document.querySelectorAll(".reveal");
-      if (!els.length) return;
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
+        document.querySelectorAll("[data-stagger]").forEach((wrap) => {
+          const children = wrap.querySelectorAll(".reveal");
+          children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
         });
-      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
 
-      els.forEach(el => io.observe(el));
+        const els = document.querySelectorAll(".reveal");
+        if (!els.length) return;
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          });
+        }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+
+        els.forEach(el => io.observe(el));
+      })();
 
       // Resize fix for open panels
       window.addEventListener("resize", () => {
