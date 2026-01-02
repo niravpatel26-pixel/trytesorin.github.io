@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Safety – TESORIN | How we approach trust, boundaries, and data</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
     content="How TESORIN is designed for trust: clear boundaries, conservative defaults, and a plain-language approach to money and data."
@@ -13,33 +13,34 @@
 
   <link rel="canonical" href="https://www.trytesorin.com/safety.html" />
 
-  <!-- Basic OG -->
-  <meta property="og:title" content="Safety – TESORIN | How we approach trust, boundaries, and data" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Safety — TESORIN" />
   <meta
     property="og:description"
     content="How TESORIN is designed for trust: clear boundaries, conservative defaults, and a plain-language approach to money and data."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trytesorin.com/safety.html" />
+  <meta property="og:site_name" content="TESORIN" />
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Safety – TESORIN | How we approach trust, boundaries, and data" />
+  <meta name="twitter:title" content="Safety — TESORIN" />
   <meta
     name="twitter:description"
     content="How TESORIN is designed for trust: clear boundaries, conservative defaults, and a plain-language approach to money and data."
   />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Icons (match homepage) -->
+  <!-- Icons (match index) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Fonts (match homepage) -->
+  <!-- Fonts (match index) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -49,6 +50,7 @@
 
   <style>
     :root {
+      /* Match index tokens */
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
@@ -61,9 +63,9 @@
       --border-subtle: rgba(148, 163, 184, 0.30);
       --border-strong: rgba(148, 163, 184, 0.44);
 
-      --radius-xl: 22px;
-      --radius-lg: 18px;
       --radius-pill: 999px;
+      --radius-lg: 18px;
+      --radius-xl: 22px;
 
       --max-width: 1120px;
 
@@ -73,7 +75,7 @@
       --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
 
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-      --shadow-card: 0 16px 36px rgba(15, 23, 42, 0.08);
+      --shadow-device: 0 24px 60px rgba(15, 23, 42, 0.12);
 
       --ease-out: cubic-bezier(.2,.8,.2,1);
       --ease-soft: cubic-bezier(.2,.6,.2,1);
@@ -127,7 +129,7 @@
       padding: 22px 16px 76px;
     }
 
-    /* HEADER (match homepage) */
+    /* HEADER (match index) */
     header {
       display: flex;
       align-items: center;
@@ -192,7 +194,23 @@
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
-    /* MOBILE MENU (match homepage) */
+    /* Active underline EXACTLY like features.html */
+    nav a.active {
+      color: var(--text-main);
+      position: relative;
+    }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.70);
+    }
+
+    /* MOBILE MENU (match index) */
     .menu-btn {
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.55);
@@ -237,43 +255,30 @@
     .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
-    /* HERO */
-    .hero { padding-top: 10px; max-width: 820px; }
+    /* CONTENT (match features widths) */
+    main { max-width: 92ch; }
 
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.40);
-      background: rgba(255, 255, 255, 0.90);
-      font-size: 11px;
-      color: var(--text-mute);
-      margin-bottom: 12px;
-    }
-    .hero-label span.dot {
-      width: 6px; height: 6px; border-radius: 999px;
-      background: rgba(34, 197, 94, 0.90);
+    .hero {
+      padding-top: 10px;
+      max-width: 72ch;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4.2vw, 44px);
+      font-size: clamp(34px, 4.2vw, 46px);
       line-height: 1.06;
       letter-spacing: -0.035em;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       text-wrap: balance;
-      max-width: 28ch;
     }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.7;
       color: var(--text-soft);
-      max-width: 72ch;
       margin-bottom: 10px;
+      max-width: 70ch;
     }
 
     .hero-note {
@@ -281,14 +286,9 @@
       color: var(--text-mute);
       line-height: 1.6;
       max-width: 78ch;
-      margin-top: 6px;
     }
-    .hero-note strong { color: var(--text-main); font-weight: 600; }
 
-    /* SECTION */
-    .section { margin-top: 34px; max-width: 860px; }
-
-    .section-header { max-width: 640px; margin-bottom: 16px; }
+    .section { margin-top: 28px; max-width: 92ch; }
 
     .section-kicker {
       font-size: 11px;
@@ -309,20 +309,22 @@
       font-size: 14px;
       color: var(--text-soft);
       line-height: 1.7;
+      max-width: 76ch;
     }
 
-    /* ACCORDION */
-    .accordion { display: flex; flex-direction: column; gap: 10px; max-width: 860px; }
+    /* ACCORDION (kept your existing style, but aligns to token system) */
+    .accordion { margin-top: 16px; display: flex; flex-direction: column; gap: 10px; max-width: 92ch; }
 
     .accordion-item {
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.28);
+      border: 1px solid var(--border-subtle);
       background: var(--card);
       overflow: hidden;
-      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out), filter var(--d-1) var(--ease-out);
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out);
       will-change: transform;
     }
-    .accordion-item:hover { box-shadow: var(--shadow-card); transform: translateY(-1px); filter: brightness(1.01); }
+    .accordion-item:hover { transform: translateY(-1px); box-shadow: 0 22px 52px rgba(15, 23, 42, 0.08); }
 
     .accordion-header { margin: 0; }
 
@@ -338,15 +340,6 @@
       font: inherit;
       text-align: left;
       cursor: pointer;
-    }
-
-    .accordion-title-wrap { display: flex; flex-direction: column; gap: 2px; }
-
-    .accordion-eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-mute);
     }
 
     .accordion-title {
@@ -367,9 +360,9 @@
     .accordion-panel {
       padding: 0 14px 12px 14px;
       border-top: 1px solid rgba(148, 163, 184, 0.18);
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-soft);
-      line-height: 1.7;
+      line-height: 1.75;
 
       max-height: 0;
       overflow: hidden;
@@ -384,7 +377,6 @@
     .accordion-panel.is-open { opacity: 1; transform: translate3d(0, 0, 0); }
 
     .accordion-panel strong { color: var(--text-main); font-weight: 600; }
-
     .accordion-panel ul { margin-top: 8px; padding-left: 18px; }
     .accordion-panel li { margin-bottom: 6px; }
 
@@ -396,7 +388,6 @@
     }
 
     .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-
     .pill {
       font-size: 11px;
       padding: 4px 10px;
@@ -406,7 +397,7 @@
       color: var(--text-mute);
     }
 
-    /* CTA STRIP */
+    /* CTA STRIP (match features) */
     .cta-strip {
       margin-top: 22px;
       padding: 14px 16px;
@@ -420,7 +411,7 @@
       gap: 10px;
       font-size: 13px;
       color: var(--text-mute);
-      max-width: 860px;
+      max-width: 92ch;
     }
     .cta-strip .highlight { font-weight: 600; color: var(--text-main); }
 
@@ -440,13 +431,13 @@
       box-shadow: 0 14px 30px rgba(15, 23, 42, 0.30);
       text-decoration: none;
       white-space: nowrap;
-      transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), filter 0.15s var(--ease-out), opacity .15s ease;
+      transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), filter 0.15s var(--ease-out);
     }
     .cta-btn span.arrow { font-size: 14px; transform: translateX(0); transition: transform 0.2s var(--ease-out); }
     .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
     .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FOOTER */
+    /* FOOTER (match index) */
     footer {
       border-top: 1px solid rgba(229, 231, 235, 1);
       margin-top: 44px;
@@ -463,13 +454,7 @@
     footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* Motion */
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .accordion-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
-      .accordion-item { transition: none !important; transform: none !important; }
-    }
-
+    /* Reveal (same pattern, optional) */
     .reveal{
       opacity: 0;
       transform: translate3d(0, 10px, 0);
@@ -478,15 +463,20 @@
     }
     .reveal.is-in{ opacity: 1; transform: translate3d(0, 0, 0); }
     .reveal-up{ transform: translate3d(0, 14px, 0); }
-
     [data-stagger] .reveal{ transition-delay: calc(var(--stagger, 0) * 1ms); }
 
-    /* Responsive */
     @media (max-width: 880px) {
       nav { display: none; }
-      .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
-      .section { margin-top: 28px; }
-      .cta-strip { align-items: flex-start; }
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
+      header { padding-bottom: 14px; }
+      .hero-title { font-size: clamp(30px, 7vw, 40px); }
+      .hero-subtitle { font-size: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+      .accordion-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
+      .accordion-item { transition: none !important; transform: none !important; }
     }
   </style>
 </head>
@@ -515,16 +505,14 @@
           <a href="/how-it-works.html">How it works</a>
           <a href="/features.html">Features</a>
           <a href="/about.html">About</a>
-          <a href="/safety.html" class="highlight">Safety</a>
-          <a href="/faq.html">FAQs</a>
+          <a href="/safety.html" class="active" aria-current="page">Safety</a>
+          <a href="/faq.html" class="highlight">FAQs</a>
         </nav>
 
-        <!-- Mobile burger -->
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
 
-        <!-- Mobile dropdown -->
         <div id="mobile-menu" class="mobile-menu" hidden>
           <div class="mobile-menu-inner">
             <a href="/how-it-works.html">How it works</a>
@@ -540,12 +528,7 @@
 
       <main id="main">
         <!-- HERO -->
-        <section class="hero" data-stagger aria-label="Safety overview">
-          <div class="hero-label reveal reveal-up">
-            <span class="dot" aria-hidden="true"></span>
-            Safety &amp; trust · TESORIN
-          </div>
-
+        <section class="hero" aria-label="Safety overview" data-stagger>
           <h1 class="hero-title reveal reveal-up">Trust comes from boundaries.</h1>
 
           <p class="hero-subtitle reveal reveal-up">
@@ -558,10 +541,10 @@
           </p>
         </section>
 
-        <!-- SAFETY PILLARS -->
+        <!-- SAFETY DETAILS -->
         <section class="section" aria-label="Safety pillars">
-          <div class="section-header" data-stagger>
-            <div class="section-kicker reveal reveal-up">Safety pillars</div>
+          <div data-stagger>
+            <div class="section-kicker reveal reveal-up">Safety</div>
             <h2 class="section-title reveal reveal-up">What “safe by design” means here.</h2>
             <p class="section-subtitle reveal reveal-up">
               Open the sections you care about: boundaries, money handling, data, limitations, and simple anti-scam checks.
@@ -569,14 +552,10 @@
           </div>
 
           <div class="accordion" role="list" data-stagger>
-            <!-- 1 -->
             <article class="accordion-item reveal reveal-up" id="safety-boundaries">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="true">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Pillar</span>
-                    <span class="accordion-title">What TESORIN is — and what it is not</span>
-                  </span>
+                  <span class="accordion-title">What TESORIN is — and what it is not</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -608,14 +587,10 @@
               </div>
             </article>
 
-            <!-- 2 -->
             <article class="accordion-item reveal reveal-up" id="safety-money">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Pillar</span>
-                    <span class="accordion-title">How your money is handled</span>
-                  </span>
+                  <span class="accordion-title">How your money is handled</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -635,14 +610,10 @@
               </div>
             </article>
 
-            <!-- 3 -->
             <article class="accordion-item reveal reveal-up" id="safety-data">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Pillar</span>
-                    <span class="accordion-title">How we think about your data</span>
-                  </span>
+                  <span class="accordion-title">How we think about your data</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -665,14 +636,10 @@
               </div>
             </article>
 
-            <!-- 4 -->
             <article class="accordion-item reveal reveal-up" id="safety-limits">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Pillar</span>
-                    <span class="accordion-title">What TESORIN can’t promise</span>
-                  </span>
+                  <span class="accordion-title">What TESORIN can’t promise</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -689,14 +656,10 @@
               </div>
             </article>
 
-            <!-- 5 -->
             <article class="accordion-item reveal reveal-up" id="safety-checks">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Pillar</span>
-                    <span class="accordion-title">If something doesn’t feel right</span>
-                  </span>
+                  <span class="accordion-title">If something doesn’t feel right</span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
@@ -714,7 +677,6 @@
             </article>
           </div>
 
-          <!-- CTA STRIP -->
           <section class="cta-strip reveal reveal-up" aria-label="Next step">
             <div>
               <span class="highlight">Ready to try it?</span><br />
@@ -728,7 +690,6 @@
         </section>
       </main>
 
-      <!-- FOOTER -->
       <footer>
         <span>© 2026 TESORIN. All rights reserved.</span>
         <div class="footer-links">
@@ -741,41 +702,40 @@
           <a href="/terms.html">Terms</a>
         </div>
       </footer>
-
     </div>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Mobile menu behavior (match homepage)
-      (function () {
-        const btn = document.querySelector(".menu-btn");
-        const menu = document.getElementById("mobile-menu");
-        if (!btn || !menu) return;
+    // Mobile menu (match index)
+    (function () {
+      const btn = document.querySelector(".menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      if (!btn || !menu) return;
 
-        function closeMenu() {
-          btn.setAttribute("aria-expanded", "false");
-          menu.hidden = true;
-        }
+      function closeMenu() {
+        btn.setAttribute("aria-expanded", "false");
+        menu.hidden = true;
+      }
 
-        btn.addEventListener("click", () => {
-          const open = btn.getAttribute("aria-expanded") === "true";
-          btn.setAttribute("aria-expanded", open ? "false" : "true");
-          menu.hidden = open;
-        });
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
+        menu.hidden = open;
+      });
 
-        document.addEventListener("click", (e) => {
-          if (menu.hidden) return;
-          const within = menu.contains(e.target) || btn.contains(e.target);
-          if (!within) closeMenu();
-        });
+      document.addEventListener("click", (e) => {
+        if (menu.hidden) return;
+        const within = menu.contains(e.target) || btn.contains(e.target);
+        if (!within) closeMenu();
+      });
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") closeMenu();
-        });
-      })();
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    })();
 
-      // Accordion behavior
+    // Accordion behavior
+    (function () {
       const triggers = document.querySelectorAll(".accordion-trigger");
 
       function closeAll() {
@@ -812,7 +772,6 @@
         panel.addEventListener("transitionend", onEnd);
       }
 
-      // Init + click handlers
       triggers.forEach((btn) => {
         const item = btn.closest(".accordion-item");
         const panel = item ? item.querySelector(".accordion-panel") : null;
@@ -842,7 +801,6 @@
         });
       });
 
-      // Deep link support via #safety-...
       function openFromHash() {
         const id = (location.hash || "").replace("#", "");
         if (!id) return;
@@ -864,7 +822,19 @@
       window.addEventListener("hashchange", openFromHash);
       setTimeout(openFromHash, 0);
 
-      // Scroll reveal + optional staggering
+      window.addEventListener("resize", () => {
+        triggers.forEach((btn) => {
+          if (btn.getAttribute("aria-expanded") !== "true") return;
+          const item = btn.closest(".accordion-item");
+          const panel = item ? item.querySelector(".accordion-panel") : null;
+          if (!panel) return;
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        });
+      });
+    })();
+
+    // Scroll reveal + optional staggering (match features)
+    (function () {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       if (reduceMotion.matches) {
         document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
@@ -888,18 +858,7 @@
       }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
 
       els.forEach(el => io.observe(el));
-
-      // Resize fix for open panels
-      window.addEventListener("resize", () => {
-        triggers.forEach((btn) => {
-          if (btn.getAttribute("aria-expanded") !== "true") return;
-          const item = btn.closest(".accordion-item");
-          const panel = item ? item.querySelector(".accordion-panel") : null;
-          if (!panel) return;
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        });
-      });
-    });
+    })();
   </script>
 </body>
 </html>
