@@ -110,7 +110,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 8px 0 28px;
-      position: relative; /* needed for mobile menu positioning */
+      position: relative;
     }
 
     .brand-link {
@@ -191,10 +191,9 @@
       font-size: 12px;
     }
 
-    /* OLD single CTA is now replaced by burger menu on mobile */
     .nav-cta { display: none; }
 
-    /* MOBILE MENU (burger + dropdown) */
+    /* MOBILE MENU */
     .menu-btn {
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.6);
@@ -323,7 +322,6 @@
       margin-bottom: 10px;
     }
 
-    /* Clarity links (funnel to planning page) */
     .hero-clarity-row{
       display:flex;
       flex-wrap:wrap;
@@ -528,7 +526,6 @@
       width: 100%;
     }
 
-    /* Subtle scroll micro-motion hooks */
     .hero-card {
       position: relative;
       width: 100%;
@@ -546,7 +543,6 @@
       transition: transform 120ms ease-out;
     }
 
-    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .hero-card {
         transition: none !important;
@@ -576,7 +572,6 @@
       width: 100%;
     }
 
-    /* remove the CSS seam line */
     .hero-app-shot {
       border-radius: 24px;
       overflow: hidden;
@@ -586,13 +581,81 @@
       box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
     }
 
-    .hero-app-shot img {
+    /* =========================
+       PREMIUM HERO FLOW DECK
+       ========================= */
+    .flow-deck {
+      position: relative;
       width: 100%;
-      height: auto;
-      display: block;
+      aspect-ratio: 9 / 19.5;
       border-radius: 24px;
-      filter: saturate(0.98) contrast(0.98) brightness(1.01);
-      transform: translateZ(0);
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .flow-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      /* premium crop feel */
+      object-position: 50% 20%; /* helps hide status bars if not cropped */
+      opacity: 0;
+      transform: translate3d(0, 10px, 0) scale(1.01);
+      transition: opacity 520ms ease, transform 620ms ease;
+      will-change: opacity, transform;
+    }
+
+    .flow-frame.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      z-index: 3;
+    }
+
+    .flow-deck::before,
+    .flow-deck::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .flow-deck::before {
+      transform: translateY(6px) scale(0.985);
+      background: rgba(15, 23, 42, 0.03);
+      z-index: 1;
+    }
+
+    .flow-deck::after {
+      transform: translateY(12px) scale(0.97);
+      background: rgba(15, 23, 42, 0.02);
+      z-index: 0;
+    }
+
+    .flow-dots {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .flow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.45);
+    }
+
+    .flow-dot.is-on {
+      background: rgba(34, 197, 94, 0.9);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flow-frame {
+        transition: none !important;
+        transform: none !important;
+      }
     }
 
     .hero-visual-caption {
@@ -686,12 +749,10 @@
           <a href="/faq.html" class="highlight">FAQs</a>
         </nav>
 
-        <!-- Mobile burger -->
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
 
-        <!-- Mobile dropdown menu -->
         <div id="mobile-menu" class="mobile-menu" hidden>
           <div class="mobile-menu-inner">
             <a href="/how-it-works.html">How it works</a>
@@ -748,7 +809,6 @@
               </li>
             </ul>
 
-            <!-- Waitlist -->
             <div class="waitlist-card">
               <div class="waitlist-label">Join the early access list</div>
               <form id="waitlist-form" class="form-row">
@@ -795,7 +855,20 @@
               <div class="hero-card-inner">
                 <div class="hero-app-wrap">
                   <div class="hero-app-shot">
-                    <img src="tesorin-home-shot.png" alt="TESORIN beta app home screen preview" />
+                    <!-- PREMIUM FLOW (replaces static screenshot) -->
+                    <div class="flow-deck" aria-label="TESORIN app flow preview">
+                      <img class="flow-frame is-active" src="tesorin-flow-01.png" alt="TESORIN app preview: Home" loading="eager" decoding="async" />
+                      <img class="flow-frame" src="tesorin-flow-02.png" alt="TESORIN app preview: Net worth" loading="lazy" decoding="async" />
+                      <img class="flow-frame" src="tesorin-flow-03.png" alt="TESORIN app preview: Actions" loading="lazy" decoding="async" />
+                      <img class="flow-frame" src="tesorin-flow-04.png" alt="TESORIN app preview: Ask TESORIN" loading="lazy" decoding="async" />
+                    </div>
+
+                    <div class="flow-dots" aria-hidden="true">
+                      <span class="flow-dot is-on"></span>
+                      <span class="flow-dot"></span>
+                      <span class="flow-dot"></span>
+                      <span class="flow-dot"></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -823,7 +896,7 @@
     </div>
   </div>
 
-  <!-- Formspree submit + redirect to success page + subtle scroll animation -->
+  <!-- Inline JS (you already had JS; we keep it here) -->
   <script>
     // allow /?focus=waitlist to focus email field
     (function () {
@@ -864,6 +937,7 @@
       });
     })();
 
+    // Formspree submit + redirect
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("waitlist-form");
       if (!form) return;
@@ -911,16 +985,14 @@
         const t = 1 - (center / vh);
         const p = clamp((t + 0.15) / 0.9, 0, 1);
 
-        // very subtle ranges
-        const translateY = (p - 0.5) * -10; // +/- 5px
-        const rotateX = (p - 0.5) * 1.8;    // +/- 0.9deg
-        const rotateY = (p - 0.5) * -1.8;   // +/- 0.9deg
+        const translateY = (p - 0.5) * -10;
+        const rotateX = (p - 0.5) * 1.8;
+        const rotateY = (p - 0.5) * -1.8;
 
         card.style.transform =
           `perspective(1100px) translate3d(0, ${translateY.toFixed(2)}px, 0) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
 
-        // tiny shadow breathing
-        const shadowA = 0.14 + p * 0.045; // 0.14..0.185
+        const shadowA = 0.14 + p * 0.045;
         card.style.boxShadow = `0 28px 70px rgba(15, 23, 42, ${shadowA.toFixed(3)})`;
       }
 
@@ -933,6 +1005,59 @@
       window.addEventListener("resize", onScrollOrResize);
 
       onScrollOrResize();
+    })();
+
+    // PREMIUM FLOW DECK (auto-advance)
+    (function () {
+      const frames = Array.from(document.querySelectorAll(".flow-frame"));
+      const dots = Array.from(document.querySelectorAll(".flow-dot"));
+      if (!frames.length) return;
+
+      let index = 0;
+      let paused = false;
+      let timer = null;
+
+      const INTERVAL = 3200;
+
+      function show(i) {
+        frames.forEach((el, idx) => {
+          el.classList.toggle("is-active", idx === i);
+          if (dots[idx]) dots[idx].classList.toggle("is-on", idx === i);
+        });
+      }
+
+      function next() {
+        if (paused) return;
+        index = (index + 1) % frames.length;
+        show(index);
+      }
+
+      function start() {
+        stop();
+        timer = setInterval(next, INTERVAL);
+      }
+
+      function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+
+      // Pause on hover
+      const deck = document.querySelector(".flow-deck");
+      if (deck) {
+        deck.addEventListener("mouseenter", () => (paused = true));
+        deck.addEventListener("mouseleave", () => (paused = false));
+      }
+
+      // Pause when tab hidden
+      document.addEventListener("visibilitychange", () => {
+        paused = document.hidden;
+      });
+
+      // Respect reduced motion
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        start();
+      }
     })();
   </script>
 </body>
