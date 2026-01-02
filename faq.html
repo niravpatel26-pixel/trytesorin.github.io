@@ -32,7 +32,7 @@
   />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- FAQ schema for rich results -->
+  <!-- FAQ schema for rich results (MUST match on-page text) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +43,23 @@
         "name": "Do I need a lot of money to start using TESORIN?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. TESORIN is built for small, realistic starting points. It helps you see what you can do next — even if you’re starting with a tight month and simple goals."
+          "text": "No. TESORIN is built for small, realistic starting points. It helps you choose a safe next action — even in a tight month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I have to link a bank account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You can start with manual entry and a simple snapshot. If bank connections are offered later, they’ll be optional and clearly explained."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does “monthly flexibility” mean?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It’s what you can safely route to goals after essentials and fixed commitments — the number that keeps your plan realistic."
         }
       },
       {
@@ -51,7 +67,7 @@
         "name": "Is TESORIN a budgeting tracker?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. TESORIN isn’t built around categorizing every transaction. It’s built around one planning number — your monthly flexibility — and a clear order of priorities you can follow."
+          "text": "Not in the usual sense. TESORIN isn’t built around categorizing every transaction. It’s built around a monthly plan you can follow without constant tracking."
         }
       },
       {
@@ -59,7 +75,15 @@
         "name": "Is TESORIN an investing or trading app?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. TESORIN is a planning layer — not a trading screen. It helps you build the foundation (cash buffer, debt direction, and capacity) before you decide where to invest."
+          "text": "No. TESORIN is focused on planning: buffers, debt direction, and capacity. Investment choices stay with you (or your broker)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will TESORIN tell me exactly what to invest in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. TESORIN helps you decide how much you can safely invest and what it’s for. Specific investments are your choice."
         }
       },
       {
@@ -72,18 +96,26 @@
       },
       {
         "@type": "Question",
-        "name": "When will TESORIN launch?",
+        "name": "Can I use TESORIN with multiple accounts (and a partner)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Early access will open in small waves. Waitlist members are invited first so feedback can shape the product before a wider release."
+          "text": "Yes for multiple accounts as you build your snapshot. Shared planning (two people, one plan) is a likely future capability; early access focuses on a strong single-user flow."
         }
       },
       {
         "@type": "Question",
-        "name": "Will TESORIN tell me exactly what to invest in?",
+        "name": "When will TESORIN launch?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. TESORIN helps you decide how much you can safely invest and what it’s for. Specific investment choices remain yours (or handled by the platform you use)."
+          "text": "Early access opens in small waves. Waitlist members are invited first so feedback can shape the product before a wider release."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do early access waves work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We invite small batches, learn from real usage, then expand. This keeps onboarding stable and improves the product faster than a big public launch."
         }
       },
       {
@@ -99,7 +131,7 @@
         "name": "How do you handle my data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "TESORIN is designed to be conservative with data. You’ll always be able to see what’s collected, why it’s needed, and what controls you have. More details live on the Safety page."
+          "text": "TESORIN is designed to be conservative with data. You’ll be able to see what’s collected, why it’s needed, and what controls you have. More detail is on the Safety page."
         }
       }
     ]
@@ -167,6 +199,22 @@
     }
 
     a, button, input { font-family: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-140%);
+      transition: transform .18s ease;
+      z-index: 9999;
+      font-size: 12px;
+    }
+    .skip-link:focus { transform: translateY(0); outline: none; box-shadow: var(--ring); }
 
     a:focus-visible,
     button:focus-visible,
@@ -291,14 +339,12 @@
     .mobile-menu-inner { display: flex; flex-direction: column; padding: 10px; gap: 4px; }
     .mobile-menu a { text-decoration: none; color: #111827; font-size: 13px; padding: 10px 10px; border-radius: 12px; }
     .mobile-menu a:hover { background: #f3f4f6; }
+    .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
     .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
     /* HERO */
-    .hero {
-      padding-top: 10px;
-      max-width: 760px;
-    }
+    .hero { padding-top: 10px; max-width: 760px; }
 
     .hero-label {
       display: inline-flex;
@@ -530,6 +576,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <div class="page">
     <div class="shell">
       <!-- HEADER -->
@@ -566,14 +614,14 @@
             <a href="/features.html">Features</a>
             <a href="/about.html">About</a>
             <a href="/safety.html">Safety</a>
-            <a href="/faq.html">FAQs</a>
+            <a class="active" href="/faq.html">FAQs</a>
             <a href="/personal-finance-planning-app.html">Planning app</a>
             <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
           </div>
         </div>
       </header>
 
-      <main>
+      <main id="main">
         <!-- HERO -->
         <section class="hero" data-stagger aria-label="FAQs overview">
           <div class="hero-label reveal reveal-up">
@@ -581,9 +629,7 @@
             FAQs · TESORIN
           </div>
 
-          <h1 class="hero-title reveal reveal-up">
-            Clear answers, without the noise.
-          </h1>
+          <h1 class="hero-title reveal reveal-up">Clear answers, without the noise.</h1>
 
           <p class="hero-subtitle reveal reveal-up">
             A quick reference for what TESORIN is, what it’s not, and how early access works.
@@ -617,7 +663,41 @@
               </h2>
               <div class="accordion-panel is-open">
                 <div class="accordion-body">
-                  No. TESORIN is built for small, realistic starting points. It helps you see what you can do next — even if you’re starting with a tight month and simple goals.
+                  No. TESORIN is built for small, realistic starting points. It helps you choose a safe next action — even in a tight month.
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item reveal reveal-up" id="faq-linking">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">FAQ</span>
+                    <span class="accordion-title">Do I have to link a bank account?</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  No. You can start with manual entry and a simple snapshot. If bank connections are offered later, they’ll be optional and clearly explained.
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item reveal reveal-up" id="faq-flexibility">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">FAQ</span>
+                    <span class="accordion-title">What does “monthly flexibility” mean?</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  It’s what you can safely route to goals after essentials and fixed commitments — the number that keeps your plan realistic.
                 </div>
               </div>
             </article>
@@ -634,7 +714,7 @@
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
-                  No. TESORIN isn’t built around categorizing every transaction. It’s built around one planning number — your monthly flexibility — and a clear order of priorities you can follow.
+                  Not in the usual sense. TESORIN isn’t built around categorizing every transaction. It’s built around a monthly plan you can follow without constant tracking.
                 </div>
               </div>
             </article>
@@ -651,7 +731,24 @@
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
-                  No. TESORIN is a planning layer — not a trading screen. It helps you build the foundation (cash buffer, debt direction, and capacity) before you decide where to invest.
+                  No. TESORIN is focused on planning: buffers, debt direction, and capacity. Investment choices stay with you (or your broker).
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item reveal reveal-up" id="faq-invest">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">FAQ</span>
+                    <span class="accordion-title">Will TESORIN tell me exactly what to invest in?</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  No. TESORIN helps you decide how much you can safely invest and what it’s for. Specific investments are your choice.
                 </div>
               </div>
             </article>
@@ -673,6 +770,23 @@
               </div>
             </article>
 
+            <article class="accordion-item reveal reveal-up" id="faq-multiple">
+              <h2 class="accordion-header">
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-eyebrow">FAQ</span>
+                    <span class="accordion-title">Can I use TESORIN with multiple accounts (and a partner)?</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h2>
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  Yes for multiple accounts as you build your snapshot. Shared planning (two people, one plan) is a likely future capability; early access focuses on a strong single-user flow.
+                </div>
+              </div>
+            </article>
+
             <article class="accordion-item reveal reveal-up" id="faq-launch">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
@@ -685,24 +799,24 @@
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
-                  Early access will open in small waves. Waitlist members are invited first so feedback can shape the product before a wider release.
+                  Early access opens in small waves. Waitlist members are invited first so feedback can shape the product before a wider release.
                 </div>
               </div>
             </article>
 
-            <article class="accordion-item reveal reveal-up" id="faq-invest">
+            <article class="accordion-item reveal reveal-up" id="faq-waves">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
                   <span class="accordion-title-wrap">
                     <span class="accordion-eyebrow">FAQ</span>
-                    <span class="accordion-title">Will TESORIN tell me exactly what to invest in?</span>
+                    <span class="accordion-title">How do early access waves work?</span>
                   </span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
-                  No. TESORIN helps you decide how much you can safely invest and what it’s for. Specific investment choices remain yours (or handled by the platform you use).
+                  We invite small batches, learn from real usage, then expand. This keeps onboarding stable and improves the product faster than a big public launch.
                 </div>
               </div>
             </article>
@@ -736,8 +850,10 @@
               </h2>
               <div class="accordion-panel" hidden>
                 <div class="accordion-body">
-                  TESORIN is designed to be conservative with data. You’ll always be able to see what’s collected, why it’s needed, and what controls you have.
-                  For deeper detail, read the <a href="/safety.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Safety</a> page.
+                  TESORIN is designed to be conservative with data. You’ll be able to see what’s collected, why it’s needed, and what controls you have.
+                  For deeper detail, read the
+                  <a href="/safety.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Safety</a>
+                  page.
                 </div>
               </div>
             </article>
