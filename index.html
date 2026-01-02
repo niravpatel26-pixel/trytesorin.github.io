@@ -13,7 +13,7 @@
       "url": "https://www.trytesorin.com/",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web",
-      "description": "Know what you can safely do this month — then follow a calm plan that adapts as your life changes.",
+      "description": "Your first step into wealth — with a plan that grows with you.",
       "creator": { "@type": "Organization", "name": "TESORIN" },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "category": "Free", "url": "https://www.trytesorin.com/" }
     }
@@ -32,13 +32,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>TESORIN — Know what you can safely do this month</title>
+  <title>TESORIN — Your first step into wealth</title>
   <meta
     name="description"
     content="TESORIN is a planning-first money app. It shows one clear number—your monthly flexibility—and turns it into a calm sequence: safety, debt, then long-term wealth."
   />
 
-  <meta property="og:title" content="TESORIN — Know what you can safely do this month" />
+  <meta property="og:title" content="TESORIN — Your first step into wealth" />
   <meta property="og:description" content="Planning-first. Calm by design. One clear number—your monthly flexibility—turned into the next right action." />
   <meta property="og:url" content="https://www.trytesorin.com" />
   <meta property="og:site_name" content="TESORIN" />
@@ -46,7 +46,7 @@
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TESORIN — Know what you can safely do this month" />
+  <meta name="twitter:title" content="TESORIN — Your first step into wealth" />
   <meta name="twitter:description" content="A planning-first money app that reduces decisions and creates steady progress." />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
@@ -61,17 +61,17 @@
 
   <style>
     :root {
-      /* Premium: subtle page tint, white cards */
+      /* Premium base */
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
-      /* Stronger contrast (less dull) */
+      /* Higher contrast (less dull) */
       --text-main: #0b1220;
-      --text-soft: #263449;   /* darker than before */
-      --text-mute: #516173;   /* nav + microcopy */
+      --text-soft: #243244;   /* richer slate */
+      --text-mute: #4f6073;   /* nav + microcopy */
 
       /* Quieter green */
-      --accent: #178a45;      /* slightly deeper, less neon */
+      --accent: #178a45;
 
       --border-subtle: rgba(148, 163, 184, 0.30);
       --border-strong: rgba(148, 163, 184, 0.44);
@@ -84,7 +84,6 @@
 
       --ring: 0 0 0 3px rgba(23, 138, 69, 0.18);
 
-      /* Refined shadows (less hazy) */
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
       --shadow-device: 0 24px 60px rgba(15, 23, 42, 0.12);
     }
@@ -131,7 +130,7 @@
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 24px 16px 76px; /* pulled up for better first screen */
+      padding: 22px 16px 76px; /* slightly tighter at top */
     }
 
     /* HEADER */
@@ -139,7 +138,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 6px 0 18px; /* tighter */
+      padding: 6px 0 16px;
       position: relative;
       gap: 14px;
     }
@@ -180,21 +179,22 @@
       display: flex;
       align-items: center;
       gap: 22px;
-      font-size: 13px;
-      color: var(--text-soft); /* stronger than before */
+      font-size: 14px;        /* bump for premium feel */
+      font-weight: 500;       /* stronger */
+      color: var(--text-soft);
       white-space: nowrap;
     }
     nav a { text-decoration: none; color: inherit; padding: 4px 0; }
     nav a:hover { color: var(--text-main); }
 
-    /* Make FAQs pill feel like same system (calm, crisp) */
     nav a.highlight {
-      padding: 7px 14px;
+      padding: 8px 14px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(148, 163, 184, 0.55);
-      font-size: 12px;
+      font-size: 13px;
+      font-weight: 600;
       color: var(--text-main);
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.82);
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
@@ -247,53 +247,54 @@
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 34px;
-      align-items: start;      /* anchors both columns together */
-      padding-top: 6px;        /* pulled up */
+      align-items: start;
+      padding-top: 6px;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4.1vw, 42px);
-      line-height: 1.06;
-      letter-spacing: -0.03em;
+      font-size: clamp(40px, 4.8vw, 56px); /* Wealthsimple-level presence */
+      line-height: 1.03;
+      letter-spacing: -0.035em;
       font-weight: 600;
       margin-bottom: 12px;
+      text-align: left;        /* “justified” = firmly left-aligned */
       text-wrap: balance;
       hyphens: auto;
+      max-width: 20ch;         /* forces intentional line breaks */
     }
 
-    /* Quieter accent: keep green, but add a subtle underline too */
     .hero-title span.highlight {
       color: var(--accent);
       text-decoration: underline;
       text-decoration-thickness: 2px;
-      text-underline-offset: 5px;
-      text-decoration-color: rgba(23, 138, 69, 0.28);
+      text-underline-offset: 6px;
+      text-decoration-color: rgba(23, 138, 69, 0.24);
     }
 
     .hero-subtitle {
-      font-size: 16px;
-      line-height: 1.75;
+      font-size: 18px;         /* stronger readability */
+      line-height: 1.65;
       color: var(--text-soft);
-      max-width: 580px;
-      margin-bottom: 14px;
+      max-width: 60ch;
+      margin-bottom: 16px;
     }
 
     .hero-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-bottom: 16px;
-      max-width: 580px;
+      gap: 10px;
+      margin-bottom: 18px;
+      max-width: 62ch;
     }
 
     .hero-bullets li {
       display: flex;
       gap: 10px;
       align-items: flex-start;
-      font-size: 13px;
-      line-height: 1.65;
+      font-size: 14px;         /* bump from 13 */
+      line-height: 1.7;
       color: var(--text-soft);
     }
 
@@ -302,7 +303,7 @@
       height: 7px;
       border-radius: 999px;
       background: rgba(23, 138, 69, 0.90);
-      margin-top: 9px;
+      margin-top: 10px;
       flex: 0 0 7px;
     }
 
@@ -317,8 +318,8 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
-      max-width: 580px;
-      margin-top: 14px;
+      max-width: 62ch;
+      margin-top: 16px;
     }
 
     .waitlist-label {
@@ -339,22 +340,22 @@
     .form-row input[type="email"] {
       flex: 1;
       min-width: 0;
-      padding: 10px 12px;
+      padding: 11px 13px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.55);
       background: #f8fafc;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-main);
       outline: none;
       transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
-    .form-row input::placeholder { color: rgba(81, 97, 115, 0.95); }
+    .form-row input::placeholder { color: rgba(79, 96, 115, 0.95); }
 
     .cta-btn {
       border: none;
       border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 13px;
+      padding: 11px 16px;
+      font-size: 14px;
       font-weight: 600;
       cursor: pointer;
       background: #0b1220;
@@ -375,32 +376,32 @@
     .form-meta { width: 100%; display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
 
     .trust-lines {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-mute);
       line-height: 1.6;
-      max-width: 580px;
+      max-width: 62ch;
     }
     .trust-lines a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
 
     .form-status {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-mute);
       line-height: 1.6;
-      max-width: 580px;
+      max-width: 62ch;
     }
     .form-status.is-error { color: #b91c1c; }
     .form-status.is-success { color: #065f46; }
 
     .category-line{
-      margin-top: 12px;
-      font-size: 11px;
+      margin-top: 14px;
+      font-size: 12px;
       color: var(--text-mute);
-      max-width: 580px;
+      max-width: 62ch;
       line-height: 1.6;
     }
     .category-line a{ color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
 
-    /* HERO VISUAL */
+    /* HERO VISUAL — DO NOT TOUCH (as requested) */
     .hero-visual-wrap {
       display: flex;
       justify-content: center;
@@ -408,7 +409,7 @@
       align-items: center;
       gap: 10px;
       width: 100%;
-      padding-top: 2px; /* aligns top with headline block */
+      padding-top: 2px;
     }
 
     .hero-card {
@@ -418,13 +419,12 @@
       border-radius: 34px;
       background: var(--card);
       border: 1px solid rgba(148, 163, 184, 0.22);
-      box-shadow: var(--shadow-device); /* refined */
+      box-shadow: var(--shadow-device);
       padding: 18px;
       overflow: hidden;
       color: var(--text-main);
     }
 
-    /* Keep app screen look: do NOT tint screenshots */
     .hero-app-shot {
       border-radius: 24px;
       overflow: hidden;
@@ -433,7 +433,6 @@
       box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
     }
 
-    /* Touch-moveable deck */
     .flow-deck {
       position: relative;
       width: 100%;
@@ -465,7 +464,6 @@
       display: block;
     }
 
-    /* Subtle deck depth, but not color shifts */
     .flow-deck::before,
     .flow-deck::after {
       content: "";
@@ -485,7 +483,6 @@
       z-index: 0;
     }
 
-    /* Micro “edge hint” (very subtle, teaches swipe) */
     .flow-edge-hint::before,
     .flow-edge-hint::after {
       content: "";
@@ -515,7 +512,7 @@
     @media (prefers-reduced-motion: reduce) { .flow-track { transition: none !important; } }
 
     .hero-visual-caption {
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-mute);
       text-align: center;
       max-width: 380px;
@@ -525,9 +522,9 @@
     /* FOOTER */
     footer {
       border-top: 1px solid rgba(229, 231, 235, 1);
-      margin-top: 40px;
+      margin-top: 44px;
       padding-top: 18px;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-mute);
       display: flex;
       flex-wrap: wrap;
@@ -547,7 +544,7 @@
 
       .hero { grid-template-columns: minmax(0, 1fr); padding-top: 10px; }
       .hero-visual-wrap { order: 2; margin-top: 18px; padding-top: 0; }
-      .hero-title { font-size: 30px; }
+      .hero-title { font-size: clamp(32px, 7vw, 42px); max-width: 22ch; }
 
       .form-row { flex-direction: column; align-items: stretch; }
       .cta-btn { width: 100%; }
@@ -603,7 +600,7 @@
         <section class="hero" aria-label="TESORIN overview">
           <div>
             <h1 class="hero-title">
-              Know what you can safely do <span class="highlight">this month.</span>
+              Your first step into wealth — <span class="highlight">with a plan that grows with you.</span>
             </h1>
 
             <p class="hero-subtitle">
@@ -624,8 +621,6 @@
                 <span><strong style="color:var(--text-main);font-weight:600;">Steady progress:</strong> track momentum with simple targets—no spreadsheets, no noise.</span>
               </li>
             </ul>
-
-            <!-- Principles removed -->
 
             <div class="waitlist-card" id="waitlist" aria-label="Join waitlist">
               <div class="waitlist-label">Join the early access list</div>
@@ -662,6 +657,7 @@
             </p>
           </div>
 
+          <!-- App screen untouched -->
           <div class="hero-visual-wrap" aria-label="App preview">
             <div class="hero-card" aria-hidden="true">
               <div class="hero-app-shot">
@@ -891,11 +887,9 @@
         else setIndex(index, true);
 
         startAuto();
-        // bring hint back after a moment if user stops interacting
         setTimeout(() => idleHint(true), 900);
       }
 
-      // Mouse
       deck.addEventListener("mousedown", (e) => {
         e.preventDefault();
         onDown(e.clientX);
@@ -903,7 +897,6 @@
       window.addEventListener("mousemove", (e) => onMove(e.clientX));
       window.addEventListener("mouseup", () => onUp());
 
-      // Touch
       deck.addEventListener("touchstart", (e) => {
         const t = e.touches[0];
         onDown(t.clientX);
@@ -916,7 +909,6 @@
 
       deck.addEventListener("touchend", () => onUp());
 
-      // Pause on hover
       deck.addEventListener("mouseenter", () => { stopAuto(); idleHint(false); });
       deck.addEventListener("mouseleave", () => { startAuto(); setTimeout(() => idleHint(true), 650); });
 
@@ -925,7 +917,6 @@
         else startAuto();
       });
 
-      // Dot click
       dots.forEach((d, i) => {
         d.style.cursor = "pointer";
         d.addEventListener("click", () => {
@@ -937,7 +928,6 @@
         });
       });
 
-      // Init
       setIndex(0, false);
       idleHint(true);
       startAuto();
