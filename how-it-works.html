@@ -22,12 +22,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trytesorin.com/how-it-works.html" />
 
-  <!-- Icons (align with main site) -->
+  <!-- Icons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
 
-  <!-- Fonts (same as home) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -38,17 +38,39 @@
   <style>
     :root {
       --bg: #ffffff;
-      --bg-soft: #ffffff;
       --text-main: #0f172a;
       --text-soft: #6b7280;
       --accent: #22c55e;
       --border-subtle: #e5e7eb;
+
       --radius-xl: 22px;
       --radius-lg: 18px;
+      --radius-md: 14px;
       --radius-pill: 999px;
+
       --max-width: 1120px;
+      --content-width: 760px; /* keeps reading comfortable */
+
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-display: "Playfair Display", "Times New Roman", serif;
+
+      /* Type scale (premium + readable) */
+      --text-body: 16px;
+      --text-small: 14px;
+      --text-label: 13px;
+
+      --h1: clamp(30px, 4.4vw, 44px);
+      --h2: clamp(22px, 3.0vw, 30px);
+
+      /* Spacing scale */
+      --space-1: 6px;
+      --space-2: 10px;
+      --space-3: 14px;
+      --space-4: 18px;
+      --space-5: 24px;
+      --space-6: 32px;
+      --space-7: 44px;
+      --space-8: 64px;
 
       /* Motion system tokens */
       --ease-out: cubic-bezier(.2,.8,.2,1);
@@ -56,6 +78,9 @@
       --d-1: 140ms;
       --d-2: 220ms;
       --d-3: 320ms;
+
+      --shadow-card: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --shadow-hover: 0 18px 40px rgba(15, 23, 42, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -65,6 +90,9 @@
       background: var(--bg);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
+      font-size: var(--text-body);
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
     }
 
     .page {
@@ -77,7 +105,7 @@
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 32px 16px 80px;
+      padding: 28px 16px 84px;
     }
 
     /* HEADER */
@@ -85,8 +113,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 0 28px;
-      position: relative; /* mobile menu anchor */
+      padding: 6px 0 22px;
+      position: relative;
     }
 
     .brand-link {
@@ -94,18 +122,20 @@
       color: inherit;
       display: flex;
       align-items: center;
+      min-width: 0;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      min-width: 0;
     }
 
     .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
       background: #ffffff;
       display: flex;
       align-items: center;
@@ -113,6 +143,7 @@
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
       border: 1px solid rgba(148, 163, 184, 0.20);
       overflow: hidden;
+      flex: 0 0 auto;
     }
 
     .brand-mark img {
@@ -125,26 +156,30 @@
     .brand-text-wrap {
       display: flex;
       flex-direction: column;
+      min-width: 0;
     }
 
     .brand-name {
       font-family: var(--font-display);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 16px;
+      letter-spacing: 0.12em;
+      font-size: 15px;
+      line-height: 1.1;
+      white-space: nowrap;
     }
 
     .brand-tagline {
-      font-size: 11px;
+      font-size: var(--text-small);
       color: var(--text-soft);
+      line-height: 1.3;
     }
 
     nav {
       display: flex;
       align-items: center;
       gap: 22px;
-      font-size: 13px;
+      font-size: var(--text-small);
       color: var(--text-soft);
     }
 
@@ -155,16 +190,18 @@
     }
 
     nav a.active {
-      font-weight: 500;
+      font-weight: 600;
       color: #111827;
       border-bottom: 1px solid rgba(148, 163, 184, 0.6);
     }
 
     nav a.highlight {
-      padding: 7px 14px;
+      padding: 8px 14px;
       border-radius: var(--radius-pill);
       border: 1px solid rgba(148, 163, 184, 0.5);
-      font-size: 12px;
+      font-size: var(--text-label);
+      color: #111827;
+      background: rgba(255,255,255,0.8);
     }
 
     /* Mobile burger */
@@ -172,7 +209,7 @@
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.6);
       background: rgba(255, 255, 255, 0.92);
-      padding: 8px 10px;
+      padding: 9px 11px;
       border-radius: 999px;
       cursor: pointer;
       line-height: 0;
@@ -181,7 +218,7 @@
 
     .menu-btn:focus {
       outline: none;
-      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.18);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.16);
     }
 
     .menu-bars {
@@ -230,13 +267,12 @@
     .mobile-menu a {
       text-decoration: none;
       color: #111827;
-      font-size: 13px;
+      font-size: var(--text-small);
       padding: 10px 10px;
       border-radius: 12px;
     }
 
     .mobile-menu a:hover { background: #f3f4f6; }
-
     .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
 
     .mobile-menu .mobile-cta {
@@ -247,123 +283,129 @@
     }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
+    /* MAIN CONTENT WIDTH */
+    .content {
+      max-width: var(--content-width);
+    }
+
     /* HERO */
     .hero {
-      padding-top: 24px;
-      padding-bottom: 8px;
-      max-width: 720px;
+      padding-top: var(--space-5);
+      padding-bottom: var(--space-6);
     }
 
     .hero-label {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 10px;
+      padding: 7px 12px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.38);
       background: rgba(255, 255, 255, 0.9);
-      font-size: 11px;
+      font-size: var(--text-label);
       color: var(--text-soft);
-      margin-bottom: 12px;
+      margin-bottom: var(--space-3);
     }
 
     .hero-label span.dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
       background: #22c55e;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(30px, 4vw, 36px);
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-      margin-bottom: 10px;
+      font-size: var(--h1);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      margin-bottom: var(--space-3);
     }
 
     .hero-subtitle {
-      font-size: 15px;
-      line-height: 1.7;
+      font-size: 17px;
+      line-height: 1.75;
       color: var(--text-soft);
-      margin-bottom: 6px;
-      max-width: 640px;
+      margin-bottom: var(--space-3);
+      max-width: 58ch;
     }
 
     .hero-note {
-      font-size: 11px;
+      font-size: var(--text-small);
       color: var(--text-soft);
-      max-width: 520px;
-      margin-top: 10px;
-      line-height: 1.6;
+      max-width: 62ch;
+      line-height: 1.7;
     }
 
     .hero-note strong {
       color: #111827;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     /* SECTIONS */
     .section {
-      margin-top: 40px;
-      max-width: 820px;
+      margin-top: var(--space-8);
     }
 
     .section-header {
-      text-align: left;
-      max-width: 580px;
-      margin-bottom: 18px;
+      margin-bottom: var(--space-5);
     }
 
     .section-kicker {
-      font-size: 11px;
+      font-size: var(--text-label);
       text-transform: uppercase;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       color: var(--text-soft);
-      margin-bottom: 6px;
+      margin-bottom: var(--space-2);
     }
 
     .section-title {
-      font-size: 20px;
+      font-size: var(--h2);
       letter-spacing: -0.03em;
-      margin-bottom: 8px;
+      margin-bottom: var(--space-2);
       font-family: var(--font-display);
+      line-height: 1.15;
     }
 
     .section-subtitle {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text-soft);
-      line-height: 1.7;
+      line-height: 1.75;
+      max-width: 64ch;
     }
 
     /* ACCORDION */
     .accordion {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .accordion-item {
       border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid rgba(229,231,235,0.95);
       background: #ffffff;
       overflow: hidden;
-      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out);
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition: box-shadow var(--d-2) var(--ease-out), transform var(--d-2) var(--ease-out), border-color var(--d-2) var(--ease-out);
     }
 
-    .accordion-item:hover { box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08); }
+    .accordion-item:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(148, 163, 184, 0.35);
+    }
 
     .accordion-header { margin: 0; }
 
     .accordion-trigger {
       width: 100%;
-      padding: 12px 14px;
+      padding: 16px 16px;
       border: none;
       background: transparent;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
       font: inherit;
       text-align: left;
       cursor: pointer;
@@ -372,40 +414,42 @@
     .accordion-title-wrap {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
+      min-width: 0;
     }
 
     .accordion-eyebrow {
-      font-size: 11px;
+      font-size: var(--text-label);
       text-transform: uppercase;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       color: var(--text-soft);
     }
 
     .accordion-title {
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 600;
       color: #111827;
+      line-height: 1.35;
     }
 
     .accordion-icon {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--text-soft);
       transform: rotate(0deg);
       transition: transform 0.2s var(--ease-out);
+      flex: 0 0 auto;
     }
 
     .accordion-trigger[aria-expanded="true"] .accordion-icon {
       transform: rotate(180deg);
     }
 
-    /* Animated panel (height + fade) */
     .accordion-panel {
-      padding: 0 14px 12px 14px;
+      padding: 0 16px 14px 16px;
       border-top: 1px solid rgba(229, 231, 235, 0.9);
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-soft);
-      line-height: 1.7;
+      line-height: 1.75;
 
       max-height: 0;
       overflow: hidden;
@@ -423,86 +467,94 @@
     }
 
     .accordion-body ul {
-      margin-top: 8px;
-      padding-left: 18px;
+      margin-top: 10px;
+      padding-left: 20px;
     }
 
-    .accordion-body li { margin-bottom: 4px; }
+    .accordion-body li { margin-bottom: 6px; }
 
     /* SUMMARY CARD */
     .summary-card {
       border-radius: var(--radius-xl);
-      border: 1px solid var(--border-subtle);
-      padding: 18px 18px 20px;
+      border: 1px solid rgba(229,231,235,0.95);
+      padding: 22px;
       background: #f9fafb;
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-soft);
-      line-height: 1.7;
-      margin-top: 18px;
+      line-height: 1.75;
+      margin-top: var(--space-6);
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+      transition: box-shadow var(--d-2) var(--ease-out), transform var(--d-2) var(--ease-out);
     }
 
+    .summary-card:hover { box-shadow: var(--shadow-card); }
+
     .summary-title {
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 8px;
+      font-size: var(--text-label);
+      font-weight: 700;
+      margin-bottom: 12px;
       color: #111827;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
     }
 
     .summary-block {
-      margin-top: 12px;
-      padding-top: 10px;
+      margin-top: 14px;
+      padding-top: 14px;
       border-top: 1px solid rgba(229, 231, 235, 0.9);
     }
 
+    .summary-block:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
     .summary-block-title {
-      font-size: 12px;
-      font-weight: 500;
-      margin-bottom: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
       color: #111827;
     }
 
     .summary-block p {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-soft);
-      line-height: 1.6;
+      line-height: 1.75;
     }
 
     /* CTA STRIP */
     .cta-strip {
-      margin-top: 48px;
-      padding: 14px 16px;
+      margin-top: var(--space-8);
+      padding: 18px 18px;
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.38);
       background: linear-gradient(120deg, #f9fafb, #ecfdf5);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      font-size: 13px;
+      gap: 12px;
       color: var(--text-soft);
-      max-width: 820px;
     }
 
     .cta-strip .highlight {
-      font-weight: 500;
+      font-weight: 700;
       color: #111827;
     }
 
     .cta-btn {
       border: none;
       border-radius: var(--radius-pill);
-      padding: 9px 16px;
-      font-size: 13px;
-      font-weight: 500;
+      padding: 10px 18px;
+      font-size: var(--text-small);
+      font-weight: 700;
       cursor: pointer;
       background: #111827;
       color: #f9fafb;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35);
       text-decoration: none;
       white-space: nowrap;
@@ -510,7 +562,7 @@
     }
 
     .cta-btn span.arrow {
-      font-size: 14px;
+      font-size: 16px;
       transform: translateX(0);
       transition: transform 0.2s var(--ease-out);
     }
@@ -526,9 +578,9 @@
     /* FOOTER */
     footer {
       border-top: 1px solid var(--border-subtle);
-      margin-top: 40px;
+      margin-top: var(--space-8);
       padding-top: 18px;
-      font-size: 11px;
+      font-size: var(--text-small);
       color: var(--text-soft);
       display: flex;
       flex-wrap: wrap;
@@ -542,15 +594,11 @@
 
     .footer-links {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
-    /* ------------------------------
-       TESORIN Motion System (v1)
-       Scroll reveal + hover micro-lift
-    -------------------------------- */
-
+    /* Motion system */
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; }
       .reveal, .reveal-up, .reveal-fade, .reveal-left, .reveal-right,
@@ -574,12 +622,10 @@
       transition: opacity var(--d-2) var(--ease-soft), transform var(--d-2) var(--ease-soft);
       will-change: transform, opacity;
     }
-
     .reveal.is-in{
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
-
     .reveal-up{ transform: translate3d(0, 14px, 0); }
     .reveal-fade{ transform: none; }
     .reveal-left{ transform: translate3d(-14px, 0, 0); }
@@ -595,13 +641,16 @@
     }
     .hover-lift:hover{ transform: translateY(-2px); filter: brightness(1.02); }
 
-    .hover-glow:hover{ box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12); }
+    .hover-glow:hover{ box-shadow: var(--shadow-hover); }
 
-    /* RESPONSIVE NAV */
+    /* RESPONSIVE NAV + TYPE */
     @media (max-width: 880px) {
       nav { display: none; }
       .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
       header { gap: 10px; }
+
+      .shell { padding-top: 22px; }
+      .hero-subtitle { font-size: 16px; }
       .cta-strip { align-items: flex-start; }
     }
   </style>
@@ -651,8 +700,8 @@
         </div>
       </header>
 
-      <!-- HERO -->
-      <main>
+      <main class="content">
+        <!-- HERO -->
         <section class="hero" data-stagger>
           <div class="hero-label reveal reveal-up">
             <span class="dot"></span>
@@ -664,8 +713,7 @@
           </h1>
 
           <p class="hero-subtitle reveal reveal-up">
-            A simple planning flow that turns your income and goals into clear monthly actions —
-            without spreadsheets, pressure, or market noise.
+            Turn your income and goals into clear monthly actions — without spreadsheets, pressure, or market noise.
           </p>
 
           <p class="hero-note reveal reveal-up">
@@ -679,7 +727,7 @@
             <div class="section-kicker reveal reveal-up">The flow</div>
             <h2 class="section-title reveal reveal-up">A calm system, repeated month by month.</h2>
             <p class="section-subtitle reveal reveal-up">
-              You don’t “optimize everything.” You do the next right thing, consistently — and the plan updates as your life changes.
+              You do the next right thing consistently — and the plan updates as your life changes.
             </p>
           </div>
 
@@ -723,7 +771,7 @@
                 <div class="accordion-body">
                   TESORIN gives you one anchor number:
                   <ul>
-                    <li><strong style="color:#111827;font-weight:500;">Monthly flexibility</strong> — what you can safely route to goals after essentials.</li>
+                    <li><strong style="color:#111827;font-weight:700;">Monthly flexibility</strong> — what you can safely route to goals after essentials.</li>
                   </ul>
                   No guilt. No “track every coffee.” Just a clear, usable view.
                 </div>
@@ -801,32 +849,24 @@
           <aside class="summary-card reveal reveal-up hover-lift hover-glow">
             <div class="summary-title">What you’ll actually see</div>
 
-            <div class="summary-block" style="margin-top:0;padding-top:0;border-top:none;">
+            <div class="summary-block">
               <div class="summary-block-title">1) Your monthly flexibility</div>
-              <p>
-                One number that tells you what’s safe to allocate toward goals this month.
-              </p>
+              <p>One number that tells you what’s safe to allocate toward goals this month.</p>
             </div>
 
             <div class="summary-block">
               <div class="summary-block-title">2) A clear priority stack</div>
-              <p>
-                Safety → debt → long-term wealth, in a calm order that reduces regret.
-              </p>
+              <p>Safety → debt → long-term wealth, in a calm order that reduces regret.</p>
             </div>
 
             <div class="summary-block">
               <div class="summary-block-title">3) Simple progress</div>
-              <p>
-                Momentum you can feel — without turning your life into a tracking project.
-              </p>
+              <p>Momentum you can feel — without turning your life into a tracking project.</p>
             </div>
 
             <div class="summary-block">
               <div class="summary-block-title">What TESORIN is not</div>
-              <p>
-                Not a trading screen. Not stock tips. Not product pushing. Planning comes first.
-              </p>
+              <p>Not a trading screen. Not stock tips. Not product pushing. Planning comes first.</p>
             </div>
           </aside>
         </section>
@@ -837,7 +877,7 @@
             <div class="section-kicker reveal reveal-up">Under the hood</div>
             <h2 class="section-title reveal reveal-up">Simple rules, chosen to keep you safe.</h2>
             <p class="section-subtitle reveal reveal-up">
-              You see a calm interface. Behind it is a rules-based approach that prioritizes stability first — tuned for early-stage planners.
+              You see a calm interface. Behind it is a rules-based approach that prioritizes stability first.
             </p>
           </div>
 
@@ -899,7 +939,7 @@
         <section class="cta-strip reveal reveal-up hover-lift hover-glow">
           <div>
             <span class="highlight">Want to see your monthly flexibility?</span><br />
-            Join early access on the main page and get notified when beta access opens.
+            Join early access on the main page and get notified when beta opens.
           </div>
           <a href="/" class="cta-btn">
             Go to main page
