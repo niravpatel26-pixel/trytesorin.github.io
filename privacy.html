@@ -1,46 +1,30 @@
+<!-- FILE: privacy.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SEO: structured data (WebPage) -->
-  <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebPage",
-  "name":"Wealth Planning App | TESORIN",
-  "url":"https://www.trytesorin.com/personal-finance-planning-app.html",
-  "description":"TESORIN is a planning-first personal finance app. Start with a foundation in TESORIN, grow into optimization with Fintrek, and reach stewardship with SummitVest — one system that evolves with you.",
-  "isPartOf":{"@type":"WebSite","name":"TESORIN","url":"https://www.trytesorin.com/"}
-}
-  </script>
-
   <meta charset="UTF-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Wealth Planning App — TESORIN | A planning-first system</title>
+  <title>Privacy — TESORIN | How we handle data</title>
   <meta
     name="description"
-    content="TESORIN is a planning-first personal finance app. Start with a foundation in TESORIN, grow into optimization with Fintrek, and reach stewardship with SummitVest — one system that evolves with you."
+    content="TESORIN Privacy Policy — what we collect, why we collect it, how we protect it, and the controls you have."
   />
-  <meta
-    name="keywords"
-    content="personal finance planning app, financial planning app, money planning app, budgeting alternative, cashflow planning, TESORIN"
-  />
-
-  <link rel="canonical" href="https://www.trytesorin.com/personal-finance-planning-app.html" />
+  <link rel="canonical" href="https://www.trytesorin.com/privacy.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Wealth Planning App — TESORIN" />
-  <meta property="og:description" content="Planning-first money system that grows with you: TESORIN → Fintrek → SummitVest." />
-  <meta property="og:url" content="https://www.trytesorin.com/personal-finance-planning-app.html" />
-  <meta property="og:site_name" content="TESORIN" />
+  <meta property="og:title" content="Privacy — TESORIN" />
+  <meta property="og:description" content="What we collect, why we collect it, and the controls you have." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trytesorin.com/privacy.html" />
+  <meta property="og:site_name" content="TESORIN" />
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Wealth Planning App — TESORIN" />
-  <meta name="twitter:description" content="Planning-first money system that grows with you: TESORIN → Fintrek → SummitVest." />
+  <meta name="twitter:title" content="Privacy — TESORIN" />
+  <meta name="twitter:description" content="What we collect, why we collect it, and the controls you have." />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
   <!-- Icons (match site) -->
@@ -60,7 +44,6 @@
 
   <style>
     :root {
-      /* Match index/features tokens */
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
@@ -85,7 +68,6 @@
       --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
 
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-      --shadow-card: 0 16px 36px rgba(15, 23, 42, 0.08);
 
       --ease-out: cubic-bezier(.2,.8,.2,1);
       --ease-soft: cubic-bezier(.2,.6,.2,1);
@@ -139,7 +121,7 @@
       padding: 22px 16px 76px;
     }
 
-    /* HEADER (match features/index) */
+    /* HEADER (match site) */
     header {
       display: flex;
       align-items: center;
@@ -219,7 +201,7 @@
       background: rgba(34, 197, 94, 0.70);
     }
 
-    /* MOBILE MENU (match features/index) */
+    /* MOBILE MENU (match site) */
     .menu-btn {
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.55);
@@ -269,7 +251,7 @@
 
     .hero {
       padding-top: 10px;
-      max-width: 72ch;
+      max-width: 78ch;
     }
 
     .hero-title {
@@ -287,22 +269,17 @@
       line-height: 1.7;
       color: var(--text-soft);
       margin-bottom: 10px;
-      max-width: 70ch;
+      max-width: 72ch;
     }
 
-    .hero-note {
+    .meta {
       font-size: 12px;
       color: var(--text-mute);
       line-height: 1.6;
       max-width: 78ch;
     }
-    .hero-note a {
-      color: var(--text-main);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
 
-    .section { margin-top: 28px; max-width: 92ch; }
+    .section { margin-top: 26px; max-width: 92ch; }
 
     .section-kicker {
       font-size: 11px;
@@ -323,15 +300,16 @@
       font-size: 14px;
       color: var(--text-soft);
       line-height: 1.7;
-      max-width: 76ch;
+      max-width: 78ch;
     }
 
-    /* FEATURE GRID (like features page cards) */
-    .cards-2 {
-      margin-top: 16px;
+    /* Summary cards */
+    .cards {
+      margin-top: 14px;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
+      max-width: 92ch;
     }
 
     .card {
@@ -368,83 +346,50 @@
       line-height: 1.75;
     }
 
-    .card ul {
-      margin-top: 10px;
-      padding-left: 18px;
-      color: var(--text-soft);
-      font-size: 14px;
-      line-height: 1.75;
-    }
-    .card li { margin: 6px 0; }
-    .card strong { color: var(--text-main); font-weight: 600; }
-
-    /* TABLE */
-    .table-wrap {
-      margin-top: 16px;
+    /* Policy text */
+    .policy {
+      margin-top: 14px;
       background: var(--card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-soft);
-      overflow: hidden;
+      padding: 16px 16px 18px;
       max-width: 92ch;
     }
 
-    .swipe-hint {
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 10px 12px;
-      font-size: 11px;
-      color: var(--text-mute);
-      background: #f9fafb;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-    }
-
-    .swipe-hint .arrow {
-      font-size: 12px;
-      color: rgba(79,96,115,0.95);
-      animation: nudge 1.6s ease-in-out infinite;
-    }
-
-    @keyframes nudge {
-      0%, 100% { transform: translateX(0); opacity: .9; }
-      50% { transform: translateX(6px); opacity: .55; }
-    }
-
-    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #ffffff;
-      font-size: 13px;
-      min-width: 720px;
-    }
-
-    th, td {
-      padding: 14px 14px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
-      text-align: left;
-      vertical-align: top;
-      white-space: nowrap;
-    }
-
-    td { white-space: normal; }
-    tr:last-child td { border-bottom: none; }
-
-    th {
-      background: #f9fafb;
-      color: #111827;
+    .policy h3 {
+      font-size: 14px;
       font-weight: 600;
-      font-size: 12px;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
+      color: var(--text-main);
+      margin: 14px 0 6px;
     }
 
-    td strong { color: #111827; font-weight: 600; }
+    .policy p {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
 
-    /* CTA STRIP (match features) */
+    .policy ul {
+      padding-left: 18px;
+      margin: 6px 0 10px;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .policy li { margin: 5px 0; }
+    .policy a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
+
+    .inline-note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-mute);
+      line-height: 1.6;
+    }
+
+    /* CTA strip */
     .cta-strip {
       margin-top: 22px;
       padding: 14px 16px;
@@ -484,42 +429,7 @@
     .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
     .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FORM (compact, site-like) */
-    .form-row {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .form-row input[type="email"] {
-      flex: 1;
-      min-width: 220px;
-      padding: 10px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.60);
-      background: rgba(249, 250, 251, 0.95);
-      font-size: 13px;
-      color: var(--text-main);
-      outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-    .form-row input::placeholder { color: rgba(148, 163, 184, 0.95); }
-    .form-row input:focus {
-      border-color: rgba(34, 197, 94, 0.70);
-      box-shadow: var(--ring);
-      background: #ffffff;
-    }
-
-    .trust-lines {
-      margin-top: 10px;
-      font-size: 11px;
-      color: var(--text-mute);
-      line-height: 1.6;
-      max-width: 80ch;
-    }
-
-    /* FOOTER (match features/index) */
+    /* FOOTER (match site) */
     footer {
       border-top: 1px solid rgba(229, 231, 235, 1);
       margin-top: 44px;
@@ -536,7 +446,7 @@
     footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* Reveal (match features) */
+    /* Reveal (match site) */
     .reveal{
       opacity: 0;
       transform: translate3d(0, 10px, 0);
@@ -551,19 +461,14 @@
       nav { display: none; }
       .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
       header { padding-bottom: 14px; }
-      .cards-2 { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
       .hero-title { font-size: clamp(30px, 7vw, 40px); }
       .hero-subtitle { font-size: 15px; }
-      .swipe-hint { display: flex; }
-      .form-row { flex-direction: column; align-items: stretch; }
-      .form-row input[type="email"] { min-width: 0; width: 100%; }
-      .form-row .cta-btn { width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
       .card { transition: none !important; transform: none !important; }
-      .swipe-hint .arrow { animation: none !important; }
     }
   </style>
 </head>
@@ -595,12 +500,10 @@
           <a href="/faq.html" class="highlight">FAQs</a>
         </nav>
 
-        <!-- Mobile burger -->
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
 
-        <!-- Mobile dropdown -->
         <div id="mobile-menu" class="mobile-menu" hidden>
           <div class="mobile-menu-inner">
             <a href="/how-it-works.html">How it works</a>
@@ -608,222 +511,156 @@
             <a href="/about.html">About</a>
             <a href="/safety.html">Safety</a>
             <a href="/faq.html">FAQs</a>
-            <a class="active" href="/personal-finance-planning-app.html">Planning app</a>
+            <a href="/personal-finance-planning-app.html">Planning app</a>
             <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
           </div>
         </div>
       </header>
 
-      <!-- MAIN -->
       <main id="main">
-        <!-- HERO (no top pill) -->
-        <section class="hero" aria-label="Planning app overview" data-stagger>
-          <h1 class="hero-title reveal reveal-up">Wealth planning app — from first plan to long-term wealth.</h1>
-
+        <!-- HERO -->
+        <section class="hero" aria-label="Privacy overview" data-stagger>
+          <h1 class="hero-title reveal reveal-up">Privacy, explained plainly.</h1>
           <p class="hero-subtitle reveal reveal-up">
-            Most apps help you track the past or push products. TESORIN helps you make the next right move — and it grows with you through a three-stage system:
-            <strong style="color:var(--text-main);font-weight:600;">TESORIN → Fintrek → SummitVest</strong>.
+            TESORIN is designed to be conservative with data. This page explains what we collect, why we collect it, and the controls you have.
           </p>
-
-          <p class="hero-note reveal reveal-up">
-            Want the product view? <a href="/features.html">Explore features →</a>
+          <p class="meta reveal reveal-up">
+            Effective date: <strong style="color:var(--text-main);font-weight:600;">January 2, 2026</strong> ·
+            This policy is a general template and should be reviewed with counsel before launch.
           </p>
         </section>
 
-        <!-- WHY PLANNING -->
-        <section class="section" aria-label="Why planning" data-stagger>
+        <!-- HIGHLIGHTS -->
+        <section class="section" aria-label="Privacy highlights" data-stagger>
           <div>
-            <div class="section-kicker reveal reveal-up">Why planning</div>
-            <h2 class="section-title reveal reveal-up">Planning comes before budgeting and investing.</h2>
+            <div class="section-kicker reveal reveal-up">At a glance</div>
+            <h2 class="section-title reveal reveal-up">The short version.</h2>
             <p class="section-subtitle reveal reveal-up">
-              Budgeting tells you where money went. Investing tells you what money might earn. Planning tells you what to do next — given your obligations, goals, and real constraints.
+              We aim for minimal collection, clear purpose, and practical controls.
             </p>
           </div>
 
-          <div class="cards-2" data-stagger>
+          <div class="cards" data-stagger>
             <article class="card reveal reveal-up">
-              <div class="card-label">Budgeting</div>
-              <h3>Categories don’t automatically become decisions.</h3>
-              <p>
-                Many people stop logging after a few weeks. Even with perfect categories, the hard question remains: what is safe to commit this month?
-              </p>
+              <div class="card-label">Minimum</div>
+              <h3>We collect what we need.</h3>
+              <p>We avoid collecting sensitive data unless it’s required to provide the product feature you’re using.</p>
             </article>
-
             <article class="card reveal reveal-up">
-              <div class="card-label">Investing</div>
-              <h3>Investing is a tool. Planning is the system.</h3>
-              <p>
-                Investing assumes your foundation is stable. Planning makes sure you invest with confidence — without creating cash stress or fragile finances.
-              </p>
+              <div class="card-label">Control</div>
+              <h3>You can delete your data.</h3>
+              <p>You can request deletion of your account and associated data. Some records may be retained if required by law.</p>
+            </article>
+            <article class="card reveal reveal-up">
+              <div class="card-label">No selling</div>
+              <h3>We don’t sell personal data.</h3>
+              <p>We don’t sell your personal information to third parties.</p>
             </article>
           </div>
         </section>
 
-        <!-- LADDER -->
-        <section class="section" id="ladder" aria-label="Stages" data-stagger>
+        <!-- POLICY BODY -->
+        <section class="section" aria-label="Privacy policy" data-stagger>
           <div>
-            <div class="section-kicker reveal reveal-up">System</div>
-            <h2 class="section-title reveal reveal-up">One philosophy. Three stages of depth.</h2>
+            <div class="section-kicker reveal reveal-up">Details</div>
+            <h2 class="section-title reveal reveal-up">Privacy Policy</h2>
             <p class="section-subtitle reveal reveal-up">
-              Your needs evolve as income, assets, and responsibilities grow. The system is designed so you don’t have to reset — you simply graduate into deeper tools when it becomes valuable.
+              The sections below describe the types of information we may collect and how it may be used.
             </p>
           </div>
 
-          <div class="cards-2" data-stagger>
-            <article class="card reveal reveal-up">
-              <div class="card-label">Stage 1</div>
-              <h3>TESORIN · Foundation</h3>
-              <p>Your first serious money plan. Calm clarity and simple priorities.</p>
-              <ul>
-                <li><strong>Monthly flexibility</strong> (what you can safely route to goals)</li>
-                <li>Safety → debt → long-term wealth (in a calm order)</li>
-                <li>Goal tracking and lightweight progress</li>
-              </ul>
-              <p style="margin-top:10px;">
-                <a href="/how-it-works.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">See how it works →</a>
-              </p>
-            </article>
+          <div class="policy reveal reveal-up">
+            <h3>1) Information we collect</h3>
+            <p>
+              Depending on how you use TESORIN, we may collect:
+            </p>
+            <ul>
+              <li><strong>Account information</strong> (e.g., email address).</li>
+              <li><strong>Product inputs you provide</strong> (e.g., goals, budgets, balances, or planning preferences).</li>
+              <li><strong>Usage data</strong> (e.g., app interactions, feature usage, diagnostics).</li>
+              <li><strong>Device information</strong> (e.g., device type, OS version) for stability and security.</li>
+            </ul>
 
-            <article class="card reveal reveal-up">
-              <div class="card-label">Stage 2</div>
-              <h3>Fintrek · Growth (coming soon)</h3>
-              <p>When your foundation is stable, the question becomes optimization.</p>
-              <ul>
-                <li>Scenario trade-offs (cash vs invest vs goals)</li>
-                <li>Allocation and contribution planning</li>
-                <li>Tax-aware thinking as complexity rises</li>
-              </ul>
-              <p style="margin-top:10px;">
-                <span style="color:var(--text-mute);">Future link:</span>
-                <a href="/fintrek.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Fintrek</a>
-              </p>
-            </article>
+            <h3>2) Information we do not intend to collect</h3>
+            <p>
+              We aim to avoid collecting sensitive personal information unless a feature explicitly requires it. We do not ask for:
+            </p>
+            <ul>
+              <li>Government identifiers (e.g., SIN/SSN) unless a future feature requires it and is clearly disclosed.</li>
+              <li>Biometric data.</li>
+              <li>Precise location data.</li>
+            </ul>
 
-            <article class="card reveal reveal-up">
-              <div class="card-label">Stage 3</div>
-              <h3>SummitVest · Stewardship (coming soon)</h3>
-              <p>For larger wealth and families: structure, coordination, continuity.</p>
-              <ul>
-                <li>Multi-asset coordination mindset</li>
-                <li>Tax strategy + structure over decades</li>
-                <li>Stewardship-first planning</li>
-              </ul>
-              <p style="margin-top:10px;">
-                <span style="color:var(--text-mute);">Future link:</span>
-                <a href="/summitvest.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">SummitVest</a>
-              </p>
-            </article>
+            <h3>3) How we use information</h3>
+            <p>
+              We use information to:
+            </p>
+            <ul>
+              <li>Provide and maintain the product (core planning features).</li>
+              <li>Improve reliability, performance, and usability.</li>
+              <li>Protect against fraud, abuse, and security incidents.</li>
+              <li>Communicate important product updates (e.g., early access invitations).</li>
+            </ul>
 
-            <article class="card reveal reveal-up">
-              <div class="card-label">Design</div>
-              <h3>No resets. Your plan compounds.</h3>
-              <p>
-                Most people outgrow their money apps. This system is designed so your plan deepens over time — without starting from scratch.
-              </p>
-              <ul>
-                <li>Begin with simplicity</li>
-                <li>Add sophistication only when useful</li>
-                <li>Stay focused on the next best move</li>
-              </ul>
-              <p style="margin-top:10px;">
-                <a href="/safety.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Read about safety & trust →</a>
-              </p>
-            </article>
-          </div>
-        </section>
+            <h3>4) Sharing</h3>
+            <p>
+              We may share information with service providers that help run the product (e.g., hosting, analytics, email delivery).
+              They are permitted to process data only for providing services to TESORIN.
+            </p>
+            <p>
+              We may also disclose information if required by law, to protect rights and safety, or in connection with a business transaction
+              (e.g., merger or acquisition), subject to appropriate safeguards.
+            </p>
 
-        <!-- COMPARISON -->
-        <section class="section" aria-label="Comparison" data-stagger>
-          <div>
-            <div class="section-kicker reveal reveal-up">Comparison</div>
-            <h2 class="section-title reveal reveal-up">How TESORIN compares</h2>
-            <p class="section-subtitle reveal reveal-up">
-              TESORIN is a planning layer above budgeting and investing — and the entry point to a system that can scale into Fintrek and SummitVest.
+            <h3>5) Cookies and analytics</h3>
+            <p>
+              If you use the website, it may use essential cookies and limited analytics to understand basic traffic patterns and improve content.
+              Where required, we will provide controls to opt out of non-essential analytics.
+            </p>
+
+            <h3>6) Data retention</h3>
+            <p>
+              We keep data for as long as necessary to provide the service and for legitimate business purposes (e.g., security, auditing),
+              unless a longer retention period is required by law.
+            </p>
+
+            <h3>7) Your choices and rights</h3>
+            <p>
+              Depending on your location, you may have rights to access, correct, delete, or export your information, and to object to certain processing.
+              To request help, contact us using the information below.
+            </p>
+
+            <h3>8) Security</h3>
+            <p>
+              We use administrative, technical, and organizational safeguards designed to protect information. No system is perfectly secure,
+              but we aim to minimize risk and respond quickly to issues.
+            </p>
+
+            <h3>9) Children</h3>
+            <p>
+              TESORIN is not intended for children. If you believe a child provided information, contact us and we will address it.
+            </p>
+
+            <h3>10) Contact</h3>
+            <p>
+              For privacy questions or requests, contact: <strong>privacy@trytesorin.com</strong>
+            </p>
+
+            <p class="inline-note">
+              If you want a simpler statement of principles, read the <a href="/safety.html">Safety</a> page.
             </p>
           </div>
 
-          <div class="table-wrap reveal reveal-up" role="region" aria-label="Comparison table">
-            <div class="swipe-hint" aria-hidden="true">
-              <span>Swipe to compare</span>
-              <span class="arrow">→</span>
-            </div>
-            <div class="table-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Capability</th>
-                    <th>Budgeting apps</th>
-                    <th>Investing apps</th>
-                    <th><strong>TESORIN</strong></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Tracks spending</td>
-                    <td>Yes</td>
-                    <td>No</td>
-                    <td>Optional</td>
-                  </tr>
-                  <tr>
-                    <td>Explains monthly flexibility</td>
-                    <td>No</td>
-                    <td>No</td>
-                    <td><strong>Yes</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Gives next-best actions</td>
-                    <td>No</td>
-                    <td>Sometimes</td>
-                    <td><strong>Yes</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Goal-first planning</td>
-                    <td>Sometimes</td>
-                    <td>Sometimes</td>
-                    <td><strong>Core</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Designed to deepen over time</td>
-                    <td>No</td>
-                    <td>No</td>
-                    <td><strong>Yes (TESORIN → Fintrek → SummitVest)</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Requires bank linking</td>
-                    <td>Often</td>
-                    <td>Usually</td>
-                    <td><strong>No (optional)</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section" id="waitlist" aria-label="Waitlist" data-stagger>
-          <div>
-            <div class="section-kicker reveal reveal-up">Early access</div>
-            <h2 class="section-title reveal reveal-up">Start with a foundation. Let everything else follow.</h2>
-            <p class="section-subtitle reveal reveal-up">
-              Join TESORIN early access. We’ll email you when beta opens, plus a few important updates.
-            </p>
-          </div>
-
-          <section class="cta-strip reveal reveal-up" aria-label="Join waitlist">
+          <section class="cta-strip reveal reveal-up" aria-label="Call to action">
             <div>
-              <span class="highlight">Join the early access list.</span><br />
-              Private by default. No stock tips. No spam.
+              <span class="highlight">Want early access?</span><br />
+              Join the waitlist and we’ll invite beta users in small waves.
             </div>
             <a href="/?focus=waitlist" class="cta-btn">
               Join waitlist
               <span class="arrow" aria-hidden="true">→</span>
             </a>
           </section>
-
-          <div class="trust-lines reveal reveal-up">
-            Prefer a direct form here? Keep the homepage as the single waitlist source — fewer moving parts, fewer mistakes.
-          </div>
         </section>
       </main>
 
@@ -844,7 +681,7 @@
   </div>
 
   <script>
-    // Mobile menu (match features/index)
+    // Mobile menu (match site)
     (function () {
       const btn = document.querySelector(".menu-btn");
       const menu = document.getElementById("mobile-menu");
@@ -872,7 +709,7 @@
       });
     })();
 
-    // Scroll reveal + optional staggering (match features)
+    // Scroll reveal + optional staggering (match site)
     (function () {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       if (reduceMotion.matches) {
