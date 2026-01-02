@@ -94,6 +94,22 @@
 
     a, button, input { font-family: inherit; }
 
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-140%);
+      transition: transform .18s ease;
+      z-index: 9999;
+      font-size: 12px;
+    }
+    .skip-link:focus { transform: translateY(0); outline: none; box-shadow: var(--ring); }
+
     a:focus-visible,
     button:focus-visible,
     input:focus-visible {
@@ -217,14 +233,12 @@
     .mobile-menu-inner { display: flex; flex-direction: column; padding: 10px; gap: 4px; }
     .mobile-menu a { text-decoration: none; color: #111827; font-size: 13px; padding: 10px 10px; border-radius: 12px; }
     .mobile-menu a:hover { background: #f3f4f6; }
+    .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
     .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
     /* HERO */
-    .hero {
-      padding-top: 10px;
-      max-width: 820px;
-    }
+    .hero { padding-top: 10px; max-width: 820px; }
 
     .hero-label {
       display: inline-flex;
@@ -392,7 +406,7 @@
       color: var(--text-mute);
     }
 
-    /* CTA STRIP (same system as FAQ) */
+    /* CTA STRIP */
     .cta-strip {
       margin-top: 22px;
       padding: 14px 16px;
@@ -432,7 +446,7 @@
     .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
     .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FOOTER (match homepage) */
+    /* FOOTER */
     footer {
       border-top: 1px solid rgba(229, 231, 235, 1);
       margin-top: 44px;
@@ -478,6 +492,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <div class="page">
     <div class="shell">
 
@@ -514,7 +530,7 @@
             <a href="/how-it-works.html">How it works</a>
             <a href="/features.html">Features</a>
             <a href="/about.html">About</a>
-            <a href="/safety.html">Safety</a>
+            <a class="active" href="/safety.html">Safety</a>
             <a href="/faq.html">FAQs</a>
             <a href="/personal-finance-planning-app.html">Planning app</a>
             <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
@@ -522,7 +538,7 @@
         </div>
       </header>
 
-      <main>
+      <main id="main">
         <!-- HERO -->
         <section class="hero" data-stagger aria-label="Safety overview">
           <div class="hero-label reveal reveal-up">
@@ -533,8 +549,8 @@
           <h1 class="hero-title reveal reveal-up">Trust comes from boundaries.</h1>
 
           <p class="hero-subtitle reveal reveal-up">
-            TESORIN is designed to feel calm because it stays in a conservative lane: planning, clarity, and control —
-            without moving your money or pushing products.
+            TESORIN is designed to stay in a conservative lane: planning, clarity, and control —
+            without moving your money or steering you toward products.
           </p>
 
           <p class="hero-note reveal reveal-up">
@@ -570,15 +586,15 @@
                   <br /><br />
                   <strong>TESORIN is:</strong>
                   <ul>
-                    <li>A calm view of cash flow, buffers, debt direction, and goals.</li>
-                    <li>A sequence that helps you choose the next right action — month by month.</li>
-                    <li>Built for people starting to take planning seriously, without spreadsheets.</li>
+                    <li>A clear view of cash flow, buffers, debt direction, and goals.</li>
+                    <li>A sequence that helps you choose the next action — month by month.</li>
+                    <li>Built for people starting to take planning seriously, without spreadsheet maintenance.</li>
                   </ul>
 
                   <strong>TESORIN is not:</strong>
                   <ul>
                     <li>A bank, brokerage, or wallet that holds funds.</li>
-                    <li>A place that trades or moves money in the background.</li>
+                    <li>A system that transfers money or places trades in the background.</li>
                     <li>A sales channel designed around commissions.</li>
                     <li>Personal advice tailored to your full legal/tax situation.</li>
                   </ul>
@@ -613,7 +629,7 @@
                     <li><strong>Cautious integrations:</strong> if account connections are added later, you’ll see what’s shared and what it enables.</li>
                   </ul>
                   <div class="muted-line">
-                    Your plan can be smart without your money leaving regulated rails.
+                    Your plan can be useful without your money leaving regulated rails.
                   </div>
                 </div>
               </div>
@@ -636,11 +652,14 @@
                   <ul>
                     <li><strong>Minimum necessary:</strong> enough to plan, not to profile.</li>
                     <li><strong>Plain-language controls:</strong> what’s stored, why it’s used, and what you can change.</li>
-                    <li><strong>No business model based on selling identifiable financial data.</strong></li>
-                    <li><strong>Clear docs as we ship:</strong> privacy and terms will be readable, not buried.</li>
+                    <li><strong>No selling identifiable financial data.</strong></li>
+                    <li><strong>Change transparency:</strong> when policies change, we’ll publish the update with a clear date.</li>
                   </ul>
                   <div class="muted-line">
-                    For legal details, see <a href="/privacy.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Privacy</a> and <a href="/terms.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Terms</a>.
+                    For details, see
+                    <a href="/privacy.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Privacy</a>
+                    and
+                    <a href="/terms.html" style="color:var(--text-main);text-decoration:underline;text-underline-offset:3px;">Terms</a>.
                   </div>
                 </div>
               </div>
