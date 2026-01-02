@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Structured data: institution + product -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Organization",
-      "name": "TESORIN",
-      "url": "https://www.trytesorin.com/",
-      "logo": "https://www.trytesorin.com/tesorin-logo.png"
-    },
-    {
-      "@type": "WebSite",
-      "name": "TESORIN",
-      "url": "https://www.trytesorin.com/"
-    },
+    { "@type": "Organization", "name": "TESORIN", "url": "https://www.trytesorin.com/", "logo": "https://www.trytesorin.com/tesorin-logo.png" },
+    { "@type": "WebSite", "name": "TESORIN", "url": "https://www.trytesorin.com/" },
     {
       "@type": "SoftwareApplication",
       "name": "TESORIN",
@@ -32,7 +22,6 @@
   </script>
 
   <link rel="canonical" href="https://www.trytesorin.com/" />
-
   <meta charset="UTF-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,33 +33,23 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <title>TESORIN — Know what you can safely do this month</title>
-
   <meta
     name="description"
     content="TESORIN is a planning-first money app. It shows one clear number—your monthly flexibility—and turns it into a calm sequence: safety, debt, then long-term wealth."
   />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="TESORIN — Know what you can safely do this month" />
-  <meta
-    property="og:description"
-    content="Planning-first. Calm by design. One clear number—your monthly flexibility—turned into the next right action."
-  />
+  <meta property="og:description" content="Planning-first. Calm by design. One clear number—your monthly flexibility—turned into the next right action." />
   <meta property="og:url" content="https://www.trytesorin.com" />
   <meta property="og:site_name" content="TESORIN" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TESORIN — Know what you can safely do this month" />
-  <meta
-    name="twitter:description"
-    content="A planning-first money app that reduces decisions and creates steady progress."
-  />
+  <meta name="twitter:description" content="A planning-first money app that reduces decisions and creates steady progress." />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Fonts (richer tone) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -78,34 +57,36 @@
     rel="stylesheet"
   />
 
-  <!-- Perf: preload hero frame (swap to .webp/.avif if available) -->
   <link rel="preload" as="image" href="/tesorin-flow-01.png" />
 
   <style>
     :root {
-      /* Subtle page tint (premium), cards stay white */
+      /* Premium: subtle page tint, white cards */
       --page-tint: #fbfcfd;
-      --bg: #ffffff;
+      --card: #ffffff;
 
+      /* Stronger contrast (less dull) */
       --text-main: #0b1220;
-      --text-soft: #334155;
-      --text-mute: #64748b;
+      --text-soft: #263449;   /* darker than before */
+      --text-mute: #516173;   /* nav + microcopy */
 
-      --accent: #16a34a;
+      /* Quieter green */
+      --accent: #178a45;      /* slightly deeper, less neon */
 
       --border-subtle: rgba(148, 163, 184, 0.30);
-      --border-strong: rgba(148, 163, 184, 0.45);
+      --border-strong: rgba(148, 163, 184, 0.44);
 
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
-      --radius-xl: 22px;
-      --radius-lg: 18px;
       --radius-pill: 999px;
       --max-width: 1120px;
 
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-display: "Playfair Display", "Times New Roman", serif;
 
-      --ring: 0 0 0 3px rgba(22, 163, 74, 0.18);
+      --ring: 0 0 0 3px rgba(23, 138, 69, 0.18);
+
+      /* Refined shadows (less hazy) */
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
+      --shadow-device: 0 24px 60px rgba(15, 23, 42, 0.12);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -120,7 +101,6 @@
 
     a, button, input { font-family: inherit; }
 
-    /* Accessibility */
     .skip-link {
       position: absolute;
       left: 12px;
@@ -142,20 +122,16 @@
     input:focus-visible {
       outline: none;
       box-shadow: var(--ring);
-      border-color: rgba(22, 163, 74, 0.65);
+      border-color: rgba(23, 138, 69, 0.65);
     }
 
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
 
     .shell {
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 32px 16px 80px;
+      padding: 24px 16px 76px; /* pulled up for better first screen */
     }
 
     /* HEADER */
@@ -163,53 +139,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 0 28px;
+      padding: 6px 0 18px; /* tighter */
       position: relative;
       gap: 14px;
     }
 
-    .brand-link {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      min-width: 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
+    .brand-link { text-decoration: none; color: inherit; display: flex; align-items: center; min-width: 0; }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
 
     .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 10px;
-      background: var(--bg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 32px; height: 32px; border-radius: 10px;
+      background: var(--card);
+      display: flex; align-items: center; justify-content: center;
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
       border: 1px solid rgba(148, 163, 184, 0.22);
       overflow: hidden;
       flex: 0 0 32px;
     }
+    .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .brand-text-wrap {
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
+    .brand-text-wrap { display: flex; flex-direction: column; min-width: 0; }
     .brand-name {
       font-family: var(--font-display);
       font-weight: 600;
@@ -218,7 +167,6 @@
       font-size: 16px;
       white-space: nowrap;
     }
-
     .brand-tagline {
       font-size: 11px;
       color: var(--text-mute);
@@ -233,32 +181,28 @@
       align-items: center;
       gap: 22px;
       font-size: 13px;
-      color: var(--text-mute);
+      color: var(--text-soft); /* stronger than before */
       white-space: nowrap;
     }
-
-    nav a {
-      text-decoration: none;
-      color: inherit;
-      padding: 4px 0;
-    }
-
+    nav a { text-decoration: none; color: inherit; padding: 4px 0; }
     nav a:hover { color: var(--text-main); }
 
+    /* Make FAQs pill feel like same system (calm, crisp) */
     nav a.highlight {
       padding: 7px 14px;
       border-radius: var(--radius-pill);
-      border: 1px solid var(--border-strong);
+      border: 1px solid rgba(148, 163, 184, 0.55);
       font-size: 12px;
       color: var(--text-main);
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
     /* MOBILE MENU */
     .menu-btn {
       display: none;
-      border: 1px solid var(--border-strong);
-      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(255, 255, 255, 0.85);
       padding: 8px 10px;
       border-radius: 999px;
       cursor: pointer;
@@ -267,21 +211,13 @@
     }
 
     .menu-bars {
-      width: 18px;
-      height: 2px;
-      background: #111827;
-      display: block;
-      position: relative;
-      border-radius: 2px;
+      width: 18px; height: 2px; background: #111827;
+      display: block; position: relative; border-radius: 2px;
     }
-    .menu-bars::before,
-    .menu-bars::after {
+    .menu-bars::before, .menu-bars::after {
       content: "";
-      position: absolute;
-      left: 0;
-      width: 18px;
-      height: 2px;
-      background: #111827;
+      position: absolute; left: 0;
+      width: 18px; height: 2px; background: #111827;
       border-radius: 2px;
     }
     .menu-bars::before { top: -6px; }
@@ -290,7 +226,7 @@
     .mobile-menu {
       position: absolute;
       right: 0;
-      top: 58px;
+      top: 52px;
       width: min(360px, calc(100vw - 32px));
       border: 1px solid var(--border-subtle);
       border-radius: 18px;
@@ -300,30 +236,10 @@
       z-index: 50;
       backdrop-filter: blur(8px);
     }
-
-    .mobile-menu-inner {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      gap: 4px;
-    }
-
-    .mobile-menu a {
-      text-decoration: none;
-      color: #111827;
-      font-size: 13px;
-      padding: 10px 10px;
-      border-radius: 12px;
-    }
-
+    .mobile-menu-inner { display: flex; flex-direction: column; padding: 10px; gap: 4px; }
+    .mobile-menu a { text-decoration: none; color: #111827; font-size: 13px; padding: 10px 10px; border-radius: 12px; }
     .mobile-menu a:hover { background: #f3f4f6; }
-
-    .mobile-menu .mobile-cta {
-      margin-top: 6px;
-      background: #111827;
-      color: #ffffff;
-      text-align: center;
-    }
+    .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
     /* HERO */
@@ -331,8 +247,8 @@
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: 34px;
-      align-items: center;
-      padding-top: 22px;
+      align-items: start;      /* anchors both columns together */
+      padding-top: 6px;        /* pulled up */
     }
 
     .hero-title {
@@ -346,7 +262,14 @@
       hyphens: auto;
     }
 
-    .hero-title span.highlight { color: var(--accent); }
+    /* Quieter accent: keep green, but add a subtle underline too */
+    .hero-title span.highlight {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
+      text-decoration-color: rgba(23, 138, 69, 0.28);
+    }
 
     .hero-subtitle {
       font-size: 16px;
@@ -378,52 +301,24 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: rgba(22, 163, 74, 0.92);
+      background: rgba(23, 138, 69, 0.90);
       margin-top: 9px;
       flex: 0 0 7px;
-    }
-
-    /* Principles */
-    .principles {
-      margin-top: 14px;
-      max-width: 580px;
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      padding: 12px 14px;
-      background: rgba(255, 255, 255, 0.86);
-    }
-    .principles-title {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 8px;
-      letter-spacing: 0.01em;
-    }
-    .principles ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .principles li {
-      font-size: 12px;
-      color: var(--text-soft);
-      line-height: 1.6;
     }
 
     /* WAITLIST */
     .waitlist-card {
       border-radius: 22px;
-      background: var(--bg);
+      background: var(--card);
       border: 1px solid var(--border-subtle);
-      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-soft);
       padding: 12px 12px 12px 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       align-items: center;
       max-width: 580px;
-      margin-top: 16px;
+      margin-top: 14px;
     }
 
     .waitlist-label {
@@ -453,8 +348,7 @@
       outline: none;
       transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
     }
-
-    .form-row input::placeholder { color: rgba(100, 116, 139, 0.95); }
+    .form-row input::placeholder { color: rgba(81, 97, 115, 0.95); }
 
     .cta-btn {
       border: none;
@@ -469,39 +363,16 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.32);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.30);
       white-space: nowrap;
       transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease, opacity .15s ease;
     }
-
-    .cta-btn span.arrow {
-      font-size: 14px;
-      transform: translateX(0);
-      transition: transform 0.2s ease;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.40);
-      filter: brightness(1.03);
-    }
+    .cta-btn span.arrow { font-size: 14px; transform: translateX(0); transition: transform 0.2s ease; }
+    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
     .cta-btn:hover span.arrow { transform: translateX(3px); }
+    .cta-btn[disabled] { cursor: not-allowed; opacity: 0.78; transform: none !important; filter: none !important; box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22); }
 
-    .cta-btn[disabled] {
-      cursor: not-allowed;
-      opacity: 0.78;
-      transform: none !important;
-      filter: none !important;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
-    }
-
-    .form-meta {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-top: 2px;
-    }
+    .form-meta { width: 100%; display: flex; flex-direction: column; gap: 6px; margin-top: 2px; }
 
     .trust-lines {
       font-size: 11px;
@@ -509,12 +380,7 @@
       line-height: 1.6;
       max-width: 580px;
     }
-
-    .trust-lines a {
-      color: var(--text-main);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .trust-lines a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
 
     .form-status {
       font-size: 11px;
@@ -532,11 +398,7 @@
       max-width: 580px;
       line-height: 1.6;
     }
-    .category-line a{
-      color: var(--text-main);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
+    .category-line a{ color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
 
     /* HERO VISUAL */
     .hero-visual-wrap {
@@ -546,6 +408,7 @@
       align-items: center;
       gap: 10px;
       width: 100%;
+      padding-top: 2px; /* aligns top with headline block */
     }
 
     .hero-card {
@@ -553,20 +416,21 @@
       width: 100%;
       max-width: 380px;
       border-radius: 34px;
-      background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f6f7f9 70%, #f1f5f9 100%);
+      background: var(--card);
       border: 1px solid rgba(148, 163, 184, 0.22);
-      box-shadow: 0 28px 70px rgba(15, 23, 42, 0.16);
+      box-shadow: var(--shadow-device); /* refined */
       padding: 18px;
       overflow: hidden;
       color: var(--text-main);
     }
 
+    /* Keep app screen look: do NOT tint screenshots */
     .hero-app-shot {
       border-radius: 24px;
       overflow: hidden;
       background: transparent;
       padding: 0;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.14);
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
     }
 
     /* Touch-moveable deck */
@@ -592,12 +456,7 @@
       will-change: transform;
     }
 
-    .flow-slide {
-      flex: 0 0 100%;
-      height: 100%;
-      position: relative;
-    }
-
+    .flow-slide { flex: 0 0 100%; height: 100%; position: relative; }
     .flow-slide img {
       width: 100%;
       height: 100%;
@@ -606,6 +465,7 @@
       display: block;
     }
 
+    /* Subtle deck depth, but not color shifts */
     .flow-deck::before,
     .flow-deck::after {
       content: "";
@@ -614,40 +474,45 @@
       border-radius: 24px;
       pointer-events: none;
     }
-
     .flow-deck::before {
       transform: translateY(6px) scale(0.985);
-      background: rgba(15, 23, 42, 0.03);
+      background: rgba(15, 23, 42, 0.025);
       z-index: 1;
     }
-
     .flow-deck::after {
       transform: translateY(12px) scale(0.97);
-      background: rgba(15, 23, 42, 0.02);
+      background: rgba(15, 23, 42, 0.018);
       z-index: 0;
     }
 
-    .flow-dots {
-      display: flex;
-      gap: 6px;
-      justify-content: center;
-      margin-top: 10px;
+    /* Micro “edge hint” (very subtle, teaches swipe) */
+    .flow-edge-hint::before,
+    .flow-edge-hint::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 18px;
+      pointer-events: none;
+      z-index: 4;
+      opacity: 0.0;
+      transition: opacity .20s ease;
     }
+    .flow-edge-hint::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(15,23,42,0.08), rgba(15,23,42,0.00));
+    }
+    .flow-edge-hint::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(15,23,42,0.08), rgba(15,23,42,0.00));
+    }
+    .flow-edge-hint.is-idle::before,
+    .flow-edge-hint.is-idle::after { opacity: 0.12; }
 
-    .flow-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: rgba(100, 116, 139, 0.35);
-    }
+    .flow-dots { display: flex; gap: 6px; justify-content: center; margin-top: 10px; }
+    .flow-dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(81, 97, 115, 0.28); }
+    .flow-dot.is-on { background: rgba(23, 138, 69, 0.90); }
 
-    .flow-dot.is-on {
-      background: rgba(22, 163, 74, 0.92);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .flow-track { transition: none !important; }
-    }
+    @media (prefers-reduced-motion: reduce) { .flow-track { transition: none !important; } }
 
     .hero-visual-caption {
       font-size: 11px;
@@ -670,31 +535,20 @@
       justify-content: space-between;
       align-items: center;
     }
-
-    footer a {
-      color: var(--text-mute);
-      text-decoration: none;
-    }
+    footer a { color: var(--text-mute); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
     /* RESPONSIVE */
     @media (max-width: 880px) {
       nav { display: none; }
       .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
-      header { padding-bottom: 18px; }
+      header { padding-bottom: 14px; }
 
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: 18px;
-      }
-      .hero-visual-wrap { order: 2; margin-top: 18px; }
+      .hero { grid-template-columns: minmax(0, 1fr); padding-top: 10px; }
+      .hero-visual-wrap { order: 2; margin-top: 18px; padding-top: 0; }
       .hero-title { font-size: 30px; }
+
       .form-row { flex-direction: column; align-items: stretch; }
       .cta-btn { width: 100%; }
       .hero-card { max-width: 360px; }
@@ -707,7 +561,6 @@
 
   <div class="page">
     <div class="shell">
-      <!-- HEADER -->
       <header>
         <a href="/" class="brand-link" aria-label="TESORIN home">
           <div class="brand">
@@ -746,7 +599,6 @@
         </div>
       </header>
 
-      <!-- HERO -->
       <main id="main">
         <section class="hero" aria-label="TESORIN overview">
           <div>
@@ -773,15 +625,7 @@
               </li>
             </ul>
 
-            <div class="principles" aria-label="TESORIN principles">
-              <div class="principles-title">Principles</div>
-              <ul>
-                <li>Safety before growth.</li>
-                <li>Simple rules beat complex forecasts.</li>
-                <li>Plans should adapt—without resetting.</li>
-                <li>Progress should feel calm.</li>
-              </ul>
-            </div>
+            <!-- Principles removed -->
 
             <div class="waitlist-card" id="waitlist" aria-label="Join waitlist">
               <div class="waitlist-label">Join the early access list</div>
@@ -818,11 +662,10 @@
             </p>
           </div>
 
-          <!-- Decorative preview: swipe/drag -->
           <div class="hero-visual-wrap" aria-label="App preview">
             <div class="hero-card" aria-hidden="true">
               <div class="hero-app-shot">
-                <div class="flow-deck" id="flow-deck">
+                <div class="flow-deck flow-edge-hint is-idle" id="flow-deck">
                   <div class="flow-track" id="flow-track">
                     <div class="flow-slide">
                       <img src="tesorin-flow-01.png" alt="" width="900" height="1950" loading="eager" decoding="async" draggable="false" />
@@ -855,7 +698,6 @@
         </section>
       </main>
 
-      <!-- FOOTER -->
       <footer>
         <span>© 2026 TESORIN. All rights reserved.</span>
         <div class="footer-links">
@@ -969,7 +811,7 @@
       });
     });
 
-    // Swipe / drag flow deck (touch + mouse)
+    // Swipe / drag flow deck (touch + mouse) + subtle edge hint
     (function () {
       const deck = document.getElementById("flow-deck");
       const track = document.getElementById("flow-track");
@@ -983,12 +825,11 @@
       let index = 0;
       let isDown = false;
       let startX = 0;
-      let lastX = 0;
       let dx = 0;
       let width = 1;
 
       let autoTimer = null;
-      const INTERVAL = 3600;
+      const INTERVAL = 3800;
 
       function clamp(n, min, max) { return Math.max(min, Math.min(max, n)); }
 
@@ -1017,20 +858,23 @@
         }, INTERVAL);
       }
 
+      function idleHint(on) {
+        deck.classList.toggle("is-idle", !!on);
+      }
+
       function onDown(clientX) {
         width = deck.getBoundingClientRect().width || 1;
         isDown = true;
         startX = clientX;
-        lastX = clientX;
         dx = 0;
         track.style.transition = "none";
         stopAuto();
+        idleHint(false);
       }
 
       function onMove(clientX) {
         if (!isDown) return;
         dx = clientX - startX;
-        lastX = clientX;
 
         const pct = (dx / width) * 100;
         const base = -index * 100;
@@ -1047,6 +891,8 @@
         else setIndex(index, true);
 
         startAuto();
+        // bring hint back after a moment if user stops interacting
+        setTimeout(() => idleHint(true), 900);
       }
 
       // Mouse
@@ -1054,7 +900,6 @@
         e.preventDefault();
         onDown(e.clientX);
       });
-
       window.addEventListener("mousemove", (e) => onMove(e.clientX));
       window.addEventListener("mouseup", () => onUp());
 
@@ -1071,27 +916,30 @@
 
       deck.addEventListener("touchend", () => onUp());
 
-      // Pause on hover/focus contexts
-      deck.addEventListener("mouseenter", stopAuto);
-      deck.addEventListener("mouseleave", startAuto);
+      // Pause on hover
+      deck.addEventListener("mouseenter", () => { stopAuto(); idleHint(false); });
+      deck.addEventListener("mouseleave", () => { startAuto(); setTimeout(() => idleHint(true), 650); });
 
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) stopAuto();
         else startAuto();
       });
 
-      // Dot click (optional, still calm)
+      // Dot click
       dots.forEach((d, i) => {
         d.style.cursor = "pointer";
         d.addEventListener("click", () => {
           stopAuto();
+          idleHint(false);
           setIndex(i, true);
           startAuto();
+          setTimeout(() => idleHint(true), 900);
         });
       });
 
       // Init
       setIndex(0, false);
+      idleHint(true);
       startAuto();
     })();
   </script>
