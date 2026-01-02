@@ -1,0 +1,620 @@
+<!-- FILE: terms.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Terms — TESORIN | Website & early access terms</title>
+  <meta
+    name="description"
+    content="TESORIN Terms of Use — website terms, early access terms, disclaimers, and limitations."
+  />
+  <link rel="canonical" href="https://www.trytesorin.com/terms.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Terms — TESORIN" />
+  <meta property="og:description" content="Website terms, early access terms, and important disclaimers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trytesorin.com/terms.html" />
+  <meta property="og:site_name" content="TESORIN" />
+  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terms — TESORIN" />
+  <meta name="twitter:description" content="Website terms, early access terms, and important disclaimers." />
+  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+
+  <!-- Icons (match site) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts (match site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --page-tint: #fbfcfd;
+      --card: #ffffff;
+
+      --text-main: #0b1220;
+      --text-soft: #243244;
+      --text-mute: #4f6073;
+
+      --accent: #22c55e;
+
+      --border-subtle: rgba(148, 163, 184, 0.30);
+      --border-strong: rgba(148, 163, 184, 0.44);
+
+      --radius-pill: 999px;
+      --radius-lg: 18px;
+      --radius-xl: 22px;
+
+      --max-width: 1120px;
+
+      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "Playfair Display", "Times New Roman", serif;
+
+      --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
+
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
+
+      --ease-out: cubic-bezier(.2,.8,.2,1);
+      --ease-soft: cubic-bezier(.2,.6,.2,1);
+      --d-1: 140ms;
+      --d-2: 220ms;
+      --d-3: 320ms;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--page-tint);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a, button, input { font-family: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-140%);
+      transition: transform .18s ease;
+      z-index: 9999;
+      font-size: 12px;
+    }
+    .skip-link:focus { transform: translateY(0); outline: none; box-shadow: var(--ring); }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: none;
+      box-shadow: var(--ring);
+      border-color: rgba(34, 197, 94, 0.65);
+    }
+
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+
+    .shell {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 22px 16px 76px;
+    }
+
+    /* HEADER (match site) */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0 16px;
+      position: relative;
+      gap: 14px;
+    }
+
+    .brand-link { text-decoration: none; color: inherit; display: flex; align-items: center; min-width: 0; }
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+
+    .brand-mark {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: var(--card);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      overflow: hidden;
+      flex: 0 0 32px;
+    }
+    .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+    .brand-text-wrap { display: flex; flex-direction: column; min-width: 0; }
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    .brand-tagline {
+      font-size: 11px;
+      color: var(--text-mute);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 280px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+    nav a { text-decoration: none; color: inherit; padding: 4px 0; }
+    nav a:hover { color: var(--text-main); }
+
+    nav a.highlight {
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    /* MOBILE MENU (match site) */
+    .menu-btn {
+      display: none;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(255, 255, 255, 0.85);
+      padding: 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      line-height: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .menu-bars {
+      width: 18px; height: 2px; background: #111827;
+      display: block; position: relative; border-radius: 2px;
+    }
+    .menu-bars::before, .menu-bars::after {
+      content: "";
+      position: absolute; left: 0;
+      width: 18px; height: 2px; background: #111827;
+      border-radius: 2px;
+    }
+    .menu-bars::before { top: -6px; }
+    .menu-bars::after { top: 6px; }
+
+    .mobile-menu {
+      position: absolute;
+      right: 0;
+      top: 52px;
+      width: min(360px, calc(100vw - 32px));
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+      overflow: hidden;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+    .mobile-menu-inner { display: flex; flex-direction: column; padding: 10px; gap: 4px; }
+    .mobile-menu a { text-decoration: none; color: #111827; font-size: 13px; padding: 10px 10px; border-radius: 12px; }
+    .mobile-menu a:hover { background: #f3f4f6; }
+    .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
+    .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
+    .mobile-menu .mobile-cta:hover { background: #0b1220; }
+
+    /* CONTENT */
+    main { max-width: 92ch; }
+
+    .hero {
+      padding-top: 10px;
+      max-width: 78ch;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4.2vw, 46px);
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-wrap: balance;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+      max-width: 72ch;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: var(--text-mute);
+      line-height: 1.6;
+      max-width: 78ch;
+    }
+
+    .section { margin-top: 26px; max-width: 92ch; }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-mute);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
+      max-width: 78ch;
+    }
+
+    /* Terms body */
+    .policy {
+      margin-top: 14px;
+      background: var(--card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 18px;
+      max-width: 92ch;
+    }
+
+    .policy h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin: 14px 0 6px;
+    }
+
+    .policy p {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .policy ul {
+      padding-left: 18px;
+      margin: 6px 0 10px;
+      color: var(--text-soft);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .policy li { margin: 5px 0; }
+    .policy a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
+
+    .callout {
+      margin-top: 12px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-mute);
+      max-width: 92ch;
+    }
+    .callout strong { color: var(--text-main); font-weight: 600; }
+
+    /* FOOTER (match site) */
+    footer {
+      border-top: 1px solid rgba(229, 231, 235, 1);
+      margin-top: 44px;
+      padding-top: 18px;
+      font-size: 12px;
+      color: var(--text-mute);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer a { color: var(--text-mute); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    /* Reveal (match site) */
+    .reveal{
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+      transition: opacity var(--d-2) var(--ease-soft), transform var(--d-2) var(--ease-soft);
+      will-change: transform, opacity;
+    }
+    .reveal.is-in{ opacity: 1; transform: translate3d(0, 0, 0); }
+    .reveal-up{ transform: translate3d(0, 14px, 0); }
+    [data-stagger] .reveal{ transition-delay: calc(var(--stagger, 0) * 1ms); }
+
+    @media (max-width: 880px) {
+      nav { display: none; }
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
+      header { padding-bottom: 14px; }
+      .hero-title { font-size: clamp(30px, 7vw, 40px); }
+      .hero-subtitle { font-size: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="page">
+    <div class="shell">
+      <!-- HEADER -->
+      <header>
+        <a href="/" class="brand-link" aria-label="TESORIN home">
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="tesorin-logo.png" alt="TESORIN logo" width="32" height="32" decoding="async" />
+            </div>
+            <div class="brand-text-wrap">
+              <div class="brand-name">TESORIN</div>
+              <div class="brand-tagline">Start small. Plan big.</div>
+            </div>
+          </div>
+        </a>
+
+        <nav aria-label="Primary">
+          <a href="/how-it-works.html">How it works</a>
+          <a href="/features.html">Features</a>
+          <a href="/about.html">About</a>
+          <a href="/safety.html">Safety</a>
+          <a href="/faq.html" class="highlight">FAQs</a>
+        </nav>
+
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="menu-bars" aria-hidden="true"></span>
+        </button>
+
+        <div id="mobile-menu" class="mobile-menu" hidden>
+          <div class="mobile-menu-inner">
+            <a href="/how-it-works.html">How it works</a>
+            <a href="/features.html">Features</a>
+            <a href="/about.html">About</a>
+            <a href="/safety.html">Safety</a>
+            <a href="/faq.html">FAQs</a>
+            <a href="/personal-finance-planning-app.html">Planning app</a>
+            <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <!-- HERO -->
+        <section class="hero" aria-label="Terms overview" data-stagger>
+          <h1 class="hero-title reveal reveal-up">Terms of use.</h1>
+          <p class="hero-subtitle reveal reveal-up">
+            These terms apply to the TESORIN website and any early access programs. They exist to set expectations clearly and protect both sides.
+          </p>
+          <p class="meta reveal reveal-up">
+            Effective date: <strong style="color:var(--text-main);font-weight:600;">January 2, 2026</strong> ·
+            This document is a general template and should be reviewed with counsel before launch.
+          </p>
+        </section>
+
+        <section class="section" aria-label="Terms content" data-stagger>
+          <div>
+            <div class="section-kicker reveal reveal-up">Important</div>
+            <h2 class="section-title reveal reveal-up">Key points.</h2>
+            <p class="section-subtitle reveal reveal-up">
+              TESORIN provides planning tools and educational information — it is not investment advice, tax advice, or legal advice.
+            </p>
+          </div>
+
+          <div class="callout reveal reveal-up">
+            <strong>Not financial advice:</strong> TESORIN is a planning surface. Any outputs are informational and should not be treated as personalized professional advice.
+          </div>
+
+          <div class="policy reveal reveal-up">
+            <h3>1) Acceptance of terms</h3>
+            <p>
+              By accessing or using the TESORIN website or participating in early access programs, you agree to these Terms.
+              If you do not agree, do not use the site or services.
+            </p>
+
+            <h3>2) Eligibility</h3>
+            <p>
+              You must be legally able to form a binding contract in your jurisdiction to use the site or services.
+            </p>
+
+            <h3>3) What TESORIN provides</h3>
+            <p>
+              TESORIN provides tools and content designed to help you understand cash flow, goals, and planning trade-offs.
+              We may update, add, or remove features at any time.
+            </p>
+
+            <h3>4) No professional advice</h3>
+            <p>
+              TESORIN does not provide investment, tax, legal, or accounting advice. You are responsible for your decisions.
+              If you need professional advice, consult a licensed advisor.
+            </p>
+
+            <h3>5) Early access / beta</h3>
+            <p>
+              If you are invited to early access, you understand the product may be incomplete, contain bugs, or change materially.
+              We may suspend or end early access at any time.
+            </p>
+
+            <h3>6) Accounts and security</h3>
+            <p>
+              If accounts are offered, you are responsible for maintaining confidentiality of credentials and for actions taken under your account.
+              Notify us if you suspect unauthorized use.
+            </p>
+
+            <h3>7) Acceptable use</h3>
+            <p>
+              You agree not to:
+            </p>
+            <ul>
+              <li>Reverse engineer or attempt to extract source code (except as permitted by law).</li>
+              <li>Interfere with security features or access controls.</li>
+              <li>Use the site to transmit malware, spam, or abusive content.</li>
+              <li>Misrepresent affiliation with TESORIN.</li>
+            </ul>
+
+            <h3>8) Intellectual property</h3>
+            <p>
+              The site and its content are owned by TESORIN and protected by intellectual property laws.
+              You may not copy, reproduce, or distribute content except as permitted by these Terms.
+            </p>
+
+            <h3>9) Third-party links</h3>
+            <p>
+              The site may link to third-party websites. TESORIN is not responsible for third-party content or practices.
+            </p>
+
+            <h3>10) Disclaimers</h3>
+            <p>
+              The site and services are provided “as is” and “as available.” We do not warrant uninterrupted or error-free operation.
+            </p>
+
+            <h3>11) Limitation of liability</h3>
+            <p>
+              To the maximum extent permitted by law, TESORIN is not liable for indirect, incidental, special, consequential, or punitive damages,
+              or any loss of profits or data, arising from your use of the site or services.
+            </p>
+
+            <h3>12) Indemnification</h3>
+            <p>
+              You agree to indemnify and hold TESORIN harmless from claims arising out of your use of the site or violation of these Terms.
+            </p>
+
+            <h3>13) Termination</h3>
+            <p>
+              We may suspend or terminate access to the site or services if we reasonably believe there is a violation of these Terms or a security risk.
+            </p>
+
+            <h3>14) Changes to these terms</h3>
+            <p>
+              We may update these Terms from time to time. The “Effective date” above indicates the latest revision. Continued use means you accept the updated Terms.
+            </p>
+
+            <h3>15) Contact</h3>
+            <p>
+              For questions about these Terms, contact: <strong>legal@trytesorin.com</strong>
+            </p>
+
+            <p class="inline-note" style="font-size:12px;color:var(--text-mute);line-height:1.6;margin-top:10px;">
+              For privacy details, see the <a href="/privacy.html">Privacy</a> policy.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <span>© 2026 TESORIN. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="/how-it-works.html">How it works</a>
+          <a href="/features.html">Features</a>
+          <a href="/about.html">About</a>
+          <a href="/safety.html">Safety</a>
+          <a href="/faq.html">FAQs</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu (match site)
+    (function () {
+      const btn = document.querySelector(".menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      if (!btn || !menu) return;
+
+      function closeMenu() {
+        btn.setAttribute("aria-expanded", "false");
+        menu.hidden = true;
+      }
+
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
+        menu.hidden = open;
+      });
+
+      document.addEventListener("click", (e) => {
+        if (menu.hidden) return;
+        const within = menu.contains(e.target) || btn.contains(e.target);
+        if (!within) closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    })();
+
+    // Scroll reveal + optional staggering (match site)
+    (function () {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (reduceMotion.matches) {
+        document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
+        return;
+      }
+
+      document.querySelectorAll("[data-stagger]").forEach((wrap) => {
+        const children = wrap.querySelectorAll(".reveal");
+        children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
+      });
+
+      const els = document.querySelectorAll(".reveal");
+      if (!els.length) return;
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
