@@ -61,17 +61,16 @@
 
   <style>
     :root {
-      /* Premium base */
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
-      /* Higher contrast (less dull) */
+      /* Stronger contrast (less dull) */
       --text-main: #0b1220;
-      --text-soft: #243244;   /* richer slate */
-      --text-mute: #4f6073;   /* nav + microcopy */
+      --text-soft: #243244;
+      --text-mute: #4f6073;
 
-      /* Quieter green */
-      --accent: #178a45;
+      /* Back to your original green */
+      --accent: #22c55e;
 
       --border-subtle: rgba(148, 163, 184, 0.30);
       --border-strong: rgba(148, 163, 184, 0.44);
@@ -82,7 +81,7 @@
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-display: "Playfair Display", "Times New Roman", serif;
 
-      --ring: 0 0 0 3px rgba(23, 138, 69, 0.18);
+      --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
 
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
       --shadow-device: 0 24px 60px rgba(15, 23, 42, 0.12);
@@ -121,7 +120,7 @@
     input:focus-visible {
       outline: none;
       box-shadow: var(--ring);
-      border-color: rgba(23, 138, 69, 0.65);
+      border-color: rgba(34, 197, 94, 0.65);
     }
 
     .page { min-height: 100vh; display: flex; flex-direction: column; }
@@ -130,7 +129,7 @@
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 22px 16px 76px; /* slightly tighter at top */
+      padding: 22px 16px 76px;
     }
 
     /* HEADER */
@@ -179,8 +178,8 @@
       display: flex;
       align-items: center;
       gap: 22px;
-      font-size: 14px;        /* bump for premium feel */
-      font-weight: 500;       /* stronger */
+      font-size: 14px;
+      font-weight: 500;
       color: var(--text-soft);
       white-space: nowrap;
     }
@@ -253,27 +252,22 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(40px, 4.8vw, 56px); /* Wealthsimple-level presence */
+      font-size: clamp(40px, 4.8vw, 56px);
       line-height: 1.03;
       letter-spacing: -0.035em;
       font-weight: 600;
       margin-bottom: 12px;
-      text-align: left;        /* “justified” = firmly left-aligned */
+      text-align: left;
       text-wrap: balance;
       hyphens: auto;
-      max-width: 20ch;         /* forces intentional line breaks */
+      max-width: 20ch;
     }
 
-    .hero-title span.highlight {
-      color: var(--accent);
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 6px;
-      text-decoration-color: rgba(23, 138, 69, 0.24);
-    }
+    /* Removed underline, kept original green */
+    .hero-title span.highlight { color: var(--accent); }
 
     .hero-subtitle {
-      font-size: 18px;         /* stronger readability */
+      font-size: 18px;
       line-height: 1.65;
       color: var(--text-soft);
       max-width: 60ch;
@@ -293,7 +287,7 @@
       display: flex;
       gap: 10px;
       align-items: flex-start;
-      font-size: 14px;         /* bump from 13 */
+      font-size: 14px;
       line-height: 1.7;
       color: var(--text-soft);
     }
@@ -302,7 +296,7 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: rgba(23, 138, 69, 0.90);
+      background: rgba(34, 197, 94, 0.90);
       margin-top: 10px;
       flex: 0 0 7px;
     }
@@ -401,7 +395,7 @@
     }
     .category-line a{ color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
 
-    /* HERO VISUAL — DO NOT TOUCH (as requested) */
+    /* HERO VISUAL — unchanged */
     .hero-visual-wrap {
       display: flex;
       justify-content: center;
@@ -507,7 +501,7 @@
 
     .flow-dots { display: flex; gap: 6px; justify-content: center; margin-top: 10px; }
     .flow-dot { width: 6px; height: 6px; border-radius: 999px; background: rgba(81, 97, 115, 0.28); }
-    .flow-dot.is-on { background: rgba(23, 138, 69, 0.90); }
+    .flow-dot.is-on { background: rgba(34, 197, 94, 0.90); }
 
     @media (prefers-reduced-motion: reduce) { .flow-track { transition: none !important; } }
 
@@ -657,7 +651,6 @@
             </p>
           </div>
 
-          <!-- App screen untouched -->
           <div class="hero-visual-wrap" aria-label="App preview">
             <div class="hero-card" aria-hidden="true">
               <div class="hero-app-shot">
@@ -710,7 +703,6 @@
   </div>
 
   <script>
-    // Focus waitlist if requested
     (function () {
       const params = new URLSearchParams(window.location.search);
       if (params.get("focus") === "waitlist") {
@@ -721,7 +713,6 @@
       }
     })();
 
-    // Mobile menu
     (function () {
       const btn = document.querySelector(".menu-btn");
       const menu = document.getElementById("mobile-menu");
@@ -749,7 +740,6 @@
       });
     })();
 
-    // Waitlist submission: only redirect on success; show status on error
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("waitlist-form");
       const email = document.getElementById("waitlist-form-email");
@@ -807,7 +797,6 @@
       });
     });
 
-    // Swipe / drag flow deck (touch + mouse) + subtle edge hint
     (function () {
       const deck = document.getElementById("flow-deck");
       const track = document.getElementById("flow-track");
