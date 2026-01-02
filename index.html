@@ -598,8 +598,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;      /* premium crop feel */
-      object-position: 50% 20%; /* helps hide status bars if not cropped */
+      object-fit: cover;
+      object-position: 50% 20%;
       opacity: 0;
       transform: translate3d(0, 10px, 0) scale(1.01);
       transition: opacity 520ms ease, transform 620ms ease;
@@ -709,7 +709,8 @@
         padding-top: 22px;
       }
 
-      .hero-visual-wrap { order: -1; }
+      /* FIX: keep copy first, app second on mobile */
+      .hero-visual-wrap { order: 2; margin-top: 18px; }
 
       .hero-title { font-size: 30px; }
 
@@ -719,7 +720,8 @@
 
       .cta-btn { justify-content: center; }
 
-      .hero-card { max-width: 420px; }
+      /* Slightly smaller on mobile for better first impression */
+      .hero-card { max-width: 360px; }
     }
   </style>
 </head>
@@ -855,7 +857,6 @@
               <div class="hero-card-inner">
                 <div class="hero-app-wrap">
                   <div class="hero-app-shot">
-                    <!-- PREMIUM FLOW (replaces static screenshot) -->
                     <div class="flow-deck" aria-label="TESORIN app flow preview">
                       <img class="flow-frame is-active" src="tesorin-flow-01.png" alt="TESORIN app preview: Home" loading="eager" decoding="async" />
                       <img class="flow-frame" src="tesorin-flow-02.png" alt="TESORIN app preview: Net worth" loading="lazy" decoding="async" />
@@ -896,9 +897,7 @@
     </div>
   </div>
 
-  <!-- Inline JS (you already had JS; we keep it here) -->
   <script>
-    // allow /?focus=waitlist to focus email field
     (function () {
       const params = new URLSearchParams(window.location.search);
       if (params.get("focus") === "waitlist") {
@@ -909,7 +908,6 @@
       }
     })();
 
-    // Mobile menu behavior
     (function () {
       const btn = document.querySelector(".menu-btn");
       const menu = document.getElementById("mobile-menu");
@@ -937,7 +935,6 @@
       });
     })();
 
-    // Formspree submit + redirect
     document.addEventListener("DOMContentLoaded", function () {
       const form = document.getElementById("waitlist-form");
       if (!form) return;
@@ -961,7 +958,6 @@
       });
     });
 
-    // Subtle scroll-based micro motion for the hero phone card
     (function () {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       if (reduceMotion.matches) return;
@@ -1007,7 +1003,6 @@
       onScrollOrResize();
     })();
 
-    // PREMIUM FLOW DECK (auto-advance)
     (function () {
       const frames = Array.from(document.querySelectorAll(".flow-frame"));
       const dots = Array.from(document.querySelectorAll(".flow-dot"));
@@ -1042,19 +1037,16 @@
         timer = null;
       }
 
-      // Pause on hover
       const deck = document.querySelector(".flow-deck");
       if (deck) {
         deck.addEventListener("mouseenter", () => (paused = true));
         deck.addEventListener("mouseleave", () => (paused = false));
       }
 
-      // Pause when tab hidden
       document.addEventListener("visibilitychange", () => {
         paused = document.hidden;
       });
 
-      // Respect reduced motion
       if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         start();
       }
