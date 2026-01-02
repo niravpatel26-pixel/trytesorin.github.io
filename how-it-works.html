@@ -2,44 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <title>How it works – TESORIN | Calm planning, step by step</title>
-
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>How it works — TESORIN | Calm planning, step by step</title>
   <meta
     name="description"
-    content="See how TESORIN turns income, spending, and goals into a calm monthly plan — with a simple flow you can actually follow."
+    content="See how TESORIN turns a simple snapshot into a calm monthly plan — with small actions you can actually keep up with."
   />
 
   <link rel="canonical" href="https://www.trytesorin.com/how-it-works.html" />
 
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="How it works – TESORIN | Calm planning, step by step" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="How it works — TESORIN" />
   <meta
     property="og:description"
-    content="From “I should plan” to “I have a plan” — here’s the calm monthly flow TESORIN uses to keep you on track."
+    content="A simple monthly loop: capture a snapshot, confirm what’s safe, pick a small action, and adjust when life changes."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trytesorin.com/how-it-works.html" />
+  <meta property="og:site_name" content="TESORIN" />
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="How it works – TESORIN | Calm planning, step by step" />
+  <meta name="twitter:title" content="How it works — TESORIN" />
   <meta
     name="twitter:description"
-    content="From “I should plan” to “I have a plan” — here’s the calm monthly flow TESORIN uses to keep you on track."
+    content="A calm monthly loop: snapshot → plan → one small action → update."
   />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Icons (match homepage) -->
+  <!-- Icons (match index) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Fonts (match homepage) -->
+  <!-- Fonts (match index) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -49,6 +50,7 @@
 
   <style>
     :root {
+      /* Match index tokens */
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
@@ -61,12 +63,11 @@
       --border-subtle: rgba(148, 163, 184, 0.30);
       --border-strong: rgba(148, 163, 184, 0.44);
 
-      --radius-xl: 22px;
-      --radius-lg: 18px;
       --radius-pill: 999px;
+      --radius-lg: 18px;
+      --radius-xl: 22px;
 
       --max-width: 1120px;
-      --content-width: 820px;
 
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-display: "Playfair Display", "Times New Roman", serif;
@@ -74,7 +75,7 @@
       --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
 
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-      --shadow-card: 0 16px 36px rgba(15, 23, 42, 0.08);
+      --shadow-device: 0 24px 60px rgba(15, 23, 42, 0.12);
 
       --ease-out: cubic-bezier(.2,.8,.2,1);
       --ease-soft: cubic-bezier(.2,.6,.2,1);
@@ -91,10 +92,25 @@
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-      line-height: 1.7;
     }
 
     a, button, input { font-family: inherit; }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-140%);
+      transition: transform .18s ease;
+      z-index: 9999;
+      font-size: 12px;
+    }
+    .skip-link:focus { transform: translateY(0); outline: none; box-shadow: var(--ring); }
 
     a:focus-visible,
     button:focus-visible,
@@ -113,7 +129,7 @@
       padding: 22px 16px 76px;
     }
 
-    /* HEADER (match homepage) */
+    /* HEADER (match index) */
     header {
       display: flex;
       align-items: center;
@@ -178,7 +194,22 @@
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
-    /* MOBILE MENU (match homepage) */
+    nav a.active {
+      color: var(--text-main);
+      position: relative;
+    }
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.70);
+    }
+
+    /* MOBILE MENU (match index) */
     .menu-btn {
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.55);
@@ -219,49 +250,34 @@
     .mobile-menu-inner { display: flex; flex-direction: column; padding: 10px; gap: 4px; }
     .mobile-menu a { text-decoration: none; color: #111827; font-size: 13px; padding: 10px 10px; border-radius: 12px; }
     .mobile-menu a:hover { background: #f3f4f6; }
+    .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
     .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
-    /* MAIN CONTENT */
-    .content { max-width: var(--content-width); }
+    /* PAGE CONTENT */
+    main { max-width: 82ch; }
 
-    /* HERO */
-    .hero { padding-top: 10px; padding-bottom: 18px; }
-
-    .hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.40);
-      background: rgba(255, 255, 255, 0.90);
-      font-size: 11px;
-      color: var(--text-mute);
-      margin-bottom: 12px;
-    }
-    .hero-label span.dot {
-      width: 6px; height: 6px; border-radius: 999px;
-      background: rgba(34, 197, 94, 0.90);
+    .hero {
+      padding-top: 10px;
+      max-width: 72ch;
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4.2vw, 44px);
+      font-size: clamp(34px, 4.2vw, 46px);
       line-height: 1.06;
       letter-spacing: -0.035em;
       font-weight: 600;
-      margin-bottom: 10px;
-      max-width: 28ch;
+      margin-bottom: 12px;
       text-wrap: balance;
     }
 
     .hero-subtitle {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.7;
       color: var(--text-soft);
-      max-width: 72ch;
       margin-bottom: 10px;
+      max-width: 70ch;
     }
 
     .hero-note {
@@ -270,12 +286,14 @@
       line-height: 1.6;
       max-width: 78ch;
     }
-    .hero-note strong { color: var(--text-main); font-weight: 600; }
+    .hero-note a {
+      color: var(--text-main);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
-    /* SECTIONS */
-    .section { margin-top: 32px; }
-
-    .section-header { max-width: 720px; margin-bottom: 16px; }
+    /* SECTION */
+    .section { margin-top: 28px; max-width: 82ch; }
 
     .section-kicker {
       font-size: 11px;
@@ -296,20 +314,21 @@
       font-size: 14px;
       color: var(--text-soft);
       line-height: 1.7;
+      max-width: 76ch;
     }
 
-    /* ACCORDION */
-    .accordion { display: flex; flex-direction: column; gap: 10px; }
+    /* ACCORDION (match About behavior + styling) */
+    .accordion { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
 
     .accordion-item {
       border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.28);
+      border: 1px solid var(--border-subtle);
       background: var(--card);
       overflow: hidden;
-      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out), filter var(--d-1) var(--ease-out);
-      will-change: transform;
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out);
     }
-    .accordion-item:hover { box-shadow: var(--shadow-card); transform: translateY(-1px); filter: brightness(1.01); }
+    .accordion-item:hover { transform: translateY(-1px); box-shadow: 0 22px 52px rgba(15, 23, 42, 0.08); }
 
     .accordion-header { margin: 0; }
 
@@ -354,10 +373,10 @@
 
     .accordion-panel {
       padding: 0 14px 12px 14px;
-      border-top: 1px solid rgba(148, 163, 184, 0.18);
-      font-size: 13px;
+      border-top: 1px solid rgba(229, 231, 235, 0.90);
+      font-size: 14px;
       color: var(--text-soft);
-      line-height: 1.7;
+      line-height: 1.75;
 
       max-height: 0;
       overflow: hidden;
@@ -370,35 +389,35 @@
     }
     .accordion-panel.is-open { opacity: 1; transform: translate3d(0, 0, 0); }
 
-    .accordion-body ul { margin-top: 8px; padding-left: 18px; }
-    .accordion-body li { margin-bottom: 6px; }
+    .accordion-panel ul { margin-top: 8px; padding-left: 18px; }
+    .accordion-panel li { margin-bottom: 6px; }
 
-    /* SUMMARY CARD (keep) */
+    /* SUMMARY CARD (kept, aligned to system) */
     .summary-card {
       margin-top: 18px;
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.24);
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
-      padding: 16px 16px;
-      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out);
-      will-change: transform;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 18px;
+      border-left: 3px solid var(--accent);
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out);
     }
-    .summary-card:hover { transform: translateY(-1px); box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08); }
+    .summary-card:hover { transform: translateY(-1px); box-shadow: 0 22px 52px rgba(15, 23, 42, 0.08); }
 
     .summary-title {
-      font-size: 11px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-mute);
+      color: var(--text-main);
       margin-bottom: 10px;
-      font-weight: 600;
     }
 
     .summary-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
     .summary-block-title {
@@ -409,12 +428,12 @@
     }
 
     .summary-block p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-soft);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* CTA STRIP (match system) */
+    /* CTA STRIP (kept, minimal) */
     .cta-strip {
       margin-top: 22px;
       padding: 14px 16px;
@@ -428,7 +447,7 @@
       gap: 10px;
       font-size: 13px;
       color: var(--text-mute);
-      max-width: var(--content-width);
+      max-width: 82ch;
     }
     .cta-strip .highlight { font-weight: 600; color: var(--text-main); }
 
@@ -454,7 +473,7 @@
     .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
     .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FOOTER (match system) */
+    /* FOOTER (match index) */
     footer {
       border-top: 1px solid rgba(229, 231, 235, 1);
       margin-top: 44px;
@@ -471,34 +490,24 @@
     footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* Motion */
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .accordion-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
-      .accordion-item { transition: none !important; transform: none !important; }
-    }
-
-    .reveal{
-      opacity: 0;
-      transform: translate3d(0, 10px, 0);
-      transition: opacity var(--d-2) var(--ease-soft), transform var(--d-2) var(--ease-soft);
-      will-change: transform, opacity;
-    }
-    .reveal.is-in{ opacity: 1; transform: translate3d(0, 0, 0); }
-    .reveal-up{ transform: translate3d(0, 14px, 0); }
-    [data-stagger] .reveal{ transition-delay: calc(var(--stagger, 0) * 1ms); }
-
-    /* Responsive */
     @media (max-width: 880px) {
       nav { display: none; }
-      .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
-      .cta-strip { align-items: flex-start; }
-      .shell { padding-top: 22px; }
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
+      header { padding-bottom: 14px; }
+      .hero-title { font-size: clamp(30px, 7vw, 40px); }
+      .hero-subtitle { font-size: 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .accordion-item { transition: none !important; transform: none !important; }
+      .accordion-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <div class="page">
     <div class="shell">
 
@@ -517,22 +526,20 @@
         </a>
 
         <nav aria-label="Primary">
-          <a href="/how-it-works.html" class="highlight">How it works</a>
+          <a href="/how-it-works.html" class="active" aria-current="page">How it works</a>
           <a href="/features.html">Features</a>
           <a href="/about.html">About</a>
           <a href="/safety.html">Safety</a>
-          <a href="/faq.html">FAQs</a>
+          <a href="/faq.html" class="highlight">FAQs</a>
         </nav>
 
-        <!-- Mobile burger -->
         <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
 
-        <!-- Mobile dropdown -->
         <div id="mobile-menu" class="mobile-menu" hidden>
           <div class="mobile-menu-inner">
-            <a href="/how-it-works.html">How it works</a>
+            <a class="active" href="/how-it-works.html">How it works</a>
             <a href="/features.html">Features</a>
             <a href="/about.html">About</a>
             <a href="/safety.html">Safety</a>
@@ -543,129 +550,105 @@
         </div>
       </header>
 
-      <main class="content">
+      <main id="main">
         <!-- HERO -->
-        <section class="hero" data-stagger>
-          <div class="hero-label reveal reveal-up">
-            <span class="dot" aria-hidden="true"></span>
-            How it works · Calm monthly planning
-          </div>
+        <section class="hero" aria-label="How TESORIN works">
+          <h1 class="hero-title">A calm monthly loop you can keep up with.</h1>
 
-          <h1 class="hero-title reveal reveal-up">
-            A calm way to plan money — one month at a time.
-          </h1>
-
-          <p class="hero-subtitle reveal reveal-up">
-            TESORIN turns your income and goals into a simple plan with clear monthly actions —
-            without spreadsheets, pressure, or market noise.
+          <p class="hero-subtitle">
+            You start with a lightweight snapshot, choose one small action for the month, and adjust when life changes —
+            without turning your finances into a project.
           </p>
 
-          <p class="hero-note reveal reveal-up">
-            <strong>Start without linking a bank.</strong> Add a simple snapshot and build from there.
+          <p class="hero-note">
+            You can start manually. Bank linking can come later, when you’re comfortable.
+            <a href="/safety.html">How we handle safety →</a>
           </p>
         </section>
 
-        <!-- STEPS -->
-        <section class="section" id="steps">
-          <div class="section-header" data-stagger>
-            <div class="section-kicker reveal reveal-up">The flow</div>
-            <h2 class="section-title reveal reveal-up">The same calm loop, repeated.</h2>
-            <p class="section-subtitle reveal reveal-up">
-              You see what’s safe, choose a small action, and update when life changes.
-            </p>
-          </div>
+        <!-- FLOW -->
+        <section class="section" aria-label="The flow">
+          <div class="section-kicker">The flow</div>
+          <h2 class="section-title">Five steps, repeated. No rebuilds.</h2>
+          <p class="section-subtitle">
+            The goal isn’t precision. It’s a plan that stays stable under real life.
+          </p>
 
-          <div class="accordion" role="list" data-stagger>
-            <article class="accordion-item reveal reveal-up" id="step-input">
+          <div class="accordion" role="list">
+            <article class="accordion-item" id="flow-1">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="true">
                   <span class="accordion-title-wrap">
                     <span class="accordion-eyebrow">Step 1</span>
-                    <span class="accordion-title">Start with a simple snapshot.</span>
+                    <span class="accordion-title">Capture a snapshot.</span>
                   </span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel is-open">
-                <div class="accordion-body">
-                  Add just enough to be honest:
-                  <ul>
-                    <li>Income and fixed commitments.</li>
-                    <li>Core spending and bills.</li>
-                    <li>Savings, debt, and existing investments.</li>
-                  </ul>
-                  Manual entry works. Bank linking is optional.
-                </div>
+                Start with what’s most stable:
+                <ul>
+                  <li>Income and fixed commitments.</li>
+                  <li>Baseline spending and bills.</li>
+                  <li>Balances: savings, debt, and any investments you already have.</li>
+                </ul>
+                Add detail only when it improves decisions.
               </div>
             </article>
 
-            <article class="accordion-item reveal reveal-up" id="step-clarity">
+            <article class="accordion-item" id="flow-2">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
                   <span class="accordion-title-wrap">
                     <span class="accordion-eyebrow">Step 2</span>
-                    <span class="accordion-title">Get clarity on what’s safe.</span>
+                    <span class="accordion-title">Confirm what you can safely move.</span>
                   </span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
-                <div class="accordion-body">
-                  TESORIN gives you one anchor number:
-                  <ul>
-                    <li><strong>Monthly flexibility</strong> — what you can safely route to goals after essentials.</li>
-                  </ul>
-                  It’s meant to be usable, not perfect.
-                </div>
+                TESORIN gives you an anchor number: what’s available after essentials, without weakening your baseline.
+                It’s designed to be actionable, not theoretical.
               </div>
             </article>
 
-            <article class="accordion-item reveal reveal-up" id="step-priority">
+            <article class="accordion-item" id="flow-3">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
                   <span class="accordion-title-wrap">
                     <span class="accordion-eyebrow">Step 3</span>
-                    <span class="accordion-title">Build a plan in a calm order.</span>
+                    <span class="accordion-title">Choose one priority for the month.</span>
                   </span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
-                <div class="accordion-body">
-                  Your money gets organized into a sensible sequence:
-                  <ul>
-                    <li>Safety (buffers and breathing room).</li>
-                    <li>High-interest debt.</li>
-                    <li>Long-term wealth.</li>
-                  </ul>
-                  The goal is to reduce regret and keep the plan stable.
-                </div>
+                Instead of juggling everything at once, you pick the most useful move for your situation —
+                the one that reduces fragility or increases momentum.
               </div>
             </article>
 
-            <article class="accordion-item reveal reveal-up" id="step-actions">
+            <article class="accordion-item" id="flow-4">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
                   <span class="accordion-title-wrap">
                     <span class="accordion-eyebrow">Step 4</span>
-                    <span class="accordion-title">Take one or two actions this month.</span>
+                    <span class="accordion-title">Turn it into a small action.</span>
                   </span>
                   <span class="accordion-icon" aria-hidden="true">▾</span>
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
-                <div class="accordion-body">
-                  TESORIN keeps actions small and clear:
-                  <ul>
-                    <li>1–2 moves that fit your flexibility number.</li>
-                    <li>A “why” that explains impact.</li>
-                    <li>Progress that feels steady, not dramatic.</li>
-                  </ul>
-                </div>
+                Actions are intentionally small:
+                <ul>
+                  <li>A single transfer, payoff, or target you can keep.</li>
+                  <li>A short “why” so it’s clear what this improves.</li>
+                  <li>A simple check-in, not daily tracking.</li>
+                </ul>
               </div>
             </article>
 
-            <article class="accordion-item reveal reveal-up" id="step-update">
+            <article class="accordion-item" id="flow-5">
               <h2 class="accordion-header">
                 <button class="accordion-trigger" type="button" aria-expanded="false">
                   <span class="accordion-title-wrap">
@@ -676,110 +659,39 @@
                 </button>
               </h2>
               <div class="accordion-panel" hidden>
-                <div class="accordion-body">
-                  Raise, rent change, travel, family support — the plan isn’t brittle.
-                  Update your snapshot and TESORIN recalculates what’s safe and what’s next.
-                </div>
+                Rent change, travel, family support, a raise — you update the snapshot and the plan recalculates.
+                The loop stays the same; the numbers adapt.
               </div>
             </article>
           </div>
 
           <!-- SUMMARY -->
-          <aside class="summary-card reveal reveal-up" aria-label="Summary">
-            <div class="summary-title">What you’ll actually see</div>
+          <aside class="summary-card" aria-label="What you’ll see">
+            <div class="summary-title">What you’ll see on the plan</div>
 
             <div class="summary-grid">
               <div class="summary-block">
-                <div class="summary-block-title">Monthly flexibility</div>
-                <p>One number that tells you what’s safe to allocate this month.</p>
+                <div class="summary-block-title">One safe-to-move number</div>
+                <p>The plan starts from what won’t break your baseline.</p>
               </div>
 
               <div class="summary-block">
-                <div class="summary-block-title">A priority stack</div>
-                <p>Safety → debt → wealth, in a calm sequence that stays realistic.</p>
+                <div class="summary-block-title">One focus for the month</div>
+                <p>A single priority that keeps the month simple and repeatable.</p>
               </div>
 
               <div class="summary-block">
-                <div class="summary-block-title">Clear actions</div>
-                <p>Small moves you can follow without turning life into tracking.</p>
-              </div>
-
-              <div class="summary-block">
-                <div class="summary-block-title">What it is not</div>
-                <p>Not a trading screen. Not stock tips. Not product pushing.</p>
+                <div class="summary-block-title">One small action</div>
+                <p>A move you can actually do — with clarity on what it improves.</p>
               </div>
             </div>
           </aside>
-        </section>
-
-        <!-- UNDER THE HOOD -->
-        <section class="section" id="under-the-hood">
-          <div class="section-header" data-stagger>
-            <div class="section-kicker reveal reveal-up">Under the hood</div>
-            <h2 class="section-title reveal reveal-up">Conservative rules, chosen on purpose.</h2>
-            <p class="section-subtitle reveal reveal-up">
-              The interface is simple, but the system is designed to keep decisions stable and beginner-safe.
-            </p>
-          </div>
-
-          <div class="accordion" role="list" data-stagger>
-            <article class="accordion-item reveal reveal-up" id="rule-cashflow">
-              <h2 class="accordion-header">
-                <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Principle</span>
-                    <span class="accordion-title">Cash flow first.</span>
-                  </span>
-                  <span class="accordion-icon" aria-hidden="true">▾</span>
-                </button>
-              </h2>
-              <div class="accordion-panel" hidden>
-                <div class="accordion-body">
-                  The plan starts from what reliably stays in your hands each month, not from idealized budgets.
-                </div>
-              </div>
-            </article>
-
-            <article class="accordion-item reveal reveal-up" id="rule-safety">
-              <h2 class="accordion-header">
-                <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Principle</span>
-                    <span class="accordion-title">Safety before optimization.</span>
-                  </span>
-                  <span class="accordion-icon" aria-hidden="true">▾</span>
-                </button>
-              </h2>
-              <div class="accordion-panel" hidden>
-                <div class="accordion-body">
-                  Before chasing returns, TESORIN nudges buffers and expensive debt so the plan doesn’t break under stress.
-                </div>
-              </div>
-            </article>
-
-            <article class="accordion-item reveal reveal-up" id="rule-grow">
-              <h2 class="accordion-header">
-                <button class="accordion-trigger" type="button" aria-expanded="false">
-                  <span class="accordion-title-wrap">
-                    <span class="accordion-eyebrow">Principle</span>
-                    <span class="accordion-title">Built to grow with you.</span>
-                  </span>
-                  <span class="accordion-icon" aria-hidden="true">▾</span>
-                </button>
-              </h2>
-              <div class="accordion-panel" hidden>
-                <div class="accordion-body">
-                  Start simple. Add detail only when it helps. The goal is clarity, not complexity.
-                </div>
-              </div>
-            </article>
-          </div>
 
           <!-- CTA STRIP -->
-          <section class="cta-strip reveal reveal-up" aria-label="Call to action">
+          <section class="cta-strip" aria-label="Call to action">
             <div>
               <span class="highlight">Want early access?</span><br />
-              Join the waitlist and we’ll invite beta users in small waves.
+              We invite beta users in small waves.
             </div>
             <a href="/?focus=waitlist" class="cta-btn">
               Join waitlist
@@ -802,41 +714,40 @@
           <a href="/terms.html">Terms</a>
         </div>
       </footer>
-
     </div>
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Mobile menu behavior
-      (function () {
-        const btn = document.querySelector(".menu-btn");
-        const menu = document.getElementById("mobile-menu");
-        if (!btn || !menu) return;
+    // Mobile menu (match index)
+    (function () {
+      const btn = document.querySelector(".menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      if (!btn || !menu) return;
 
-        function closeMenu() {
-          btn.setAttribute("aria-expanded", "false");
-          menu.hidden = true;
-        }
+      function closeMenu() {
+        btn.setAttribute("aria-expanded", "false");
+        menu.hidden = true;
+      }
 
-        btn.addEventListener("click", () => {
-          const open = btn.getAttribute("aria-expanded") === "true";
-          btn.setAttribute("aria-expanded", open ? "false" : "true");
-          menu.hidden = open;
-        });
+      btn.addEventListener("click", () => {
+        const open = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", open ? "false" : "true");
+        menu.hidden = open;
+      });
 
-        document.addEventListener("click", (e) => {
-          if (menu.hidden) return;
-          const within = menu.contains(e.target) || btn.contains(e.target);
-          if (!within) closeMenu();
-        });
+      document.addEventListener("click", (e) => {
+        if (menu.hidden) return;
+        const within = menu.contains(e.target) || btn.contains(e.target);
+        if (!within) closeMenu();
+      });
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") closeMenu();
-        });
-      })();
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+    })();
 
-      // Accordion behavior (panel-safe + deep-link-friendly)
+    // Accordion (fast + clean)
+    (function () {
       const triggers = document.querySelectorAll(".accordion-trigger");
 
       function closeAll() {
@@ -844,10 +755,11 @@
           const item = btn.closest(".accordion-item");
           const panel = item ? item.querySelector(".accordion-panel") : null;
           btn.setAttribute("aria-expanded", "false");
-          if (!panel) return;
-          panel.classList.remove("is-open");
-          panel.style.maxHeight = "0px";
-          panel.hidden = true;
+          if (panel) {
+            panel.hidden = true;
+            panel.classList.remove("is-open");
+            panel.style.maxHeight = "0px";
+          }
         });
       }
 
@@ -891,9 +803,8 @@
 
         btn.addEventListener("click", () => {
           const isOpen = btn.getAttribute("aria-expanded") === "true";
-          if (isOpen) {
-            closePanel(btn, panel);
-          } else {
+          if (isOpen) closePanel(btn, panel);
+          else {
             closeAll();
             openPanel(btn, panel);
             if (item && item.id) history.replaceState(null, "", "#" + item.id);
@@ -901,7 +812,7 @@
         });
       });
 
-      // Deep link support via #step-...
+      // Deep-link support
       function openFromHash() {
         const id = (location.hash || "").replace("#", "");
         if (!id) return;
@@ -921,32 +832,7 @@
       window.addEventListener("hashchange", openFromHash);
       setTimeout(openFromHash, 0);
 
-      // Scroll reveal + optional staggering
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (reduceMotion.matches) {
-        document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
-        return;
-      }
-
-      document.querySelectorAll("[data-stagger]").forEach((wrap) => {
-        const children = wrap.querySelectorAll(".reveal");
-        children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
-      });
-
-      const els = document.querySelectorAll(".reveal");
-      if (!els.length) return;
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
-        });
-      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
-
-      els.forEach(el => io.observe(el));
-
-      // Resize fix for open panels
+      // Keep open panel height correct on resize
       window.addEventListener("resize", () => {
         triggers.forEach((btn) => {
           if (btn.getAttribute("aria-expanded") !== "true") return;
@@ -956,7 +842,7 @@
           panel.style.maxHeight = panel.scrollHeight + "px";
         });
       });
-    });
+    })();
   </script>
 </body>
 </html>
