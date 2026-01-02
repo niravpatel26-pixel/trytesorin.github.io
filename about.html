@@ -5,52 +5,34 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>About TESORIN — Product doctrine</title>
+  <title>About TESORIN — What this product is trying to be</title>
   <meta
     name="description"
-    content="TESORIN is a planning-first money system. Learn what it is, what it is not, and the doctrine behind its decisions."
+    content="What TESORIN stands for, why it exists, and the kind of money planning experience it’s built to deliver."
   />
   <link rel="canonical" href="https://www.trytesorin.com/about.html" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="About TESORIN — Product doctrine" />
-  <meta property="og:description" content="What TESORIN is, what it is not, and how it makes decisions." />
+  <meta property="og:title" content="About TESORIN — What this product is trying to be" />
+  <meta property="og:description" content="A calm money planning experience built for small starts and serious long-term progress." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.trytesorin.com/about.html" />
-  <meta property="og:site_name" content="TESORIN" />
   <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="About TESORIN — Product doctrine" />
-  <meta name="twitter:description" content="Planning-first. Calm by design. Doctrine-led decisions." />
+  <meta name="twitter:title" content="About TESORIN — What this product is trying to be" />
+  <meta name="twitter:description" content="A calm money planning experience built for small starts and serious long-term progress." />
   <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Icons -->
+  <!-- Icons (match index) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    { "@type": "Organization", "name": "TESORIN", "url": "https://www.trytesorin.com/", "logo": "https://www.trytesorin.com/tesorin-logo.png" },
-    { "@type": "WebSite", "name": "TESORIN", "url": "https://www.trytesorin.com/" },
-    {
-      "@type": "WebPage",
-      "name": "About TESORIN — Product doctrine",
-      "url": "https://www.trytesorin.com/about.html",
-      "isPartOf": { "@type": "WebSite", "url": "https://www.trytesorin.com/" }
-    }
-  ]
-}
-  </script>
-
-  <!-- Fonts (match home) -->
+  <!-- Fonts (match index) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -60,11 +42,11 @@
 
   <style>
     :root {
-      /* Match index system */
+      /* Match index */
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
-      --text-main: #0b1220;
+      --text-main: #0f172a;
       --text-soft: #263449;
       --text-mute: #516173;
 
@@ -74,8 +56,8 @@
       --border-subtle: rgba(148, 163, 184, 0.30);
       --border-strong: rgba(148, 163, 184, 0.44);
 
-      --radius-lg: 18px;
       --radius-pill: 999px;
+      --radius-lg: 18px;
       --max-width: 1120px;
 
       --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -84,8 +66,8 @@
       --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
 
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-      --shadow-card: 0 16px 36px rgba(15, 23, 42, 0.07);
 
+      /* Motion */
       --ease-out: cubic-bezier(.2,.8,.2,1);
       --ease-soft: cubic-bezier(.2,.6,.2,1);
       --d-1: 140ms;
@@ -103,7 +85,7 @@
       text-rendering: optimizeLegibility;
     }
 
-    a, button { font-family: inherit; }
+    a, button, input { font-family: inherit; }
 
     .skip-link {
       position: absolute;
@@ -122,13 +104,15 @@
     .skip-link:focus { transform: translateY(0); outline: none; box-shadow: var(--ring); }
 
     a:focus-visible,
-    button:focus-visible {
+    button:focus-visible,
+    input:focus-visible {
       outline: none;
       box-shadow: var(--ring);
-      border-color: rgba(34, 197, 94, 0.60);
+      border-color: rgba(34, 197, 94, 0.65);
     }
 
     .page { min-height: 100vh; display: flex; flex-direction: column; }
+
     .shell {
       width: 100%;
       max-width: var(--max-width);
@@ -136,7 +120,7 @@
       padding: 24px 16px 76px;
     }
 
-    /* HEADER (same layout logic as home) */
+    /* HEADER (match index) */
     header {
       display: flex;
       align-items: center;
@@ -189,12 +173,6 @@
     nav a { text-decoration: none; color: inherit; padding: 4px 0; }
     nav a:hover { color: var(--text-main); }
 
-    nav a.active {
-      font-weight: 600;
-      color: var(--text-main);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.60);
-    }
-
     nav a.highlight {
       padding: 7px 14px;
       border-radius: var(--radius-pill);
@@ -205,7 +183,13 @@
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
-    /* Mobile menu */
+    nav a.active {
+      font-weight: 600;
+      color: var(--text-main);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.65);
+    }
+
+    /* MOBILE MENU */
     .menu-btn {
       display: none;
       border: 1px solid rgba(148, 163, 184, 0.55);
@@ -250,12 +234,10 @@
     .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
-    /* CONTENT */
-    main { padding-top: 6px; }
-
+    /* HERO */
     .hero {
+      padding-top: 10px;
       max-width: 780px;
-      padding-top: 8px;
     }
 
     .hero-title {
@@ -264,7 +246,7 @@
       line-height: 1.06;
       letter-spacing: -0.03em;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       text-wrap: balance;
     }
 
@@ -273,144 +255,101 @@
       line-height: 1.75;
       color: var(--text-soft);
       max-width: 680px;
-      margin-bottom: 12px;
+      margin-bottom: 0;
     }
 
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-      margin-bottom: 18px;
+    /* SECTIONS */
+    .section {
+      margin-top: 34px;
+      max-width: 860px;
     }
 
-    .chip {
-      font-size: 11px;
-      padding: 5px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: rgba(255, 255, 255, 0.85);
-      color: var(--text-mute);
-      white-space: nowrap;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
-      gap: 22px;
-      align-items: start;
-      margin-top: 14px;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft);
-      padding: 16px 16px 18px;
-    }
-
-    .tldr {
-      border-left: 3px solid var(--accent);
-    }
-
-    .card-title {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-mute);
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      letter-spacing: -0.02em;
       margin-bottom: 10px;
     }
 
-    .tldr ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .tldr li {
-      font-size: 13px;
-      line-height: 1.65;
+    .section-subtitle {
+      font-size: 14px;
       color: var(--text-soft);
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
+      line-height: 1.75;
+      max-width: 700px;
     }
 
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.92);
-      margin-top: 8px;
-      flex: 0 0 7px;
-    }
-
-    .strong { color: var(--text-main); font-weight: 600; }
-
-    /* Accordion (scan-first: title + teaser visible before opening) */
+    /* ACCORDION (scan-first, no "Topic") */
     .accordion {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      margin-top: 14px;
+      max-width: 860px;
     }
 
-    .acc-item {
+    .accordion-item {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       background: var(--card);
       overflow: hidden;
-      transition: box-shadow var(--d-1) var(--ease-out), transform var(--d-1) var(--ease-out);
+      box-shadow: var(--shadow-soft);
+      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out);
     }
-    .acc-item:hover { box-shadow: var(--shadow-card); transform: translateY(-1px); }
+    .accordion-item:hover { transform: translateY(-1px); box-shadow: 0 22px 55px rgba(15, 23, 42, 0.08); }
 
-    .acc-trigger {
+    .accordion-trigger {
       width: 100%;
-      padding: 14px 14px;
+      padding: 14px 14px 12px;
       border: none;
       background: transparent;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 12px;
+      font: inherit;
       text-align: left;
       cursor: pointer;
     }
 
-    .acc-left { display: flex; flex-direction: column; gap: 4px; }
+    .accordion-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
 
-    .acc-title {
+    .accordion-title {
       font-size: 14px;
       font-weight: 600;
-      color: var(--text-main);
+      color: #111827;
       line-height: 1.35;
+      text-wrap: balance;
     }
 
-    .acc-teaser {
+    /* visible teaser: keeps scanning fast */
+    .accordion-teaser {
       font-size: 12px;
-      line-height: 1.55;
       color: var(--text-mute);
-      max-width: 64ch;
+      line-height: 1.6;
+      max-width: 680px;
     }
 
-    .acc-icon {
+    .accordion-icon {
       font-size: 14px;
       color: var(--text-mute);
       transform: rotate(0deg);
-      transition: transform var(--d-2) var(--ease-out);
-      margin-top: 2px;
+      transition: transform 0.2s var(--ease-out);
+      padding-top: 2px;
       flex: 0 0 auto;
     }
-    .acc-trigger[aria-expanded="true"] .acc-icon { transform: rotate(180deg); }
+    .accordion-trigger[aria-expanded="true"] .accordion-icon { transform: rotate(180deg); }
 
-    .acc-panel {
+    .accordion-panel {
       padding: 0 14px 14px 14px;
-      border-top: 1px solid rgba(229, 231, 235, 0.90);
-
+      border-top: 1px solid rgba(229, 231, 235, 0.9);
       font-size: 13px;
       color: var(--text-soft);
-      line-height: 1.7;
+      line-height: 1.75;
 
       max-height: 0;
       overflow: hidden;
@@ -422,56 +361,54 @@
         transform var(--d-2) var(--ease-soft);
     }
 
-    .acc-panel.is-open {
+    .accordion-panel.is-open {
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
 
-    .acc-panel ul { margin-top: 8px; padding-left: 18px; }
-    .acc-panel li { margin-bottom: 4px; }
+    .accordion-body ul { margin-top: 10px; padding-left: 18px; }
+    .accordion-body li { margin-bottom: 6px; }
+    .highlight { color: #111827; font-weight: 600; }
 
-    /* CTA */
-    .cta-card {
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    /* TL;DR at bottom, human */
+    .tldr {
+      margin-top: 34px;
+      max-width: 860px;
     }
 
-    .cta-row {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .cta-btn {
-      border: none;
-      border-radius: var(--radius-pill);
-      padding: 10px 14px;
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 16px 16px 18px;
       font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      background: #0b1220;
-      color: #f8fafc;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.28);
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
-      white-space: nowrap;
+      color: var(--text-soft);
+      line-height: 1.75;
     }
-    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.34); filter: brightness(1.03); }
 
-    .cta-note {
+    .tldr-card { border-left: 3px solid var(--accent); }
+
+    .tldr-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .tldr-list { padding-left: 16px; }
+    .tldr-list li { margin-bottom: 6px; }
+
+    .meta {
       font-size: 11px;
       color: var(--text-mute);
+      margin-top: 12px;
       line-height: 1.6;
-      max-width: 62ch;
     }
 
-    /* FOOTER (match home links set) */
+    .meta a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* FOOTER (match index) */
     footer {
       border-top: 1px solid rgba(229, 231, 235, 1);
       margin-top: 40px;
@@ -488,19 +425,27 @@
     footer a:hover { text-decoration: underline; }
     .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* Motion (very light) */
+    /* Scroll reveal */
     @media (prefers-reduced-motion: reduce) {
-      .acc-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
+      .reveal { transition: none !important; transform: none !important; opacity: 1 !important; }
+      .accordion-panel { transition: none !important; transform: none !important; opacity: 1 !important; max-height: none !important; }
     }
+
+    .reveal {
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+      transition: opacity var(--d-2) var(--ease-soft), transform var(--d-2) var(--ease-soft);
+      will-change: transform, opacity;
+    }
+    .reveal.is-in { opacity: 1; transform: translate3d(0, 0, 0); }
+    [data-stagger] .reveal { transition-delay: calc(var(--stagger, 0) * 1ms); }
 
     /* Responsive */
     @media (max-width: 880px) {
       nav { display: none; }
-      .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
+      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
       header { padding-bottom: 14px; }
-
-      .grid { grid-template-columns: 1fr; gap: 12px; }
-      .hero { padding-top: 10px; }
+      .section { margin-top: 28px; }
     }
   </style>
 </head>
@@ -549,121 +494,136 @@
       </header>
 
       <main id="main">
-        <section class="hero" aria-label="About TESORIN">
-          <h1 class="hero-title">What this product is trying to be.</h1>
-          <p class="hero-subtitle">
-            A planning-first money system that reduces decisions, protects your baseline, and turns consistency into progress.
-          </p>
+        <section class="hero" data-stagger>
+          <h1 class="hero-title reveal">
+            What this product is trying to be.
+          </h1>
 
-          <div class="chip-row" aria-label="Positioning">
-            <span class="chip">Doctrine-led decisions</span>
-            <span class="chip">Safety before optimization</span>
-            <span class="chip">Calm interface, clear outputs</span>
+          <p class="hero-subtitle reveal">
+            TESORIN is a calm place to plan your money. It’s built for people who want steady progress—without spreadsheets, noise, or a trading mindset.
+          </p>
+        </section>
+
+        <section class="section" aria-label="About details">
+          <div class="section-header" data-stagger>
+            <h2 class="section-title reveal">A few things worth knowing</h2>
+            <p class="section-subtitle reveal">
+              Open what you care about. Everything else can be skipped.
+            </p>
           </div>
 
-          <div class="grid" aria-label="Doctrine overview">
-            <section class="accordion" aria-label="Doctrine sections">
-              <article class="acc-item" data-acc>
-                <h2>
-                  <button class="acc-trigger" type="button" aria-expanded="true">
-                    <span class="acc-left">
-                      <span class="acc-title">The gap</span>
-                      <span class="acc-teaser">Most tools are either bookkeeping or stimulation. TESORIN sits between: planning you can keep.</span>
-                    </span>
-                    <span class="acc-icon" aria-hidden="true">▾</span>
-                  </button>
-                </h2>
-                <div class="acc-panel is-open">
-                  TESORIN is built for people who have money coming in, money going out, and no reliable system that holds up month to month.
-                  <ul>
-                    <li><span class="strong">Clarity:</span> what your baseline costs, and what’s actually flexible.</li>
-                    <li><span class="strong">Order:</span> priorities that prevent backtracking (protect baseline first).</li>
-                    <li><span class="strong">Follow-through:</span> fewer decisions, repeated consistently.</li>
-                  </ul>
-                </div>
-              </article>
+          <div class="accordion" role="list" data-stagger>
+            <article class="accordion-item reveal" id="about-gap">
+              <h3>
+                <button class="accordion-trigger" type="button" aria-expanded="true">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-title">Why TESORIN exists</span>
+                    <span class="accordion-teaser">Most tools are either too intense or too manual. This aims for the middle: clear, calm, and practical.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h3>
 
-              <article class="acc-item" data-acc>
-                <h2>
-                  <button class="acc-trigger" type="button" aria-expanded="false">
-                    <span class="acc-left">
-                      <span class="acc-title">How TESORIN makes decisions</span>
-                      <span class="acc-teaser">If a feature doesn’t increase clarity or safety, it doesn’t ship.</span>
-                    </span>
-                    <span class="acc-icon" aria-hidden="true">▾</span>
-                  </button>
-                </h2>
-                <div class="acc-panel" hidden>
-                  TESORIN is doctrine-first: the system comes before the surface area.
-                  <ul>
-                    <li><span class="strong">One primary output:</span> a clear number you can act on.</li>
-                    <li><span class="strong">Minimal inputs:</span> only what’s required to stay accurate.</li>
-                    <li><span class="strong">No urgency design:</span> no streak pressure, no “panic” prompts.</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="acc-item" data-acc>
-                <h2>
-                  <button class="acc-trigger" type="button" aria-expanded="false">
-                    <span class="acc-left">
-                      <span class="acc-title">What TESORIN is not</span>
-                      <span class="acc-teaser">Not a trading terminal. Not a content feed. Not a tool that needs daily attention.</span>
-                    </span>
-                    <span class="acc-icon" aria-hidden="true">▾</span>
-                  </button>
-                </h2>
-                <div class="acc-panel" hidden>
-                  TESORIN avoids anything that increases noise or creates fragile behavior.
-                  <ul>
-                    <li>No “market theatre” UI that trains constant checking.</li>
-                    <li>No incentive to take risk before your baseline is protected.</li>
-                    <li>No feature sprawl that makes the product feel heavy.</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="acc-item" data-acc>
-                <h2>
-                  <button class="acc-trigger" type="button" aria-expanded="false">
-                    <span class="acc-left">
-                      <span class="acc-title">The ecosystem path</span>
-                      <span class="acc-teaser">As complexity increases, the planning layer deepens—without changing the doctrine.</span>
-                    </span>
-                    <span class="acc-icon" aria-hidden="true">▾</span>
-                  </button>
-                </h2>
-                <div class="acc-panel" hidden>
-                  TESORIN is designed as the starting layer.
-                  <ul>
-                    <li><span class="strong">TESORIN:</span> baseline, buffers, early wealth building.</li>
-                    <li><span class="strong">FinTrek:</span> deeper planning and scenarios (planned).</li>
-                    <li><span class="strong">SummitVest:</span> advanced strategy for complex situations (planned).</li>
-                  </ul>
-                </div>
-              </article>
-            </section>
-
-            <aside class="card tldr" aria-label="TL;DR">
-              <div class="card-title">In one glance</div>
-              <ul>
-                <li><span class="dot" aria-hidden="true"></span><span><span class="strong">Planning-first:</span> decisions come from a small set of stable rules.</span></li>
-                <li><span class="dot" aria-hidden="true"></span><span><span class="strong">Safety-led:</span> protect baseline, then move outward.</span></li>
-                <li><span class="dot" aria-hidden="true"></span><span><span class="strong">Low-noise:</span> the product should feel quieter after you use it.</span></li>
-                <li><span class="dot" aria-hidden="true"></span><span><span class="strong">Built to hold:</span> a system you can keep, not a sprint.</span></li>
-              </ul>
-
-              <div class="cta-card" aria-label="Next step">
-                <div class="cta-row">
-                  <a class="cta-btn" href="/?focus=waitlist">
-                    Join early access <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-                <div class="cta-note">
-                  If you want the “calm plan” approach, the homepage shows the flow and the waitlist.
+              <div class="accordion-panel is-open">
+                <div class="accordion-body">
+                  A lot of money tools pull you toward one of two extremes: complex tracking you don’t keep up with, or
+                  trading-style apps that keep you “on” all the time.
+                  <br /><br />
+                  TESORIN is built for a different moment: <span class="highlight">“I earn okay money, but I don’t really have a plan.”</span>
+                  Not stock tips. Not hype. Just a calmer way to decide what matters next—this month—without backtracking.
                 </div>
               </div>
-            </aside>
+            </article>
+
+            <article class="accordion-item reveal" id="about-name">
+              <h3>
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-title">What the name means</span>
+                    <span class="accordion-teaser">A reminder that wealth is built—slowly, deliberately—not guessed.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h3>
+
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  TESORIN comes from the idea of a <span class="highlight">treasure you build over time</span>—not a lottery ticket.
+                  It reflects a simple belief: money planning should feel deliberate and steady, not like a gamble.
+                  <ul>
+                    <li>Small starts count.</li>
+                    <li>Less anxiety is a feature.</li>
+                    <li>Simple rules beat perfect spreadsheets.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item reveal" id="about-isnt">
+              <h3>
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-title">What TESORIN is (and isn’t)</span>
+                    <span class="accordion-teaser">Planning, priorities, and progress—without pushing products.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h3>
+
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  Underneath the UI, TESORIN is a set of simple rules designed to keep you safe, focused, and moving—
+                  <span class="highlight">not to sell you something.</span>
+                  <ul>
+                    <li>A planning surface for spending, buffers, and goals in one calm view.</li>
+                    <li>Safety before optimization: buffers and high-interest debt first, then investing.</li>
+                    <li>Plain language. Realistic inputs. No shame.</li>
+                  </ul>
+                  It’s not a trading app, not an investing course, and not a place that tries to make you feel behind.
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item reveal" id="about-ecosystem">
+              <h3>
+                <button class="accordion-trigger" type="button" aria-expanded="false">
+                  <span class="accordion-title-wrap">
+                    <span class="accordion-title">How it fits with what’s next</span>
+                    <span class="accordion-teaser">A simple starting point now. Deeper tools later—as your needs grow.</span>
+                  </span>
+                  <span class="accordion-icon" aria-hidden="true">▾</span>
+                </button>
+              </h3>
+
+              <div class="accordion-panel" hidden>
+                <div class="accordion-body">
+                  TESORIN is designed to be the first step. Over time, it can sit alongside deeper tools as your money life becomes more complex:
+                  <ul>
+                    <li><span class="highlight">TESORIN</span> — calm planning for cashflow, buffers, and early wealth building.</li>
+                    <li><span class="highlight">FinTrek</span> — planned as a deeper planning layer for more scenarios and long-term detail.</li>
+                    <li><span class="highlight">SummitVest</span> — planned as premium tools and strategies for complex situations and larger wealth.</li>
+                  </ul>
+                  The feel stays the same: calm, transparent, and user-first.
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="tldr" id="tldr" data-stagger>
+          <div class="card tldr-card reveal">
+            <div class="tldr-title">TL;DR</div>
+            <ul class="tldr-list">
+              <li><strong class="highlight">TESORIN is a calm planning app, not a trading screen.</strong></li>
+              <li>It’s for people taking money seriously for the first time—starting from small, realistic steps.</li>
+              <li>It focuses on safety and steady progress, before anything fancy.</li>
+              <li>No hidden product push. No commission-driven recommendations.</li>
+              <li>As your situation grows, the ecosystem can grow with you (FinTrek and SummitVest).</li>
+            </ul>
+            <p class="meta">
+              Want to join early access? Go to the homepage and add your email to the waitlist.
+              <a href="/?focus=waitlist">Go to waitlist →</a>
+            </p>
           </div>
         </section>
       </main>
@@ -684,57 +644,52 @@
   </div>
 
   <script>
-    // Mobile menu (same behavior as index)
-    (function () {
-      const btn = document.querySelector(".menu-btn");
-      const menu = document.getElementById("mobile-menu");
-      if (!btn || !menu) return;
+    document.addEventListener("DOMContentLoaded", function () {
+      // Mobile menu
+      (function () {
+        const btn = document.querySelector(".menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        if (!btn || !menu) return;
 
-      function closeMenu() {
-        btn.setAttribute("aria-expanded", "false");
-        menu.hidden = true;
-      }
+        function closeMenu() {
+          btn.setAttribute("aria-expanded", "false");
+          menu.hidden = true;
+        }
 
-      btn.addEventListener("click", () => {
-        const open = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", open ? "false" : "true");
-        menu.hidden = open;
-      });
+        btn.addEventListener("click", () => {
+          const open = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", open ? "false" : "true");
+          menu.hidden = open;
+        });
 
-      document.addEventListener("click", (e) => {
-        if (menu.hidden) return;
-        const within = menu.contains(e.target) || btn.contains(e.target);
-        if (!within) closeMenu();
-      });
+        document.addEventListener("click", (e) => {
+          if (menu.hidden) return;
+          const within = menu.contains(e.target) || btn.contains(e.target);
+          if (!within) closeMenu();
+        });
 
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-      });
-    })();
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMenu();
+        });
+      })();
 
-    // Accordion (single-open, scan-first)
-    (function () {
-      const items = Array.from(document.querySelectorAll("[data-acc]"));
-      if (!items.length) return;
+      // Accordion
+      const triggers = document.querySelectorAll(".accordion-trigger");
 
       function closeAll() {
-        items.forEach((it) => {
-          const btn = it.querySelector(".acc-trigger");
-          const panel = it.querySelector(".acc-panel");
-          if (!btn || !panel) return;
-
+        triggers.forEach((btn) => {
+          const item = btn.closest(".accordion-item");
+          const panel = item ? item.querySelector(".accordion-panel") : null;
           btn.setAttribute("aria-expanded", "false");
-          panel.classList.remove("is-open");
-          panel.style.maxHeight = "0px";
-          panel.hidden = true;
+          if (panel) {
+            panel.hidden = true;
+            panel.classList.remove("is-open");
+            panel.style.maxHeight = "0px";
+          }
         });
       }
 
-      function open(it) {
-        const btn = it.querySelector(".acc-trigger");
-        const panel = it.querySelector(".acc-panel");
-        if (!btn || !panel) return;
-
+      function openPanel(btn, panel) {
         btn.setAttribute("aria-expanded", "true");
         panel.hidden = false;
         requestAnimationFrame(() => {
@@ -743,53 +698,86 @@
         });
       }
 
-      // Init: first is open (already in markup), set heights
-      items.forEach((it) => {
-        const btn = it.querySelector(".acc-trigger");
-        const panel = it.querySelector(".acc-panel");
-        if (!btn || !panel) return;
+      function closePanel(btn, panel) {
+        btn.setAttribute("aria-expanded", "false");
+        panel.classList.remove("is-open");
+        panel.style.maxHeight = "0px";
+        const onEnd = (e) => {
+          if (e.propertyName !== "max-height") return;
+          panel.hidden = true;
+          panel.removeEventListener("transitionend", onEnd);
+        };
+        panel.addEventListener("transitionend", onEnd);
+      }
+
+      triggers.forEach((btn, idx) => {
+        const item = btn.closest(".accordion-item");
+        const panel = item ? item.querySelector(".accordion-panel") : null;
+        if (!panel) return;
 
         const startOpen = btn.getAttribute("aria-expanded") === "true";
-        if (startOpen) {
-          panel.hidden = false;
-          panel.classList.add("is-open");
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        } else {
+        if (!startOpen) {
           panel.hidden = true;
           panel.classList.remove("is-open");
           panel.style.maxHeight = "0px";
+        } else {
+          panel.hidden = false;
+          panel.classList.add("is-open");
+          panel.style.maxHeight = panel.scrollHeight + "px";
         }
 
         btn.addEventListener("click", () => {
           const isOpen = btn.getAttribute("aria-expanded") === "true";
-          if (isOpen) {
-            // allow close
-            btn.setAttribute("aria-expanded", "false");
-            panel.classList.remove("is-open");
-            panel.style.maxHeight = "0px";
-            const onEnd = (e) => {
-              if (e.propertyName !== "max-height") return;
-              panel.hidden = true;
-              panel.removeEventListener("transitionend", onEnd);
-            };
-            panel.addEventListener("transitionend", onEnd);
-          } else {
+          if (isOpen) closePanel(btn, panel);
+          else {
             closeAll();
-            open(it);
+            openPanel(btn, panel);
           }
         });
+
+        // Ensure only the first starts open (safety)
+        if (idx !== 0 && startOpen) {
+          btn.setAttribute("aria-expanded", "false");
+          panel.hidden = true;
+          panel.classList.remove("is-open");
+          panel.style.maxHeight = "0px";
+        }
       });
 
+      // Scroll reveal + stagger
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      if (reduceMotion.matches) {
+        document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
+        return;
+      }
+
+      document.querySelectorAll("[data-stagger]").forEach((wrap) => {
+        const children = wrap.querySelectorAll(".reveal");
+        children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
+      });
+
+      const els = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+
+      els.forEach(el => io.observe(el));
+
+      // Resize fix for open panels
       window.addEventListener("resize", () => {
-        items.forEach((it) => {
-          const btn = it.querySelector(".acc-trigger");
-          const panel = it.querySelector(".acc-panel");
-          if (!btn || !panel) return;
+        triggers.forEach((btn) => {
           if (btn.getAttribute("aria-expanded") !== "true") return;
+          const item = btn.closest(".accordion-item");
+          const panel = item ? item.querySelector(".accordion-panel") : null;
+          if (!panel) return;
           panel.style.maxHeight = panel.scrollHeight + "px";
         });
       });
-    })();
+    });
   </script>
 </body>
 </html>
