@@ -33,7 +33,7 @@
   <!-- Icons (match index) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
@@ -236,18 +236,13 @@
     .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
     .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
-    /* ABOUT HERO (short + not repeating home headline) */
+    /* ABOUT HERO */
     .about-hero {
       padding-top: 10px;
       max-width: 70ch;
     }
 
-    .about-kicker {
-      font-size: 12px;
-      color: var(--text-mute);
-      margin-bottom: 10px;
-    }
-
+    /* Removed the top “About TESORIN” label, but keep spacing consistent */
     .about-title {
       font-family: var(--font-display);
       font-size: clamp(34px, 4.2vw, 46px);
@@ -255,6 +250,14 @@
       letter-spacing: -0.035em;
       font-weight: 600;
       margin-bottom: 12px;
+      text-wrap: balance;
+    }
+
+    /* Justify headline line properly (without ugly full-justify gaps) */
+    .about-title .headline {
+      display: inline-block;
+      text-align: left;
+      max-width: 60ch;
       text-wrap: balance;
     }
 
@@ -266,7 +269,7 @@
       max-width: 62ch;
     }
 
-    /* Tight, attention-friendly blocks */
+    /* Quick cards */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -310,19 +313,13 @@
       max-width: 60ch;
     }
 
-    /* Accordion (no "Topic", no fluff) */
+    /* Accordion */
     .section {
       margin-top: 28px;
       max-width: 82ch;
     }
 
-    .section-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 10px;
-    }
-
+    /* Removed: “If you want the details” line */
     .accordion {
       display: flex;
       flex-direction: column;
@@ -395,7 +392,7 @@
     .accordion-panel ul { margin-top: 8px; padding-left: 18px; }
     .accordion-panel li { margin-bottom: 4px; }
 
-    /* TL;DR at bottom (human language) */
+    /* TL;DR */
     .tldr {
       margin-top: 26px;
       max-width: 82ch;
@@ -474,7 +471,6 @@
 
   <div class="page">
     <div class="shell">
-
       <!-- HEADER -->
       <header>
         <a href="/" class="brand-link" aria-label="TESORIN home">
@@ -517,10 +513,8 @@
       <main id="main">
         <!-- ABOUT HERO -->
         <section class="about-hero" aria-label="About TESORIN">
-          <div class="about-kicker">About TESORIN</div>
-
           <h1 class="about-title">
-            A planning-first money app designed for clarity, safety, and steady progress.
+            <span class="headline">A planning-first money app designed for clarity, safety, and steady progress.</span>
           </h1>
 
           <p class="about-subtitle">
@@ -553,8 +547,6 @@
 
         <!-- ACCORDION -->
         <section class="section" aria-label="Details">
-          <div class="section-title">If you want the details</div>
-
           <div class="accordion" role="list">
             <article class="accordion-item" id="about-gap">
               <h2 class="accordion-header">
