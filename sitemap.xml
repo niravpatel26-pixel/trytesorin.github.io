@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core -->
   <url>
     <loc>https://www.trytesorin.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Product understanding -->
   <url>
     <loc>https://www.trytesorin.com/how-it-works.html</loc>
     <changefreq>monthly</changefreq>
@@ -24,6 +27,7 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Trust & support -->
   <url>
     <loc>https://www.trytesorin.com/safety.html</loc>
     <changefreq>monthly</changefreq>
@@ -43,9 +47,24 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Legal -->
+  <url>
+    <loc>https://www.trytesorin.com/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.trytesorin.com/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- System -->
   <url>
     <loc>https://www.trytesorin.com/success.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+
 </urlset>
