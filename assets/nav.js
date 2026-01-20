@@ -1,5 +1,4 @@
 (function () {
-  // Mobile menu
   const btn = document.querySelector(".menu-btn");
   const overlay = document.getElementById("menu-overlay");
 
@@ -15,7 +14,6 @@
       document.documentElement.classList.toggle("menu-open", open);
       document.body.classList.toggle("menu-open", open);
 
-      // Progressive enhancement: inert blocks focus/clicks in supporting browsers
       try { overlay.inert = !open; } catch (e) {}
 
       if (open) {
@@ -37,18 +35,15 @@
 
     btn.addEventListener("click", () => setOpen(!isOpen()));
 
-    // Close on backdrop / close button
     overlay.addEventListener("click", (e) => {
       const t = e.target;
       if (t && t.getAttribute && t.getAttribute("data-close") === "true") setOpen(false);
     });
 
-    // Close on link click
     overlay.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", () => setOpen(false));
     });
 
-    // Escape + focus trap
     document.addEventListener("keydown", (e) => {
       if (!isOpen()) return;
 
@@ -77,13 +72,12 @@
       }
     });
 
-    // Close if resized to desktop
     window.addEventListener("resize", () => {
       if (window.innerWidth > 880 && isOpen()) setOpen(false);
     });
   }
 
-  // Optional: set active desktop nav link automatically (prevents manual drift)
+  // Optional: auto-active desktop nav link
   const primaryNav = document.querySelector('nav[aria-label="Primary"]');
   if (primaryNav) {
     const path = (window.location.pathname || "/").replace(/\/+$/, "") || "/";
@@ -95,7 +89,7 @@
     });
   }
 
-  // Waitlist focus helper (safe on pages without the field)
+  // Waitlist focus helper (safe on non-index pages)
   const params = new URLSearchParams(window.location.search);
   if (params.get("focus") === "waitlist") {
     setTimeout(() => {
