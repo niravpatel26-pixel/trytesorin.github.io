@@ -58,6 +58,10 @@
     rel="stylesheet"
   />
 
+  <!-- Shared nav + full-screen mobile menu -->
+  <link rel="stylesheet" href="/assets/nav.css" />
+  <script src="/assets/nav.js" defer></script>
+
   <style>
     :root {
       /* Match index/features tokens */
@@ -138,131 +142,6 @@
       margin: 0 auto;
       padding: 22px 16px 76px;
     }
-
-    /* HEADER (match features/index) */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 0 16px;
-      position: relative;
-      gap: 14px;
-    }
-
-    .brand-link { text-decoration: none; color: inherit; display: flex; align-items: center; min-width: 0; }
-    .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
-
-    .brand-mark {
-      width: 32px; height: 32px; border-radius: 10px;
-      background: var(--card);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.10);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-      overflow: hidden;
-      flex: 0 0 32px;
-    }
-    .brand-mark img { width: 100%; height: 100%; object-fit: contain; display: block; }
-
-    .brand-text-wrap { display: flex; flex-direction: column; min-width: 0; }
-    .brand-name {
-      font-family: var(--font-display);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 16px;
-      white-space: nowrap;
-    }
-    .brand-tagline {
-      font-size: 11px;
-      color: var(--text-mute);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 280px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text-soft);
-      white-space: nowrap;
-    }
-    nav a { text-decoration: none; color: inherit; padding: 4px 0; }
-    nav a:hover { color: var(--text-main); }
-
-    nav a.highlight {
-      padding: 8px 14px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-main);
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
-    }
-
-    nav a.active {
-      color: var(--text-main);
-      position: relative;
-    }
-    nav a.active::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -6px;
-      height: 2px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.70);
-    }
-
-    /* MOBILE MENU (match features/index) */
-    .menu-btn {
-      display: none;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: rgba(255, 255, 255, 0.85);
-      padding: 8px 10px;
-      border-radius: 999px;
-      cursor: pointer;
-      line-height: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .menu-bars {
-      width: 18px; height: 2px; background: #111827;
-      display: block; position: relative; border-radius: 2px;
-    }
-    .menu-bars::before, .menu-bars::after {
-      content: "";
-      position: absolute; left: 0;
-      width: 18px; height: 2px; background: #111827;
-      border-radius: 2px;
-    }
-    .menu-bars::before { top: -6px; }
-    .menu-bars::after { top: 6px; }
-
-    .mobile-menu {
-      position: absolute;
-      right: 0;
-      top: 52px;
-      width: min(360px, calc(100vw - 32px));
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
-      overflow: hidden;
-      z-index: 50;
-      backdrop-filter: blur(8px);
-    }
-    .mobile-menu-inner { display: flex; flex-direction: column; padding: 10px; gap: 4px; }
-    .mobile-menu a { text-decoration: none; color: #111827; font-size: 13px; padding: 10px 10px; border-radius: 12px; }
-    .mobile-menu a:hover { background: #f3f4f6; }
-    .mobile-menu a.active { background: rgba(34, 197, 94, 0.08); }
-    .mobile-menu .mobile-cta { margin-top: 6px; background: #111827; color: #fff; text-align: center; }
-    .mobile-menu .mobile-cta:hover { background: #0b1220; }
 
     /* CONTENT */
     main { max-width: 92ch; }
@@ -484,33 +363,6 @@
     .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
     .cta-btn:hover span.arrow { transform: translateX(3px); }
 
-    /* FORM (compact, site-like) */
-    .form-row {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .form-row input[type="email"] {
-      flex: 1;
-      min-width: 220px;
-      padding: 10px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.60);
-      background: rgba(249, 250, 251, 0.95);
-      font-size: 13px;
-      color: var(--text-main);
-      outline: none;
-      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-    }
-    .form-row input::placeholder { color: rgba(148, 163, 184, 0.95); }
-    .form-row input:focus {
-      border-color: rgba(34, 197, 94, 0.70);
-      box-shadow: var(--ring);
-      background: #ffffff;
-    }
-
     .trust-lines {
       margin-top: 10px;
       font-size: 11px;
@@ -548,16 +400,10 @@
     [data-stagger] .reveal{ transition-delay: calc(var(--stagger, 0) * 1ms); }
 
     @media (max-width: 880px) {
-      nav { display: none; }
-      .menu-btn { display: inline-flex; align-items:center; justify-content:center; }
-      header { padding-bottom: 14px; }
       .cards-2 { grid-template-columns: 1fr; }
       .hero-title { font-size: clamp(30px, 7vw, 40px); }
       .hero-subtitle { font-size: 15px; }
       .swipe-hint { display: flex; }
-      .form-row { flex-direction: column; align-items: stretch; }
-      .form-row input[type="email"] { min-width: 0; width: 100%; }
-      .form-row .cta-btn { width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -596,27 +442,46 @@
         </nav>
 
         <!-- Mobile burger -->
-        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
 
-        <!-- Mobile dropdown -->
-        <div id="mobile-menu" class="mobile-menu" hidden>
-          <div class="mobile-menu-inner">
-            <a href="/how-it-works.html">How it works</a>
-            <a href="/features.html">Features</a>
-            <a href="/about.html">About</a>
-            <a href="/safety.html">Safety</a>
-            <a href="/faq.html">FAQs</a>
-            <a class="active" href="/personal-finance-planning-app.html">Planning app</a>
-            <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+        <!-- Full-screen, grid-aligned mobile menu -->
+        <div id="menu-overlay" class="menu-overlay" data-open="false" aria-hidden="true">
+          <div class="menu-backdrop" data-close="true"></div>
+
+          <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+            <div class="menu-panel-inner">
+              <div class="menu-panel-head">
+                <a href="/" class="menu-brand" aria-label="TESORIN home">
+                  <span class="menu-brand-mark" aria-hidden="true">
+                    <img src="tesorin-logo.png" alt="" width="28" height="28" decoding="async" />
+                  </span>
+                  <span class="menu-brand-text">TESORIN</span>
+                </a>
+
+                <button type="button" class="menu-close" aria-label="Close menu" data-close="true">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+
+              <nav class="menu-panel-nav" aria-label="Mobile">
+                <a href="/how-it-works.html">How it works</a>
+                <a href="/features.html">Features</a>
+                <a href="/about.html">About</a>
+                <a href="/safety.html">Safety</a>
+                <a href="/faq.html">FAQs</a>
+                <a href="/personal-finance-planning-app.html">Planning app</a>
+                <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+              </nav>
+            </div>
           </div>
         </div>
       </header>
 
       <!-- MAIN -->
       <main id="main">
-        <!-- HERO (no top pill) -->
+        <!-- HERO -->
         <section class="hero" aria-label="Planning app overview" data-stagger>
           <h1 class="hero-title reveal reveal-up">Wealth planning app — from first plan to long-term wealth.</h1>
 
@@ -821,8 +686,7 @@
             </a>
           </section>
 
-          <div class="trust-lines reveal reveal-up">
-          </div>
+          <div class="trust-lines reveal reveal-up"></div>
         </section>
       </main>
 
@@ -843,34 +707,6 @@
   </div>
 
   <script>
-    // Mobile menu (match features/index)
-    (function () {
-      const btn = document.querySelector(".menu-btn");
-      const menu = document.getElementById("mobile-menu");
-      if (!btn || !menu) return;
-
-      function closeMenu() {
-        btn.setAttribute("aria-expanded", "false");
-        menu.hidden = true;
-      }
-
-      btn.addEventListener("click", () => {
-        const open = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", open ? "false" : "true");
-        menu.hidden = open;
-      });
-
-      document.addEventListener("click", (e) => {
-        if (menu.hidden) return;
-        const within = menu.contains(e.target) || btn.contains(e.target);
-        if (!within) closeMenu();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-      });
-    })();
-
     // Scroll reveal + optional staggering (match features)
     (function () {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
