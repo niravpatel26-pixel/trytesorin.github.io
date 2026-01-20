@@ -64,12 +64,10 @@
       --page-tint: #fbfcfd;
       --card: #ffffff;
 
-      /* Stronger contrast (less dull) */
       --text-main: #0b1220;
       --text-soft: #243244;
       --text-mute: #4f6073;
 
-      /* Back to your original green */
       --accent: #22c55e;
 
       --border-subtle: rgba(148, 163, 184, 0.30);
@@ -225,7 +223,12 @@
     .menu-bars::before { top: -6px; }
     .menu-bars::after { top: 6px; }
 
-    /* PREMIUM MOBILE MENU OVERLAY */
+    /* Hamburger morph to X */
+    .menu-btn[aria-expanded="true"] .menu-bars { background: transparent; }
+    .menu-btn[aria-expanded="true"] .menu-bars::before { top: 0; transform: rotate(45deg); }
+    .menu-btn[aria-expanded="true"] .menu-bars::after { top: 0; transform: rotate(-45deg); }
+
+    /* MOBILE MENU — FULL-SCREEN, GRID-ALIGNED (Wealthsimple-like) */
     .menu-overlay {
       position: fixed;
       inset: 0;
@@ -236,63 +239,95 @@
     .menu-backdrop {
       position: absolute;
       inset: 0;
-      background: rgba(11, 18, 32, 0.46);
+      background: rgba(11, 18, 32, 0.36);
       opacity: 0;
       transition: opacity 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .menu-panel {
       position: absolute;
-      top: 0;
-      right: 0;
-      width: min(380px, 100%);
+      inset: 0;
       height: 100dvh;
-      background: rgba(255, 255, 255, 0.98);
-      border-left: 1px solid var(--border-subtle);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+      background: rgba(251, 252, 253, 0.98);
       backdrop-filter: blur(10px);
 
-      transform: translate3d(18px, 0, 0);
+      transform: translate3d(0, 10px, 0);
       opacity: 0;
 
       transition:
-        transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
         opacity 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
 
       will-change: transform, opacity;
-      padding: calc(14px + env(safe-area-inset-top)) 14px 14px;
+    }
+
+    .menu-panel-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: calc(14px + env(safe-area-inset-top)) 16px 22px;
+      height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 10px;
     }
 
     .menu-panel-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 6px 4px 10px;
+      padding: 2px 0 10px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
     }
 
-    .menu-panel-title {
-      font-size: 12px;
-      letter-spacing: 0.12em;
+    .menu-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+      min-width: 0;
+    }
+
+    .menu-brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex: 0 0 32px;
+    }
+
+    .menu-brand-mark img {
+      display: block;
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .menu-brand-text {
+      font-family: var(--font-display);
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--text-mute);
       font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
     }
 
     .menu-close {
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: rgba(255, 255, 255, 0.85);
-      width: 38px;
-      height: 38px;
+      border: 1px solid rgba(148, 163, 184, 0.40);
+      background: rgba(255, 255, 255, 0.70);
+      width: 40px;
+      height: 40px;
       border-radius: 999px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       -webkit-tap-highlight-color: transparent;
-      font-size: 20px;
+      font-size: 22px;
       line-height: 0;
       color: #111827;
     }
@@ -300,29 +335,34 @@
     .menu-panel-nav {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      padding: 2px;
+      padding: 8px 0 0;
+      flex: 1;
     }
 
     .menu-panel-nav a {
       text-decoration: none;
-      color: #111827;
-      font-size: 14px;
-      padding: 12px 12px;
-      border-radius: 14px;
+      color: var(--text-main);
+      font-size: 16px;
+      font-weight: 500;
+      padding: 14px 2px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
     }
 
-    .menu-panel-nav a:hover { background: #f3f4f6; }
+    .menu-panel-nav a:hover { color: #0b1220; }
 
     .menu-panel-nav .mobile-cta {
-      margin-top: 6px;
-      background: #111827;
+      margin-top: auto;
+      border-bottom: none;
+      padding: 14px 16px;
+      border-radius: 999px;
+      background: #0b1220;
       color: #fff;
       text-align: center;
+      font-weight: 600;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
     }
-    .menu-panel-nav .mobile-cta:hover { background: #0b1220; }
+    .menu-panel-nav .mobile-cta:hover { background: #111827; }
 
-    /* OPEN STATE */
     .menu-overlay[data-open="true"] { pointer-events: auto; }
     .menu-overlay[data-open="true"] .menu-backdrop { opacity: 1; }
     .menu-overlay[data-open="true"] .menu-panel {
@@ -330,16 +370,9 @@
       opacity: 1;
     }
 
-    /* SCROLL LOCK */
     html.menu-open,
     body.menu-open { overflow: hidden; }
 
-    /* Hamburger morph to X */
-    .menu-btn[aria-expanded="true"] .menu-bars { background: transparent; }
-    .menu-btn[aria-expanded="true"] .menu-bars::before { top: 0; transform: rotate(45deg); }
-    .menu-btn[aria-expanded="true"] .menu-bars::after { top: 0; transform: rotate(-45deg); }
-
-    /* Reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .menu-backdrop, .menu-panel { transition: none !important; }
     }
@@ -366,7 +399,6 @@
       max-width: 20ch;
     }
 
-    /* Removed underline, kept original green */
     .hero-title span.highlight { color: var(--accent); }
 
     .hero-subtitle {
@@ -680,27 +712,36 @@
           <span class="menu-bars" aria-hidden="true"></span>
         </button>
 
-        <!-- Premium overlay menu -->
+        <!-- Full-screen, grid-aligned mobile menu -->
         <div id="menu-overlay" class="menu-overlay" data-open="false" aria-hidden="true">
           <div class="menu-backdrop" data-close="true"></div>
 
           <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
-            <div class="menu-panel-head">
-              <div class="menu-panel-title">Menu</div>
-              <button type="button" class="menu-close" aria-label="Close menu" data-close="true">
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
+            <div class="menu-panel-inner">
+              <div class="menu-panel-head">
+                <a href="/" class="menu-brand" aria-label="TESORIN home">
+                  <span class="menu-brand-mark" aria-hidden="true">
+                    <img src="tesorin-logo.png" alt="" width="28" height="28" decoding="async" />
+                  </span>
+                  <span class="menu-brand-text">TESORIN</span>
+                </a>
 
-            <nav class="menu-panel-nav" aria-label="Mobile">
-              <a href="/how-it-works.html">How it works</a>
-              <a href="/features.html">Features</a>
-              <a href="/about.html">About</a>
-              <a href="/safety.html">Safety</a>
-              <a href="/faq.html">FAQs</a>
-              <a href="/personal-finance-planning-app.html">Planning app</a>
-              <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
-            </nav>
+                <button type="button" class="menu-close" aria-label="Close menu" data-close="true">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+
+              <nav class="menu-panel-nav" aria-label="Mobile">
+                <a href="/how-it-works.html">How it works</a>
+                <a href="/features.html">Features</a>
+                <a href="/about.html">About</a>
+                <a href="/safety.html">Safety</a>
+                <a href="/faq.html">FAQs</a>
+                <a href="/personal-finance-planning-app.html">Planning app</a>
+
+                <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+              </nav>
+            </div>
           </div>
         </div>
       </header>
@@ -828,7 +869,7 @@
       }
     })();
 
-    /* Premium mobile menu */
+    /* Full-screen mobile menu */
     (function () {
       const btn = document.querySelector(".menu-btn");
       const overlay = document.getElementById("menu-overlay");
