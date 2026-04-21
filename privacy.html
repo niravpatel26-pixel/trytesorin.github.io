@@ -1,569 +1,396 @@
-<!-- FILE: privacy.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Privacy — TESORIN | How we handle data</title>
-  <meta
-    name="description"
-    content="TESORIN Privacy Policy — what we collect, why we collect it, how we protect it, and the controls you have."
-  />
   <link rel="canonical" href="https://www.trytesorin.com/privacy.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Privacy — TESORIN" />
-  <meta property="og:description" content="What we collect, why we collect it, and the controls you have." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.trytesorin.com/privacy.html" />
-  <meta property="og:site_name" content="TESORIN" />
-  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Privacy — TESORIN" />
-  <meta name="twitter:description" content="What we collect, why we collect it, and the controls you have." />
-  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
-
-  <!-- Icons (match site) -->
+  <meta charset="UTF-8" /><meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Fonts (match site) -->
+  <title>Privacy — TESORIN | How we handle data</title>
+  <meta name="description" content="TESORIN Privacy Policy — what we collect, why we collect it, how we protect it, and the controls you have." />
+
+  <meta property="og:title" content="Privacy — TESORIN" />
+  <meta property="og:description" content="What we collect, why we collect it, and the controls you have." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trytesorin.com/privacy.html" />
+  <meta property="og:site_name" content="TESORIN" />
+  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Privacy — TESORIN" />
+  <meta name="twitter:description" content="What we collect, why we collect it, and the controls you have." />
+  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Shared nav + full-screen mobile menu -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/nav.css" />
   <script src="/assets/nav.js" defer></script>
 
   <style>
     :root {
-      --page-tint: #fbfcfd;
-      --card: #ffffff;
-
-      --text-main: #0b1220;
-      --text-soft: #243244;
-      --text-mute: #4f6073;
-
-      --accent: #22c55e;
-
-      --border-subtle: rgba(148, 163, 184, 0.30);
-      --border-strong: rgba(148, 163, 184, 0.44);
-
-      --radius-pill: 999px;
-      --radius-lg: 18px;
-      --radius-xl: 22px;
-
-      --max-width: 1120px;
-
-      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-display: "Playfair Display", "Times New Roman", serif;
-
-      --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
-
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-
-      --ease-out: cubic-bezier(.2,.8,.2,1);
-      --ease-soft: cubic-bezier(.2,.6,.2,1);
-      --d-1: 140ms;
-      --d-2: 220ms;
-      --d-3: 320ms;
+      --paper:#f5f3ef; --paper-2:#edebe5; --surface:#fff;
+      --ink:#0a0a0a; --ink-2:#2e2c29; --ink-3:#5c5852; --ink-4:#9c9790; --ink-5:#ccc8c0;
+      --umber:#9c8b6e; --umber-lt:#f0ebe2;
+      --bd:rgba(10,10,10,.09); --bd-md:rgba(10,10,10,.15);
+      --text-main:#0a0a0a; --text-soft:#2e2c29; --text-mute:#9c9790; --card:#fff;
+      --max-width:1120px;
+      --font-display:"Instrument Serif",Georgia,serif;
+      --font-body:"Plus Jakarta Sans",system-ui,sans-serif;
+      --ease:cubic-bezier(.22,1,.36,1);
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--font-body);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;} img{display:block;max-width:100%;} button{font-family:inherit;}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ── NAV ── */
+    header,header a,header button,.menu-brand-text,.menu-panel-nav a{font-family:var(--font-body)!important;}
+    .menu-panel{background:rgba(245,243,239,.98)!important;}
+    .brand-link{text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;}
+    .brand-wordmark{font-family:var(--font-display)!important;font-size:21px!important;font-weight:400!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:var(--ink)!important;line-height:1!important;}
+    .menu-brand-text{font-family:var(--font-display)!important;font-size:18px!important;font-weight:400!important;letter-spacing:.22em!important;text-transform:uppercase!important;}
+    nav[aria-label="Primary"] a.is-active{color:var(--ink)!important;box-shadow:inset 0 -1.5px 0 var(--ink)!important;}
+    a.nav-cta{padding:8px 18px!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;border:1px solid var(--bd-md)!important;font-size:13px!important;font-weight:500!important;box-shadow:none!important;transition:background .15s,color .15s!important;}
+    a.nav-cta:hover{background:var(--ink)!important;color:var(--paper)!important;border-color:var(--ink)!important;}
 
-    body {
-      font-family: var(--font-sans);
-      background: var(--page-tint);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+    .shell{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 40px;}
+
+    /* ── PAGE HERO ── */
+    .page-hero{padding:80px 0 72px;border-bottom:1px solid var(--bd);}
+    .page-kicker{font-size:11.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-4);margin-bottom:20px;}
+    .page-h1{font-family:var(--font-display);font-size:clamp(44px,5.8vw,72px);font-weight:400;line-height:1.06;letter-spacing:-.02em;color:var(--ink);margin-bottom:20px;max-width:22ch;}
+    .page-h1 em{font-style:italic;color:var(--ink-3);}
+    .page-sub{font-size:16px;line-height:1.74;color:var(--ink-3);max-width:52ch;margin-bottom:14px;}
+    .page-meta{font-size:12.5px;color:var(--ink-4);}
+    .page-meta strong{color:var(--ink-3);font-weight:500;}
+
+    /* ── AT A GLANCE CARDS ── */
+    .glance{padding:72px 0;border-bottom:1px solid var(--bd);}
+    .section-kicker{font-size:11.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-4);margin-bottom:20px;}
+    .section-h{font-family:var(--font-display);font-size:clamp(28px,3.4vw,40px);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px;}
+    .section-h em{font-style:italic;color:var(--ink-3);}
+    .section-sub{font-size:15px;line-height:1.72;color:var(--ink-3);max-width:50ch;margin-bottom:36px;}
+
+    .glance-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--bd);border-left:1px solid var(--bd);}
+    .glance-cell{border-right:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:32px 28px;background:var(--paper);}
+    .glance-tag{font-size:10.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--umber);margin-bottom:14px;}
+    .glance-h{font-family:var(--font-display);font-size:20px;font-weight:400;line-height:1.2;letter-spacing:-.01em;color:var(--ink);margin-bottom:10px;}
+    .glance-p{font-size:13.5px;color:var(--ink-3);line-height:1.68;}
+
+    /* ── POLICY SECTIONS ── */
+    .policy-section{padding:72px 0;}
+    .policy-intro{font-size:15px;color:var(--ink-3);line-height:1.74;max-width:60ch;margin-bottom:48px;}
+
+    /* Each numbered section as a row */
+    .policy-row{border-top:1px solid var(--bd);padding:36px 0;display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;}
+    .policy-row:last-child{border-bottom:1px solid var(--bd);}
+    .policy-row-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);padding-top:4px;line-height:1.5;}
+    .policy-row-n{font-family:var(--font-display);font-size:28px;font-style:italic;font-weight:400;color:var(--ink-5);line-height:1;margin-bottom:6px;}
+    .policy-body{}
+    .policy-h{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.01em;margin-bottom:12px;}
+    .policy-p{font-size:14.5px;color:var(--ink-3);line-height:1.76;margin-bottom:12px;}
+    .policy-p:last-child{margin-bottom:0;}
+    .policy-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:4px;margin-bottom:12px;}
+    .policy-list li{font-size:14px;color:var(--ink-3);padding-left:16px;position:relative;line-height:1.65;}
+    .policy-list li::before{content:"·";position:absolute;left:0;color:var(--umber);font-size:18px;line-height:1.25;}
+    .policy-list li strong{color:var(--ink);font-weight:600;}
+    .policy-link{color:var(--ink-3);text-decoration:underline;text-underline-offset:2px;}
+    .policy-link:hover{color:var(--ink);}
+
+    /* ── CTA ── */
+    .cta-strip{display:flex;justify-content:space-between;align-items:center;gap:32px;border-top:1px solid var(--bd);padding:40px 0;flex-wrap:wrap;}
+    .cta-strip-copy{font-size:15px;color:var(--ink-3);max-width:40ch;line-height:1.6;}
+    .cta-btn{background:var(--ink);color:var(--paper);border:none;border-radius:0;padding:14px 26px;font-size:13.5px;font-weight:500;font-family:var(--font-body);cursor:pointer;display:inline-flex;align-items:center;gap:8px;letter-spacing:.01em;transition:opacity .15s;text-decoration:none;}
+    .cta-btn .arr{transition:transform .2s var(--ease);display:inline-block;}
+    .cta-btn:hover{opacity:.82;}
+    .cta-btn:hover .arr{transform:translateX(3px);}
+
+    /* ── FOOTER ── */
+    .site-footer{padding:28px 0;border-top:1px solid var(--bd);}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+    .footer-copy{font-size:12px;color:var(--ink-4);}
+    .footer-links{display:flex;flex-wrap:wrap;gap:24px;}
+    .footer-links a{font-size:12px;color:var(--ink-4);transition:color .15s;}
+    .footer-links a:hover{color:var(--ink);}
+
+    /* ── REVEALS ── */
+    .rv{opacity:0;transform:translateY(14px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+    .rv.in{opacity:1;transform:translateY(0);}
+    .rv-d1{transition-delay:.08s;} .rv-d2{transition-delay:.16s;} .rv-d3{transition-delay:.24s;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:860px){
+      .glance-grid{grid-template-columns:1fr 1fr;}
+      .policy-row{grid-template-columns:1fr;gap:14px;}
+      .policy-row-n{font-size:22px;}
     }
-
-    a, button, input { font-family: inherit; }
-
-    .skip-link {
-      position: absolute;
-      left: 12px;
-      top: 10px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: #111827;
-      color: #fff;
-      text-decoration: none;
-      transform: translateY(-140%);
-      transition: transform .18s ease;
-      z-index: 9999;
-      font-size: 12px;
-    }
-    .skip-link:focus { transform: translateY(0); outline: none; box-shadow: var(--ring); }
-
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible {
-      outline: none;
-      box-shadow: var(--ring);
-      border-color: rgba(34, 197, 94, 0.65);
-    }
-
-    .page { min-height: 100vh; display: flex; flex-direction: column; }
-
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 22px 16px 76px;
-    }
-
-    /* CONTENT */
-    main { max-width: 92ch; }
-
-    .hero {
-      padding-top: 10px;
-      max-width: 78ch;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(34px, 4.2vw, 46px);
-      line-height: 1.06;
-      letter-spacing: -0.035em;
-      font-weight: 600;
-      margin-bottom: 12px;
-      text-wrap: balance;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--text-soft);
-      margin-bottom: 10px;
-      max-width: 72ch;
-    }
-
-    .meta {
-      font-size: 12px;
-      color: var(--text-mute);
-      line-height: 1.6;
-      max-width: 78ch;
-    }
-
-    .section { margin-top: 26px; max-width: 92ch; }
-
-    .section-kicker {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-mute);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      line-height: 1.7;
-      max-width: 78ch;
-    }
-
-    /* Summary cards */
-    .cards {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      max-width: 92ch;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 14px 14px 16px;
-      box-shadow: var(--shadow-soft);
-      transition: transform var(--d-1) var(--ease-out), box-shadow var(--d-1) var(--ease-out);
-      will-change: transform;
-    }
-    .card:hover { transform: translateY(-1px); box-shadow: 0 22px 52px rgba(15, 23, 42, 0.08); }
-
-    .card-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-mute);
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-
-    .card h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 6px;
-      line-height: 1.35;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: var(--text-soft);
-      line-height: 1.75;
-    }
-
-    /* Policy text */
-    .policy {
-      margin-top: 14px;
-      background: var(--card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-soft);
-      padding: 16px 16px 18px;
-      max-width: 92ch;
-    }
-
-    .policy h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin: 14px 0 6px;
-    }
-
-    .policy p {
-      font-size: 14px;
-      color: var(--text-soft);
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
-
-    .policy ul {
-      padding-left: 18px;
-      margin: 6px 0 10px;
-      color: var(--text-soft);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .policy li { margin: 5px 0; }
-    .policy a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
-
-    .inline-note {
-      margin-top: 10px;
-      font-size: 12px;
-      color: var(--text-mute);
-      line-height: 1.6;
-    }
-
-    /* CTA strip */
-    .cta-strip {
-      margin-top: 22px;
-      padding: 14px 16px;
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 13px;
-      color: var(--text-mute);
-      max-width: 92ch;
-    }
-    .cta-strip .highlight { font-weight: 600; color: var(--text-main); }
-
-    .cta-btn {
-      border: none;
-      border-radius: var(--radius-pill);
-      padding: 10px 16px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      background: #0b1220;
-      color: #f8fafc;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.30);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: transform 0.15s var(--ease-out), box-shadow 0.15s var(--ease-out), filter 0.15s var(--ease-out);
-    }
-    .cta-btn span.arrow { font-size: 14px; transform: translateX(0); transition: transform 0.2s var(--ease-out); }
-    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.36); filter: brightness(1.03); }
-    .cta-btn:hover span.arrow { transform: translateX(3px); }
-
-    /* FOOTER */
-    footer {
-      border-top: 1px solid rgba(229, 231, 235, 1);
-      margin-top: 44px;
-      padding-top: 18px;
-      font-size: 12px;
-      color: var(--text-mute);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: space-between;
-      align-items: center;
-    }
-    footer a { color: var(--text-mute); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    /* Reveal */
-    .reveal{
-      opacity: 0;
-      transform: translate3d(0, 10px, 0);
-      transition: opacity var(--d-2) var(--ease-soft), transform var(--d-2) var(--ease-soft);
-      will-change: transform, opacity;
-    }
-    .reveal.is-in{ opacity: 1; transform: translate3d(0, 0, 0); }
-    .reveal-up{ transform: translate3d(0, 14px, 0); }
-    [data-stagger] .reveal{ transition-delay: calc(var(--stagger, 0) * 1ms); }
-
-    @media (max-width: 880px) {
-      header { padding-bottom: 14px; }
-      .cards { grid-template-columns: 1fr; }
-      .hero-title { font-size: clamp(30px, 7vw, 40px); }
-      .hero-subtitle { font-size: 15px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-      .card { transition: none !important; transform: none !important; }
+    @media(max-width:600px){
+      .shell{padding:0 22px;}
+      .glance-grid{grid-template-columns:1fr;}
+      .cta-strip{flex-direction:column;align-items:flex-start;}
+      .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
+      .footer-links{gap:14px;}
     }
   </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="page">
-    <div class="shell">
-      <!-- HEADER -->
-      <header>
-        <a href="/" class="brand-link" aria-label="TESORIN home">
-          <div class="brand">
-            <div class="brand-mark">
-              <img src="tesorin-logo.png" alt="TESORIN logo" width="32" height="32" decoding="async" />
+  <!-- NAV -->
+  <div class="shell">
+    <header>
+      <a href="/" class="brand-link" aria-label="TESORIN home">
+        <span class="brand-wordmark">TESORIN</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/how-it-works.html">How it works</a>
+        <a href="/features.html">Features</a>
+        <a href="/about.html">About</a>
+        <a href="/safety.html">Safety</a>
+        <a href="/faq.html">FAQs</a>
+        <a href="/?focus=waitlist" class="nav-cta">Join waitlist</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
+        <span class="menu-bars"></span>
+      </button>
+      <div id="menu-overlay" class="menu-overlay" data-open="false" aria-hidden="true">
+        <div class="menu-backdrop" data-close="true"></div>
+        <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+          <div class="menu-panel-inner">
+            <div class="menu-panel-head">
+              <a href="/" class="menu-brand"><span class="menu-brand-text">TESORIN</span></a>
+              <button type="button" class="menu-close" aria-label="Close menu" data-close="true"><span>×</span></button>
             </div>
-            <div class="brand-text-wrap">
-              <div class="brand-name">TESORIN</div>
-              <div class="brand-tagline">Start small. Plan big.</div>
-            </div>
-          </div>
-        </a>
-
-        <nav aria-label="Primary">
-          <a href="/how-it-works.html">How it works</a>
-          <a href="/features.html">Features</a>
-          <a href="/about.html">About</a>
-          <a href="/safety.html">Safety</a>
-          <a href="/faq.html">FAQs</a>
-        </nav>
-
-        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
-          <span class="menu-bars" aria-hidden="true"></span>
-        </button>
-
-        <!-- Full-screen, grid-aligned mobile menu -->
-        <div id="menu-overlay" class="menu-overlay" data-open="false" aria-hidden="true">
-          <div class="menu-backdrop" data-close="true"></div>
-
-          <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
-            <div class="menu-panel-inner">
-              <div class="menu-panel-head">
-                <a href="/" class="menu-brand" aria-label="TESORIN home">
-                  <span class="menu-brand-mark" aria-hidden="true">
-                    <img src="tesorin-logo.png" alt="" width="28" height="28" decoding="async" />
-                  </span>
-                  <span class="menu-brand-text">TESORIN</span>
-                </a>
-
-                <button type="button" class="menu-close" aria-label="Close menu" data-close="true">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-
-              <nav class="menu-panel-nav" aria-label="Mobile">
-                <a href="/how-it-works.html">How it works</a>
-                <a href="/features.html">Features</a>
-                <a href="/about.html">About</a>
-                <a href="/safety.html">Safety</a>
-                <a href="/faq.html">FAQs</a>
-                <a href="/personal-finance-planning-app.html">Planning app</a>
-                <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
-              </nav>
-            </div>
+            <nav class="menu-panel-nav" aria-label="Mobile">
+              <a href="/how-it-works.html">How it works</a>
+              <a href="/features.html">Features</a>
+              <a href="/about.html">About</a>
+              <a href="/safety.html">Safety</a>
+              <a href="/faq.html">FAQs</a>
+              <a href="/personal-finance-planning-app.html">Planning app</a>
+              <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+            </nav>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
+  </div>
 
-      <main id="main">
-        <!-- HERO -->
-        <section class="hero" aria-label="Privacy overview" data-stagger>
-          <h1 class="hero-title reveal reveal-up">Privacy, explained plainly.</h1>
-          <p class="hero-subtitle reveal reveal-up">
-            TESORIN is designed to be conservative with data. This page explains what we collect, why we collect it, and the controls you have.
-          </p>
-          <p class="meta reveal reveal-up">
-            Effective date: <strong style="color:var(--text-main);font-weight:600;">January 2, 2026</strong>
-          </p>
-        </section>
+  <main id="main">
 
-        <!-- HIGHLIGHTS -->
-        <section class="section" aria-label="Privacy highlights" data-stagger>
+    <!-- HERO -->
+    <section class="page-hero" aria-label="Privacy overview">
+      <div class="shell">
+        <p class="page-kicker rv">Privacy policy</p>
+        <h1 class="page-h1 rv rv-d1">Privacy,<em> explained plainly.</em></h1>
+        <p class="page-sub rv rv-d2">TESORIN is designed to be conservative with data. This page explains what we collect, why we collect it, and the controls you have.</p>
+        <p class="page-meta rv rv-d3">Effective date: <strong>January 2, 2026</strong></p>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE -->
+    <section class="glance" aria-label="Privacy at a glance">
+      <div class="shell">
+        <p class="section-kicker rv">At a glance</p>
+        <h2 class="section-h rv rv-d1">The short version.</h2>
+        <p class="section-sub rv rv-d2">Minimal collection, clear purpose, practical controls.</p>
+
+        <div class="glance-grid">
+          <div class="glance-cell rv">
+            <div class="glance-tag">Minimum</div>
+            <h3 class="glance-h">We collect what we need.</h3>
+            <p class="glance-p">We avoid collecting sensitive data unless it's required to provide the product feature you're using. Nothing collected "just in case."</p>
+          </div>
+          <div class="glance-cell rv">
+            <div class="glance-tag">Control</div>
+            <h3 class="glance-h">You can delete your data.</h3>
+            <p class="glance-p">You can request deletion of your account and associated data at any time. Some records may be retained if required by law.</p>
+          </div>
+          <div class="glance-cell rv">
+            <div class="glance-tag">No selling</div>
+            <h3 class="glance-h">We don't sell personal data.</h3>
+            <p class="glance-p">We don't sell your personal information to third parties — and never will. Your planning data is not an advertising product.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICY DETAIL -->
+    <section class="policy-section" aria-label="Full privacy policy">
+      <div class="shell">
+        <p class="section-kicker rv">Full policy</p>
+        <h2 class="section-h rv rv-d1">Privacy Policy</h2>
+        <p class="policy-intro rv rv-d2">The sections below describe the types of information we may collect and how it is used. If you have questions not answered here, email <a href="mailto:hello@trytesorin.com" class="policy-link">hello@trytesorin.com</a>.</p>
+
+        <!-- 1 -->
+        <div class="policy-row rv">
           <div>
-            <div class="section-kicker reveal reveal-up">At a glance</div>
-            <h2 class="section-title reveal reveal-up">The short version.</h2>
-            <p class="section-subtitle reveal reveal-up">
-              We aim for minimal collection, clear purpose, and practical controls.
-            </p>
+            <div class="policy-row-n">1</div>
+            <div class="policy-row-label">What we collect</div>
           </div>
-
-          <div class="cards" data-stagger>
-            <article class="card reveal reveal-up">
-              <div class="card-label">Minimum</div>
-              <h3>We collect what we need.</h3>
-              <p>We avoid collecting sensitive data unless it’s required to provide the product feature you’re using.</p>
-            </article>
-            <article class="card reveal reveal-up">
-              <div class="card-label">Control</div>
-              <h3>You can delete your data.</h3>
-              <p>You can request deletion of your account and associated data. Some records may be retained if required by law.</p>
-            </article>
-            <article class="card reveal reveal-up">
-              <div class="card-label">No selling</div>
-              <h3>We don’t sell personal data.</h3>
-              <p>We don’t sell your personal information to third parties.</p>
-            </article>
-          </div>
-        </section>
-
-        <!-- POLICY BODY -->
-        <section class="section" aria-label="Privacy policy" data-stagger>
-          <div>
-            <div class="section-kicker reveal reveal-up">Details</div>
-            <h2 class="section-title reveal reveal-up">Privacy Policy</h2>
-            <p class="section-subtitle reveal reveal-up">
-              The sections below describe the types of information we may collect and how it may be used.
-            </p>
-          </div>
-
-          <div class="policy reveal reveal-up">
-            <h3>1) Information we collect</h3>
-            <p>
-              Depending on how you use TESORIN, we may collect:
-            </p>
-            <ul>
-              <li><strong>Account information</strong> (e.g., email address).</li>
-              <li><strong>Product inputs you provide</strong> (e.g., goals, budgets, balances, or planning preferences).</li>
-              <li><strong>Usage data</strong> (e.g., app interactions, feature usage, diagnostics).</li>
-              <li><strong>Device information</strong> (e.g., device type, OS version) for stability and security.</li>
+          <div class="policy-body">
+            <div class="policy-h">Information we collect</div>
+            <p class="policy-p">Depending on how you use TESORIN, we may collect:</p>
+            <ul class="policy-list">
+              <li><strong>Account information</strong> — e.g., email address.</li>
+              <li><strong>Product inputs you provide</strong> — e.g., goals, budgets, balances, or planning preferences.</li>
+              <li><strong>Usage data</strong> — e.g., app interactions, feature usage, diagnostics.</li>
+              <li><strong>Device information</strong> — e.g., device type, OS version, for stability and security.</li>
             </ul>
+          </div>
+        </div>
 
-            <h3>2) Information we do not intend to collect</h3>
-            <p>
-              We aim to avoid collecting sensitive personal information unless a feature explicitly requires it. We do not ask for:
-            </p>
-            <ul>
+        <!-- 2 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">2</div>
+            <div class="policy-row-label">What we don't collect</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Information we do not intend to collect</div>
+            <p class="policy-p">We aim to avoid collecting sensitive personal information unless a feature explicitly requires it. We do not ask for:</p>
+            <ul class="policy-list">
               <li>Government identifiers (e.g., SIN/SSN) unless a future feature requires it and is clearly disclosed.</li>
               <li>Biometric data.</li>
               <li>Precise location data.</li>
             </ul>
+          </div>
+        </div>
 
-            <h3>3) How we use information</h3>
-            <p>
-              We use information to:
-            </p>
-            <ul>
-              <li>Provide and maintain the product (core planning features).</li>
+        <!-- 3 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">3</div>
+            <div class="policy-row-label">How we use it</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">How we use information</div>
+            <p class="policy-p">We use information to:</p>
+            <ul class="policy-list">
+              <li>Provide and maintain the product — core planning features.</li>
               <li>Improve reliability, performance, and usability.</li>
               <li>Protect against fraud, abuse, and security incidents.</li>
-              <li>Communicate important product updates (e.g., early access invitations).</li>
+              <li>Communicate important product updates — e.g., early access invitations.</li>
             </ul>
-
-            <h3>4) Sharing</h3>
-            <p>
-              We may share information with service providers that help run the product (e.g., hosting, analytics, email delivery).
-              They are permitted to process data only for providing services to TESORIN.
-            </p>
-            <p>
-              We may also disclose information if required by law, to protect rights and safety, or in connection with a business transaction
-              (e.g., merger or acquisition), subject to appropriate safeguards.
-            </p>
-
-            <h3>5) Cookies and analytics</h3>
-            <p>
-              If you use the website, it may use essential cookies and limited analytics to understand basic traffic patterns and improve content.
-              Where required, we will provide controls to opt out of non-essential analytics.
-            </p>
-
-            <h3>6) Data retention</h3>
-            <p>
-              We keep data for as long as necessary to provide the service and for legitimate business purposes (e.g., security, auditing),
-              unless a longer retention period is required by law.
-            </p>
-
-            <h3>7) Your choices and rights</h3>
-            <p>
-              Depending on your location, you may have rights to access, correct, delete, or export your information, and to object to certain processing.
-              To request help, contact us using the information below.
-            </p>
-
-            <h3>8) Security</h3>
-            <p>
-              We use administrative, technical, and organizational safeguards designed to protect information. No system is perfectly secure,
-              but we aim to minimize risk and respond quickly to issues.
-            </p>
-
-            <h3>9) Children</h3>
-            <p>
-              TESORIN is not intended for children. If you believe a child provided information, contact us and we will address it.
-            </p>
-
-            <h3>10) Contact</h3>
-            <p>
-              For privacy questions or requests, contact: <strong>privacy@trytesorin.com</strong>
-            </p>
-
-            <p class="inline-note">
-              If you want a simpler statement of principles, read the <a href="/safety.html">Safety</a> page.
-            </p>
           </div>
+        </div>
 
-          <section class="cta-strip reveal reveal-up" aria-label="Call to action">
-            <div>
-              <span class="highlight">Want early access?</span><br />
-              Join the waitlist and we’ll invite beta users in small waves.
-            </div>
-            <a href="/?focus=waitlist" class="cta-btn">
-              Join waitlist
-              <span class="arrow" aria-hidden="true">→</span>
-            </a>
-          </section>
-        </section>
-      </main>
+        <!-- 4 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">4</div>
+            <div class="policy-row-label">Sharing</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Who we share information with</div>
+            <p class="policy-p">We may share information with service providers that help run the product (e.g., hosting, analytics, email delivery). They are permitted to process data only for providing services to TESORIN.</p>
+            <p class="policy-p">We may also disclose information if required by law, to protect rights and safety, or in connection with a business transaction (e.g., merger or acquisition), subject to appropriate safeguards.</p>
+            <p class="policy-p">We do not sell personal information to third parties.</p>
+          </div>
+        </div>
 
-      <!-- FOOTER -->
-      <footer>
-        <span>© 2026 TESORIN. All rights reserved.</span>
-        <div class="footer-links">
+        <!-- 5 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">5</div>
+            <div class="policy-row-label">Cookies &amp; analytics</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Cookies and analytics</div>
+            <p class="policy-p">If you use the website, it may use essential cookies and limited analytics to understand basic traffic patterns and improve content. Where required, we will provide controls to opt out of non-essential analytics.</p>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">6</div>
+            <div class="policy-row-label">Retention</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Data retention</div>
+            <p class="policy-p">We keep data for as long as necessary to provide the service and for legitimate business purposes (e.g., security, auditing), unless a longer retention period is required by law.</p>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">7</div>
+            <div class="policy-row-label">Your rights</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Your choices and rights</div>
+            <p class="policy-p">Depending on your location, you may have rights to access, correct, delete, or export your information, and to object to certain processing. To make a request, email <a href="mailto:hello@trytesorin.com" class="policy-link">hello@trytesorin.com</a>. We will respond in accordance with applicable law.</p>
+            <p class="policy-p">You may also unsubscribe from marketing emails at any time via the unsubscribe link in any email, or by contacting us directly.</p>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">8</div>
+            <div class="policy-row-label">Children</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Children's privacy</div>
+            <p class="policy-p">TESORIN is not directed at children under 13 (or the applicable age in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that we have collected such information, we will delete it promptly.</p>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">9</div>
+            <div class="policy-row-label">Security</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Security</div>
+            <p class="policy-p">We use reasonable technical and organisational measures to protect your information. No method of transmission over the internet or electronic storage is 100% secure — we cannot guarantee absolute security, but we take this responsibility seriously.</p>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">10</div>
+            <div class="policy-row-label">Changes</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Changes to this policy</div>
+            <p class="policy-p">We may update this Privacy Policy from time to time. The effective date at the top of this page indicates the latest revision. We will notify you of material changes by email or by a notice within the product.</p>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="policy-row rv">
+          <div>
+            <div class="policy-row-n">11</div>
+            <div class="policy-row-label">Contact</div>
+          </div>
+          <div class="policy-body">
+            <div class="policy-h">Contact us</div>
+            <p class="policy-p">For questions about this policy or your data, contact us at <a href="mailto:hello@trytesorin.com" class="policy-link">hello@trytesorin.com</a>. For legal inquiries, use <a href="mailto:legal@trytesorin.com" class="policy-link">legal@trytesorin.com</a>.</p>
+          </div>
+        </div>
+
+        <div class="cta-strip rv">
+          <p class="cta-strip-copy">Questions not answered here? We read every email.</p>
+          <a href="/?focus=waitlist" class="cta-btn">Join the waitlist <span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 TESORIN. All rights reserved.</span>
+        <nav class="footer-links" aria-label="Footer">
           <a href="/how-it-works.html">How it works</a>
           <a href="/features.html">Features</a>
           <a href="/about.html">About</a>
@@ -571,38 +398,21 @@
           <a href="/faq.html">FAQs</a>
           <a href="/privacy.html">Privacy</a>
           <a href="/terms.html">Terms</a>
-        </div>
-      </footer>
+        </nav>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <script>
-    // Scroll reveal + optional staggering (match site)
-    (function () {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (reduceMotion.matches) {
-        document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
-        return;
-      }
-
-      document.querySelectorAll("[data-stagger]").forEach((wrap) => {
-        const children = wrap.querySelectorAll(".reveal");
-        children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
+  (function(){
+    "use strict";
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
-
-      const els = document.querySelectorAll(".reveal");
-      if (!els.length) return;
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
-        });
-      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
-
-      els.forEach(el => io.observe(el));
-    })();
+    }, { threshold: .08, rootMargin: "0px 0px -24px 0px" });
+    document.querySelectorAll(".rv, .glance-cell").forEach(el => io.observe(el));
+  }());
   </script>
 </body>
 </html>
