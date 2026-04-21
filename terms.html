@@ -1,464 +1,330 @@
-<!-- FILE: terms.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Terms — TESORIN | Website & early access terms</title>
-  <meta
-    name="description"
-    content="TESORIN Terms of Use — website terms, early access terms, disclaimers, and limitations."
-  />
   <link rel="canonical" href="https://www.trytesorin.com/terms.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Terms — TESORIN" />
-  <meta property="og:description" content="Website terms, early access terms, and important disclaimers." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.trytesorin.com/terms.html" />
-  <meta property="og:site_name" content="TESORIN" />
-  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Terms — TESORIN" />
-  <meta name="twitter:description" content="Website terms, early access terms, and important disclaimers." />
-  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
-
-  <!-- Icons (match site) -->
+  <meta charset="UTF-8" /><meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Fonts (match site) -->
+  <title>Terms — TESORIN | Website &amp; early access terms</title>
+  <meta name="description" content="TESORIN Terms of Use — website terms, early access terms, disclaimers, and limitations." />
+
+  <meta property="og:title" content="Terms — TESORIN" />
+  <meta property="og:description" content="Website terms, early access terms, and important disclaimers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trytesorin.com/terms.html" />
+  <meta property="og:site_name" content="TESORIN" />
+  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terms — TESORIN" />
+  <meta name="twitter:description" content="Website terms, early access terms, and important disclaimers." />
+  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Shared nav + full-screen mobile menu -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/nav.css" />
   <script src="/assets/nav.js" defer></script>
 
   <style>
     :root {
-      --page-tint: #fbfcfd;
-      --card: #ffffff;
-
-      --text-main: #0b1220;
-      --text-soft: #243244;
-      --text-mute: #4f6073;
-
-      --accent: #22c55e;
-
-      --border-subtle: rgba(148, 163, 184, 0.30);
-      --border-strong: rgba(148, 163, 184, 0.44);
-
-      --radius-pill: 999px;
-      --radius-lg: 18px;
-      --radius-xl: 22px;
-
-      --max-width: 1120px;
-
-      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-display: "Playfair Display", "Times New Roman", serif;
-
-      --ring: 0 0 0 3px rgba(34, 197, 94, 0.18);
-
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.06);
-
-      --ease-out: cubic-bezier(.2,.8,.2,1);
-      --ease-soft: cubic-bezier(.2,.6,.2,1);
-      --d-1: 140ms;
-      --d-2: 220ms;
-      --d-3: 320ms;
+      --paper:#f5f3ef; --paper-2:#edebe5; --surface:#fff;
+      --ink:#0a0a0a; --ink-2:#2e2c29; --ink-3:#5c5852; --ink-4:#9c9790; --ink-5:#ccc8c0;
+      --umber:#9c8b6e; --umber-lt:#f0ebe2;
+      --bd:rgba(10,10,10,.09); --bd-md:rgba(10,10,10,.15);
+      --text-main:#0a0a0a; --text-soft:#2e2c29; --text-mute:#9c9790; --card:#fff;
+      --max-width:1120px;
+      --font-display:"Instrument Serif",Georgia,serif;
+      --font-body:"Plus Jakarta Sans",system-ui,sans-serif;
+      --ease:cubic-bezier(.22,1,.36,1);
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--font-body);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;} img{display:block;max-width:100%;} button{font-family:inherit;}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ── NAV ── */
+    header,header a,header button,.menu-brand-text,.menu-panel-nav a{font-family:var(--font-body)!important;}
+    .menu-panel{background:rgba(245,243,239,.98)!important;}
+    .brand-link{text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;}
+    .brand-wordmark{font-family:var(--font-display)!important;font-size:21px!important;font-weight:400!important;letter-spacing:.22em!important;text-transform:uppercase!important;color:var(--ink)!important;line-height:1!important;}
+    .menu-brand-text{font-family:var(--font-display)!important;font-size:18px!important;font-weight:400!important;letter-spacing:.22em!important;text-transform:uppercase!important;}
+    nav[aria-label="Primary"] a.is-active{color:var(--ink)!important;box-shadow:inset 0 -1.5px 0 var(--ink)!important;}
+    a.nav-cta{padding:8px 18px!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;border:1px solid var(--bd-md)!important;font-size:13px!important;font-weight:500!important;box-shadow:none!important;transition:background .15s,color .15s!important;}
+    a.nav-cta:hover{background:var(--ink)!important;color:var(--paper)!important;border-color:var(--ink)!important;}
 
-    body {
-      font-family: var(--font-sans);
-      background: var(--page-tint);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+    .shell{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 40px;}
+
+    /* ── PAGE HERO ── */
+    .page-hero{padding:80px 0 72px;border-bottom:1px solid var(--bd);}
+    .page-kicker{font-size:11.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-4);margin-bottom:20px;}
+    .page-h1{font-family:var(--font-display);font-size:clamp(44px,5.8vw,72px);font-weight:400;line-height:1.06;letter-spacing:-.02em;color:var(--ink);margin-bottom:20px;max-width:22ch;}
+    .page-h1 em{font-style:italic;color:var(--ink-3);}
+    .page-sub{font-size:16px;line-height:1.74;color:var(--ink-3);max-width:52ch;margin-bottom:14px;}
+    .page-meta{font-size:12.5px;color:var(--ink-4);}
+    .page-meta strong{color:var(--ink-3);font-weight:500;}
+
+    /* ── NOT ADVICE CALLOUT ── */
+    .callout{
+      margin:52px 0 0;
+      padding:22px 28px;
+      background:var(--umber-lt);
+      border:1px solid rgba(156,139,110,.25);
+      border-left:3px solid var(--umber);
+      display:flex;gap:14px;align-items:flex-start;
     }
+    .callout-label{font-size:10.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--umber);white-space:nowrap;padding-top:3px;}
+    .callout-text{font-size:14px;color:var(--ink-3);line-height:1.68;}
+    .callout-text strong{color:var(--ink-2);font-weight:600;}
 
-    a, button, input { font-family: inherit; }
+    /* ── POLICY ROWS ── */
+    .policy-section{padding:72px 0;}
+    .policy-intro{font-size:15px;color:var(--ink-3);line-height:1.74;max-width:60ch;margin-bottom:48px;}
 
-    .skip-link {
-      position: absolute;
-      left: 12px;
-      top: 10px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: #111827;
-      color: #fff;
-      text-decoration: none;
-      transform: translateY(-140%);
-      transition: transform .18s ease;
-      z-index: 9999;
-      font-size: 12px;
+    .policy-row{border-top:1px solid var(--bd);padding:36px 0;display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:start;}
+    .policy-row:last-child{border-bottom:1px solid var(--bd);}
+    .policy-row-n{font-family:var(--font-display);font-size:28px;font-style:italic;font-weight:400;color:var(--ink-5);line-height:1;margin-bottom:6px;}
+    .policy-row-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-4);line-height:1.5;}
+    .policy-h{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.01em;margin-bottom:12px;}
+    .policy-p{font-size:14.5px;color:var(--ink-3);line-height:1.76;margin-bottom:12px;}
+    .policy-p:last-child{margin-bottom:0;}
+    .policy-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:4px;margin-bottom:12px;}
+    .policy-list li{font-size:14px;color:var(--ink-3);padding-left:16px;position:relative;line-height:1.65;}
+    .policy-list li::before{content:"·";position:absolute;left:0;color:var(--umber);font-size:18px;line-height:1.25;}
+    .policy-link{color:var(--ink-3);text-decoration:underline;text-underline-offset:2px;}
+    .policy-link:hover{color:var(--ink);}
+
+    /* ── FOOTER ── */
+    .site-footer{padding:28px 0;border-top:1px solid var(--bd);}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+    .footer-copy{font-size:12px;color:var(--ink-4);}
+    .footer-links{display:flex;flex-wrap:wrap;gap:24px;}
+    .footer-links a{font-size:12px;color:var(--ink-4);transition:color .15s;}
+    .footer-links a:hover{color:var(--ink);}
+
+    /* ── REVEALS ── */
+    .rv{opacity:0;transform:translateY(14px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+    .rv.in{opacity:1;transform:translateY(0);}
+    .rv-d1{transition-delay:.08s;} .rv-d2{transition-delay:.16s;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:860px){
+      .policy-row{grid-template-columns:1fr;gap:14px;}
+      .policy-row-n{font-size:22px;}
+      .callout{flex-direction:column;gap:8px;}
     }
-    .skip-link:focus { transform: translateY(0); outline: none; box-shadow: var(--ring); }
-
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible {
-      outline: none;
-      box-shadow: var(--ring);
-      border-color: rgba(34, 197, 94, 0.65);
-    }
-
-    .page { min-height: 100vh; display: flex; flex-direction: column; }
-
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 22px 16px 76px;
-    }
-
-    /* CONTENT */
-    main { max-width: 92ch; }
-
-    .hero {
-      padding-top: 10px;
-      max-width: 78ch;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(34px, 4.2vw, 46px);
-      line-height: 1.06;
-      letter-spacing: -0.035em;
-      font-weight: 600;
-      margin-bottom: 12px;
-      text-wrap: balance;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--text-soft);
-      margin-bottom: 10px;
-      max-width: 72ch;
-    }
-
-    .meta {
-      font-size: 12px;
-      color: var(--text-mute);
-      line-height: 1.6;
-      max-width: 78ch;
-    }
-
-    .section { margin-top: 26px; max-width: 92ch; }
-
-    .section-kicker {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-mute);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: var(--text-soft);
-      line-height: 1.7;
-      max-width: 78ch;
-    }
-
-    /* Terms body */
-    .policy {
-      margin-top: 14px;
-      background: var(--card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-soft);
-      padding: 16px 16px 18px;
-      max-width: 92ch;
-    }
-
-    .policy h3 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-main);
-      margin: 14px 0 6px;
-    }
-
-    .policy p {
-      font-size: 14px;
-      color: var(--text-soft);
-      line-height: 1.8;
-      margin-bottom: 10px;
-    }
-
-    .policy ul {
-      padding-left: 18px;
-      margin: 6px 0 10px;
-      color: var(--text-soft);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .policy li { margin: 5px 0; }
-    .policy a { color: var(--text-main); text-decoration: underline; text-underline-offset: 3px; }
-
-    .callout {
-      margin-top: 12px;
-      border-radius: var(--radius-xl);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: linear-gradient(120deg, #f9fafb, #ecfdf5);
-      padding: 14px 16px;
-      font-size: 13px;
-      color: var(--text-mute);
-      max-width: 92ch;
-    }
-    .callout strong { color: var(--text-main); font-weight: 600; }
-
-    /* FOOTER (match site) */
-    footer {
-      border-top: 1px solid rgba(229, 231, 235, 1);
-      margin-top: 44px;
-      padding-top: 18px;
-      font-size: 12px;
-      color: var(--text-mute);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: space-between;
-      align-items: center;
-    }
-    footer a { color: var(--text-mute); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
-
-    /* Reveal (match site) */
-    .reveal{
-      opacity: 0;
-      transform: translate3d(0, 10px, 0);
-      transition: opacity var(--d-2) var(--ease-soft), transform var(--d-2) var(--ease-soft);
-      will-change: transform, opacity;
-    }
-    .reveal.is-in{ opacity: 1; transform: translate3d(0, 0, 0); }
-    .reveal-up{ transform: translate3d(0, 14px, 0); }
-    [data-stagger] .reveal{ transition-delay: calc(var(--stagger, 0) * 1ms); }
-
-    @media (max-width: 880px) {
-      header { padding-bottom: 14px; }
-      .hero-title { font-size: clamp(30px, 7vw, 40px); }
-      .hero-subtitle { font-size: 15px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    @media(max-width:600px){
+      .shell{padding:0 22px;}
+      .callout{padding:18px 20px;}
+      .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
+      .footer-links{gap:14px;}
     }
   </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="page">
-    <div class="shell">
-      <!-- HEADER -->
-      <header>
-        <a href="/" class="brand-link" aria-label="TESORIN home">
-          <div class="brand">
-            <div class="brand-mark">
-              <img src="tesorin-logo.png" alt="TESORIN logo" width="32" height="32" decoding="async" />
+  <!-- NAV -->
+  <div class="shell">
+    <header>
+      <a href="/" class="brand-link" aria-label="TESORIN home">
+        <span class="brand-wordmark">TESORIN</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="/how-it-works.html">How it works</a>
+        <a href="/features.html">Features</a>
+        <a href="/about.html">About</a>
+        <a href="/safety.html">Safety</a>
+        <a href="/faq.html">FAQs</a>
+        <a href="/?focus=waitlist" class="nav-cta">Join waitlist</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
+        <span class="menu-bars"></span>
+      </button>
+      <div id="menu-overlay" class="menu-overlay" data-open="false" aria-hidden="true">
+        <div class="menu-backdrop" data-close="true"></div>
+        <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+          <div class="menu-panel-inner">
+            <div class="menu-panel-head">
+              <a href="/" class="menu-brand"><span class="menu-brand-text">TESORIN</span></a>
+              <button type="button" class="menu-close" aria-label="Close menu" data-close="true"><span>×</span></button>
             </div>
-            <div class="brand-text-wrap">
-              <div class="brand-name">TESORIN</div>
-              <div class="brand-tagline">Start small. Plan big.</div>
-            </div>
-          </div>
-        </a>
-
-        <nav aria-label="Primary">
-          <a href="/how-it-works.html">How it works</a>
-          <a href="/features.html">Features</a>
-          <a href="/about.html">About</a>
-          <a href="/safety.html">Safety</a>
-          <a href="/faq.html">FAQs</a>
-        </nav>
-
-        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
-          <span class="menu-bars" aria-hidden="true"></span>
-        </button>
-
-        <!-- Full-screen, grid-aligned mobile menu -->
-        <div id="menu-overlay" class="menu-overlay" data-open="false" aria-hidden="true">
-          <div class="menu-backdrop" data-close="true"></div>
-
-          <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
-            <div class="menu-panel-inner">
-              <div class="menu-panel-head">
-                <a href="/" class="menu-brand" aria-label="TESORIN home">
-                  <span class="menu-brand-mark" aria-hidden="true">
-                    <img src="tesorin-logo.png" alt="" width="28" height="28" decoding="async" />
-                  </span>
-                  <span class="menu-brand-text">TESORIN</span>
-                </a>
-
-                <button type="button" class="menu-close" aria-label="Close menu" data-close="true">
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-
-              <nav class="menu-panel-nav" aria-label="Mobile">
-                <a href="/how-it-works.html">How it works</a>
-                <a href="/features.html">Features</a>
-                <a href="/about.html">About</a>
-                <a href="/safety.html">Safety</a>
-                <a href="/faq.html">FAQs</a>
-                <a href="/personal-finance-planning-app.html">Planning app</a>
-                <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
-              </nav>
-            </div>
+            <nav class="menu-panel-nav" aria-label="Mobile">
+              <a href="/how-it-works.html">How it works</a>
+              <a href="/features.html">Features</a>
+              <a href="/about.html">About</a>
+              <a href="/safety.html">Safety</a>
+              <a href="/faq.html">FAQs</a>
+              <a href="/personal-finance-planning-app.html">Planning app</a>
+              <a class="mobile-cta" href="/?focus=waitlist">Join waitlist →</a>
+            </nav>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
+  </div>
 
-      <main id="main">
-        <!-- HERO -->
-        <section class="hero" aria-label="Terms overview" data-stagger>
-          <h1 class="hero-title reveal reveal-up">Terms of use.</h1>
-          <p class="hero-subtitle reveal reveal-up">
-            These terms apply to the TESORIN website and any early access programs. They exist to set expectations clearly and protect both sides.
-          </p>
-          <p class="meta reveal reveal-up">
-            Effective date: <strong style="color:var(--text-main);font-weight:600;">January 2, 2026</strong>
-          </p>
-        </section>
+  <main id="main">
 
-        <section class="section" aria-label="Terms content" data-stagger>
+    <!-- HERO -->
+    <section class="page-hero" aria-label="Terms overview">
+      <div class="shell">
+        <p class="page-kicker rv">Terms of use</p>
+        <h1 class="page-h1 rv rv-d1">Terms of use.</h1>
+        <p class="page-sub rv rv-d2">These terms apply to the TESORIN website and any early access programs. They exist to set expectations clearly and protect both sides.</p>
+        <p class="page-meta rv">Effective date: <strong>January 2, 2026</strong></p>
+
+        <div class="callout rv">
+          <span class="callout-label">Important</span>
+          <p class="callout-text"><strong>Not financial advice.</strong> TESORIN is a planning surface. Any outputs are informational and should not be treated as personalised professional advice of any kind.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMS BODY -->
+    <section class="policy-section" aria-label="Terms content">
+      <div class="shell">
+        <p class="policy-intro rv">The sections below constitute the full terms of use. By accessing or using TESORIN, you agree to these terms. Questions: <a href="mailto:legal@trytesorin.com" class="policy-link">legal@trytesorin.com</a>.</p>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">1</div><div class="policy-row-label">Acceptance</div></div>
           <div>
-            <div class="section-kicker reveal reveal-up">Important</div>
-            <h2 class="section-title reveal reveal-up">Key points.</h2>
-            <p class="section-subtitle reveal reveal-up">
-              TESORIN provides planning tools and educational information — it is not investment advice, tax advice, or legal advice.
-            </p>
+            <div class="policy-h">Acceptance of terms</div>
+            <p class="policy-p">By accessing or using the TESORIN website or participating in early access programs, you agree to these Terms. If you do not agree, do not use the site or services.</p>
           </div>
+        </div>
 
-          <div class="callout reveal reveal-up">
-            <strong>Not financial advice:</strong> TESORIN is a planning surface. Any outputs are informational and should not be treated as personalized professional advice.
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">2</div><div class="policy-row-label">Eligibility</div></div>
+          <div>
+            <div class="policy-h">Eligibility</div>
+            <p class="policy-p">You must be legally able to form a binding contract in your jurisdiction to use the site or services.</p>
           </div>
+        </div>
 
-          <div class="policy reveal reveal-up">
-            <h3>1) Acceptance of terms</h3>
-            <p>
-              By accessing or using the TESORIN website or participating in early access programs, you agree to these Terms.
-              If you do not agree, do not use the site or services.
-            </p>
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">3</div><div class="policy-row-label">What we provide</div></div>
+          <div>
+            <div class="policy-h">What TESORIN provides</div>
+            <p class="policy-p">TESORIN provides tools and content designed to help you understand cash flow, goals, and planning trade-offs. We may update, add, or remove features at any time.</p>
+          </div>
+        </div>
 
-            <h3>2) Eligibility</h3>
-            <p>
-              You must be legally able to form a binding contract in your jurisdiction to use the site or services.
-            </p>
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">4</div><div class="policy-row-label">No advice</div></div>
+          <div>
+            <div class="policy-h">No professional advice</div>
+            <p class="policy-p">TESORIN does not provide investment, tax, legal, or accounting advice. You are responsible for your decisions. If you need professional advice, consult a licensed advisor.</p>
+          </div>
+        </div>
 
-            <h3>3) What TESORIN provides</h3>
-            <p>
-              TESORIN provides tools and content designed to help you understand cash flow, goals, and planning trade-offs.
-              We may update, add, or remove features at any time.
-            </p>
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">5</div><div class="policy-row-label">Early access</div></div>
+          <div>
+            <div class="policy-h">Early access / beta</div>
+            <p class="policy-p">If you are invited to early access, you understand the product may be incomplete, contain bugs, or change materially. We may suspend or end early access at any time.</p>
+          </div>
+        </div>
 
-            <h3>4) No professional advice</h3>
-            <p>
-              TESORIN does not provide investment, tax, legal, or accounting advice. You are responsible for your decisions.
-              If you need professional advice, consult a licensed advisor.
-            </p>
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">6</div><div class="policy-row-label">Accounts</div></div>
+          <div>
+            <div class="policy-h">Accounts and security</div>
+            <p class="policy-p">If accounts are offered, you are responsible for maintaining confidentiality of credentials and for actions taken under your account. Notify us promptly if you suspect unauthorised use.</p>
+          </div>
+        </div>
 
-            <h3>5) Early access / beta</h3>
-            <p>
-              If you are invited to early access, you understand the product may be incomplete, contain bugs, or change materially.
-              We may suspend or end early access at any time.
-            </p>
-
-            <h3>6) Accounts and security</h3>
-            <p>
-              If accounts are offered, you are responsible for maintaining confidentiality of credentials and for actions taken under your account.
-              Notify us if you suspect unauthorized use.
-            </p>
-
-            <h3>7) Acceptable use</h3>
-            <p>
-              You agree not to:
-            </p>
-            <ul>
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">7</div><div class="policy-row-label">Acceptable use</div></div>
+          <div>
+            <div class="policy-h">Acceptable use</div>
+            <p class="policy-p">You agree not to:</p>
+            <ul class="policy-list">
               <li>Reverse engineer or attempt to extract source code (except as permitted by law).</li>
               <li>Interfere with security features or access controls.</li>
               <li>Use the site to transmit malware, spam, or abusive content.</li>
               <li>Misrepresent affiliation with TESORIN.</li>
             </ul>
-
-            <h3>8) Intellectual property</h3>
-            <p>
-              The site and its content are owned by TESORIN and protected by intellectual property laws.
-              You may not copy, reproduce, or distribute content except as permitted by these Terms.
-            </p>
-
-            <h3>9) Third-party links</h3>
-            <p>
-              The site may link to third-party websites. TESORIN is not responsible for third-party content or practices.
-            </p>
-
-            <h3>10) Disclaimers</h3>
-            <p>
-              The site and services are provided “as is” and “as available.” We do not warrant uninterrupted or error-free operation.
-            </p>
-
-            <h3>11) Limitation of liability</h3>
-            <p>
-              To the maximum extent permitted by law, TESORIN is not liable for indirect, incidental, special, consequential, or punitive damages,
-              or any loss of profits or data, arising from your use of the site or services.
-            </p>
-
-            <h3>12) Indemnification</h3>
-            <p>
-              You agree to indemnify and hold TESORIN harmless from claims arising out of your use of the site or violation of these Terms.
-            </p>
-
-            <h3>13) Termination</h3>
-            <p>
-              We may suspend or terminate access to the site or services if we reasonably believe there is a violation of these Terms or a security risk.
-            </p>
-
-            <h3>14) Changes to these terms</h3>
-            <p>
-              We may update these Terms from time to time. The “Effective date” above indicates the latest revision. Continued use means you accept the updated Terms.
-            </p>
-
-            <h3>15) Contact</h3>
-            <p>
-              For questions about these Terms, contact: <strong>legal@trytesorin.com</strong>
-            </p>
-
-            <p class="inline-note" style="font-size:12px;color:var(--text-mute);line-height:1.6;margin-top:10px;">
-              For privacy details, see the <a href="/privacy.html">Privacy</a> policy.
-            </p>
           </div>
-        </section>
-      </main>
+        </div>
 
-      <!-- FOOTER -->
-      <footer>
-        <span>© 2026 TESORIN. All rights reserved.</span>
-        <div class="footer-links">
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">8</div><div class="policy-row-label">Intellectual property</div></div>
+          <div>
+            <div class="policy-h">Intellectual property</div>
+            <p class="policy-p">The site and its content are owned by TESORIN and protected by applicable intellectual property laws. You may not copy, reproduce, or distribute content except as permitted by these Terms.</p>
+          </div>
+        </div>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">9</div><div class="policy-row-label">Third parties</div></div>
+          <div>
+            <div class="policy-h">Third-party links</div>
+            <p class="policy-p">The site may link to third-party websites. TESORIN is not responsible for third-party content, practices, or privacy policies. Links do not imply endorsement.</p>
+          </div>
+        </div>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">10</div><div class="policy-row-label">Disclaimers</div></div>
+          <div>
+            <div class="policy-h">Disclaimers</div>
+            <p class="policy-p">The site and services are provided "as is" and "as available." We do not warrant uninterrupted, error-free, or completely accurate operation. We disclaim all warranties to the extent permitted by law.</p>
+          </div>
+        </div>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">11</div><div class="policy-row-label">Liability</div></div>
+          <div>
+            <div class="policy-h">Limitation of liability</div>
+            <p class="policy-p">To the maximum extent permitted by law, TESORIN is not liable for indirect, incidental, special, consequential, or punitive damages, or any loss of profits or data, arising from your use of the site or services.</p>
+          </div>
+        </div>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">12</div><div class="policy-row-label">Indemnification</div></div>
+          <div>
+            <div class="policy-h">Indemnification</div>
+            <p class="policy-p">You agree to indemnify and hold TESORIN harmless from claims arising out of your use of the site or violation of these Terms.</p>
+          </div>
+        </div>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">13</div><div class="policy-row-label">Termination</div></div>
+          <div>
+            <div class="policy-h">Termination</div>
+            <p class="policy-p">We may suspend or terminate access to the site or services if we reasonably believe there is a violation of these Terms or a security risk.</p>
+          </div>
+        </div>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">14</div><div class="policy-row-label">Changes</div></div>
+          <div>
+            <div class="policy-h">Changes to these terms</div>
+            <p class="policy-p">We may update these Terms from time to time. The effective date above indicates the latest revision. Continued use of the site means you accept the updated Terms.</p>
+          </div>
+        </div>
+
+        <div class="policy-row rv">
+          <div><div class="policy-row-n">15</div><div class="policy-row-label">Contact</div></div>
+          <div>
+            <div class="policy-h">Contact</div>
+            <p class="policy-p">For questions about these Terms, contact <a href="mailto:legal@trytesorin.com" class="policy-link">legal@trytesorin.com</a>. For privacy details, see the <a href="/privacy.html" class="policy-link">Privacy Policy</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-inner">
+        <span class="footer-copy">© 2026 TESORIN. All rights reserved.</span>
+        <nav class="footer-links" aria-label="Footer">
           <a href="/how-it-works.html">How it works</a>
           <a href="/features.html">Features</a>
           <a href="/about.html">About</a>
@@ -466,38 +332,16 @@
           <a href="/faq.html">FAQs</a>
           <a href="/privacy.html">Privacy</a>
           <a href="/terms.html">Terms</a>
-        </div>
-      </footer>
+        </nav>
+      </div>
     </div>
-  </div>
+  </footer>
 
   <script>
-    // Scroll reveal + optional staggering (match site)
-    (function () {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (reduceMotion.matches) {
-        document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-in"));
-        return;
-      }
-
-      document.querySelectorAll("[data-stagger]").forEach((wrap) => {
-        const children = wrap.querySelectorAll(".reveal");
-        children.forEach((el, i) => el.style.setProperty("--stagger", String(i * 70)));
-      });
-
-      const els = document.querySelectorAll(".reveal");
-      if (!els.length) return;
-
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
-        });
-      }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
-
-      els.forEach(el => io.observe(el));
-    })();
+  (function(){
+    const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}}),{threshold:.08,rootMargin:"0px 0px -24px 0px"});
+    document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+  }());
   </script>
 </body>
 </html>
