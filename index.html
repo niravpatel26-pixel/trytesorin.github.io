@@ -5,12 +5,11 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "name": "TESORIN", "url": "https://www.trytesorin.com/", "logo": "https://www.trytesorin.com/tesorin-logo.png" },
-      { "@type": "WebSite", "name": "TESORIN", "url": "https://www.trytesorin.com/" },
+      { "@type": "Organization", "name": "TESORIN", "url": "https://www.trytesorin.com/" },
+      { "@type": "WebSite",      "name": "TESORIN", "url": "https://www.trytesorin.com/" },
       {
         "@type": "SoftwareApplication",
         "name": "TESORIN",
-        "url": "https://www.trytesorin.com/",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
         "description": "Your first step into wealth — with a plan that grows with you.",
@@ -34,77 +33,58 @@
 
   <title>TESORIN — Know what your money can do this month</title>
   <meta name="description" content="TESORIN gives you one number — your monthly flexibility — and turns it into a clear plan: safety buffer, debt, then long-term wealth." />
-  <meta property="og:title" content="TESORIN — Know what your money can do this month" />
+  <meta property="og:title"       content="TESORIN — Know what your money can do this month" />
   <meta property="og:description" content="One clear number. A calm sequence. Your first real money plan." />
-  <meta property="og:url" content="https://www.trytesorin.com" />
-  <meta property="og:site_name" content="TESORIN" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="TESORIN — Know what your money can do this month" />
+  <meta property="og:url"         content="https://www.trytesorin.com" />
+  <meta property="og:site_name"   content="TESORIN" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:image"       content="https://www.trytesorin.com/tesorin-preview.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+  <meta name="twitter:title"      content="TESORIN — Know what your money can do this month" />
   <meta name="twitter:description" content="One clear number. A calm sequence. Your first real money plan." />
-  <meta name="twitter:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+  <meta name="twitter:image"      content="https://www.trytesorin.com/tesorin-preview.png" />
 
-  <!-- Fonts -->
+  <!-- Fonts: Instrument Serif (display) + Plus Jakarta Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Shared nav -->
+  <!-- Shared nav (font + active state overridden below) -->
   <link rel="stylesheet" href="/assets/nav.css" />
   <script src="/assets/nav.js" defer></script>
 
   <style>
-    /* ─── DESIGN TOKENS ────────────────────────────────────────
-       Set here once. nav.css reads --text-main, --text-mute,
-       --card, --font-display, --max-width via custom property
-       fallback. All overridden to match our new system.
-    ─────────────────────────────────────────────────────────── */
+    /* ─── TOKENS ────────────────────────────────────────────── */
     :root {
       /* Surfaces */
       --bg:      #f8f7f4;
       --surface: #ffffff;
-      --tint:    #f1ede6;
+      --tint:    #f0ece4;
 
-      /* Text — nav.css reads these */
-      --text-main: #0f0f0f;
-      --text-soft: #3d4e5e;
-      --text-mute: #7a8a98;
-      --text-xmute: #adbac4;
+      /* Text  (nav.css reads --text-main, --text-mute) */
+      --text-main:  #0f0f0f;
+      --text-soft:  #3a4b5c;
+      --text-mute:  #7a8a98;
+      --text-xmute: #b0bec8;
 
-      /* Accent — Forest green */
-      --green:     #1a6b47;
-      --green-dk:  #155a3b;
-      --green-lt:  #eaf3ee;
-      --green-bd:  #c2ddd0;
-      --green-ring: rgba(26,107,71,.16);
+      /* Accent — forest green */
+      --green:      #1a6b47;
+      --green-dk:   #155a3b;
+      --green-lt:   #eaf3ee;
+      --green-bd:   #bdd8ca;
+      --green-ring: rgba(26,107,71,.15);
 
       /* Borders */
-      --bd:     rgba(15,15,15,.08);
-      --bd-md:  rgba(15,15,15,.13);
-      --bd-str: rgba(15,15,15,.20);
+      --bd:    rgba(15,15,15,.08);
+      --bd-md: rgba(15,15,15,.13);
 
-      /* Shadows */
-      --sh-sm: 0 2px 10px rgba(15,15,15,.06);
-      --sh-md: 0 6px 28px rgba(15,15,15,.08);
-      --sh-lg: 0 18px 56px rgba(15,15,15,.10);
+      /* Layout (nav.css reads --max-width) */
+      --max-width:  1120px;
 
-      /* Radii */
-      --r-sm:  8px;
-      --r-md:  12px;
-      --r-lg:  16px;
-      --r-xl:  22px;
-      --r-pill: 999px;
-
-      /* Layout — nav.css reads --max-width */
-      --max-width: 1120px;
-
-      /* Typography — nav.css reads --font-display */
+      /* Typography (nav.css reads --font-display, --card) */
       --font-display: "Instrument Serif", Georgia, serif;
       --font-body:    "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-
-      /* nav.css reads --card */
-      --card: #ffffff;
+      --card:         #ffffff;
 
       /* Easing */
       --ease:  cubic-bezier(.22,1,.36,1);
@@ -113,144 +93,139 @@
 
     /* ─── RESET ─────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
+    html  { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body  {
       font-family: var(--font-body);
       background: var(--bg);
       color: var(--text-main);
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
-      line-height: 1.5;
     }
-    a { color: inherit; text-decoration: none; }
+    a   { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
     button, input { font-family: inherit; }
 
     /* ─── NAV OVERRIDES ─────────────────────────────────────── */
-    header,
-    header a,
-    header button,
-    .menu-brand-text,
-    .menu-panel-nav a { font-family: var(--font-body) !important; }
+    /* Body font everywhere in nav */
+    header, header a, header button,
+    .menu-brand-text, .menu-panel-nav a { font-family: var(--font-body) !important; }
 
     /* Warm mobile panel */
     .menu-panel { background: rgba(248,247,244,.97) !important; }
 
-    /* Active link */
+    /* Active state: forest green underline */
     nav[aria-label="Primary"] a.is-active {
-      color: var(--green) !important;
+      color: var(--green)       !important;
       box-shadow: inset 0 -1.5px 0 var(--green) !important;
     }
 
-    /* Nav CTA pill */
-    .nav-cta {
-      padding: 8px 16px !important;
-      border-radius: var(--r-pill) !important;
-      background: var(--green) !important;
-      color: #fff !important;
-      border: none !important;
-      font-size: 13px !important;
-      font-weight: 500 !important;
-      box-shadow: none !important;
-      transition: background .18s, transform .15s !important;
+    /* Nav CTA — solid green pill, no extra flair */
+    a.nav-cta {
+      padding: 9px 18px           !important;
+      border-radius: 999px        !important;
+      background: var(--green)    !important;
+      color: #fff                 !important;
+      border: none                !important;
+      font-size: 13.5px           !important;
+      font-weight: 500            !important;
+      letter-spacing: -.01em      !important;
+      box-shadow: none            !important;
+      transition: background .18s !important;
     }
-    .nav-cta:hover {
-      background: var(--green-dk) !important;
-      color: #fff !important;
-      transform: translateY(-1px) !important;
-    }
+    a.nav-cta:hover { background: var(--green-dk) !important; }
 
     /* ─── SHELL ─────────────────────────────────────────────── */
     .shell {
       width: 100%;
       max-width: var(--max-width);
       margin: 0 auto;
-      padding: 0 32px;
+      padding: 0 36px;
     }
 
     /* ─── HERO ──────────────────────────────────────────────── */
     .hero {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 64px;
+      /* Left column is wider — headline dominates */
+      grid-template-columns: 1.12fr 1fr;
+      column-gap: 72px;
       align-items: center;
-      min-height: calc(100vh - 76px);
-      padding: 52px 0 80px;
+      /* Open, breathing space — like Wealthsimple / Remarkable */
+      padding: 80px 0 108px;
     }
+
+    /* ── Left column ── */
     .hero-left { display: flex; flex-direction: column; }
 
-    /* Eyebrow */
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11.5px;
-      font-weight: 500;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      color: var(--green);
-      background: var(--green-lt);
-      border: 1px solid var(--green-bd);
-      border-radius: var(--r-pill);
-      padding: 5px 14px;
-      width: fit-content;
-      margin-bottom: 32px;
+    /* Status line — replaces pill badge entirely */
+    .hero-kicker {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-mute);
+      letter-spacing: .02em;
+      margin-bottom: 28px;
     }
-    .eyebrow-dot {
+    /* The single accent touch — a green dot before the text */
+    .hero-kicker::before {
+      content: "";
+      display: inline-block;
       width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--green);
-      flex-shrink: 0;
-      animation: blink 2.6s ease-in-out infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: .35; transform: scale(.72); }
+      margin-right: 8px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
     }
 
-    /* Headline */
+    /* Headline — larger, commands the page */
     .hero-h1 {
       font-family: var(--font-display);
-      font-size: clamp(38px, 4.4vw, 60px);
+      /* Larger than before — headline wins vs card */
+      font-size: clamp(52px, 7vw, 92px);
       font-weight: 400;
-      line-height: 1.08;
-      letter-spacing: -.015em;
+      line-height: 1.04;
+      letter-spacing: -.02em;
       color: var(--text-main);
-      margin-bottom: 22px;
-      max-width: 17ch;
+      margin-bottom: 24px;
+      max-width: 16ch;
     }
-    .hero-h1 em { font-style: italic; color: var(--text-soft); }
+    .hero-h1 em {
+      font-style: italic;
+      /* Slightly softer — the italic "rests" vs the roman */
+      color: var(--text-soft);
+    }
 
-    /* Subline */
+    /* Subline — small, supporting. Headline does the work. */
     .hero-sub {
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.72;
       color: var(--text-soft);
       font-weight: 400;
-      max-width: 42ch;
-      margin-bottom: 40px;
+      max-width: 40ch;
+      margin-bottom: 44px;
     }
 
-    /* ─── WAITLIST FORM ─────────────────────────────────────── */
-    .wl-wrap { max-width: 420px; }
+    /* ── Waitlist form ── */
+    .wl-form-wrap { max-width: 400px; }
 
+    /* Flat pill — no shadow, no elevation.
+       The cream bg + 1px border is all the separation needed. */
     .wl-pill {
-      background: var(--surface);
-      border: 1px solid var(--bd-md);
-      border-radius: var(--r-xl);
-      padding: 5px 5px 5px 20px;
       display: flex;
       align-items: center;
-      gap: 6px;
-      box-shadow: var(--sh-md);
-      transition: border-color .2s, box-shadow .2s;
+      background: var(--surface);
+      border: 1px solid var(--bd-md);
+      border-radius: 999px;
+      padding: 5px 5px 5px 22px;
+      /* No box-shadow — form recedes, headline leads */
+      transition: border-color .2s;
     }
     .wl-pill:focus-within {
       border-color: var(--green-bd);
-      box-shadow: var(--sh-md), 0 0 0 3px var(--green-ring);
+      outline: 3px solid var(--green-ring);
+      outline-offset: 0;
     }
-
     .wl-pill input[type="email"] {
       flex: 1;
       min-width: 0;
@@ -260,17 +235,17 @@
       font-size: 14.5px;
       font-family: var(--font-body);
       color: var(--text-main);
-      padding: 10px 0;
+      padding: 9px 0;
     }
     .wl-pill input::placeholder { color: var(--text-mute); }
 
-    .wl-submit {
+    .wl-btn {
       background: var(--green);
       color: #fff;
       border: none;
-      border-radius: var(--r-lg);
-      padding: 12px 20px;
-      font-size: 14px;
+      border-radius: 999px;
+      padding: 11px 20px;
+      font-size: 13.5px;
       font-weight: 500;
       font-family: var(--font-body);
       cursor: pointer;
@@ -278,16 +253,17 @@
       flex-shrink: 0;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      transition: background .18s, transform .15s var(--ease);
+      gap: 6px;
+      letter-spacing: -.01em;
+      transition: background .18s, transform .14s var(--ease);
     }
-    .wl-submit .arr { transition: transform .2s var(--ease); }
-    .wl-submit:hover { background: var(--green-dk); transform: translateY(-1px); }
-    .wl-submit:hover .arr { transform: translateX(3px); }
-    .wl-submit:disabled { opacity: .65; cursor: not-allowed; transform: none !important; }
+    .wl-btn .arr { transition: transform .2s var(--ease); display: inline-block; }
+    .wl-btn:hover { background: var(--green-dk); }
+    .wl-btn:hover .arr { transform: translateX(3px); }
+    .wl-btn:disabled { opacity: .6; cursor: not-allowed; }
 
     .wl-meta {
-      margin-top: 13px;
+      margin-top: 14px;
       display: flex;
       flex-direction: column;
       gap: 4px;
@@ -297,59 +273,57 @@
       line-height: 1.6;
       color: var(--text-mute);
     }
-    .wl-note a { color: var(--text-soft); text-decoration: underline; text-underline-offset: 2px; }
+    .wl-note a {
+      color: var(--text-soft);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
     .wl-status { font-size: 12px; color: var(--text-mute); min-height: 16px; }
-    .wl-status.ok  { color: var(--green); }
+    .wl-status.ok  { color: var(--green);  }
     .wl-status.err { color: #b91c1c; }
 
-    /* ─── PLAN CARD ─────────────────────────────────────────── */
+    /* ── Right column — plan card ── */
     .hero-right {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       gap: 14px;
     }
 
+    /* Card: NO shadow. Border only.
+       Floating shadows are what makes cards look like prototypes.
+       A 1px border on a cream bg is far more refined. */
     .plan-card {
       width: 100%;
-      max-width: 336px;
       background: var(--surface);
-      border: 1px solid var(--bd);
-      border-radius: var(--r-xl);
-      padding: 26px 24px 22px;
-      box-shadow: var(--sh-lg);
-      position: relative;
-    }
-    /* Forest green top rule */
-    .plan-card::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 24px; right: 24px;
-      height: 2px;
-      background: var(--green);
-      border-radius: 0 0 var(--r-sm) var(--r-sm);
+      border: 1px solid var(--bd-md);
+      border-radius: 20px;
+      padding: 28px 26px 24px;
+      /* Top rule in forest green — the only accent on the card */
+      border-top: 2.5px solid var(--green);
     }
 
     .pc-head {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
     .pc-lbl {
       font-size: 10.5px;
       font-weight: 500;
-      letter-spacing: .07em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       color: var(--text-mute);
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
     .pc-amt {
       font-family: var(--font-display);
-      font-size: 50px;
+      /* Larger — the number should feel like a statement */
+      font-size: 56px;
       font-weight: 400;
       line-height: 1;
-      letter-spacing: -.03em;
+      letter-spacing: -.035em;
       color: var(--text-main);
     }
     .pc-badge {
@@ -358,34 +332,34 @@
       color: var(--green);
       background: var(--green-lt);
       border: 1px solid var(--green-bd);
-      border-radius: var(--r-pill);
-      padding: 4px 11px;
+      border-radius: 999px;
+      padding: 4px 12px;
       white-space: nowrap;
-      margin-top: 3px;
     }
 
-    .pc-line { height: 1px; background: var(--bd); margin-bottom: 18px; }
+    .pc-rule { height: 1px; background: var(--bd); margin-bottom: 20px; }
 
-    .pc-rows { display: flex; flex-direction: column; gap: 15px; }
-    .pc-row-top {
+    .pc-rows { display: flex; flex-direction: column; gap: 16px; }
+    .pc-row-head {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 7px;
+      align-items: baseline;
+      margin-bottom: 8px;
     }
     .pc-row-name { font-size: 13px; font-weight: 500; color: var(--text-soft); }
     .pc-row-val  { font-size: 13px; font-weight: 600; color: var(--text-main); }
 
+    /* Thicker bars — more presence */
     .pc-track {
-      height: 5px;
+      height: 6px;
       background: var(--tint);
-      border-radius: var(--r-pill);
+      border-radius: 999px;
       overflow: hidden;
     }
     .pc-fill {
       height: 100%;
       background: var(--green);
-      border-radius: var(--r-pill);
+      border-radius: 999px;
       transform-origin: left;
       transform: scaleX(0);
     }
@@ -394,113 +368,116 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 22px;
       padding-top: 16px;
       border-top: 1px solid var(--bd);
     }
-    .pc-foot-note   { font-size: 11.5px; color: var(--text-mute); }
-    .pc-foot-action { font-size: 11.5px; font-weight: 500; color: var(--green); }
+    .pc-foot-note   { font-size: 12px; color: var(--text-mute); }
+    .pc-foot-action { font-size: 12px; font-weight: 500; color: var(--green); }
 
-    .card-caption {
-      font-size: 11.5px;
-      color: var(--text-mute);
-      text-align: center;
+    .card-note {
+      font-size: 12px;
+      color: var(--text-xmute);
     }
 
-    /* ─── CONCEPT STRIP ────────────────────────────────────── */
-    .strip {
-      border-top: 1px solid var(--bd);
-      border-bottom: 1px solid var(--bd);
-    }
+    /* ─── CONCEPT STRIP ─────────────────────────────────────── */
+    /* Clean rule separation — Remarkable's approach */
+    .strip { border-top: 1px solid var(--bd); }
+
     .strip-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
+
     .strip-cell {
-      padding: 40px 36px;
+      padding: 44px 40px;
       border-right: 1px solid var(--bd);
       opacity: 0;
-      transform: translateY(14px);
+      transform: translateY(12px);
       transition: opacity .6s var(--ease), transform .6s var(--ease);
     }
     .strip-cell:last-child { border-right: none; }
     .strip-cell.in { opacity: 1; transform: translateY(0); }
-    .strip-cell:nth-child(2) { transition-delay: .1s; }
-    .strip-cell:nth-child(3) { transition-delay: .2s; }
+    .strip-cell:nth-child(2) { transition-delay: .09s; }
+    .strip-cell:nth-child(3) { transition-delay: .18s; }
 
+    /* Italic serif step label — Remarkable uses italic accents */
     .strip-step {
       font-family: var(--font-display);
       font-style: italic;
       font-size: 13px;
       color: var(--text-xmute);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      display: block;
     }
-    .strip-title {
-      font-size: 16px;
+    .strip-h {
+      font-size: 17px;
       font-weight: 600;
       color: var(--text-main);
-      letter-spacing: -.01em;
-      margin-bottom: 9px;
+      letter-spacing: -.015em;
+      margin-bottom: 10px;
     }
-    .strip-body {
+    .strip-p {
       font-size: 13.5px;
       color: var(--text-soft);
-      line-height: 1.66;
+      line-height: 1.68;
       max-width: 26ch;
     }
 
     /* ─── FOOTER ────────────────────────────────────────────── */
-    .site-footer {
-      padding: 28px 0;
-    }
+    .site-footer { padding: 28px 0; border-top: 1px solid var(--bd); }
     .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 18px;
     }
-    .footer-copy { font-size: 12.5px; color: var(--text-mute); }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
-    .footer-links a { font-size: 12.5px; color: var(--text-mute); transition: color .15s; }
+    .footer-copy   { font-size: 12.5px; color: var(--text-mute); }
+    .footer-links  { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-links a {
+      font-size: 12.5px;
+      color: var(--text-mute);
+      transition: color .15s;
+    }
     .footer-links a:hover { color: var(--text-main); }
 
-    /* ─── HERO REVEALS ──────────────────────────────────────── */
-    .rv { opacity: 0; transform: translateY(16px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+    /* ─── REVEAL ────────────────────────────────────────────── */
+    .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
     .rv.in { opacity: 1; transform: translateY(0); }
-    .rv-d1 { transition-delay: .08s; }
-    .rv-d2 { transition-delay: .17s; }
-    .rv-d3 { transition-delay: .26s; }
-    .rv-d4 { transition-delay: .35s; }
+    .rv-d1 { transition-delay: .07s; }
+    .rv-d2 { transition-delay: .14s; }
+    .rv-d3 { transition-delay: .21s; }
+    .rv-d4 { transition-delay: .28s; }
 
     /* ─── RESPONSIVE ────────────────────────────────────────── */
     @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
-        min-height: unset;
-        padding: 44px 0 64px;
-        gap: 48px;
+        padding: 52px 0 72px;
+        column-gap: 0;
+        row-gap: 52px;
       }
-      .hero-right { order: -1; }
-      .plan-card  { max-width: 100%; }
+      .hero-right { order: -1; align-items: center; }
       .hero-h1    { max-width: 100%; }
       .strip-grid { grid-template-columns: 1fr; }
       .strip-cell {
         border-right: none;
         border-bottom: 1px solid var(--bd);
-        padding: 28px 0;
+        padding: 32px 0;
       }
       .strip-cell:last-child { border-bottom: none; }
     }
 
     @media (max-width: 600px) {
-      .shell    { padding: 0 20px; }
-      .hero-h1  { font-size: 36px; }
-      .hero-sub { font-size: 16px; }
-      .wl-pill  { padding: 4px 4px 4px 14px; }
-      .wl-submit { padding: 11px 15px; font-size: 13.5px; }
-      .footer-inner  { flex-direction: column; align-items: flex-start; gap: 14px; }
-      .footer-links  { gap: 16px; }
+      .shell     { padding: 0 20px; }
+      .hero      { padding: 44px 0 64px; row-gap: 44px; }
+      .hero-h1   { font-size: 44px; }
+      .hero-sub  { font-size: 15px; }
+      .wl-pill   { padding: 4px 4px 4px 16px; }
+      .wl-btn    { padding: 10px 14px; font-size: 13px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .footer-links { gap: 14px; }
     }
   </style>
 </head>
@@ -541,7 +518,7 @@
           <div class="menu-panel-inner">
             <div class="menu-panel-head">
               <a href="/" class="menu-brand" aria-label="TESORIN home">
-                <span class="menu-brand-mark" aria-hidden="true">
+                <span class="menu-brand-mark">
                   <img src="tesorin-logo.png" alt="" width="28" height="28" decoding="async" />
                 </span>
                 <span class="menu-brand-text">TESORIN</span>
@@ -567,16 +544,15 @@
   <main id="main">
 
     <!-- ─── HERO ─────────────────────────────────────────────── -->
-    <section aria-label="TESORIN overview">
+    <section aria-label="TESORIN — homepage hero">
       <div class="shell">
         <div class="hero">
 
-          <!-- Left — copy + form -->
+          <!-- LEFT ── copy + form -->
           <div class="hero-left">
-            <div class="eyebrow rv">
-              <span class="eyebrow-dot" aria-hidden="true"></span>
-              Planning-first · Early access open
-            </div>
+
+            <!-- Status line instead of pill badge -->
+            <p class="hero-kicker rv">Planning-first · Canada &amp; India</p>
 
             <h1 class="hero-h1 rv rv-d1">
               Know what your money can do<em> this month.</em>
@@ -586,7 +562,7 @@
               TESORIN gives you one number — your monthly flexibility — and turns it into a clear plan: safety buffer first, then debt, then wealth.
             </p>
 
-            <div class="wl-wrap rv rv-d3" id="waitlist">
+            <div class="wl-form-wrap rv rv-d3" id="waitlist">
               <form id="wl-form" novalidate>
                 <div class="wl-pill">
                   <input
@@ -600,7 +576,7 @@
                     aria-label="Email address"
                     aria-describedby="wl-status"
                   />
-                  <button id="wl-btn" type="submit" class="wl-submit">
+                  <button id="wl-btn" type="submit" class="wl-btn">
                     Get early access <span class="arr" aria-hidden="true">→</span>
                   </button>
                 </div>
@@ -612,9 +588,10 @@
                 <p class="wl-status" id="wl-status" role="status" aria-live="polite"></p>
               </div>
             </div>
+
           </div>
 
-          <!-- Right — plan card -->
+          <!-- RIGHT ── plan card -->
           <div class="hero-right rv rv-d4" aria-hidden="true">
             <div class="plan-card">
               <div class="pc-head">
@@ -625,11 +602,11 @@
                 <span class="pc-badge">This month</span>
               </div>
 
-              <div class="pc-line"></div>
+              <div class="pc-rule"></div>
 
               <div class="pc-rows">
                 <div class="pc-row">
-                  <div class="pc-row-top">
+                  <div class="pc-row-head">
                     <span class="pc-row-name">Safety buffer</span>
                     <span class="pc-row-val">$420</span>
                   </div>
@@ -637,22 +614,24 @@
                     <div class="pc-fill" data-w="0.34"></div>
                   </div>
                 </div>
+
                 <div class="pc-row">
-                  <div class="pc-row-top">
+                  <div class="pc-row-head">
                     <span class="pc-row-name">Debt paydown</span>
                     <span class="pc-row-val">$280</span>
                   </div>
                   <div class="pc-track">
-                    <div class="pc-fill" data-w="0.23" style="opacity:.68;"></div>
+                    <div class="pc-fill" data-w="0.23" style="opacity:.65;"></div>
                   </div>
                 </div>
+
                 <div class="pc-row">
-                  <div class="pc-row-top">
+                  <div class="pc-row-head">
                     <span class="pc-row-name">Growth goal</span>
                     <span class="pc-row-val">$540</span>
                   </div>
                   <div class="pc-track">
-                    <div class="pc-fill" data-w="0.44" style="opacity:.45;"></div>
+                    <div class="pc-fill" data-w="0.44" style="opacity:.42;"></div>
                   </div>
                 </div>
               </div>
@@ -663,7 +642,7 @@
               </div>
             </div>
 
-            <p class="card-caption">Illustrative. Your numbers, your plan.</p>
+            <p class="card-note">Illustrative. Your numbers, your plan.</p>
           </div>
 
         </div>
@@ -671,23 +650,23 @@
     </section>
 
     <!-- ─── CONCEPT STRIP ────────────────────────────────────── -->
-    <div class="strip" role="region" aria-label="How it works in three steps">
+    <div class="strip" role="region" aria-label="How TESORIN works">
       <div class="shell">
         <div class="strip-grid">
           <div class="strip-cell">
-            <div class="strip-step">Step one</div>
-            <div class="strip-title">Snapshot</div>
-            <p class="strip-body">Map your income, fixed bills, and balances. Takes minutes. No bank linking needed.</p>
+            <span class="strip-step">Step one</span>
+            <div class="strip-h">Snapshot</div>
+            <p class="strip-p">Map your income, fixed bills, and balances. Takes minutes. No bank linking needed.</p>
           </div>
           <div class="strip-cell">
-            <div class="strip-step">Step two</div>
-            <div class="strip-title">Plan</div>
-            <p class="strip-body">Get one clear number: what you can safely route to goals this month without breaking your baseline.</p>
+            <span class="strip-step">Step two</span>
+            <div class="strip-h">Plan</div>
+            <p class="strip-p">Get one clear number: what you can safely route to goals this month without breaking your baseline.</p>
           </div>
           <div class="strip-cell">
-            <div class="strip-step">Step three</div>
-            <div class="strip-title">Act</div>
-            <p class="strip-body">Follow a calm sequence. Safety first. Then debt. Then growth. One small action at a time.</p>
+            <span class="strip-step">Step three</span>
+            <div class="strip-h">Act</div>
+            <p class="strip-p">Follow a calm sequence. Safety first. Then debt. Then growth. One small action at a time.</p>
           </div>
         </div>
       </div>
@@ -718,25 +697,25 @@
     "use strict";
 
     /* ── SCROLL REVEALS ─────────────────────────────────────── */
-    const revealObs = new IntersectionObserver((entries) => {
+    const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add("in"); revealObs.unobserve(e.target); }
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
-    }, { threshold: .1, rootMargin: "0px 0px -28px 0px" });
+    }, { threshold: .1, rootMargin: "0px 0px -24px 0px" });
 
-    document.querySelectorAll(".rv, .strip-cell").forEach(el => revealObs.observe(el));
+    document.querySelectorAll(".rv, .strip-cell").forEach(el => io.observe(el));
 
-    /* ── PLAN CARD ──────────────────────────────────────────── */
-    const numEl  = document.getElementById("pc-num");
-    const fills  = document.querySelectorAll(".pc-fill");
-    const TARGET = 1240;
-    let started  = false;
+    /* ── PLAN CARD ANIMATION ────────────────────────────────── */
+    const numEl   = document.getElementById("pc-num");
+    const fills   = document.querySelectorAll(".pc-fill");
+    const TARGET  = 1240;
+    let   started = false;
 
     function runCard() {
       if (started) return;
       started = true;
 
-      /* counter */
+      /* Count up */
       const dur = 1100, tick = 14;
       const inc = TARGET / (dur / tick);
       let v = 0;
@@ -746,17 +725,17 @@
         if (v >= TARGET) clearInterval(t);
       }, tick);
 
-      /* bars */
+      /* Bars stagger in */
       fills.forEach((fill, i) => {
         const w = parseFloat(fill.dataset.w || "1");
-        fill.style.transition = `transform 1.25s cubic-bezier(.16,1,.3,1) ${.28 + i * .15}s`;
+        fill.style.transition = `transform 1.3s cubic-bezier(.16,1,.3,1) ${.26 + i * .14}s`;
         fill.style.transform  = `scaleX(${w})`;
       });
     }
 
     const cardObs = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) { runCard(); cardObs.disconnect(); }
-    }, { threshold: .5 });
+    }, { threshold: .45 });
 
     const card = document.querySelector(".plan-card");
     if (card) cardObs.observe(card);
@@ -779,8 +758,8 @@
         }
         btn.disabled       = true;
         btn.textContent    = "Sending…";
-        status.className   = "wl-status";
         status.textContent = "";
+        status.className   = "wl-status";
 
         try {
           const res = await fetch("https://formspree.io/f/mwkgdbdo", {
@@ -805,10 +784,11 @@
 
     /* ── WAITLIST FOCUS PARAM ───────────────────────────────── */
     if (new URLSearchParams(location.search).get("focus") === "waitlist") {
-      setTimeout(() => { document.getElementById("wl-email")?.focus(); }, 60);
+      setTimeout(() => document.getElementById("wl-email")?.focus(), 60);
     }
 
   }());
   </script>
+
 </body>
 </html>
