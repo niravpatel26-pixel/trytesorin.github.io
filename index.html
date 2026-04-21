@@ -1,504 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      { "@type": "Organization", "name": "TESORIN", "url": "https://www.trytesorin.com/" },
-      { "@type": "WebSite",      "name": "TESORIN", "url": "https://www.trytesorin.com/" },
-      {
-        "@type": "SoftwareApplication",
-        "name": "TESORIN",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "description": "Your first step into wealth — with a plan that grows with you.",
-        "creator": { "@type": "Organization", "name": "TESORIN" },
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "category": "Free" }
-      }
-    ]
-  }
-  </script>
-
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TESORIN","url":"https://www.trytesorin.com/","applicationCategory":"FinanceApplication","description":"Your first step into wealth — with a plan that grows with you.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
   <link rel="canonical" href="https://www.trytesorin.com/" />
-  <meta charset="UTF-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta charset="UTF-8" /><meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-
   <title>TESORIN — Know what your money can do this month</title>
-  <meta name="description" content="TESORIN gives you one number — your monthly flexibility — and turns it into a clear plan: safety buffer, debt, then long-term wealth." />
-  <meta property="og:title"       content="TESORIN — Know what your money can do this month" />
-  <meta property="og:description" content="One clear number. A calm sequence. Your first real money plan." />
-  <meta property="og:url"         content="https://www.trytesorin.com" />
-  <meta property="og:site_name"   content="TESORIN" />
-  <meta property="og:type"        content="website" />
-  <meta property="og:image"       content="https://www.trytesorin.com/tesorin-preview.png" />
-  <meta name="twitter:card"       content="summary_large_image" />
-  <meta name="twitter:title"      content="TESORIN — Know what your money can do this month" />
-  <meta name="twitter:description" content="One clear number. A calm sequence. Your first real money plan." />
-  <meta name="twitter:image"      content="https://www.trytesorin.com/tesorin-preview.png" />
-
-  <!-- Fonts: Instrument Serif (display) + Plus Jakarta Sans (body) -->
+  <meta name="description" content="One number. Your monthly flexibility. A calm plan: safety, debt, then wealth." />
+  <meta property="og:title" content="TESORIN — Know what your money can do this month" />
+  <meta property="og:description" content="One number. A calm sequence. Your first real money plan." />
+  <meta property="og:url" content="https://www.trytesorin.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.trytesorin.com/tesorin-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Shared nav (font + active state overridden below) -->
   <link rel="stylesheet" href="/assets/nav.css" />
   <script src="/assets/nav.js" defer></script>
-
   <style>
-    /* ─── TOKENS ────────────────────────────────────────────── */
     :root {
-      /* Surfaces */
-      --bg:      #f8f7f4;
-      --surface: #ffffff;
-      --tint:    #f0ece4;
+      --paper:#f5f3ef; --paper-2:#edebe5; --surface:#fff;
+      --ink:#0a0a0a; --ink-2:#2e2c29; --ink-3:#5c5852; --ink-4:#9c9790; --ink-5:#ccc8c0;
+      --umber:#9c8b6e; --umber-lt:#f0ebe2;
+      --bd:rgba(10,10,10,.09); --bd-md:rgba(10,10,10,.15);
+      --text-main:#0a0a0a; --text-soft:#2e2c29; --text-mute:#9c9790; --card:#fff;
+      --max-width:1120px;
+      --font-display:"Instrument Serif",Georgia,serif;
+      --font-body:"Plus Jakarta Sans",system-ui,sans-serif;
+      --ease:cubic-bezier(.22,1,.36,1); --ease2:cubic-bezier(.16,1,.3,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{font-family:var(--font-body);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;} img{display:block;max-width:100%;} button,input{font-family:inherit;}
 
-      /* Text  (nav.css reads --text-main, --text-mute) */
-      --text-main:  #0f0f0f;
-      --text-soft:  #3a4b5c;
-      --text-mute:  #7a8a98;
-      --text-xmute: #b0bec8;
+    /* ── NAV ── */
+    header,header a,header button,.menu-brand-text,.menu-panel-nav a{font-family:var(--font-body)!important;}
+    .menu-panel{background:rgba(245,243,239,.98)!important;}
 
-      /* Accent — forest green */
-      --green:      #1a6b47;
-      --green-dk:   #155a3b;
-      --green-lt:   #eaf3ee;
-      --green-bd:   #bdd8ca;
-      --green-ring: rgba(26,107,71,.15);
+    /* Wordmark — no logo, just type */
+    .brand-link{text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;}
+    .brand-wordmark{
+      font-family:var(--font-display)!important;
+      font-size:21px!important; font-weight:400!important;
+      letter-spacing:.22em!important;
+      text-transform:uppercase!important;
+      color:var(--ink)!important; line-height:1!important;
+    }
+    .menu-brand-text{
+      font-family:var(--font-display)!important;
+      font-size:18px!important; font-weight:400!important;
+      letter-spacing:.22em!important; text-transform:uppercase!important;
+    }
+    nav[aria-label="Primary"] a.is-active{color:var(--ink)!important;box-shadow:inset 0 -1.5px 0 var(--ink)!important;}
+    a.nav-cta{padding:8px 18px!important;border-radius:0!important;background:transparent!important;color:var(--ink)!important;border:1px solid var(--bd-md)!important;font-size:13px!important;font-weight:500!important;box-shadow:none!important;letter-spacing:.01em!important;transition:background .15s,color .15s!important;}
+    a.nav-cta:hover{background:var(--ink)!important;color:var(--paper)!important;border-color:var(--ink)!important;}
 
-      /* Borders */
-      --bd:    rgba(15,15,15,.08);
-      --bd-md: rgba(15,15,15,.13);
+    .shell{width:100%;max-width:var(--max-width);margin:0 auto;padding:0 40px;}
 
-      /* Layout (nav.css reads --max-width) */
-      --max-width:  1120px;
-
-      /* Typography (nav.css reads --font-display, --card) */
-      --font-display: "Instrument Serif", Georgia, serif;
-      --font-body:    "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-      --card:         #ffffff;
-
-      /* Easing */
-      --ease:  cubic-bezier(.22,1,.36,1);
-      --ease2: cubic-bezier(.16,1,.3,1);
+    /* ── GLOBAL IMAGE GRADE ── */
+    .ig{
+      filter: sepia(12%) saturate(88%) brightness(103%) contrast(96%);
+      display:block; width:100%;
     }
 
-    /* ─── RESET ─────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html  { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body  {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x: hidden;
-    }
-    a   { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button, input { font-family: inherit; }
-
-    /* ─── NAV OVERRIDES ─────────────────────────────────────── */
-    /* Body font everywhere in nav */
-    header, header a, header button,
-    .menu-brand-text, .menu-panel-nav a { font-family: var(--font-body) !important; }
-
-    /* Warm mobile panel */
-    .menu-panel { background: rgba(248,247,244,.97) !important; }
-
-    /* Active state: forest green underline */
-    nav[aria-label="Primary"] a.is-active {
-      color: var(--green)       !important;
-      box-shadow: inset 0 -1.5px 0 var(--green) !important;
+    /* ── HERO ── */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:calc(100vh - 72px);
+      border-bottom:1px solid var(--bd);
     }
 
-    /* Nav CTA — solid green pill, no extra flair */
-    a.nav-cta {
-      padding: 9px 18px           !important;
-      border-radius: 999px        !important;
-      background: var(--green)    !important;
-      color: #fff                 !important;
-      border: none                !important;
-      font-size: 13.5px           !important;
-      font-weight: 500            !important;
-      letter-spacing: -.01em      !important;
-      box-shadow: none            !important;
-      transition: background .18s !important;
+    /* Left — copy */
+    .hero-left{
+      display:flex; flex-direction:column; justify-content:center;
+      padding:80px 64px 80px 40px;
+      /* relative to shell so we need padding from edge */
     }
-    a.nav-cta:hover { background: var(--green-dk) !important; }
-
-    /* ─── SHELL ─────────────────────────────────────────────── */
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 36px;
+    /* override: hero is full-bleed, shell handles left padding */
+    .hero-shell-left{
+      max-width:calc(var(--max-width)/2);
+      margin-left:auto;
+      padding:80px 64px 80px 40px;
+      display:flex; flex-direction:column; justify-content:center;
+      height:100%;
     }
 
-    /* ─── HERO ──────────────────────────────────────────────── */
-    .hero {
-      display: grid;
-      /* Left column is wider — headline dominates */
-      grid-template-columns: 1.12fr 1fr;
-      column-gap: 72px;
-      align-items: center;
-      /* Open, breathing space — like Wealthsimple / Remarkable */
-      padding: 80px 0 108px;
+    .hero-status{
+      font-size:12px; color:var(--ink-4); letter-spacing:.04em;
+      margin-bottom:32px; display:flex; align-items:center; gap:8px;
+    }
+    .status-dot{width:5px;height:5px;border-radius:50%;background:var(--umber);flex-shrink:0;}
+
+    .hero-h1{
+      font-family:var(--font-display);
+      font-size:clamp(48px,5.5vw,80px);
+      font-weight:400; line-height:1.04; letter-spacing:-.02em;
+      color:var(--ink); margin-bottom:24px; max-width:14ch;
+    }
+    .hero-h1 em{font-style:italic;color:var(--ink-3);}
+
+    .hero-sub{
+      font-size:16px; line-height:1.74; color:var(--ink-3);
+      font-weight:400; max-width:40ch; margin-bottom:44px;
     }
 
-    /* ── Left column ── */
-    .hero-left { display: flex; flex-direction: column; }
+    /* Form */
+    .wl-pill{
+      display:flex; align-items:center; background:var(--surface);
+      border:1px solid var(--bd-md); border-radius:0;
+      padding:0 0 0 20px; max-width:400px;
+      transition:border-color .18s;
+    }
+    .wl-pill:focus-within{border-color:var(--ink);}
+    .wl-pill input[type="email"]{flex:1;min-width:0;background:none;border:none;outline:none;font-size:14px;font-family:var(--font-body);color:var(--ink);padding:13px 0;}
+    .wl-pill input::placeholder{color:var(--ink-4);}
+    .wl-submit{background:var(--ink);color:var(--paper);border:none;border-radius:0;padding:14px 22px;font-size:13px;font-weight:500;font-family:var(--font-body);cursor:pointer;white-space:nowrap;flex-shrink:0;display:inline-flex;align-items:center;gap:6px;letter-spacing:.01em;transition:opacity .15s;}
+    .wl-submit .arr{transition:transform .2s var(--ease);display:inline-block;}
+    .wl-submit:hover{opacity:.82;}
+    .wl-submit:hover .arr{transform:translateX(3px);}
+    .wl-submit:disabled{opacity:.5;cursor:not-allowed;}
+    .wl-meta{margin-top:12px;}
+    .wl-note{font-size:11.5px;line-height:1.6;color:var(--ink-4);}
+    .wl-note a{color:var(--ink-3);text-decoration:underline;text-underline-offset:2px;}
+    .wl-status{font-size:11.5px;color:var(--ink-4);min-height:16px;margin-top:4px;}
+    .wl-status.ok{color:#2d6a4f;} .wl-status.err{color:#9b2335;}
 
-    /* Status line — replaces pill badge entirely */
-    .hero-kicker {
-      font-size: 12px;
-      font-weight: 400;
-      color: var(--text-mute);
-      letter-spacing: .02em;
-      margin-bottom: 28px;
+    /* Right — image */
+    .hero-right{
+      position:relative; overflow:hidden;
+      /* no padding — image fills edge to edge */
     }
-    /* The single accent touch — a green dot before the text */
-    .hero-kicker::before {
-      content: "";
-      display: inline-block;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      margin-right: 8px;
-      vertical-align: middle;
-      position: relative;
-      top: -1px;
+    .hero-img{
+      width:100%; height:100%;
+      object-fit:cover; object-position:center;
+      display:block;
     }
-
-    /* Headline — larger, commands the page */
-    .hero-h1 {
-      font-family: var(--font-display);
-      /* Larger than before — headline wins vs card */
-      font-size: clamp(52px, 7vw, 92px);
-      font-weight: 400;
-      line-height: 1.04;
-      letter-spacing: -.02em;
-      color: var(--text-main);
-      margin-bottom: 24px;
-      max-width: 16ch;
-    }
-    .hero-h1 em {
-      font-style: italic;
-      /* Slightly softer — the italic "rests" vs the roman */
-      color: var(--text-soft);
+    /* Dark gradient at bottom for card readability */
+    .hero-right::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(10,10,10,.52) 0%, rgba(10,10,10,.18) 40%, transparent 70%);
+      pointer-events:none;
     }
 
-    /* Subline — small, supporting. Headline does the work. */
-    .hero-sub {
-      font-size: 16px;
-      line-height: 1.72;
-      color: var(--text-soft);
-      font-weight: 400;
-      max-width: 40ch;
-      margin-bottom: 44px;
+    /* Plan card — floated over image bottom */
+    .plan-card-float{
+      position:absolute; bottom:28px; left:28px; right:28px;
+      background:rgba(245,243,239,.94);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border:1px solid rgba(10,10,10,.12);
+      border-radius:4px; padding:22px 24px 20px;
+      z-index:2;
     }
+    .pc-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;}
+    .pc-lbl{font-size:10px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-4);margin-bottom:6px;}
+    .pc-amt{font-family:var(--font-display);font-size:46px;font-weight:400;line-height:1;letter-spacing:-.04em;color:var(--ink);}
+    .pc-badge{font-size:11px;font-weight:500;color:var(--umber);background:rgba(156,139,110,.12);border:1px solid rgba(156,139,110,.25);border-radius:0;padding:3px 10px;margin-top:3px;white-space:nowrap;}
+    .pc-rule{height:1px;background:var(--bd-md);margin-bottom:16px;}
+    .pc-rows{display:flex;flex-direction:column;gap:13px;}
+    .pc-row-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+    .pc-row-name{font-size:12.5px;font-weight:500;color:var(--ink-3);}
+    .pc-row-val{font-size:12.5px;font-weight:600;color:var(--ink);}
+    .pc-track{height:3px;background:rgba(10,10,10,.1);overflow:hidden;}
+    .pc-fill{height:100%;background:var(--ink);transform-origin:left;transform:scaleX(0);}
 
-    /* ── Waitlist form ── */
-    .wl-form-wrap { max-width: 400px; }
+    /* ── THREE-STEP STRIP ── */
+    .strip{border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);}
+    .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+    .strip-cell{padding:48px 40px;border-right:1px solid var(--bd);opacity:0;transform:translateY(12px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+    .strip-cell:last-child{border-right:none;}
+    .strip-cell.in{opacity:1;transform:translateY(0);}
+    .strip-cell:nth-child(2){transition-delay:.1s;} .strip-cell:nth-child(3){transition-delay:.2s;}
+    .strip-n{font-family:var(--font-display);font-size:64px;font-style:italic;font-weight:400;line-height:1;letter-spacing:-.04em;color:var(--ink-5);margin-bottom:18px;}
+    .strip-h{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.01em;margin-bottom:9px;}
+    .strip-p{font-size:13.5px;color:var(--ink-3);line-height:1.68;max-width:24ch;}
 
-    /* Flat pill — no shadow, no elevation.
-       The cream bg + 1px border is all the separation needed. */
-    .wl-pill {
-      display: flex;
-      align-items: center;
-      background: var(--surface);
-      border: 1px solid var(--bd-md);
-      border-radius: 999px;
-      padding: 5px 5px 5px 22px;
-      /* No box-shadow — form recedes, headline leads */
-      transition: border-color .2s;
-    }
-    .wl-pill:focus-within {
-      border-color: var(--green-bd);
-      outline: 3px solid var(--green-ring);
-      outline-offset: 0;
-    }
-    .wl-pill input[type="email"] {
-      flex: 1;
-      min-width: 0;
-      background: none;
-      border: none;
-      outline: none;
-      font-size: 14.5px;
-      font-family: var(--font-body);
-      color: var(--text-main);
-      padding: 9px 0;
-    }
-    .wl-pill input::placeholder { color: var(--text-mute); }
+    /* ── FOOTER ── */
+    .site-footer{padding:28px 0;border-top:1px solid var(--bd);}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+    .footer-copy{font-size:12px;color:var(--ink-4);}
+    .footer-links{display:flex;flex-wrap:wrap;gap:24px;}
+    .footer-links a{font-size:12px;color:var(--ink-4);transition:color .15s;}
+    .footer-links a:hover{color:var(--ink);}
 
-    .wl-btn {
-      background: var(--green);
-      color: #fff;
-      border: none;
-      border-radius: 999px;
-      padding: 11px 20px;
-      font-size: 13.5px;
-      font-weight: 500;
-      font-family: var(--font-body);
-      cursor: pointer;
-      white-space: nowrap;
-      flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      letter-spacing: -.01em;
-      transition: background .18s, transform .14s var(--ease);
-    }
-    .wl-btn .arr { transition: transform .2s var(--ease); display: inline-block; }
-    .wl-btn:hover { background: var(--green-dk); }
-    .wl-btn:hover .arr { transform: translateX(3px); }
-    .wl-btn:disabled { opacity: .6; cursor: not-allowed; }
+    /* ── REVEALS ── */
+    .rv{opacity:0;transform:translateY(14px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+    .rv.in{opacity:1;transform:translateY(0);}
+    .rv-d1{transition-delay:.07s;} .rv-d2{transition-delay:.14s;} .rv-d3{transition-delay:.21s;}
 
-    .wl-meta {
-      margin-top: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    /* ── RESPONSIVE ── */
+    @media(max-width:960px){
+      .hero{grid-template-columns:1fr;min-height:unset;}
+      .hero-right{height:420px;order:-1;}
+      .hero-shell-left{max-width:100%;padding:52px 40px 64px;}
+      .strip-grid{grid-template-columns:1fr;}
+      .strip-cell{border-right:none;border-bottom:1px solid var(--bd);padding:32px 0;}
+      .strip-cell:last-child{border-bottom:none;}
     }
-    .wl-note {
-      font-size: 12px;
-      line-height: 1.6;
-      color: var(--text-mute);
-    }
-    .wl-note a {
-      color: var(--text-soft);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .wl-status { font-size: 12px; color: var(--text-mute); min-height: 16px; }
-    .wl-status.ok  { color: var(--green);  }
-    .wl-status.err { color: #b91c1c; }
-
-    /* ── Right column — plan card ── */
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    /* Card: NO shadow. Border only.
-       Floating shadows are what makes cards look like prototypes.
-       A 1px border on a cream bg is far more refined. */
-    .plan-card {
-      width: 100%;
-      background: var(--surface);
-      border: 1px solid var(--bd-md);
-      border-radius: 20px;
-      padding: 28px 26px 24px;
-      /* Top rule in forest green — the only accent on the card */
-      border-top: 2.5px solid var(--green);
-    }
-
-    .pc-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 24px;
-    }
-    .pc-lbl {
-      font-size: 10.5px;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-      margin-bottom: 8px;
-    }
-    .pc-amt {
-      font-family: var(--font-display);
-      /* Larger — the number should feel like a statement */
-      font-size: 56px;
-      font-weight: 400;
-      line-height: 1;
-      letter-spacing: -.035em;
-      color: var(--text-main);
-    }
-    .pc-badge {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--green);
-      background: var(--green-lt);
-      border: 1px solid var(--green-bd);
-      border-radius: 999px;
-      padding: 4px 12px;
-      white-space: nowrap;
-    }
-
-    .pc-rule { height: 1px; background: var(--bd); margin-bottom: 20px; }
-
-    .pc-rows { display: flex; flex-direction: column; gap: 16px; }
-    .pc-row-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 8px;
-    }
-    .pc-row-name { font-size: 13px; font-weight: 500; color: var(--text-soft); }
-    .pc-row-val  { font-size: 13px; font-weight: 600; color: var(--text-main); }
-
-    /* Thicker bars — more presence */
-    .pc-track {
-      height: 6px;
-      background: var(--tint);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-    .pc-fill {
-      height: 100%;
-      background: var(--green);
-      border-radius: 999px;
-      transform-origin: left;
-      transform: scaleX(0);
-    }
-
-    .pc-foot {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 22px;
-      padding-top: 16px;
-      border-top: 1px solid var(--bd);
-    }
-    .pc-foot-note   { font-size: 12px; color: var(--text-mute); }
-    .pc-foot-action { font-size: 12px; font-weight: 500; color: var(--green); }
-
-    .card-note {
-      font-size: 12px;
-      color: var(--text-xmute);
-    }
-
-    /* ─── CONCEPT STRIP ─────────────────────────────────────── */
-    /* Clean rule separation — Remarkable's approach */
-    .strip { border-top: 1px solid var(--bd); }
-
-    .strip-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .strip-cell {
-      padding: 44px 40px;
-      border-right: 1px solid var(--bd);
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .6s var(--ease), transform .6s var(--ease);
-    }
-    .strip-cell:last-child { border-right: none; }
-    .strip-cell.in { opacity: 1; transform: translateY(0); }
-    .strip-cell:nth-child(2) { transition-delay: .09s; }
-    .strip-cell:nth-child(3) { transition-delay: .18s; }
-
-    /* Italic serif step label — Remarkable uses italic accents */
-    .strip-step {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 13px;
-      color: var(--text-xmute);
-      margin-bottom: 12px;
-      display: block;
-    }
-    .strip-h {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-main);
-      letter-spacing: -.015em;
-      margin-bottom: 10px;
-    }
-    .strip-p {
-      font-size: 13.5px;
-      color: var(--text-soft);
-      line-height: 1.68;
-      max-width: 26ch;
-    }
-
-    /* ─── FOOTER ────────────────────────────────────────────── */
-    .site-footer { padding: 28px 0; border-top: 1px solid var(--bd); }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-    .footer-copy   { font-size: 12.5px; color: var(--text-mute); }
-    .footer-links  { display: flex; flex-wrap: wrap; gap: 22px; }
-    .footer-links a {
-      font-size: 12.5px;
-      color: var(--text-mute);
-      transition: color .15s;
-    }
-    .footer-links a:hover { color: var(--text-main); }
-
-    /* ─── REVEAL ────────────────────────────────────────────── */
-    .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
-    .rv.in { opacity: 1; transform: translateY(0); }
-    .rv-d1 { transition-delay: .07s; }
-    .rv-d2 { transition-delay: .14s; }
-    .rv-d3 { transition-delay: .21s; }
-    .rv-d4 { transition-delay: .28s; }
-
-    /* ─── RESPONSIVE ────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 52px 0 72px;
-        column-gap: 0;
-        row-gap: 52px;
-      }
-      .hero-right { order: -1; align-items: center; }
-      .hero-h1    { max-width: 100%; }
-      .strip-grid { grid-template-columns: 1fr; }
-      .strip-cell {
-        border-right: none;
-        border-bottom: 1px solid var(--bd);
-        padding: 32px 0;
-      }
-      .strip-cell:last-child { border-bottom: none; }
-    }
-
-    @media (max-width: 600px) {
-      .shell     { padding: 0 20px; }
-      .hero      { padding: 44px 0 64px; row-gap: 44px; }
-      .hero-h1   { font-size: 44px; }
-      .hero-sub  { font-size: 15px; }
-      .wl-pill   { padding: 4px 4px 4px 16px; }
-      .wl-btn    { padding: 10px 14px; font-size: 13px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
-      .footer-links { gap: 14px; }
+    @media(max-width:600px){
+      .shell{padding:0 22px;}
+      .hero-shell-left{padding:44px 22px 56px;}
+      .hero-h1{font-size:44px;}
+      .hero-right{height:320px;}
+      .plan-card-float{left:16px;right:16px;bottom:16px;padding:18px;}
+      .pc-amt{font-size:38px;}
+      .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;}
+      .footer-links{gap:14px;}
     }
   </style>
 </head>
-
 <body>
 
-  <!-- ─── NAV ─────────────────────────────────────────────────── -->
+  <!-- NAV -->
   <div class="shell">
     <header>
       <a href="/" class="brand-link" aria-label="TESORIN home">
-        <div class="brand">
-          <span class="brand-mark" aria-hidden="true">
-            <img src="tesorin-logo.png" alt="" width="28" height="28" decoding="async" />
-          </span>
-          <span class="brand-text-wrap">
-            <span class="brand-name">TESORIN</span>
-            <span class="brand-tagline">Plan big.</span>
-          </span>
-        </div>
+        <span class="brand-wordmark">TESORIN</span>
       </a>
-
       <nav aria-label="Primary">
         <a href="/how-it-works.html">How it works</a>
         <a href="/features.html">Features</a>
@@ -507,25 +231,16 @@
         <a href="/faq.html">FAQs</a>
         <a href="/?focus=waitlist" class="nav-cta">Join waitlist</a>
       </nav>
-
       <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-overlay">
-        <span class="menu-bars" aria-hidden="true"></span>
+        <span class="menu-bars"></span>
       </button>
-
       <div id="menu-overlay" class="menu-overlay" data-open="false" aria-hidden="true">
         <div class="menu-backdrop" data-close="true"></div>
         <div class="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
           <div class="menu-panel-inner">
             <div class="menu-panel-head">
-              <a href="/" class="menu-brand" aria-label="TESORIN home">
-                <span class="menu-brand-mark">
-                  <img src="tesorin-logo.png" alt="" width="28" height="28" decoding="async" />
-                </span>
-                <span class="menu-brand-text">TESORIN</span>
-              </a>
-              <button type="button" class="menu-close" aria-label="Close menu" data-close="true">
-                <span aria-hidden="true">×</span>
-              </button>
+              <a href="/" class="menu-brand"><span class="menu-brand-text">TESORIN</span></a>
+              <button type="button" class="menu-close" aria-label="Close menu" data-close="true"><span>×</span></button>
             </div>
             <nav class="menu-panel-nav" aria-label="Mobile">
               <a href="/how-it-works.html">How it works</a>
@@ -542,144 +257,79 @@
   </div>
 
   <main id="main">
-
-    <!-- ─── HERO ─────────────────────────────────────────────── -->
-    <section aria-label="TESORIN — homepage hero">
-      <div class="shell">
-        <div class="hero">
-
-          <!-- LEFT ── copy + form -->
-          <div class="hero-left">
-
-            <!-- Status line instead of pill badge -->
-            <p class="hero-kicker rv">Planning-first · Canada &amp; India</p>
-
-            <h1 class="hero-h1 rv rv-d1">
-              Know what your money can do<em> this month.</em>
-            </h1>
-
-            <p class="hero-sub rv rv-d2">
-              TESORIN gives you one number — your monthly flexibility — and turns it into a clear plan: safety buffer first, then debt, then wealth.
-            </p>
-
-            <div class="wl-form-wrap rv rv-d3" id="waitlist">
+    <!-- HERO -->
+    <section aria-label="TESORIN hero" style="border-bottom:1px solid var(--bd);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 72px);" class="hero-grid">
+        <!-- Left -->
+        <div style="display:flex;align-items:center;background:var(--paper);">
+          <div class="hero-shell-left">
+            <p class="hero-status rv"><span class="status-dot"></span>Early access · Canada &amp; India</p>
+            <h1 class="hero-h1 rv rv-d1">Know what your money can do<em> this month.</em></h1>
+            <p class="hero-sub rv rv-d2">TESORIN gives you one number — your monthly flexibility — and turns it into a clear plan: safety buffer first, then debt, then wealth.</p>
+            <div class="rv rv-d3" id="waitlist">
               <form id="wl-form" novalidate>
                 <div class="wl-pill">
-                  <input
-                    id="wl-email"
-                    type="email"
-                    name="email"
-                    placeholder="Your email address"
-                    autocomplete="email"
-                    inputmode="email"
-                    required
-                    aria-label="Email address"
-                    aria-describedby="wl-status"
-                  />
-                  <button id="wl-btn" type="submit" class="wl-btn">
-                    Get early access <span class="arr" aria-hidden="true">→</span>
-                  </button>
+                  <input id="wl-email" type="email" name="email" placeholder="Your email address" autocomplete="email" inputmode="email" required aria-label="Email address" aria-describedby="wl-status" />
+                  <button id="wl-btn" type="submit" class="wl-submit">Get early access <span class="arr">→</span></button>
                 </div>
               </form>
               <div class="wl-meta">
-                <p class="wl-note">
-                  No bank linking required. Free during early access.&ensp;<a href="/privacy.html">Privacy</a>
-                </p>
+                <p class="wl-note">No bank linking required. Free during early access.&ensp;<a href="/privacy.html">Privacy</a></p>
                 <p class="wl-status" id="wl-status" role="status" aria-live="polite"></p>
               </div>
             </div>
-
           </div>
-
-          <!-- RIGHT ── plan card -->
-          <div class="hero-right rv rv-d4" aria-hidden="true">
-            <div class="plan-card">
-              <div class="pc-head">
-                <div>
-                  <div class="pc-lbl">Monthly flexibility</div>
-                  <div class="pc-amt" id="pc-num">$0</div>
-                </div>
-                <span class="pc-badge">This month</span>
+        </div>
+        <!-- Right — image -->
+        <div class="hero-right" style="position:relative;overflow:hidden;">
+          <img src="/assets/img-hero.png" alt="Person writing in notebook at desk with warm morning light" class="hero-img ig" />
+          <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(10,10,10,.55) 0%, rgba(10,10,10,.15) 45%, transparent 72%);pointer-events:none;"></div>
+          <!-- Plan card floating over image -->
+          <div class="plan-card-float" aria-hidden="true">
+            <div class="pc-head">
+              <div>
+                <div class="pc-lbl">Monthly flexibility</div>
+                <div class="pc-amt" id="pc-num">$0</div>
               </div>
-
-              <div class="pc-rule"></div>
-
-              <div class="pc-rows">
-                <div class="pc-row">
-                  <div class="pc-row-head">
-                    <span class="pc-row-name">Safety buffer</span>
-                    <span class="pc-row-val">$420</span>
-                  </div>
-                  <div class="pc-track">
-                    <div class="pc-fill" data-w="0.34"></div>
-                  </div>
-                </div>
-
-                <div class="pc-row">
-                  <div class="pc-row-head">
-                    <span class="pc-row-name">Debt paydown</span>
-                    <span class="pc-row-val">$280</span>
-                  </div>
-                  <div class="pc-track">
-                    <div class="pc-fill" data-w="0.23" style="opacity:.65;"></div>
-                  </div>
-                </div>
-
-                <div class="pc-row">
-                  <div class="pc-row-head">
-                    <span class="pc-row-name">Growth goal</span>
-                    <span class="pc-row-val">$540</span>
-                  </div>
-                  <div class="pc-track">
-                    <div class="pc-fill" data-w="0.44" style="opacity:.42;"></div>
-                  </div>
-                </div>
+              <span class="pc-badge">This month</span>
+            </div>
+            <div class="pc-rule"></div>
+            <div class="pc-rows">
+              <div class="pc-row">
+                <div class="pc-row-head"><span class="pc-row-name">Safety buffer</span><span class="pc-row-val">$420</span></div>
+                <div class="pc-track"><div class="pc-fill" data-w="0.34"></div></div>
               </div>
-
-              <div class="pc-foot">
-                <span class="pc-foot-note">Plan updated today</span>
-                <span class="pc-foot-action">Adjust →</span>
+              <div class="pc-row">
+                <div class="pc-row-head"><span class="pc-row-name">Debt paydown</span><span class="pc-row-val">$280</span></div>
+                <div class="pc-track"><div class="pc-fill" data-w="0.23" style="opacity:.62;"></div></div>
+              </div>
+              <div class="pc-row">
+                <div class="pc-row-head"><span class="pc-row-name">Growth goal</span><span class="pc-row-val">$540</span></div>
+                <div class="pc-track"><div class="pc-fill" data-w="0.44" style="opacity:.40;"></div></div>
               </div>
             </div>
-
-            <p class="card-note">Illustrative. Your numbers, your plan.</p>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ─── CONCEPT STRIP ────────────────────────────────────── -->
-    <div class="strip" role="region" aria-label="How TESORIN works">
+    <!-- THREE-STEP STRIP -->
+    <section class="strip" aria-label="How it works">
       <div class="shell">
         <div class="strip-grid">
-          <div class="strip-cell">
-            <span class="strip-step">Step one</span>
-            <div class="strip-h">Snapshot</div>
-            <p class="strip-p">Map your income, fixed bills, and balances. Takes minutes. No bank linking needed.</p>
-          </div>
-          <div class="strip-cell">
-            <span class="strip-step">Step two</span>
-            <div class="strip-h">Plan</div>
-            <p class="strip-p">Get one clear number: what you can safely route to goals this month without breaking your baseline.</p>
-          </div>
-          <div class="strip-cell">
-            <span class="strip-step">Step three</span>
-            <div class="strip-h">Act</div>
-            <p class="strip-p">Follow a calm sequence. Safety first. Then debt. Then growth. One small action at a time.</p>
-          </div>
+          <div class="strip-cell"><div class="strip-n">1</div><div class="strip-h">Snapshot</div><p class="strip-p">Map income, fixed bills, balances. Minutes. No bank linking needed.</p></div>
+          <div class="strip-cell"><div class="strip-n">2</div><div class="strip-h">Plan</div><p class="strip-p">One clear number: what you can safely route to goals this month.</p></div>
+          <div class="strip-cell"><div class="strip-n">3</div><div class="strip-h">Act</div><p class="strip-p">Safety first. Then debt. Then growth. One small action at a time.</p></div>
         </div>
       </div>
-    </div>
-
+    </section>
   </main>
 
-  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="shell">
       <div class="footer-inner">
-        <span class="footer-copy">© 2026 TESORIN. All rights reserved.</span>
-        <nav class="footer-links" aria-label="Footer">
+        <span class="footer-copy">© 2026 TESORIN</span>
+        <nav class="footer-links">
           <a href="/how-it-works.html">How it works</a>
           <a href="/features.html">Features</a>
           <a href="/about.html">About</a>
@@ -693,102 +343,51 @@
   </footer>
 
   <script>
-  (function () {
+  (function(){
     "use strict";
+    const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target);}}),{threshold:.08});
+    document.querySelectorAll(".rv,.strip-cell").forEach(el=>io.observe(el));
 
-    /* ── SCROLL REVEALS ─────────────────────────────────────── */
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: .1, rootMargin: "0px 0px -24px 0px" });
-
-    document.querySelectorAll(".rv, .strip-cell").forEach(el => io.observe(el));
-
-    /* ── PLAN CARD ANIMATION ────────────────────────────────── */
-    const numEl   = document.getElementById("pc-num");
-    const fills   = document.querySelectorAll(".pc-fill");
-    const TARGET  = 1240;
-    let   started = false;
-
-    function runCard() {
-      if (started) return;
-      started = true;
-
-      /* Count up */
-      const dur = 1100, tick = 14;
-      const inc = TARGET / (dur / tick);
-      let v = 0;
-      const t = setInterval(() => {
-        v = Math.min(v + inc, TARGET);
-        numEl.textContent = "$" + Math.round(v).toLocaleString();
-        if (v >= TARGET) clearInterval(t);
-      }, tick);
-
-      /* Bars stagger in */
-      fills.forEach((fill, i) => {
-        const w = parseFloat(fill.dataset.w || "1");
-        fill.style.transition = `transform 1.3s cubic-bezier(.16,1,.3,1) ${.26 + i * .14}s`;
-        fill.style.transform  = `scaleX(${w})`;
-      });
+    /* Responsive hero grid */
+    const hg=document.querySelector(".hero-grid");
+    function fixHero(){
+      if(!hg)return;
+      if(window.innerWidth<=960){
+        hg.style.gridTemplateColumns="1fr";
+        hg.style.minHeight="unset";
+      } else {
+        hg.style.gridTemplateColumns="1fr 1fr";
+        hg.style.minHeight="calc(100vh - 72px)";
+      }
     }
+    fixHero(); window.addEventListener("resize",fixHero);
 
-    const cardObs = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) { runCard(); cardObs.disconnect(); }
-    }, { threshold: .45 });
-
-    const card = document.querySelector(".plan-card");
-    if (card) cardObs.observe(card);
-
-    /* ── WAITLIST FORM ──────────────────────────────────────── */
-    const form   = document.getElementById("wl-form");
-    const emailI = document.getElementById("wl-email");
-    const btn    = document.getElementById("wl-btn");
-    const status = document.getElementById("wl-status");
-
-    if (form) {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const email = emailI.value.trim();
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          status.textContent = "Please enter a valid email address.";
-          status.className   = "wl-status err";
-          emailI.focus();
-          return;
-        }
-        btn.disabled       = true;
-        btn.textContent    = "Sending…";
-        status.textContent = "";
-        status.className   = "wl-status";
-
-        try {
-          const res = await fetch("https://formspree.io/f/mwkgdbdo", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify({ email })
-          });
-          if (res.ok) {
-            form.reset();
-            status.textContent = "You're on the list. We'll be in touch.";
-            status.className   = "wl-status ok";
-            btn.textContent    = "Done ✓";
-          } else { throw new Error(); }
-        } catch {
-          status.textContent = "Something went wrong. Please try again.";
-          status.className   = "wl-status err";
-          btn.disabled       = false;
-          btn.innerHTML      = 'Get early access <span class="arr" aria-hidden="true">→</span>';
-        }
-      });
+    /* Plan card */
+    const numEl=document.getElementById("pc-num"),fills=document.querySelectorAll(".pc-fill"),TARGET=1240;
+    let started=false;
+    function runCard(){
+      if(started)return; started=true;
+      let v=0; const t=setInterval(()=>{v=Math.min(v+TARGET/(1100/14),TARGET);numEl.textContent="$"+Math.round(v).toLocaleString();if(v>=TARGET)clearInterval(t);},14);
+      fills.forEach((f,i)=>{const w=parseFloat(f.dataset.w||1);f.style.transition=`transform 1.3s cubic-bezier(.16,1,.3,1) ${.26+i*.15}s`;f.style.transform=`scaleX(${w})`;});
     }
+    const co=new IntersectionObserver(e=>{if(e[0].isIntersecting){runCard();co.disconnect();}},{threshold:.3});
+    const card=document.querySelector(".plan-card-float"); if(card)co.observe(card);
 
-    /* ── WAITLIST FOCUS PARAM ───────────────────────────────── */
-    if (new URLSearchParams(location.search).get("focus") === "waitlist") {
-      setTimeout(() => document.getElementById("wl-email")?.focus(), 60);
-    }
-
+    /* Waitlist */
+    const form=document.getElementById("wl-form"),emailI=document.getElementById("wl-email"),btn=document.getElementById("wl-btn"),status=document.getElementById("wl-status");
+    if(form)form.addEventListener("submit",async e=>{
+      e.preventDefault();
+      const email=emailI.value.trim();
+      if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){status.textContent="Please enter a valid email.";status.className="wl-status err";emailI.focus();return;}
+      btn.disabled=true;btn.textContent="Sending…";status.textContent="";status.className="wl-status";
+      try{
+        const res=await fetch("https://formspree.io/f/mwkgdbdo",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email})});
+        if(res.ok){form.reset();status.textContent="You're on the list. We'll be in touch.";status.className="wl-status ok";btn.textContent="Done ✓";}
+        else throw new Error();
+      }catch{status.textContent="Something went wrong. Please try again.";status.className="wl-status err";btn.disabled=false;btn.innerHTML='Get early access <span class="arr">→</span>';}
+    });
+    if(new URLSearchParams(location.search).get("focus")==="waitlist")setTimeout(()=>document.getElementById("wl-email")?.focus(),60);
   }());
   </script>
-
 </body>
 </html>
