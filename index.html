@@ -381,8 +381,13 @@
       if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){status.textContent="Please enter a valid email.";status.className="wl-status err";emailI.focus();return;}
       btn.disabled=true;btn.textContent="Sending…";status.textContent="";status.className="wl-status";
       try{
-        const res=await fetch("https://formspree.io/f/mwkgdbdo",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email})});
-        if(res.ok){form.reset();status.textContent="You're on the list. We'll be in touch.";status.className="wl-status ok";btn.textContent="Done ✓";}
+        const res=await fetch("https://formspree.io/f/xzznvgkp",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({email})});
+        if(res.ok){
+          status.textContent="You're on the list. Redirecting…";
+          status.className="wl-status ok";
+          window.location.href="/success.html";
+          return;
+        }
         else throw new Error();
       }catch{status.textContent="Something went wrong. Please try again.";status.className="wl-status err";btn.disabled=false;btn.innerHTML='Get early access <span class="arr">→</span>';}
     });
